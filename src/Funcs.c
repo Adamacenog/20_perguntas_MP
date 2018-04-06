@@ -19,3 +19,13 @@ FILE * CriaArquivo(char *type, char *opcao)
   arq = fopen(nome, type);
   return arq;
 }
+
+char * ConstroiNo(char *no, char *filho)
+{
+  char *noFilho = (char *) malloc (strlen(no) + strlen(filho) + 1);
+
+  strcpy(noFilho, no);
+  strcat(noFilho, filho);
+
+  return noFilho;
+}

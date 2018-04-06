@@ -9,6 +9,7 @@ typedef struct Arvore
     struct Arvore *sim, *nao;
 } arvore;
 
+void Constroi_Manual (arvore **, char *, int);
 void Constroi_TXT (arvore **, FILE *);
 void Salva_TXT (arvore **, FILE *);
 void Le (arvore *);

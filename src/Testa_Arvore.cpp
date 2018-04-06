@@ -4,6 +4,43 @@
 #include "Arvore.h"
 #include "Funcs.h"
 
+TEST_CASE( "Creating a tree from user input", "Prove that the tree is created" )
+{
+  arvore *ainicio;
+  char pai[4] = "PAI";
+  printf("\nDIGITE 'SAIR' PARA O TESTE DAR CERTO\n");
+  Constroi_Manual(&ainicio,pai,0);
+  REQUIRE( ainicio == NULL );
+  printf("\n\nAGORA DIGITE QUALQUER COISA VALIDA, DEPOIS 'SAIR' E DEPOIS 'SAIR'\n\n");
+  Constroi_Manual(&ainicio,pai,0);
+  REQUIRE( ainicio != NULL );
+  REQUIRE( ainicio->sim == NULL );
+  REQUIRE( ainicio->nao == NULL );
+  printf("\n\nAGORA DIGITE QUALQUER COISA VALIDA, DEPOIS ALGO VALIDO E DEPOIS 'SAIR' 3 VEZES\n\n");
+  Constroi_Manual(&ainicio,pai,0);
+  REQUIRE( ainicio != NULL );
+  REQUIRE( ainicio->sim != NULL );
+  REQUIRE( ainicio->sim->sim == NULL );
+  REQUIRE( ainicio->sim->nao == NULL );
+  REQUIRE( ainicio->nao == NULL );
+  printf("\n\nAGORA DIGITE QUALQUER COISA VALIDA, DEPOIS 'SAIR', DEPOIS ALGO VALIDO, DEPOIS 'SAIR' 2 VEZES'\n\n");
+  Constroi_Manual(&ainicio,pai,0);
+  REQUIRE( ainicio != NULL );
+  REQUIRE( ainicio->sim == NULL );
+  REQUIRE( ainicio->nao->sim == NULL );
+  REQUIRE( ainicio->nao->nao == NULL );
+  REQUIRE( ainicio->nao != NULL );
+  printf("\n\nAGORA DIGITE QUALQUER COISA VALIDA, DEPOIS ALGO VALIDO, DEPOIS 'SAIR' 2 VEZES' DEPOIS ALGO VALIDO, DEPOIS 'SAIR' 2 VEZES'\n\n");
+  Constroi_Manual(&ainicio,pai,0);
+  REQUIRE( ainicio != NULL );
+  REQUIRE( ainicio->sim != NULL );
+  REQUIRE( ainicio->sim->sim == NULL );
+  REQUIRE( ainicio->sim->nao == NULL );
+  REQUIRE( ainicio->nao != NULL );
+  REQUIRE( ainicio->nao->sim == NULL );
+  REQUIRE( ainicio->nao->nao == NULL );
+}
+
 TEST_CASE( "Creating a tree from a file", "Prove that the tree is created" )
 {
   arvore *ainicio;
@@ -183,4 +220,17 @@ TEST_CASE("Creating/Opening a file (read) and (write)", "Function opens/creates 
   fclose(arq);
   arq = CriaArquivo(r, qlqr);
   REQUIRE(arq == NULL);
+}
+
+TEST_CASE("Function that concatenates strings", "Should concatenate the string")
+{
+  char tes[4] = "tes";
+  char tando[6] = "tando";
+  char vazio[1] = "";
+
+  REQUIRE(strcmp(ConstroiNo(tes,tando),"testando") == 0);
+  REQUIRE(strcmp(ConstroiNo(vazio,tando),"tando") == 0);
+  REQUIRE(strcmp(ConstroiNo(tes,vazio),"tes") == 0);
+  REQUIRE(strcmp(ConstroiNo(vazio,vazio),"") == 0);
+  REQUIRE(strcmp(ConstroiNo(tando,tes),"tandotes") == 0);
 }

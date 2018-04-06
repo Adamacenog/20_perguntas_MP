@@ -10,6 +10,52 @@ mat. 15/0117531.
 #include "Arvore.h"
 #include "Funcs.h"
 
+void Constroi_Manual (arvore **ainicio, char *no, int size)
+{
+  char pergunta[100];
+  char *noFilho;
+  char fSim[14] = " - Filho(sim)";
+  char fNao[14] = " - Filho(nao)";
+
+  if(size < 20)
+  {
+    printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.\n");
+    printf("Nó atual: %s\n", no);
+    fgets (pergunta, 99, stdin);
+    strtok(pergunta, "\n");
+
+    if (strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0)
+    {
+        *ainicio = NULL;
+    }
+    else
+    {
+      *ainicio = (arvore*) malloc (sizeof (arvore));
+      if(*ainicio != NULL)
+      {
+        strcpy((*ainicio)->Pergunta,pergunta);
+        noFilho = ConstroiNo(no, fSim);
+        Constroi_Manual (&((*ainicio)->sim), noFilho, (size + 1));
+        free(noFilho);
+        noFilho = ConstroiNo(no, fNao);
+        Constroi_Manual (&((*ainicio)->nao), noFilho, (size + 1));
+        free(noFilho);
+      }
+      else
+      {
+        printf("Malloc Error! Exiting!");
+        exit(1);
+      }
+    }
+  }
+  else
+  {
+    *ainicio = NULL;
+  }
+
+  return;
+}
+
 void Constroi_TXT (arvore **ainicio, FILE *arq)
 {
     const char nulo[2] = ".";
