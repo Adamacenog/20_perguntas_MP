@@ -1,2 +1,2 @@
-testa_arvore: testa_arvore.cpp factorial.c
-	g++ -std=c++11 -o testa_arvore testa_arvore.cpp factorial.c -I../include
+Testa_Arvore: Testa_Arvore.cpp Arvore.c
+	g++ -std=c++11 -o Testa_Arvore Testa_Arvore.cpp Arvore.c -I../include
