@@ -48,3 +48,76 @@ void Constroi_TXT (arvore **ainicio, FILE *arq)
 
     return;
 }
+
+void Salva_TXT (arvore **ainicio, FILE *arq)
+{
+  if(arq != NULL)
+  {
+    if (*ainicio == NULL)
+    {
+        fprintf(arq, "%s\n", ".");
+    }
+    else
+    {
+        fprintf(arq, "%s\n", (*ainicio)->Pergunta);
+        Salva_TXT (&(*ainicio)->sim, arq);
+        Salva_TXT (&(*ainicio)->nao, arq);
+    }
+ }
+  return;
+}
+
+void Le (arvore *a1)
+{
+    if (a1 != NULL)
+    {
+      printf ("%s\n" , a1->Pergunta);
+    }
+
+    return;
+}
+
+int NavegaSim(arvore **pergunta)
+{
+  if((*pergunta)->sim != NULL)
+  {
+    *pergunta = (*pergunta)->sim;
+    Le(*pergunta);
+
+    return 1;
+  }
+  else
+  {
+    *pergunta = NULL;
+    return 2;
+  }
+}
+
+int NavegaNao(arvore **pergunta)
+{
+  if((*pergunta)->nao != NULL)
+  {
+    *pergunta = (*pergunta)->nao;
+    Le(*pergunta);
+
+    return 1;
+  }
+  else
+  {
+    *pergunta = NULL;
+    return 2;
+  }
+}
+
+void Desconstroi (arvore **ainicio)
+{
+    if (*ainicio != NULL)
+    {
+        Desconstroi (&((*ainicio)->sim));
+        Desconstroi (&((*ainicio)->nao));
+        free (*ainicio);
+        *ainicio = NULL;
+    }
+
+    return;
+}

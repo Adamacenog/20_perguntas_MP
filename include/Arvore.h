@@ -10,3 +10,8 @@ typedef struct Arvore
 } arvore;
 
 void Constroi_TXT (arvore **, FILE *);
+void Salva_TXT (arvore **, FILE *);
+void Le (arvore *);
+int NavegaSim(arvore **);
+int NavegaNao(arvore **);
+void Desconstroi (arvore **);
