@@ -8,6 +8,7 @@ mat. 15/0117531.
 #include <ctype.h>
 #include <string.h>
 #include "Arvore.h"
+#include "Funcs.h"
 
 void Constroi_TXT (arvore **ainicio, FILE *arq)
 {
@@ -79,34 +80,50 @@ void Le (arvore *a1)
 
 int NavegaSim(arvore **pergunta)
 {
-  if((*pergunta)->sim != NULL)
+  if((*pergunta) != NULL)
   {
-    *pergunta = (*pergunta)->sim;
-    Le(*pergunta);
+    if((*pergunta)->sim != NULL)
+    {
+      *pergunta = (*pergunta)->sim;
+      Le(*pergunta);
 
-    return 1;
+      return 1;
+    }
+    else
+    {
+      *pergunta = NULL;
+      return 2;
+    }
   }
   else
   {
-    *pergunta = NULL;
     return 2;
   }
+
 }
 
 int NavegaNao(arvore **pergunta)
 {
-  if((*pergunta)->nao != NULL)
+  if((*pergunta) != NULL)
   {
-    *pergunta = (*pergunta)->nao;
-    Le(*pergunta);
+    if((*pergunta)->nao != NULL)
+    {
+      *pergunta = (*pergunta)->nao;
+      Le(*pergunta);
 
-    return 1;
+      return 1;
+    }
+    else
+    {
+      *pergunta = NULL;
+      return 2;
+    }
   }
   else
   {
-    *pergunta = NULL;
     return 2;
   }
+
 }
 
 void Desconstroi (arvore **ainicio)

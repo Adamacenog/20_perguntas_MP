@@ -2,6 +2,7 @@
 
 #include "catch.hpp"
 #include "Arvore.h"
+#include "Funcs.h"
 
 TEST_CASE( "Creating a tree from a file", "Prove that the tree is created" )
 {
@@ -138,4 +139,48 @@ TEST_CASE("Trying to navigate to '->sim' and '->nao' and reading the question", 
   REQUIRE(NavegaNao(&naveganao) == 2);
   REQUIRE(navegasim == NULL);
   REQUIRE(naveganao == NULL);
+}
+
+TEST_CASE("Trying to navigate to '->sim' and '->nao' whith NULL tree", "Program is contained and function returns 2")
+{
+  arvore *ainicio = NULL;
+  arvore *navegasim, *naveganao, *ainiciobackup;
+  navegasim = ainicio;
+  naveganao = ainicio;
+  REQUIRE(NavegaSim(&navegasim) == 2);
+  REQUIRE(NavegaNao(&naveganao) == 2);
+  REQUIRE(navegasim == NULL);
+  REQUIRE(naveganao == NULL);
+}
+
+TEST_CASE("Creating/Opening a file (read) and (write)", "Function opens/creates the file")
+{
+  arvore *ainicio=NULL;
+  char abrirP[26] = {"Aberto (Digite teste.txt)"};
+  char abrirE[28] = {"Aberto (Digite escreve.txt)"};
+  char Escrever[29] = {"Escrito (Digite escreve.txt)"};
+  char qlqr[53] = {"aberto - (digite qlqr coisa que nao seja um arquivo)"};
+  char r[2] = "r";
+  char w[2] = "w";
+  FILE *arq;
+  arq = CriaArquivo(r,abrirP);
+  REQUIRE(arq != NULL);
+  Constroi_TXT(&ainicio,arq);
+  REQUIRE(ainicio != NULL);
+  REQUIRE( strcmp(ainicio->Pergunta, "O objeto a ser descoberto é um aviao?") == 0);
+  REQUIRE( strcmp(ainicio->sim->Pergunta, "O objeto é um abacaxi?") == 0);
+  REQUIRE( strcmp(ainicio->nao->Pergunta, "O objeto é de comer?") == 0);
+  fclose(arq);
+  arq = CriaArquivo(w, Escrever);
+  REQUIRE(arq != NULL);
+  Salva_TXT(&ainicio,arq);
+  fclose(arq);
+  arq = CriaArquivo(r, abrirE);
+  Constroi_TXT(&ainicio,arq);
+  REQUIRE( strcmp(ainicio->Pergunta, "O objeto a ser descoberto é um aviao?") == 0);
+  REQUIRE( strcmp(ainicio->sim->Pergunta, "O objeto é um abacaxi?") == 0);
+  REQUIRE( strcmp(ainicio->nao->Pergunta, "O objeto é de comer?") == 0);
+  fclose(arq);
+  arq = CriaArquivo(r, qlqr);
+  REQUIRE(arq == NULL);
 }
