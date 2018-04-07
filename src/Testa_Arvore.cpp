@@ -3,6 +3,7 @@
 #include "catch.hpp"
 #include "Arvore.h"
 #include "Funcs.h"
+#include "Vinte_Perguntas.h"
 
 TEST_CASE( "Creating a tree from user input", "Prove that the tree is created" )
 {
@@ -172,8 +173,8 @@ TEST_CASE("Trying to navigate to '->sim' and '->nao' and reading the question", 
   REQUIRE(ainicio == ainiciobackup);
   REQUIRE(navegasim == ainicio->sim);
   REQUIRE(naveganao == ainicio->nao);
-  REQUIRE(NavegaSim(&navegasim) == 2);
-  REQUIRE(NavegaNao(&naveganao) == 2);
+  REQUIRE(NavegaSim(&navegasim) == 0);
+  REQUIRE(NavegaNao(&naveganao) == 0);
   REQUIRE(navegasim == NULL);
   REQUIRE(naveganao == NULL);
 }
@@ -181,11 +182,11 @@ TEST_CASE("Trying to navigate to '->sim' and '->nao' and reading the question", 
 TEST_CASE("Trying to navigate to '->sim' and '->nao' whith NULL tree", "Program is contained and function returns 2")
 {
   arvore *ainicio = NULL;
-  arvore *navegasim, *naveganao, *ainiciobackup;
+  arvore *navegasim, *naveganao;
   navegasim = ainicio;
   naveganao = ainicio;
-  REQUIRE(NavegaSim(&navegasim) == 2);
-  REQUIRE(NavegaNao(&naveganao) == 2);
+  REQUIRE(NavegaSim(&navegasim) == 0);
+  REQUIRE(NavegaNao(&naveganao) == 0);
   REQUIRE(navegasim == NULL);
   REQUIRE(naveganao == NULL);
 }

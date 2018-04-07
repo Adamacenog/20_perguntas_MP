@@ -8,7 +8,6 @@ mat. 15/0117531.
 #include <ctype.h>
 #include <string.h>
 #include "Funcs.h"
-#include "Arvore.h"
 
 FILE * CriaArquivo(char *type, char *opcao)
 {

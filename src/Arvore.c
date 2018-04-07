@@ -9,16 +9,14 @@ mat. 15/0117531.
 #include <string.h>
 #include "Arvore.h"
 #include "Funcs.h"
+#include "Vinte_Perguntas.h"
 
 void Constroi_Manual (arvore **ainicio, char *no, int size)
 {
-  char pergunta[100];
-  char *noFilho;
-  char fSim[14] = " - Filho(sim)";
-  char fNao[14] = " - Filho(nao)";
-
   if(size < 20)
   {
+    char pergunta[100];
+
     printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.\n");
     printf("Nó atual: %s\n", no);
     fgets (pergunta, 99, stdin);
@@ -33,6 +31,10 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
       *ainicio = (arvore*) malloc (sizeof (arvore));
       if(*ainicio != NULL)
       {
+        char *noFilho;
+        char fSim[14] = " - Filho(sim)";
+        char fNao[14] = " - Filho(nao)";
+
         strcpy((*ainicio)->Pergunta,pergunta);
         noFilho = ConstroiNo(no, fSim);
         Constroi_Manual (&((*ainicio)->sim), noFilho, (size + 1));
@@ -59,10 +61,11 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
 void Constroi_TXT (arvore **ainicio, FILE *arq)
 {
     const char nulo[2] = ".";
-    char pergunta[100];
 
     if(arq!=NULL)
     {
+      char pergunta[100];
+      
       if(fgets (pergunta, 100, arq)!=NULL)
       {
           strtok(pergunta, "\n");
@@ -133,17 +136,17 @@ int NavegaSim(arvore **pergunta)
       *pergunta = (*pergunta)->sim;
       Le(*pergunta);
 
-      return 1;
+      return prosseguir;
     }
     else
     {
       *pergunta = NULL;
-      return 2;
+      return finalizar;
     }
   }
   else
   {
-    return 2;
+    return finalizar;
   }
 
 }
@@ -157,17 +160,17 @@ int NavegaNao(arvore **pergunta)
       *pergunta = (*pergunta)->nao;
       Le(*pergunta);
 
-      return 1;
+      return prosseguir;
     }
     else
     {
       *pergunta = NULL;
-      return 2;
+      return finalizar;
     }
   }
   else
   {
-    return 2;
+    return finalizar;
   }
 
 }
