@@ -235,3 +235,40 @@ TEST_CASE("Function that concatenates strings", "Should concatenate the string")
   REQUIRE(strcmp(ConstroiNo(vazio,vazio),"") == 0);
   REQUIRE(strcmp(ConstroiNo(tando,tes),"tandotes") == 0);
 }
+
+TEST_CASE("Function that gets user answer in game", "Get only 'sim', 'nao', 'editar', 'apagar' answer and nothing else")
+{
+  char resposta[9];
+  char sim[4] = "SIM";
+  char nao[4] = "NAO";
+  char apagar[7] = "APAGAR";
+  char editar[7] = "EDITAR";
+
+  printf("\nPARA PASSAR NO TESTE, DIGITE 'SIM'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,sim) == 0);
+  printf("\nPARA PASSAR NO TESTE, DIGITE 'NAO'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,nao) == 0);
+  printf("\nPARA PASSAR NO TESTE, DIGITE 'APAGAR'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,apagar) == 0);
+  printf("\nPARA PASSAR NO TESTE, DIGITE 'EDITAR'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,editar) == 0);
+  printf("\nPARA PASSAR NO TESTE, DIGITE 'sim'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,sim) == 0);
+  printf("\nPARA PASSAR NO TESTE, DIGITE 'nao'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,nao) == 0);
+  printf("\nPARA PASSAR NO TESTE, DIGITE 'apagar'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,apagar) == 0);
+  printf("\nPARA PASSAR NO TESTE, DIGITE 'editar'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,editar) == 0);
+  printf("\nPARA PASSAR NO TESTE, DIGITE QUALQUER COISA QUANTAS VEZES QUISER, E POR FIM 'EDITAR'\n");
+  Resposta(resposta);
+  REQUIRE(strcmp(resposta,editar) == 0);
+}

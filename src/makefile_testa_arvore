@@ -1,2 +1,2 @@
 Testa_Arvore: Testa_Arvore.cpp Arvore.c Funcs.c Vinte_Perguntas.c
-	g++ -std=c++11 -o Testa_Arvore Testa_Arvore.cpp Arvore.c Funcs.c Vinte_Perguntas.c -I../include
+	g++ -std=c++11 -o Testa_Arvore --coverage Testa_Arvore.cpp Arvore.c Funcs.c Vinte_Perguntas.c -I../include
