@@ -19,7 +19,11 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
 
     printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.\n");
     printf("Nó atual: %s\n", no);
-    fgets (pergunta, 99, stdin);
+    do
+    {
+      fgets (pergunta, 99, stdin);
+    } while(strcmp(pergunta,"\n") == 0);
+
     strtok(pergunta, "\n");
 
     if (strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0)
@@ -65,7 +69,7 @@ void Constroi_TXT (arvore **ainicio, FILE *arq)
     if(arq!=NULL)
     {
       char pergunta[100];
-      
+
       if(fgets (pergunta, 100, arq)!=NULL)
       {
           strtok(pergunta, "\n");
