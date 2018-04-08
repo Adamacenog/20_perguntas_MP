@@ -1,0 +1,6 @@
+Jogo:
+	Primeiro, compile de acordo com a instrução do arquivo 'Como compilar.txt', depois de compilado, basta abrir o terminal na pasta ./20_perguntas_MP/src e digitar ./Jogo_20_Perguntas
+
+Testes:
+	Primeiro, compile de acordo com a instrução do arquivo 'Como compilar.txt', depois de compilado, basta abrir o terminal na pasta ./20_perguntas_MP/src e digitar ./Testa_Arvore
+

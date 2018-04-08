@@ -1,2 +1,5 @@
+Jogo:
+	Para compilar um executável do jogo, basta abrir o terminal na pasta ./20_perguntas_MP/src e digitar make
+
 Testes:
 	Para compilar o executável dos testes, basta abrir o terminal na pasta ./20_perguntas_MP/src e digitar make -f makefile_testa_arvore

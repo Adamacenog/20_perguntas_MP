@@ -26,10 +26,16 @@ int Resposta(int tipo)
     if(strcmp(resposta,"NAO") == 0) return Rnao;
     if(strcmp(resposta,"EDITAR") == 0 && tipo == multipla) return Reditar;
     if(strcmp(resposta,"APAGAR") == 0 && tipo == multipla) return Rapagar;
+    if(strcmp(resposta, "ABRIR") == 0 && tipo == inicializacao) return Rabrir;
+    if(strcmp(resposta, "CRIAR") == 0 && tipo == inicializacao) return Rcriar;
 
     if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0 || strcmp(resposta,"EDITAR") == 0 || strcmp(resposta,"APAGAR") == 0) && tipo == multipla)
     {
       printf("Digite 'sim', 'nao', 'editar' ou 'apagar'\n");
+    }
+    if(!(strcmp(resposta,"CRIAR") == 0 || strcmp(resposta,"ABRIR") == 0) && tipo == inicializacao)
+    {
+      printf("Digite 'abrir' ou 'criar'\n");
     }
     if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0) && tipo == simples)
     {
@@ -152,8 +158,6 @@ void Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, i
         printf("A edição vai começar a partir da última pergunta respondida, que é:\n");
         if(*anterior != NULL)
         {
-          char posicaoSim[21] = "ULTIMA PERGUNTA->SIM";
-          char posicaoNao[21] = "ULTIMA PERGUNTA->NAO";
           int seleciona = 0;
           Le(*anterior);
 
@@ -165,12 +169,14 @@ void Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, i
           }
           if((*anterior)->sim == NULL && (((*anterior)->nao != NULL &&  seleciona == 0) || opcao == Rsim))
           {
+            char posicaoSim[21] = "ULTIMA PERGUNTA->SIM";
             printf("Construindo a partir do nó ULTIMA PERGUNTA->SIM\n");
             Constroi_Manual(&(*anterior)->sim,posicaoSim, numero_respostas);
             Vinte_Perguntas(&(*anterior)->sim, numero_respostas);
           }
           if((*anterior)->nao == NULL && (((*anterior)->sim != NULL && seleciona == 0) || opcao == Rnao))
           {
+            char posicaoNao[21] = "ULTIMA PERGUNTA->NAO";
             printf("Construindo a partir do nó ULTIMA PERGUNTA->NAO\n");
             Constroi_Manual(&(*anterior)->nao,posicaoNao, numero_respostas);
             Vinte_Perguntas(&(*anterior)->nao, numero_respostas);
