@@ -1,16 +1,35 @@
 /*
-Propriedade de Andre Garrido Damaceno.
-mat. 15/0117531.
+*Propriedade de Andre Garrido Damaceno.
+*mat. 15/0117531.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
-#include "Arvore.h"
-#include "Funcs.h"
-#include "Vinte_Perguntas.h"
-#include "Jogo.h"
+#ifndef _Primary_libraries
+  #define _Primary_libraries
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <ctype.h>
+    #include <string.h>
+#endif
+
+#ifndef _Arvore_library
+  #define _Arvore_library
+    #include "Arvore.h"
+#endif
+
+#ifndef _Funcs_library
+  #define _Funcs_library
+    #include "Funcs.h"
+#endif
+
+#ifndef _Vinte_Perguntas_library
+  #define _Vinte_Perguntas_library
+    #include "Vinte_Perguntas.h"
+#endif
+
+#ifndef _Jogo_library
+  #define _Jogo_library
+    #include "Jogo.h"
+#endif
 
 int main()
 {
@@ -21,7 +40,7 @@ int main()
 void Jogo_init(void)
 {
   int opcao;
-  arvore *ainicio;
+  arvore *ainicio = NULL;
   FILE *arq;
 
   printf("\nDigite 'abrir' para abrir um arquivo ou 'criar' para criar um jogo do zero\n");
@@ -32,7 +51,10 @@ void Jogo_init(void)
     char aberto[7] = "aberto";
     arq = CriaArquivo(r, aberto);
     Constroi_TXT(&ainicio, arq);
-    fclose(arq);
+    if(arq != NULL)
+    {
+        fclose(arq);
+    }
   }
   if(opcao == Rcriar)
   {
@@ -49,7 +71,10 @@ void Jogo_init(void)
     char salvo[6] = "salvo";
     arq = CriaArquivo(w,salvo);
     Salva_TXT(&ainicio,arq);
-    fclose(arq);
+    if(arq != NULL)
+    {
+        fclose(arq);
+    }
   }
   Desconstroi(&ainicio);
 

@@ -1,13 +1,20 @@
 /*
-Propriedade de Andre Garrido Damaceno.
-mat. 15/0117531.
+*Propriedade de Andre Garrido Damaceno.
+*mat. 15/0117531.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
-#include "Funcs.h"
+#ifndef _Primary_libraries
+  #define _Primary_libraries
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <ctype.h>
+    #include <string.h>
+#endif
+
+#ifndef _Funcs_library
+  #define _Funcs_library
+    #include "Funcs.h"
+#endif
 
 FILE * CriaArquivo(char *type, char *opcao)
 {

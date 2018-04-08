@@ -1,3 +1,8 @@
+/*
+*Propriedade de Andre Garrido Damaceno.
+*mat. 15/0117531.
+*/
+
 #define CATCH_CONFIG_MAIN
 
 #include "catch.hpp"

@@ -1,5 +1,8 @@
+Compilar tudo:
+	Para compilar tudo de uma vez, basta abrir o terminal na pasta './20_perguntas_MP/src' e digitar 'make'
+
 Jogo:
-	Para compilar um executável do jogo, basta abrir o terminal na pasta ./20_perguntas_MP/src e digitar make
+	Para compilar um executável do jogo, basta abrir o terminal na pasta './20_perguntas_MP/src' e digitar 'make Jogo_20_Perguntas'
 
 Testes:
-	Para compilar o executável dos testes, basta abrir o terminal na pasta ./20_perguntas_MP/src e digitar make -f makefile_testa_arvore
+	Para compilar o executável dos testes, basta abrir o terminal na pasta './20_perguntas_MP/src' e digitar 'make Testa_Arvore'
