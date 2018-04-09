@@ -123,19 +123,19 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
   Le(*anavega);  //A primeira pergunta é lida
   while (numero_respostas < 20 && *anavega != NULL)  //Checa se ja foram respondidas 20 perguntas ou se a arvore chegou ao seu fim
   {
-      opcao = Resposta(multipla);
+      opcao = Resposta(multipla);  //Pega as respostas do usuario (do tipo multipla - 'sim', 'nao', 'editar', 'apagar')
 
-      if(opcao == Rsim)
+      if(opcao == Rsim)  //Navega para o nó sim
       {
         anterior = (*anavega);
         NavegaSim(anavega);
       }
-      if(opcao == Rnao)
+      if(opcao == Rnao)  //Navega para o nó nao
       {
         anterior = (*anavega);
         NavegaNao(anavega);
       }
-      if(opcao == Reditar)
+      if(opcao == Reditar)  //Edição da pergunta
       {
         char pergunta[100];
         printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para cancelar a edição.\n");
@@ -146,19 +146,19 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
 
         strtok(pergunta, "\n");
 
-        if (!(strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0))
+        if (!(strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0))  //Caso a pessoa cancele a edição
         {
           strcpy((*anavega)->Pergunta,pergunta);
         }
         printf("Responda a pergunta editada agora para continuar...\n");
       }
-      if(opcao == Rapagar)
+      if(opcao == Rapagar)  //Apagar um nó
       {
         printf("Tem certeza? Apagar removerá todos os filhos do nó e o nó.\n");
         opcao = Resposta(simples);
-        if(opcao == Rsim)
+        if(opcao == Rsim)  //Checa se a pessoa realmente deseja apagar o nó
         {
-          if(anterior != NULL)
+          if(anterior != NULL)  //Essa etapa faz com que a arvore deixe de apontar para anavega, para apaga-la
           {
             if(anterior->sim == *anavega)
             {
@@ -170,97 +170,104 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
             }
           }
 
-          if(ainicio == *anavega)
+          if(ainicio == *anavega)  //Checa se é o primeiro nó que é apagado
           {
             ainicio = NULL;
           }
-          Desconstroi(anavega);
+          Desconstroi(anavega);  //Apaga o nó da arvore
           opcao = Rapagar;
         }
-        if(opcao == Rnao)
+        if(opcao == Rnao)  //Caso a pessoa desista de apagar o nó
         {
           numero_respostas--;
           Le(*anavega);
         }
       }
-      numero_respostas++;
+      numero_respostas++;  //Contador de perguntas respondidas
   }
 
   Pergunta_Final(&anterior, &ainicio, numero_respostas, opcao);
 
-  *anavega = ainicio;
+  *anavega = ainicio;  //Coloca o apontador da arvore de volta para o inicio da arvore
 
   return;
 }
 
 /*
-*@brief
+*@brief Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas).
+*Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anterior', o endereço do apontador do inicio
+*da arvore 'arvore **ainicio', o numero de perguntas ja respondidas 'int numero_respostas' e a última opção selecionada 'int opcao'.
+*A função não retorna nenhum parametro. Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto
+*que o usuário pensava. Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha
+*respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas
+*as 20 perguntas). Os casos de erro são os mesmos das funções 'Vinte_Perguntas()' e 'Constroi_Manual()', pois depende dessas funções e de alocação
+*de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação.
 */
 void Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, int opcao)
 {
-  if(opcao != Rapagar)
+  if(opcao != Rapagar)  //Checa se a ultima opcao foi apagar
   {
     printf("\nFim de jogo!, seu objeto foi descoberto?\n");
     opcao = Resposta(simples);
   }
-  else
+  else  //Caso tenha sido apagar, já vai direto á pergunta se o usuário deseja add mais perguntas
   {
     opcao = Rnao;
   }
 
-  if(opcao == Rsim)
+  if(opcao == Rsim)  //Verifica a necessidade de criar novas perguntas
   {
     printf("Que bom!! O computador é esperto!\n");
   }
-  if(opcao == Rnao)
+  if(opcao == Rnao)  //Caso não tenha descoberto o objeto
   {
-    if(numero_respostas < 20)
+    if(numero_respostas < 20)  //Caso ainda não tenha respondido todas as 20 perguntas
     {
       printf("Deseja fazer mais perguntas para conseguir responder seu objeto?\n");
       opcao = Resposta(simples);
-      if(opcao == Rsim)
+      if(opcao == Rsim)  //Caso a pessoa queira fazer mais perguntas
       {
         printf("A edição vai começar a partir da última pergunta respondida, que é:\n");
-        if(*anterior != NULL)
+        if(*anterior != NULL)  //Checa se a ultima pergunta existe
         {
           int seleciona = 0;
-          Le(*anterior);
+          Le(*anterior);  //Le a ultima pergunta
 
-          if((*anterior)->sim == NULL && (*anterior)->nao == NULL)
+          if((*anterior)->sim == NULL && (*anterior)->nao == NULL)  //Checa se ambos os filhos da ultima pergunta estao vazios
           {
             printf("Digite 'SIM' para adicionar no nó PERGUNTA->SIM e 'NAO' para o nó PERGUNTA->NAO\n");
             opcao = Resposta(simples);
             seleciona = 1;
           }
-          if((*anterior)->sim == NULL && (((*anterior)->nao != NULL &&  seleciona == 0) || opcao == Rsim))
+          if((*anterior)->sim == NULL && (((*anterior)->nao != NULL &&  seleciona == 0) || opcao == Rsim))  //Caso o filho 'nao' esteja preenchido OU seja selecionado o filho 'sim'
           {
             char posicaoSim[21] = "ULTIMA PERGUNTA->SIM";
             printf("Construindo a partir do nó ULTIMA PERGUNTA->SIM\n");
-            Constroi_Manual(&(*anterior)->sim,posicaoSim, numero_respostas);
-            Vinte_Perguntas(&(*anterior)->sim, numero_respostas);
+            Constroi_Manual(&(*anterior)->sim,posicaoSim, numero_respostas);  //Continua a construção da arvore
+            Vinte_Perguntas(&(*anterior)->sim, numero_respostas);  //Continua o jogo
           }
-          if((*anterior)->nao == NULL && (((*anterior)->sim != NULL && seleciona == 0) || opcao == Rnao))
+          if((*anterior)->nao == NULL && (((*anterior)->sim != NULL && seleciona == 0) || opcao == Rnao))  //Caso o filho 'sim' esteja preenchido OU seja selecionado o filho 'nao'
           {
             char posicaoNao[21] = "ULTIMA PERGUNTA->NAO";
             printf("Construindo a partir do nó ULTIMA PERGUNTA->NAO\n");
-            Constroi_Manual(&(*anterior)->nao,posicaoNao, numero_respostas);
-            Vinte_Perguntas(&(*anterior)->nao, numero_respostas);
+            Constroi_Manual(&(*anterior)->nao,posicaoNao, numero_respostas);  //Continua a construção da arvore
+            Vinte_Perguntas(&(*anterior)->nao, numero_respostas);  //Continua o jogo
           }
         }
-        else
+        else  //Caso a ultima pergunta não exista (arvore NULL)
         {
           printf("\nÚltima pergunta vazia, fazendo jogo novo!\n");
           char posicao[4] = "PAI";
-          Constroi_Manual(ainicio,posicao, numero_respostas);
-          Vinte_Perguntas(ainicio, numero_respostas);
+          Constroi_Manual(ainicio,posicao, numero_respostas);  //Inicia uma nova arvore
+          Vinte_Perguntas(ainicio, numero_respostas);  //Inicia o jogo
         }
       }
-      if(opcao == Rnao)
+      if(opcao == Rnao)  //Caso a pessoa não queira fazer mais perguntas
       {
           printf("Fim de jogo!\n");
       }
     }
-    else
+    else  //Caso a pessoa ja tenha respondido 20 perguntas e não chegou no seu objeto
     {
       printf("Que pena :(, não foi dessa vez\n");
     }

@@ -23,7 +23,7 @@ Jogo_20_Perguntas: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS) $(LIBS)
 
 Testa_Arvore: Testa_Arvore.cpp Arvore.c Funcs.c Vinte_Perguntas.c
-	g++ -std=c++11 -o Testa_Arvore --coverage Testa_Arvore.cpp Arvore.c Funcs.c Vinte_Perguntas.c -I../include
+	g++ -std=c++11 -o Testa_Arvore -ftest-coverage -fprofile-arcs Testa_Arvore.cpp Arvore.c Funcs.c Vinte_Perguntas.c -I../include
 
 .PHONY: clean
 

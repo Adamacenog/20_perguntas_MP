@@ -3,12 +3,48 @@
 *mat. 15/0117531.
 */
 
+/**
+ * @file Testa_Arvore.cpp
+ * @author Andre Garrido Damaceno
+ * @brief Arquivo que contem os testes do jogo de 20 perguntas.
+ *
+ *Como esse arquivo contem os testes, necessita dos headers de toda
+ *a biblioteca do jogo.
+ */
+
 #define CATCH_CONFIG_MAIN
 
-#include "catch.hpp"
-#include "Arvore.h"
-#include "Funcs.h"
-#include "Vinte_Perguntas.h"
+/*
+*@brief Header da biblioteca de testes.
+*/
+#ifndef _Catch
+  #define _Catch
+    #include "catch.hpp"
+#endif
+
+/*
+*@brief Header da biblioteca de arvore.
+*/
+#ifndef _Arvore_library
+  #define _Arvore_library
+    #include "Arvore.h"
+#endif
+
+/*
+*@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+*/
+#ifndef _Funcs_library
+  #define _Funcs_library
+    #include "Funcs.h"
+#endif
+
+/*
+*@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
+*/
+#ifndef _Vinte_Perguntas_library
+  #define _Vinte_Perguntas_library
+    #include "Vinte_Perguntas.h"
+#endif
 
 TEST_CASE( "Creating a tree from user input", "Prove that the tree is created" )
 {
