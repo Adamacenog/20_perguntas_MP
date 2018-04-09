@@ -3,6 +3,18 @@
 *mat. 15/0117531.
 */
 
+/**
+ * @file Jogo.c
+ * @author Andre Garrido Damaceno
+ * @brief Arquivo que contem a Main e uma função de chamadas para executar o jogo.
+ *
+ *Como esse arquivo contem a função que inicializa o jogo, são necessários todos arquivos
+ *headers que o programa utiliza.
+ */
+
+/*
+*@brief Header de funções padrão, para I/O, manipulação de strings.
+*/
 #ifndef _Primary_libraries
   #define _Primary_libraries
     #include <stdio.h>
@@ -11,72 +23,98 @@
     #include <string.h>
 #endif
 
+/*
+*@brief Header da biblioteca de arvore.
+*/
 #ifndef _Arvore_library
   #define _Arvore_library
     #include "Arvore.h"
 #endif
 
+/*
+*@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+*/
 #ifndef _Funcs_library
   #define _Funcs_library
     #include "Funcs.h"
 #endif
 
+/*
+*@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
+*/
 #ifndef _Vinte_Perguntas_library
   #define _Vinte_Perguntas_library
     #include "Vinte_Perguntas.h"
 #endif
 
+/*
+*@brief Header da biblioteca que inicializa o jogo.
+*/
 #ifndef _Jogo_library
   #define _Jogo_library
     #include "Jogo.h"
 #endif
 
+/*
+*@brief Main de inicialização do jogo.
+*A main apenas chama a função de inicialização 'Jogo_init()',
+*que chama as funções do jogo em ordem lógica para sua execução normal.
+*/
 int main()
 {
   Jogo_init();
   return 0;
 }
 
+/*
+*@brief Função de inicialização do jogo.
+*A função não recebe nem retorna nenhum parâmentro. Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto
+*ou por criação manual). Em seguida, inicializa-se o jogo ao chamar a função 'Vinte_Perguntas()', ao fim, é perguntado ao usuário se quer
+*salvar os dados de seu jogo em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria).
+*Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null, eventualmente
+*havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão,
+*ou o programa finalizará com erro.
+*/
 void Jogo_init(void)
 {
-  int opcao;
-  arvore *ainicio = NULL;
-  FILE *arq;
+  int opcao;  //Respostas do usuário (podendo ser 'sim', 'nao', 'criar', 'abrir')
+  arvore *ainicio = NULL;  //arvore com os dados do jogo (as perguntas)
+  FILE *arq;  //Ponteiro usado para manipulação de arquivos (abrir ou salvar em .txt)
 
   printf("\nDigite 'abrir' para abrir um arquivo ou 'criar' para criar um jogo do zero\n");
-  opcao = Resposta(inicializacao);
+  opcao = Resposta(inicializacao);  //Tipo inicializacao tem as opções 'abrir' ou 'criar' apenas
   if(opcao == Rabrir)
   {
     char r[2] = "r";
-    char aberto[7] = "aberto";
+    char aberto[7] = "aberto";  //Apenas para informar ao usuário se o arquivo é usado para abrir em .txt
     arq = CriaArquivo(r, aberto);
-    Constroi_TXT(&ainicio, arq);
-    if(arq != NULL)
+    Constroi_TXT(&ainicio, arq);  //Cria a arvore em memoria, a partir de um .txt
+    if(arq != NULL)  //Caso o arquivo não exista, para evitar um segmentation faut
     {
         fclose(arq);
     }
   }
   if(opcao == Rcriar)
   {
-    char pai[4] = "PAI";
-    Constroi_Manual(&ainicio, pai, 0);
+    char pai[4] = "PAI";  //Sinalização do nó inicial da arvore
+    Constroi_Manual(&ainicio, pai, 0);  //Função de criação da arvore de forma manual
   }
 
-  Vinte_Perguntas(&ainicio, 0);
+  Vinte_Perguntas(&ainicio, 0);  //Função de execução do jogo
   printf("\nDigite 'sim' para salvar as perguntas em um arquivo ou 'nao' para finalizar\n");
-  opcao = Resposta(simples);
+  opcao = Resposta(simples);  //Tipo simples tem as opções 'sim' ou 'nao' apenas
   if(opcao == Rsim)
   {
     char w[2] = "w";
-    char salvo[6] = "salvo";
+    char salvo[6] = "salvo";  //Apenas para informar ao usuário se o arquivo é usado para salvar em .txt
     arq = CriaArquivo(w,salvo);
-    Salva_TXT(&ainicio,arq);
-    if(arq != NULL)
+    Salva_TXT(&ainicio,arq);  //Salva efetivamente os dados da arvore em um .txt
+    if(arq != NULL)  //Caso o arquivo não exista, para evitar um segmentation faut
     {
         fclose(arq);
     }
   }
-  Desconstroi(&ainicio);
+  Desconstroi(&ainicio);  //Remove a arvore da memoria
 
   return;
 }
