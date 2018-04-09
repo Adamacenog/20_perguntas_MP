@@ -186,13 +186,13 @@ TEST_CASE("Trying to navigate to '->sim' and '->nao' and reading the question", 
   REQUIRE(navegasim != NULL);
   REQUIRE(naveganao != NULL);
   REQUIRE(ainicio != NULL);
-  REQUIRE(NavegaSim(&navegasim) == 1);
-  REQUIRE(NavegaNao(&naveganao) == 1);
   REQUIRE(ainicio == ainiciobackup);
+  NavegaSim(&navegasim);
+  NavegaNao(&naveganao);
   REQUIRE(navegasim == ainicio->sim);
   REQUIRE(naveganao == ainicio->nao);
-  REQUIRE(NavegaSim(&navegasim) == 0);
-  REQUIRE(NavegaNao(&naveganao) == 0);
+  NavegaSim(&navegasim);
+  NavegaNao(&naveganao);
   REQUIRE(navegasim == NULL);
   REQUIRE(naveganao == NULL);
 }
@@ -203,8 +203,8 @@ TEST_CASE("Trying to navigate to '->sim' and '->nao' whith NULL tree", "Program 
   arvore *navegasim, *naveganao;
   navegasim = ainicio;
   naveganao = ainicio;
-  REQUIRE(NavegaSim(&navegasim) == 0);
-  REQUIRE(NavegaNao(&naveganao) == 0);
+  NavegaSim(&navegasim);
+  NavegaNao(&naveganao);
   REQUIRE(navegasim == NULL);
   REQUIRE(naveganao == NULL);
 }

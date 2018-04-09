@@ -6,10 +6,10 @@
 /**
  * @file Arvore.c
  * @author Andre Garrido Damaceno
- * @brief Arquivo que contem a biblioteca de manipulação e criação da arvore
+ * @brief Arquivo que contem a biblioteca de manipulação e criação da arvore.
  *
- *Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões,
- *de funções auxiliares, e de estruturação do jogo (para um enum).
+ *Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de 
+ *de funções auxiliares.
  */
 
  /*
@@ -38,15 +38,6 @@
   #define _Funcs_library
     #include "Funcs.h"
 #endif
-
-/*
-*@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
-*/
-#ifndef _Vinte_Perguntas_library
-  #define _Vinte_Perguntas_library
-    #include "Vinte_Perguntas.h"
-#endif
-
 
 /*
 *@brief Função de criação da arvore de forma manual.
@@ -201,13 +192,12 @@ void Le (arvore *a1)
 
 /*
 *@brief Função para a navegação e leitura da pergunta para o nó 'sim' da arvore.
-*Essa função recebe como parametro o endereço do ponteiro da arvore, e retorna um inteiro
-*(para a informação se o nó é valido ou não (NULL)). A função checa se o nó é valido e se o nó
-*'sim' é valido, caso sejam, o apontador passa a apontar para o nó 'sim' e a pergunta é lida, em seguida
-*é retornado 'prosseguir' (operação bem sucedida). Caso contrario retorna-se 'finalizar' (operação mal sucedida (nó NULL)).
-*Caso em algum ponto o nó seja NULL, apenas retorna 'finalizar' (não havendo erros).
+*Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum
+*parametro. A função checa se o nó atual é valido e se o nó 'sim' é valido, caso sejam,
+*o apontador passa a apontar para o nó 'sim' e a pergunta é lida.
+*Caso em algum ponto o nó seja NULL, a função não faz nada, apenas retorna.
 */
-int NavegaSim(arvore **pergunta)
+void NavegaSim(arvore **pergunta)
 {
   if((*pergunta) != NULL)  //Checa se o nó é valido (não NULL)
   {
@@ -215,31 +205,23 @@ int NavegaSim(arvore **pergunta)
     {
       *pergunta = (*pergunta)->sim;  //Faz o apontador apontar para o nó 'sim'
       Le(*pergunta);  //Le a pergunta do nó 'sim'
-
-      return prosseguir;
     }
     else  //Caso o nó 'sim' não seja valido
     {
       *pergunta = NULL;
-      return finalizar;
     }
   }
-  else  //Caso o nó não seja valido
-  {
-    return finalizar;
-  }
-
+  return;
 }
 
 /*
 *@brief Função para a navegação e leitura da pergunta para o nó 'nao' da arvore.
-*Essa função recebe como parametro o endereço do ponteiro da arvore, e retorna um inteiro
-*(para a informação se o nó é valido ou não (NULL)). A função checa se o nó é valido e se o nó
-*'nao' é valido, caso sejam, o apontador passa a apontar para o nó 'nao' e a pergunta é lida, em seguida
-*é retornado 'prosseguir' (operação bem sucedida). Caso contrario retorna-se 'finalizar' (operação mal sucedida (nó NULL)).
-*Caso em algum ponto o nó seja NULL, apenas retorna 'finalizar' (não havendo erros).
+*Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum
+*parametro. A função checa se o nó atual é valido e se o nó 'nao' é valido, caso sejam,
+*o apontador passa a apontar para o nó 'nao' e a pergunta é lida.
+*Caso em algum ponto o nó seja NULL, a função não faz nada, apenas retorna.
 */
-int NavegaNao(arvore **pergunta)
+void NavegaNao(arvore **pergunta)
 {
   if((*pergunta) != NULL)  //Checa se o nó é valido (não NULL)
   {
@@ -247,20 +229,13 @@ int NavegaNao(arvore **pergunta)
     {
       *pergunta = (*pergunta)->nao;  //Faz o apontador apontar para o nó 'nao'
       Le(*pergunta);  //Le a pergunta do nó 'nao'
-
-      return prosseguir;
     }
     else  //Caso o nó 'nao' não seja valido
     {
       *pergunta = NULL;
-      return finalizar;
     }
   }
-  else  //Caso o nó não seja valido
-  {
-    return finalizar;
-  }
-
+  return;
 }
 
 /*

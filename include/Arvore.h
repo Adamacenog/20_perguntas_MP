@@ -13,6 +13,6 @@ void Constroi_Manual (arvore **, char *, int);
 void Constroi_TXT (arvore **, FILE *);
 void Salva_TXT (arvore **, FILE *);
 void Le (arvore *);
-int NavegaSim(arvore **);
-int NavegaNao(arvore **);
+void NavegaSim(arvore **);
+void NavegaNao(arvore **);
 void Desconstroi (arvore **);

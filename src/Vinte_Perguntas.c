@@ -3,6 +3,18 @@
 *mat. 15/0117531.
 */
 
+/**
+ * @file Vinte_Perguntas.c
+ * @author Andre Garrido Damaceno
+ * @brief Arquivo que contem a biblioteca de estruturação (execução) do jogo de 20 perguntas.
+ *
+ *Como esse arquivo contem a biblioteca de execução, necessita dos headers padrões,
+ *de funções auxiliares, e de estruturação do jogo.
+ */
+
+ /*
+ *@brief Header de funções padrão, para I/O, manipulação de strings.
+ */
 #ifndef _Primary_libraries
   #define _Primary_libraries
     #include <stdio.h>
@@ -11,39 +23,64 @@
     #include <string.h>
 #endif
 
+/*
+*@brief Header da biblioteca de arvore.
+*/
 #ifndef _Arvore_library
   #define _Arvore_library
     #include "Arvore.h"
 #endif
 
+/*
+*@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+*/
 #ifndef _Funcs_library
   #define _Funcs_library
     #include "Funcs.h"
 #endif
 
+/*
+*@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
+*/
 #ifndef _Vinte_Perguntas_library
   #define _Vinte_Perguntas_library
     #include "Vinte_Perguntas.h"
 #endif
 
+/*
+*@brief Função para pegar o input especifico de opções do usuario.
+*Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção
+*que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.
+*Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo
+*da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de
+*'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'.
+*Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e
+*dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta
+*do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres),
+* apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de
+*erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper).
+*/
 int Resposta(int tipo)
 {
   do
   {
-    char resposta[8];
+    char resposta[8];  //Variavel que armazena a resposta do usuario
     scanf("%7s", resposta);
 
-    for(int i=0;i<strlen(resposta);i++)
+    for(int i=0;i<strlen(resposta);i++)  //Transformação de todos os caracteres em maiusculo, para melhor identificação da opcao
     {
       resposta[i] = toupper(resposta[i]);
     }
-    if(strcmp(resposta,"SIM") == 0) return Rsim;
-    if(strcmp(resposta,"NAO") == 0) return Rnao;
+
+    //Respostas
+    if(strcmp(resposta,"SIM") == 0 && (tipo == multipla || tipo == simples)) return Rsim;
+    if(strcmp(resposta,"NAO") == 0 && (tipo == multipla || tipo == simples)) return Rnao;
     if(strcmp(resposta,"EDITAR") == 0 && tipo == multipla) return Reditar;
     if(strcmp(resposta,"APAGAR") == 0 && tipo == multipla) return Rapagar;
     if(strcmp(resposta, "ABRIR") == 0 && tipo == inicializacao) return Rabrir;
     if(strcmp(resposta, "CRIAR") == 0 && tipo == inicializacao) return Rcriar;
 
+    //Caso o usuario tenha digitado algo invalido, há uma condição para cada tipo de pergunta ('simples', 'multipla' e 'inicializacao')
     if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0 || strcmp(resposta,"EDITAR") == 0 || strcmp(resposta,"APAGAR") == 0) && tipo == multipla)
     {
       printf("Digite 'sim', 'nao', 'editar' ou 'apagar'\n");
@@ -59,30 +96,44 @@ int Resposta(int tipo)
   } while(1);
 }
 
+/*
+*@brief Função de execução do programa.
+*Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anavega'
+*(para as possiveis mudanças na arvore como apagar, editar, navegar e criar novos nós) e
+*um inteiro 'int numero_respostas', para saber quantas perguntas ja foram respondidas pelo usuario.
+*Essa função não retorna nenhum parametro. A função inicialmente alerta ao usuário que o jogo irá
+*começar e analisa se a arvore é vazia ou o numero_respostas é menor que 19 (ja foram respondidas
+*20 perguntas). Em seguida é lida a pergunta para o usuário e ele pode navegar pelas perguntas
+*(respondendo 'sim' ou 'nao') ou editar/apagar uma pergunta. No fim, é perguntado ao usuário se
+*seu objeto pensado foi descoberto. Caso tenha sido, o jogo é finalizado, caso não tenha sido e
+*o usuário ainda não tenha respondido 20 perguntas, é perguntado se o usuário deseja inserir mais
+*perguntas para o programa descobrir o objeto. Ao fim das inserções, o jogo recomeça a partir do ponto
+*da ultima pergunta respondida pelo usuário. Como essa função de execução utiliza a maior parte de todas
+*as funções criadas, os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi
+*desenvolvida para conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer.
+*/
 void Vinte_Perguntas(arvore **anavega, int numero_respostas)
 {
-  int opcao;
-  arvore *ainicio,*anterior = NULL;
+  int opcao;  //Variavel com a resposta do usuario ('sim', 'nao', 'editar', 'apagar')
+  arvore *ainicio,*anterior = NULL;  /*ainicio - guarda o endereço do inicio da arvore,
+                                      anterior - guarda o endereço da jogada anterior feita*/
 
   printf("\nO jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'\n\n");
-  ainicio = (*anavega);
-  Le(*anavega);
-  while (numero_respostas < 19 && *anavega != NULL)
+  ainicio = (*anavega);  //Coloca-se o endereço do inicio da arvore em ainicio
+  Le(*anavega);  //A primeira pergunta é lida
+  while (numero_respostas < 20 && *anavega != NULL)  //Checa se ja foram respondidas 20 perguntas ou se a arvore chegou ao seu fim
   {
-    int continua;
-    do
-    {
       opcao = Resposta(multipla);
 
       if(opcao == Rsim)
       {
         anterior = (*anavega);
-        continua = NavegaSim(anavega);
+        NavegaSim(anavega);
       }
       if(opcao == Rnao)
       {
         anterior = (*anavega);
-        continua = NavegaNao(anavega);
+        NavegaNao(anavega);
       }
       if(opcao == Reditar)
       {
@@ -100,7 +151,6 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
           strcpy((*anavega)->Pergunta,pergunta);
         }
         printf("Responda a pergunta editada agora para continuar...\n");
-        continua = prosseguir;
       }
       if(opcao == Rapagar)
       {
@@ -126,17 +176,14 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
           }
           Desconstroi(anavega);
           opcao = Rapagar;
-          continua = finalizar;
         }
         if(opcao == Rnao)
         {
-          continua = prosseguir;
           numero_respostas--;
           Le(*anavega);
         }
       }
-      if(continua == prosseguir) numero_respostas++;
-    } while(continua == prosseguir);
+      numero_respostas++;
   }
 
   Pergunta_Final(&anterior, &ainicio, numero_respostas, opcao);
@@ -146,6 +193,9 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
   return;
 }
 
+/*
+*@brief
+*/
 void Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, int opcao)
 {
   if(opcao != Rapagar)
@@ -164,7 +214,7 @@ void Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, i
   }
   if(opcao == Rnao)
   {
-    if(numero_respostas < 19)
+    if(numero_respostas < 20)
     {
       printf("Deseja fazer mais perguntas para conseguir responder seu objeto?\n");
       opcao = Resposta(simples);

@@ -6,7 +6,7 @@
 /**
  * @file Funcs.c
  * @author Andre Garrido Damaceno
- * @brief Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar)
+ * @brief Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar).
  *
  *Como esse arquivo contem apenas funções auxiliares, necessita apenas dos headers padrões.
  */
