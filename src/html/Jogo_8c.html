@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Documentação Jogo 20 perguntas: Referência do Arquivo Jogo.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentação Jogo 20 perguntas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Membros&#160;dos&#160;Arquivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo Jogo.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arquivo que contem a Main e uma função de chamadas para executar o jogo.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;Arvore.h&quot;</code><br />
+<code>#include &quot;Funcs.h&quot;</code><br />
+<code>#include &quot;Vinte_Perguntas.h&quot;</code><br />
+<code>#include &quot;Jogo.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para Jogo.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="Jogo_8c__incl.png" border="0" usemap="#Jogo_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:aa9c92c11eef6b6d98a1a444302093ca5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9c92c11eef6b6d98a1a444302093ca5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jogo_8c.html#aa9c92c11eef6b6d98a1a444302093ca5">_Primary_libraries</a></td></tr>
+<tr class="memdesc:aa9c92c11eef6b6d98a1a444302093ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header de funções padrão, para I/O, manipulação de strings. <br /></td></tr>
+<tr class="separator:aa9c92c11eef6b6d98a1a444302093ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3059c7e862e1f571f036f8edbec268e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3059c7e862e1f571f036f8edbec268e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jogo_8c.html#ad3059c7e862e1f571f036f8edbec268e">_Arvore_library</a></td></tr>
+<tr class="memdesc:ad3059c7e862e1f571f036f8edbec268e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header da biblioteca de arvore. <br /></td></tr>
+<tr class="separator:ad3059c7e862e1f571f036f8edbec268e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aada0c2263d9b6d55cbf5b649bc72a64a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jogo_8c.html#aada0c2263d9b6d55cbf5b649bc72a64a">_Funcs_library</a></td></tr>
+<tr class="memdesc:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header da biblioteca de funções (criação de arquivo e concatenação de strings). <br /></td></tr>
+<tr class="separator:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18fc926bd99ef27d0302ea3f50e1424e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18fc926bd99ef27d0302ea3f50e1424e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jogo_8c.html#a18fc926bd99ef27d0302ea3f50e1424e">_Vinte_Perguntas_library</a></td></tr>
+<tr class="memdesc:a18fc926bd99ef27d0302ea3f50e1424e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header da biblioteca de estruturação (execução) do jogo de 20 perguntas. <br /></td></tr>
+<tr class="separator:a18fc926bd99ef27d0302ea3f50e1424e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22dc5c94c24cf28b5260af7777f0bb1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22dc5c94c24cf28b5260af7777f0bb1b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jogo_8c.html#a22dc5c94c24cf28b5260af7777f0bb1b">_Jogo_library</a></td></tr>
+<tr class="memdesc:a22dc5c94c24cf28b5260af7777f0bb1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header da biblioteca que inicializa o jogo. <br /></td></tr>
+<tr class="separator:a22dc5c94c24cf28b5260af7777f0bb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jogo_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main de inicialização do jogo.  <a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">Mais...</a><br /></td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa95326e6eb7941a743d5543f82d7c7de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jogo_8c.html#aa95326e6eb7941a743d5543f82d7c7de">Jogo_init</a> (void)</td></tr>
+<tr class="memdesc:aa95326e6eb7941a743d5543f82d7c7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de inicialização do jogo.  <a href="#aa95326e6eb7941a743d5543f82d7c7de">Mais...</a><br /></td></tr>
+<tr class="separator:aa95326e6eb7941a743d5543f82d7c7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
+<div class="textblock"><p>Arquivo que contem a Main e uma função de chamadas para executar o jogo. </p>
+<dl class="section author"><dt>Autor</dt><dd>Andre Garrido Damaceno Como esse arquivo contem a função que inicializa o jogo, são necessários todos arquivos headers que o programa utiliza. </dd></dl>
+</div><h2 class="groupheader">Funções</h2>
+<a class="anchor" id="aa95326e6eb7941a743d5543f82d7c7de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jogo_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função de inicialização do jogo. </p>
+<p>A função não recebe nem retorna nenhum parâmentro. Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto ou por criação manual). Em seguida, inicializa-se o jogo ao chamar a função '<a class="el" href="Vinte__Perguntas_8c.html#a50cd5030c633ddd0c6cc9bcfb9adfd88" title="Função de execução do programa. ">Vinte_Perguntas()</a>', ao fim, é perguntado ao usuário se quer salvar os dados de seu jogo em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria). Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null, eventualmente havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão, ou o programa finalizará com erro. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main de inicialização do jogo. </p>
+<p>A main apenas chama a função de inicialização '<a class="el" href="Jogo_8c.html#aa95326e6eb7941a743d5543f82d7c7de" title="Função de inicialização do jogo. ">Jogo_init()</a>', que chama as funções do jogo em ordem lógica para sua execução normal. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

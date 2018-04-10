@@ -12,8 +12,7 @@
  *headers que o programa utiliza.
  */
 
-/*
-*@brief Header de funções padrão, para I/O, manipulação de strings.
+/**@brief Header de funções padrão, para I/O, manipulação de strings.
 */
 #ifndef _Primary_libraries
   #define _Primary_libraries
@@ -23,40 +22,36 @@
     #include <string.h>
 #endif
 
-/*
-*@brief Header da biblioteca de arvore.
+/**@brief Header da biblioteca de arvore.
 */
 #ifndef _Arvore_library
   #define _Arvore_library
     #include "Arvore.h"
 #endif
 
-/*
-*@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+/**@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
 */
 #ifndef _Funcs_library
   #define _Funcs_library
     #include "Funcs.h"
 #endif
 
-/*
-*@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
+/**@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
 */
 #ifndef _Vinte_Perguntas_library
   #define _Vinte_Perguntas_library
     #include "Vinte_Perguntas.h"
 #endif
 
-/*
-*@brief Header da biblioteca que inicializa o jogo.
+/**@brief Header da biblioteca que inicializa o jogo.
 */
 #ifndef _Jogo_library
   #define _Jogo_library
     #include "Jogo.h"
 #endif
 
-/*
-*@brief Main de inicialização do jogo.
+/**@brief Main de inicialização do jogo.
+*
 *A main apenas chama a função de inicialização 'Jogo_init()',
 *que chama as funções do jogo em ordem lógica para sua execução normal.
 */
@@ -66,8 +61,8 @@ int main()
   return 0;
 }
 
-/*
-*@brief Função de inicialização do jogo.
+/**@brief Função de inicialização do jogo.
+*
 *A função não recebe nem retorna nenhum parâmentro. Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto
 *ou por criação manual). Em seguida, inicializa-se o jogo ao chamar a função 'Vinte_Perguntas()', ao fim, é perguntado ao usuário se quer
 *salvar os dados de seu jogo em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria).

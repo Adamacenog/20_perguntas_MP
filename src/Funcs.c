@@ -11,9 +11,8 @@
  *Como esse arquivo contem apenas funções auxiliares, necessita apenas dos headers padrões.
  */
 
- /*
- *@brief Header de funções padrão, para I/O, manipulação de strings.
- */
+/**@brief Header de funções padrão, para I/O, manipulação de strings.
+*/
 #ifndef _Primary_libraries
   #define _Primary_libraries
     #include <stdio.h>
@@ -22,16 +21,15 @@
     #include <string.h>
 #endif
 
-/*
-*@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+/**@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
 */
 #ifndef _Funcs_library
   #define _Funcs_library
     #include "Funcs.h"
 #endif
 
-/*
-*@brief Função de Criação de arquivos (abertura ou leitura).
+/**@brief Função de Criação de arquivos (abertura ou leitura).
+*
 *Essa função recebe como parametro o tipo de abertura 'char *type' ("r" - para read, "w" - para write)
 *e também uma string 'char *opcao' para ser impresso na tela (informando ao usuário se o arquivo esta sendo aberto ou salvo).
 *A função retorna o arquivo 'FILE *'. Essa função apenas abre um arquivo e o retorna para o usuário.
@@ -47,8 +45,8 @@ FILE * CriaArquivo(char *type, char *opcao)
   return arq;
 }
 
-/*
-*@brief Função de concatenação de string.
+/**@brief Função de concatenação de string.
+*
 *Essa função recebe como parametro duas strings 'char *no' e 'char *filho', concatena a string 'filho' na
 *string 'no', e retorna essa string 'char *'. Inicialmente a função aloca memória suficiente para a concatenação
 *das strings, em seguida copia a string 'no' para a memoria alocada, por fim, concatena a string 'filho' na memoria

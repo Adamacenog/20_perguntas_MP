@@ -14,40 +14,36 @@
 
 #define CATCH_CONFIG_MAIN
 
-/*
-*@brief Header da biblioteca de testes.
+/**@brief Header da biblioteca de testes.
 */
 #ifndef _Catch
   #define _Catch
     #include "catch.hpp"
 #endif
 
-/*
-*@brief Header da biblioteca de arvore.
+/**@brief Header da biblioteca de arvore.
 */
 #ifndef _Arvore_library
   #define _Arvore_library
     #include "Arvore.h"
 #endif
 
-/*
-*@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+/**@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
 */
 #ifndef _Funcs_library
   #define _Funcs_library
     #include "Funcs.h"
 #endif
 
-/*
-*@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
+/**@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
 */
 #ifndef _Vinte_Perguntas_library
   #define _Vinte_Perguntas_library
     #include "Vinte_Perguntas.h"
 #endif
 
-/*
-*@brief Teste da função 'Constroi_Manual'
+/**@brief Teste da função 'Constroi_Manual'
+*
 *Testes feitos e criterio de aceitação:
 *Teste de criação de uma arvore NULL - criterio de aceitação é a arvore ser
 *null e o programa se conter.
@@ -113,8 +109,8 @@ TEST_CASE( "Creating a tree from user input", "Prove that the tree is created" )
   REQUIRE( ainicio->nao->nao == NULL );
 }
 
-/*
-*@brief Testes da função 'Constroi_TXT' - Criação normal da arvore.
+/**@brief Testes da função 'Constroi_TXT' - Criação normal da arvore.
+*
 *Testes feitos e criterio de aceitação:
 *Teste de criação da arvore com um arquivo existente (onde os nós pai, filho 'sim'
 *filho 'nao' existem na arvore), os criterios de aceitação foram os nós descritos
@@ -139,8 +135,8 @@ TEST_CASE( "Creating a tree from a file", "Prove that the tree is created" )
   fclose(arq);
 }
 
-/*
-*@brief Testes da função 'Constroi_TXT' - tentativa de criar arvore por arquivo Null
+/**@brief Testes da função 'Constroi_TXT' - tentativa de criar arvore por arquivo Null
+*
 *Foi feito um teste, abrindo um arquivo inexistente pela função 'fopen', e passado
 *o arquivo para a função 'Constroi_TXT', os criterios de aceitação são a Arvore
 *ser NULL, e o programa não ter problemas em sua execução.
@@ -155,8 +151,8 @@ TEST_CASE( "Trying to create a tree from an non existing file", "Prove that the 
   REQUIRE( ainicio == NULL );
 }
 
-/*
-*@brief Testes da função 'Salva_TXT' - tentativa de salvar arvore NULL.
+/**@brief Testes da função 'Salva_TXT' - tentativa de salvar arvore NULL.
+*
 *Foi feito um teste, abrindo um arquivo inexistente na forma "w", então
 *foi salva uma arvore NULL no arquivo. Em seguida, foi aberto esse arquivo
 *e construida a arvore a partir dele com a função 'Constroi_TXT', e por fim,
@@ -176,8 +172,8 @@ TEST_CASE ("Trying to navigate to save a NULL tree to file", "Prove that the txt
   REQUIRE(ainicio == NULL);
 }
 
-/*
-*@brief Testes da função 'Salva_TXT' - tentativa de salvar arvore existente.
+/**@brief Testes da função 'Salva_TXT' - tentativa de salvar arvore existente.
+*
 *Foi aberto um arquivo txt existente com dados de arvore, criada a arvore pela
 *função 'Constroi_TXT', em seguida foi salva a arvore criada pela função 'Salva_TXT'
 *em um outro arquivo de texto inexistente ('Perguntas2.txt'), por fim, para verificar
@@ -209,8 +205,8 @@ TEST_CASE ("Saving a tree to file", "Prove that the txt saves the tree")
   REQUIRE( ainicio->nao->nao == NULL);
 }
 
-/*
-*@brief Testes da função 'Salva_TXT' - tentativa de salvar arquivo inexistente.
+/**@brief Testes da função 'Salva_TXT' - tentativa de salvar arquivo inexistente.
+*
 *Foi aberto um arquivo txt na função "r", em seguida foi tentado salvar uma arvore
 *NULL em um arquivo inexistente, os criterios de aceitação são a função se conter,
 *a arvore ser NULL, o arquivo ser NULL.
@@ -226,8 +222,8 @@ TEST_CASE ("Saving tree to NULL file", "Prove that the function does nothing and
   REQUIRE(arq == NULL);
 }
 
-/*
-*@brief Teste da função 'Desconstroi' - Apagando uma arvore existente
+/**@brief Teste da função 'Desconstroi' - Apagando uma arvore existente
+*
 *Foi criada uma arvore por um txt existente, em seguida, foi verificado que
 *a arvore não era NULL, por fim, foi chamada a função de desconstrução, e o
 *criterio de aceitação é que a função apagasse a arvore e seu ponteiro fosse Null
@@ -246,8 +242,8 @@ TEST_CASE ("Freeing an existing tree", "the tree is freed")
   REQUIRE(ainicio == NULL);
 }
 
-/*
-*@brief Teste da função 'Desconstroi' - Apagando uma arvore inexistente
+/**@brief Teste da função 'Desconstroi' - Apagando uma arvore inexistente
+*
 *Foi passada para a função 'Desconstroi()' uma arvore NULL, o resultado
 *esperado e criterio de aceitação é que o programa se contenha e que a
 *arvore continue sendo NULL.
@@ -260,8 +256,8 @@ TEST_CASE ("Freeing a NULL tree", "the program is contained")
   REQUIRE(ainicio == NULL);
 }
 
-/*
-*@brief Teste da função Le - lendo arvore existente
+/**@brief Teste da função Le - lendo arvore existente
+*
 *Foi criada uma arvore por um arquivo txt existente e passado
 *o ponteiro da arvore para a função 'Le()', o criterio de aceitação
 *é que a mensagem da pergunta apareça na tela e o ponteiro da arvore
@@ -281,8 +277,8 @@ TEST_CASE("Reading a tree question", "tree is unmodified and question is read")
   REQUIRE(anterior == ainicio);
 }
 
-/*
-*@brief Teste da função Le - lendo arvore inexistente
+/**@brief Teste da função Le - lendo arvore inexistente
+*
 *Foi passado um ponteiro NULL de arvore para a função 'Le()', o criterio de aceitação
 *é que função não fizesse nada e se contenha e o ponteiro da arvore não fosse
 *alterado de NULL.
@@ -297,8 +293,8 @@ TEST_CASE("Trying to read NULL tree", "Program is contained and function does no
   REQUIRE(anterior == ainicio);
 }
 
-/*
-*@brief Testes de navegação (sim e nao) - arvore existente
+/**@brief Testes de navegação (sim e nao) - arvore existente
+*
 *Foi criada uma arvore por um arquivo txt, e inicializado as variaveis navegasim,
 *naveganao e ainiciobackup com o endereço da arvore e verificado se todas continham
 *o endereço da arvore, em seguida, foi feita a navegação NavegaSim em navegasim e
@@ -332,8 +328,8 @@ TEST_CASE("Trying to navigate to '->sim' and '->nao' and reading the question", 
   REQUIRE(naveganao == NULL);
 }
 
-/*
-*@brief Testes de navegação (sim e nao) - arvore inexistente
+/**@brief Testes de navegação (sim e nao) - arvore inexistente
+*
 *Para esse teste, foi criado um ponteiro NULL, e feito a navegação de
 *NavegaSim e NavegaNao passando como parametro o ponteiro NULL, para criterio
 *de aceitação, verifica-se se a função se conteve e se os ponteiros continuam
@@ -352,8 +348,8 @@ TEST_CASE("Trying to navigate to '->sim' and '->nao' whith NULL tree", "Program 
   REQUIRE(naveganao == NULL);
 }
 
-/*
-*@brief Teste da função 'CriaArquivo' - arquivos existentes "r" e "w" e arquivos inexistentes
+/**@brief Teste da função 'CriaArquivo' - arquivos existentes "r" e "w" e arquivos inexistentes
+*
 *Primeiramente é aberto um arquivo com a função "r", e criado uma arvore a partir desse arquivo,
 *o teste de aceitação é que todos os nós do arquivo sejam iguais à strings colocadas no teste.
 *Em seguida, cria-se um arquivo com a função "w", e é feito o teste de escrita, usando a função
@@ -395,8 +391,8 @@ TEST_CASE("Creating/Opening a file (read) and (write)", "Function opens/creates 
   REQUIRE(arq == NULL);
 }
 
-/*
-*@brief Testando a função 'ConstroiNo' - Concatenação de strings existente e inexistente
+/**@brief Testando a função 'ConstroiNo' - Concatenação de strings existente e inexistente
+*
 *São declaradas strings e feito criterios de aceitação, usando a função 'strcmp' para
 *comparar as strings concatenadas com strings digitadas no teste, testando inclusive a
 *concatenação de duas strings vazias, sendo o resultado valido da concatenação string vazia.
@@ -415,8 +411,8 @@ TEST_CASE("Function that concatenates strings", "Should concatenate the string")
   REQUIRE(strcmp(ConstroiNo(tando,tes),"tandotes") == 0);
 }
 
-/*
-*@brief Testando a função 'Resposta' - teste para o tipo 'simples', 'multipla' e inicializacao
+/**@brief Testando a função 'Resposta' - teste para o tipo 'simples', 'multipla' e inicializacao
+*
 *Os testes são feitos ao passar todas as possiveis combinações (maiusculo ou minusculo) dos
 *resultados das possiveis respostas, e feito uma comparação se a resposta é como a esperada.
 *O criterio de aceitação é que todas as variaveis em todas as suas combinações possiveis de
@@ -503,8 +499,8 @@ TEST_CASE("Testing user's answers in game", "Get only 'sim', 'nao', 'editar', 'a
   REQUIRE(Resposta(inicializacao) == Rabrir);
 }
 
-/*
-*@brief Teste da função 'Vinte_Perguntas' - Arvore inexistente
+/**@brief Teste da função 'Vinte_Perguntas' - Arvore inexistente
+*
 *Nesse teste, foi testado o comportamento da função 'Vinte_Perguntas' quando recebe
 *uma arvore Null, sendo o primeiro requisito que a arvore continuasse NULL, e que no segundo
 *requisito que a arvore fosse criada (no minimo um nó).
@@ -525,8 +521,8 @@ TEST_CASE("Receiving null tree or object was not guessed by Vinte_Perguntas", "T
   REQUIRE(ainicio != NULL);
 }
 
-/*
-*@brief Teste da função 'Vinte_Perguntas' - Arvore existente, cheia, edição, apagar
+/**@brief Teste da função 'Vinte_Perguntas' - Arvore existente, cheia, edição, apagar
+*
 *Foi testado inicialmente o comportamento da função 'Vinte_Perguntas' ao receber e navegar até o final de uma
 *arvore com as 20 perguntas preenchidas, o criterio de aceitação é que o jogo finalizasse se o usuario chegou ou não
 *no objeto que ele estava pensando. O outro teste foi de edição do nó principal, o criterio de aceitação foi que a string
@@ -589,8 +585,8 @@ TEST_CASE("Receiving 20 questions and testing 'apagar' and 'editar' in Vinte_Per
   REQUIRE(ainicio->nao == NULL);
 }
 
-/*
-*@brief Teste da função 'Pergunta_Final'
+/**@brief Teste da função 'Pergunta_Final'
+*
 *Foi aberto um arquivo txt e criado uma arvore, em seguida passada essa arvore para a função
 *'Pergunta_Final', com o intuido da criação de um novo nó 'sim' na arvore, o criterio de aceitação
 *é que o nó fosse criado com sucesso e que seus filhos fossem NULL, em seguida, novamente foi feito
@@ -624,8 +620,8 @@ TEST_CASE("Creating childs at the end in 'sim' and 'nao'", "Should normaly creat
   fclose(arq);
 }
 
-/*
-*@brief Conclusões
+/**@brief Conclusões
+*
 *As descrições dos parametros das funções estão descritos nos .c de todas as funções.
 *A unica função que foi observado um resultado não desejado foi a 'Resposta', que quando
 *digitado mais que 6 caracteres, ela imprime na tela mais de uma vez a mensagem de erro. Isso

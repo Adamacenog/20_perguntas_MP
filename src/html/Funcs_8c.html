@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Documentação Jogo 20 perguntas: Referência do Arquivo Funcs.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentação Jogo 20 perguntas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Membros&#160;dos&#160;Arquivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo Funcs.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar).  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;Funcs.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para Funcs.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="Funcs_8c__incl.png" border="0" usemap="#Funcs_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:aa9c92c11eef6b6d98a1a444302093ca5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9c92c11eef6b6d98a1a444302093ca5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Funcs_8c.html#aa9c92c11eef6b6d98a1a444302093ca5">_Primary_libraries</a></td></tr>
+<tr class="memdesc:aa9c92c11eef6b6d98a1a444302093ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header de funções padrão, para I/O, manipulação de strings. <br /></td></tr>
+<tr class="separator:aa9c92c11eef6b6d98a1a444302093ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aada0c2263d9b6d55cbf5b649bc72a64a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Funcs_8c.html#aada0c2263d9b6d55cbf5b649bc72a64a">_Funcs_library</a></td></tr>
+<tr class="memdesc:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header da biblioteca de funções (criação de arquivo e concatenação de strings). <br /></td></tr>
+<tr class="separator:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ae514617a2ce835b9ba8c3974e6e09f3b"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Funcs_8c.html#ae514617a2ce835b9ba8c3974e6e09f3b">CriaArquivo</a> (char *type, char *opcao)</td></tr>
+<tr class="memdesc:ae514617a2ce835b9ba8c3974e6e09f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de Criação de arquivos (abertura ou leitura).  <a href="#ae514617a2ce835b9ba8c3974e6e09f3b">Mais...</a><br /></td></tr>
+<tr class="separator:ae514617a2ce835b9ba8c3974e6e09f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6e869105db05a7a2253c50108cb8583"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Funcs_8c.html#ab6e869105db05a7a2253c50108cb8583">ConstroiNo</a> (char *no, char *filho)</td></tr>
+<tr class="memdesc:ab6e869105db05a7a2253c50108cb8583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de concatenação de string.  <a href="#ab6e869105db05a7a2253c50108cb8583">Mais...</a><br /></td></tr>
+<tr class="separator:ab6e869105db05a7a2253c50108cb8583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
+<div class="textblock"><p>Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar). </p>
+<dl class="section author"><dt>Autor</dt><dd>Andre Garrido Damaceno Como esse arquivo contem apenas funções auxiliares, necessita apenas dos headers padrões. </dd></dl>
+</div><h2 class="groupheader">Funções</h2>
+<a class="anchor" id="ab6e869105db05a7a2253c50108cb8583"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* ConstroiNo </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>no</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função de concatenação de string. </p>
+<p>Essa função recebe como parametro duas strings 'char *no' e 'char *filho', concatena a string 'filho' na string 'no', e retorna essa string 'char *'. Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string 'no' para a memoria alocada, por fim, concatena a string 'filho' na memoria alocada, retornando assim a string com 'no' e 'filho' concatenados devidamente. Caso o computador negue a alocação de memória, o programa é finalizado. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae514617a2ce835b9ba8c3974e6e09f3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* CriaArquivo </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>opcao</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função de Criação de arquivos (abertura ou leitura). </p>
+<p>Essa função recebe como parametro o tipo de abertura 'char *type' ("r" - para read, "w" - para write) e também uma string 'char *opcao' para ser impresso na tela (informando ao usuário se o arquivo esta sendo aberto ou salvo). A função retorna o arquivo 'FILE *'. Essa função apenas abre um arquivo e o retorna para o usuário. Caso o arquivo não exista, ou ele será criado (no caso do tipo "w" - write), ou a função retornará NULL no 'FILE *'. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

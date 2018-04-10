@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Documentação Jogo 20 perguntas: Referência do Arquivo Vinte_Perguntas.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentação Jogo 20 perguntas
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;Principal</span></a></li>
+      <li class="current"><a href="files.html"><span>Arquivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Busca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;Arquivos</span></a></li>
+      <li><a href="globals.html"><span>Membros&#160;dos&#160;Arquivos</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo Vinte_Perguntas.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Arquivo que contem a biblioteca de estruturação (execução) do jogo de 20 perguntas.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;Arvore.h&quot;</code><br />
+<code>#include &quot;Funcs.h&quot;</code><br />
+<code>#include &quot;Vinte_Perguntas.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para Vinte_Perguntas.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="Vinte__Perguntas_8c__incl.png" border="0" usemap="#Vinte__Perguntas_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:aa9c92c11eef6b6d98a1a444302093ca5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9c92c11eef6b6d98a1a444302093ca5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Vinte__Perguntas_8c.html#aa9c92c11eef6b6d98a1a444302093ca5">_Primary_libraries</a></td></tr>
+<tr class="memdesc:aa9c92c11eef6b6d98a1a444302093ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header de funções padrão, para I/O, manipulação de strings. <br /></td></tr>
+<tr class="separator:aa9c92c11eef6b6d98a1a444302093ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3059c7e862e1f571f036f8edbec268e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3059c7e862e1f571f036f8edbec268e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Vinte__Perguntas_8c.html#ad3059c7e862e1f571f036f8edbec268e">_Arvore_library</a></td></tr>
+<tr class="memdesc:ad3059c7e862e1f571f036f8edbec268e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header da biblioteca de arvore. <br /></td></tr>
+<tr class="separator:ad3059c7e862e1f571f036f8edbec268e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aada0c2263d9b6d55cbf5b649bc72a64a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Vinte__Perguntas_8c.html#aada0c2263d9b6d55cbf5b649bc72a64a">_Funcs_library</a></td></tr>
+<tr class="memdesc:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header da biblioteca de funções (criação de arquivo e concatenação de strings). <br /></td></tr>
+<tr class="separator:aada0c2263d9b6d55cbf5b649bc72a64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18fc926bd99ef27d0302ea3f50e1424e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18fc926bd99ef27d0302ea3f50e1424e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Vinte__Perguntas_8c.html#a18fc926bd99ef27d0302ea3f50e1424e">_Vinte_Perguntas_library</a></td></tr>
+<tr class="memdesc:a18fc926bd99ef27d0302ea3f50e1424e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header da biblioteca de estruturação (execução) do jogo de 20 perguntas. <br /></td></tr>
+<tr class="separator:a18fc926bd99ef27d0302ea3f50e1424e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a750ed2de98e06946b1287d1fd3aeff08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Vinte__Perguntas_8c.html#a750ed2de98e06946b1287d1fd3aeff08">Resposta</a> (int tipo)</td></tr>
+<tr class="memdesc:a750ed2de98e06946b1287d1fd3aeff08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para pegar o input especifico de opções do usuario.  <a href="#a750ed2de98e06946b1287d1fd3aeff08">Mais...</a><br /></td></tr>
+<tr class="separator:a750ed2de98e06946b1287d1fd3aeff08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50cd5030c633ddd0c6cc9bcfb9adfd88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Vinte__Perguntas_8c.html#a50cd5030c633ddd0c6cc9bcfb9adfd88">Vinte_Perguntas</a> (arvore **anavega, int numero_respostas)</td></tr>
+<tr class="memdesc:a50cd5030c633ddd0c6cc9bcfb9adfd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de execução do programa.  <a href="#a50cd5030c633ddd0c6cc9bcfb9adfd88">Mais...</a><br /></td></tr>
+<tr class="separator:a50cd5030c633ddd0c6cc9bcfb9adfd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a843ac3fa2d2a9236370d2771e011fbde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Vinte__Perguntas_8c.html#a843ac3fa2d2a9236370d2771e011fbde">Pergunta_Final</a> (arvore **anterior, arvore **ainicio, int numero_respostas, int opcao)</td></tr>
+<tr class="memdesc:a843ac3fa2d2a9236370d2771e011fbde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas).  <a href="#a843ac3fa2d2a9236370d2771e011fbde">Mais...</a><br /></td></tr>
+<tr class="separator:a843ac3fa2d2a9236370d2771e011fbde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
+<div class="textblock"><p>Arquivo que contem a biblioteca de estruturação (execução) do jogo de 20 perguntas. </p>
+<dl class="section author"><dt>Autor</dt><dd>Andre Garrido Damaceno Como esse arquivo contem a biblioteca de execução, necessita dos headers padrões, de funções auxiliares, e de estruturação do jogo. </dd></dl>
+</div><h2 class="groupheader">Funções</h2>
+<a class="anchor" id="a843ac3fa2d2a9236370d2771e011fbde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pergunta_Final </td>
+          <td>(</td>
+          <td class="paramtype">arvore **&#160;</td>
+          <td class="paramname"><em>anterior</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">arvore **&#160;</td>
+          <td class="paramname"><em>ainicio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numero_respostas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opcao</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas). </p>
+<p>Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anterior', o endereço do apontador do inicio da arvore 'arvore **ainicio', o numero de perguntas ja respondidas 'int numero_respostas' e a última opção selecionada 'int opcao'. A função não retorna nenhum parametro. Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto que o usuário pensava. Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas as 20 perguntas). Os casos de erro são os mesmos das funções '<a class="el" href="Vinte__Perguntas_8c.html#a50cd5030c633ddd0c6cc9bcfb9adfd88" title="Função de execução do programa. ">Vinte_Perguntas()</a>' e '<a class="el" href="Arvore_8c.html#a11bdc8462ac661708ec7dfc6209ad039" title="Função de criação da arvore de forma manual. ">Constroi_Manual()</a>', pois depende dessas funções e de alocação de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação. </p>
+
+</div>
+</div>
+<a class="anchor" id="a750ed2de98e06946b1287d1fd3aeff08"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Resposta </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tipo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para pegar o input especifico de opções do usuario. </p>
+<p>Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario. Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de 'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'. Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres), apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper). </p>
+
+</div>
+</div>
+<a class="anchor" id="a50cd5030c633ddd0c6cc9bcfb9adfd88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Vinte_Perguntas </td>
+          <td>(</td>
+          <td class="paramtype">arvore **&#160;</td>
+          <td class="paramname"><em>anavega</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numero_respostas</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função de execução do programa. </p>
+<p>Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anavega' (para as possiveis mudanças na arvore como apagar, editar, navegar e criar novos nós) e um inteiro 'int numero_respostas', para saber quantas perguntas ja foram respondidas pelo usuario. Essa função não retorna nenhum parametro. A função inicialmente alerta ao usuário que o jogo irá começar e analisa se a arvore é vazia ou o numero_respostas é menor que 19 (ja foram respondidas 20 perguntas). Em seguida é lida a pergunta para o usuário e ele pode navegar pelas perguntas (respondendo 'sim' ou 'nao') ou editar/apagar uma pergunta. No fim, é perguntado ao usuário se seu objeto pensado foi descoberto. Caso tenha sido, o jogo é finalizado, caso não tenha sido e o usuário ainda não tenha respondido 20 perguntas, é perguntado se o usuário deseja inserir mais perguntas para o programa descobrir o objeto. Ao fim das inserções, o jogo recomeça a partir do ponto da ultima pergunta respondida pelo usuário. Como essa função de execução utiliza a maior parte de todas as funções criadas, os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi desenvolvida para conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

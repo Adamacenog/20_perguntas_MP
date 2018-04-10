@@ -1,0 +1,142 @@
+\hypertarget{Arvore_8c}{}\section{Referência do Arquivo Arvore.\+c}
+\label{Arvore_8c}\index{Arvore.\+c@{Arvore.\+c}}
+
+
+Arquivo que contem a biblioteca de manipulação e criação da arvore.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Arvore.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Funcs.\+h\char`\"{}}\\*
+Gráfico de dependência de inclusões para Arvore.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Arvore_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Arvore_8c_aa9c92c11eef6b6d98a1a444302093ca5}{\+\_\+\+Primary\+\_\+libraries}\hypertarget{Arvore_8c_aa9c92c11eef6b6d98a1a444302093ca5}{}\label{Arvore_8c_aa9c92c11eef6b6d98a1a444302093ca5}
+
+\begin{DoxyCompactList}\small\item\em Header de funções padrão, para I/O, manipulação de strings. \end{DoxyCompactList}\item 
+\#define \hyperlink{Arvore_8c_ad3059c7e862e1f571f036f8edbec268e}{\+\_\+\+Arvore\+\_\+library}\hypertarget{Arvore_8c_ad3059c7e862e1f571f036f8edbec268e}{}\label{Arvore_8c_ad3059c7e862e1f571f036f8edbec268e}
+
+\begin{DoxyCompactList}\small\item\em Header da biblioteca de arvore. \end{DoxyCompactList}\item 
+\#define \hyperlink{Arvore_8c_aada0c2263d9b6d55cbf5b649bc72a64a}{\+\_\+\+Funcs\+\_\+library}\hypertarget{Arvore_8c_aada0c2263d9b6d55cbf5b649bc72a64a}{}\label{Arvore_8c_aada0c2263d9b6d55cbf5b649bc72a64a}
+
+\begin{DoxyCompactList}\small\item\em Header da biblioteca de funções (criação de arquivo e concatenação de strings). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Arvore_8c_a11bdc8462ac661708ec7dfc6209ad039}{Constroi\+\_\+\+Manual} (arvore $\ast$$\ast$ainicio, char $\ast$no, int size)
+\begin{DoxyCompactList}\small\item\em Função de criação da arvore de forma manual. \end{DoxyCompactList}\item 
+void \hyperlink{Arvore_8c_a1d91a898045686dcc35f0201643fd047}{Constroi\+\_\+\+T\+XT} (arvore $\ast$$\ast$ainicio, F\+I\+LE $\ast$arq)
+\begin{DoxyCompactList}\small\item\em Função de criação da arvore por .txt. \end{DoxyCompactList}\item 
+void \hyperlink{Arvore_8c_a84ece5fc9e1f4d2f169800dd5f32b078}{Salva\+\_\+\+T\+XT} (arvore $\ast$$\ast$ainicio, F\+I\+LE $\ast$arq)
+\begin{DoxyCompactList}\small\item\em Função para salvar as perguntas da arvore em um .txt. \end{DoxyCompactList}\item 
+void \hyperlink{Arvore_8c_ab7a6f0fdd0836b340bbad8c859b16dc4}{Le} (arvore $\ast$a1)
+\begin{DoxyCompactList}\small\item\em Função para a leitura da pergunta no nó da Arvore. \end{DoxyCompactList}\item 
+void \hyperlink{Arvore_8c_a1f19223608412f84ebe5001d5cd539b3}{Navega\+Sim} (arvore $\ast$$\ast$pergunta)
+\begin{DoxyCompactList}\small\item\em Função para a navegação e leitura da pergunta para o nó \textquotesingle{}sim\textquotesingle{} da arvore. \end{DoxyCompactList}\item 
+void \hyperlink{Arvore_8c_a25ee1248463373bfb62fc366a93af84e}{Navega\+Nao} (arvore $\ast$$\ast$pergunta)
+\begin{DoxyCompactList}\small\item\em Função para a navegação e leitura da pergunta para o nó \textquotesingle{}nao\textquotesingle{} da arvore. \end{DoxyCompactList}\item 
+void \hyperlink{Arvore_8c_ad33c2e638a0cc3819525d8cef7119cdb}{Desconstroi} (arvore $\ast$$\ast$ainicio)
+\begin{DoxyCompactList}\small\item\em Função para apagar a arvore da memória. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo que contem a biblioteca de manipulação e criação da arvore. 
+
+\begin{DoxyAuthor}{Autor}
+Andre Garrido Damaceno Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de de funções auxiliares. 
+\end{DoxyAuthor}
+
+
+\subsection{Funções}
+\index{Arvore.\+c@{Arvore.\+c}!Constroi\+\_\+\+Manual@{Constroi\+\_\+\+Manual}}
+\index{Constroi\+\_\+\+Manual@{Constroi\+\_\+\+Manual}!Arvore.\+c@{Arvore.\+c}}
+\subsubsection[{\texorpdfstring{Constroi\+\_\+\+Manual(arvore $\ast$$\ast$ainicio, char $\ast$no, int size)}{Constroi_Manual(arvore **ainicio, char *no, int size)}}]{\setlength{\rightskip}{0pt plus 5cm}void Constroi\+\_\+\+Manual (
+\begin{DoxyParamCaption}
+\item[{arvore $\ast$$\ast$}]{ainicio, }
+\item[{char $\ast$}]{no, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{Arvore_8c_a11bdc8462ac661708ec7dfc6209ad039}{}\label{Arvore_8c_a11bdc8462ac661708ec7dfc6209ad039}
+
+
+Função de criação da arvore de forma manual. 
+
+Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação), uma string \textquotesingle{}char $\ast$no\textquotesingle{} para a informação a respeito do nó atual para o usuário, um inteiro \textquotesingle{}int size\textquotesingle{}, para impedir a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo). A função não retorna nenhum parametro. Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário, sendo possível o usuário criar quantas perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser. Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+Manual\textquotesingle{} ou nas funções que ela chama, o programa é encerrado com erro. \index{Arvore.\+c@{Arvore.\+c}!Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}}
+\index{Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}!Arvore.\+c@{Arvore.\+c}}
+\subsubsection[{\texorpdfstring{Constroi\+\_\+\+T\+X\+T(arvore $\ast$$\ast$ainicio, F\+I\+L\+E $\ast$arq)}{Constroi_TXT(arvore **ainicio, FILE *arq)}}]{\setlength{\rightskip}{0pt plus 5cm}void Constroi\+\_\+\+T\+XT (
+\begin{DoxyParamCaption}
+\item[{arvore $\ast$$\ast$}]{ainicio, }
+\item[{F\+I\+LE $\ast$}]{arq}
+\end{DoxyParamCaption}
+)}\hypertarget{Arvore_8c_a1d91a898045686dcc35f0201643fd047}{}\label{Arvore_8c_a1d91a898045686dcc35f0201643fd047}
+
+
+Função de criação da arvore por .txt. 
+
+Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação) e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro. Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados por pontos \textquotesingle{}.\textquotesingle{}. Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} o programa é encerrado com erro. \index{Arvore.\+c@{Arvore.\+c}!Desconstroi@{Desconstroi}}
+\index{Desconstroi@{Desconstroi}!Arvore.\+c@{Arvore.\+c}}
+\subsubsection[{\texorpdfstring{Desconstroi(arvore $\ast$$\ast$ainicio)}{Desconstroi(arvore **ainicio)}}]{\setlength{\rightskip}{0pt plus 5cm}void Desconstroi (
+\begin{DoxyParamCaption}
+\item[{arvore $\ast$$\ast$}]{ainicio}
+\end{DoxyParamCaption}
+)}\hypertarget{Arvore_8c_ad33c2e638a0cc3819525d8cef7119cdb}{}\label{Arvore_8c_ad33c2e638a0cc3819525d8cef7119cdb}
+
+
+Função para apagar a arvore da memória. 
+
+Essa função recebe como parametro o endereço do ponteiro da arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} e não retorna nenhum parametro. A função navega recursivamente para o ultimo nó sim, em seguida o ultimo nó nao, e vai apagando a arvore. A função checa se o nó é N\+U\+LL, para evitar erros e conseguir apagar de forma recursiva. Caso seja inserido um nó invalido não N\+U\+LL, pode ser que ocorra um erro de Seg\+Fault. \index{Arvore.\+c@{Arvore.\+c}!Le@{Le}}
+\index{Le@{Le}!Arvore.\+c@{Arvore.\+c}}
+\subsubsection[{\texorpdfstring{Le(arvore $\ast$a1)}{Le(arvore *a1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Le (
+\begin{DoxyParamCaption}
+\item[{arvore $\ast$}]{a1}
+\end{DoxyParamCaption}
+)}\hypertarget{Arvore_8c_ab7a6f0fdd0836b340bbad8c859b16dc4}{}\label{Arvore_8c_ab7a6f0fdd0836b340bbad8c859b16dc4}
+
+
+Função para a leitura da pergunta no nó da Arvore. 
+
+Essa função recebe como parametro um ponteiro de arvore \textquotesingle{}arvore $\ast$a1\textquotesingle{}, não retorna nenhum parametro. A função apenas checa se o ponteiro é valido, caso seja, imprime na tela a pergunta. Caso o ponteiro não seja valido (N\+U\+LL), a função não faz nada (não havendo erros). \index{Arvore.\+c@{Arvore.\+c}!Navega\+Nao@{Navega\+Nao}}
+\index{Navega\+Nao@{Navega\+Nao}!Arvore.\+c@{Arvore.\+c}}
+\subsubsection[{\texorpdfstring{Navega\+Nao(arvore $\ast$$\ast$pergunta)}{NavegaNao(arvore **pergunta)}}]{\setlength{\rightskip}{0pt plus 5cm}void Navega\+Nao (
+\begin{DoxyParamCaption}
+\item[{arvore $\ast$$\ast$}]{pergunta}
+\end{DoxyParamCaption}
+)}\hypertarget{Arvore_8c_a25ee1248463373bfb62fc366a93af84e}{}\label{Arvore_8c_a25ee1248463373bfb62fc366a93af84e}
+
+
+Função para a navegação e leitura da pergunta para o nó \textquotesingle{}nao\textquotesingle{} da arvore. 
+
+Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum parametro. A função checa se o nó atual é valido e se o nó \textquotesingle{}nao\textquotesingle{} é valido, caso sejam, o apontador passa a apontar para o nó \textquotesingle{}nao\textquotesingle{} e a pergunta é lida. Caso em algum ponto o nó seja N\+U\+LL, a função não faz nada, apenas retorna. \index{Arvore.\+c@{Arvore.\+c}!Navega\+Sim@{Navega\+Sim}}
+\index{Navega\+Sim@{Navega\+Sim}!Arvore.\+c@{Arvore.\+c}}
+\subsubsection[{\texorpdfstring{Navega\+Sim(arvore $\ast$$\ast$pergunta)}{NavegaSim(arvore **pergunta)}}]{\setlength{\rightskip}{0pt plus 5cm}void Navega\+Sim (
+\begin{DoxyParamCaption}
+\item[{arvore $\ast$$\ast$}]{pergunta}
+\end{DoxyParamCaption}
+)}\hypertarget{Arvore_8c_a1f19223608412f84ebe5001d5cd539b3}{}\label{Arvore_8c_a1f19223608412f84ebe5001d5cd539b3}
+
+
+Função para a navegação e leitura da pergunta para o nó \textquotesingle{}sim\textquotesingle{} da arvore. 
+
+Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum parametro. A função checa se o nó atual é valido e se o nó \textquotesingle{}sim\textquotesingle{} é valido, caso sejam, o apontador passa a apontar para o nó \textquotesingle{}sim\textquotesingle{} e a pergunta é lida. Caso em algum ponto o nó seja N\+U\+LL, a função não faz nada, apenas retorna. \index{Arvore.\+c@{Arvore.\+c}!Salva\+\_\+\+T\+XT@{Salva\+\_\+\+T\+XT}}
+\index{Salva\+\_\+\+T\+XT@{Salva\+\_\+\+T\+XT}!Arvore.\+c@{Arvore.\+c}}
+\subsubsection[{\texorpdfstring{Salva\+\_\+\+T\+X\+T(arvore $\ast$$\ast$ainicio, F\+I\+L\+E $\ast$arq)}{Salva_TXT(arvore **ainicio, FILE *arq)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salva\+\_\+\+T\+XT (
+\begin{DoxyParamCaption}
+\item[{arvore $\ast$$\ast$}]{ainicio, }
+\item[{F\+I\+LE $\ast$}]{arq}
+\end{DoxyParamCaption}
+)}\hypertarget{Arvore_8c_a84ece5fc9e1f4d2f169800dd5f32b078}{}\label{Arvore_8c_a84ece5fc9e1f4d2f169800dd5f32b078}
+
+
+Função para salvar as perguntas da arvore em um .txt. 
+
+Essa função recebe como parametro o endereço do ponteiro de uma arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{}, e o arquivo de texto a ser salvo as perguntas da arvore \textquotesingle{}F\+I\+LE $\ast$arq\textquotesingle{}. A função não retorna nenhum parametro. A função salva a pergunta no arquivo .txt, caso o nó seja N\+U\+LL, é salvo um \textquotesingle{}.\textquotesingle{} no arquivo. Caso o arquivo seja inexistente, a função não faz nada. Caso a arvore seja inexistente, a função salva apenas um \textquotesingle{}.\textquotesingle{} no .txt (não havendo erros). 

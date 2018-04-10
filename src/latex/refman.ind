@@ -1,0 +1,90 @@
+\begin{theindex}
+
+  \item {Arvore.\+c}, \hyperpage{3}
+    \subitem {Constroi\+\_\+\+Manual}, \hyperpage{4}
+    \subitem {Constroi\+\_\+\+T\+XT}, \hyperpage{4}
+    \subitem {Desconstroi}, \hyperpage{4}
+    \subitem {Le}, \hyperpage{5}
+    \subitem {Navega\+Nao}, \hyperpage{5}
+    \subitem {Navega\+Sim}, \hyperpage{5}
+    \subitem {Salva\+\_\+\+T\+XT}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Constroi\+\_\+\+Manual}
+    \subitem {Arvore.\+c}, \hyperpage{4}
+  \item {Constroi\+\_\+\+T\+XT}
+    \subitem {Arvore.\+c}, \hyperpage{4}
+  \item {Constroi\+No}
+    \subitem {Funcs.\+c}, \hyperpage{7}
+  \item {Cria\+Arquivo}
+    \subitem {Funcs.\+c}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Desconstroi}
+    \subitem {Arvore.\+c}, \hyperpage{4}
+
+  \indexspace
+
+  \item {Funcs.\+c}, \hyperpage{6}
+    \subitem {Constroi\+No}, \hyperpage{7}
+    \subitem {Cria\+Arquivo}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Jogo.\+c}, \hyperpage{7}
+    \subitem {Jogo\+\_\+init}, \hyperpage{8}
+    \subitem {main}, \hyperpage{8}
+  \item {Jogo\+\_\+init}
+    \subitem {Jogo.\+c}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Le}
+    \subitem {Arvore.\+c}, \hyperpage{5}
+
+  \indexspace
+
+  \item {main}
+    \subitem {Jogo.\+c}, \hyperpage{8}
+
+  \indexspace
+
+  \item {Navega\+Nao}
+    \subitem {Arvore.\+c}, \hyperpage{5}
+  \item {Navega\+Sim}
+    \subitem {Arvore.\+c}, \hyperpage{5}
+
+  \indexspace
+
+  \item {Pergunta\+\_\+\+Final}
+    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Resposta}
+    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Salva\+\_\+\+T\+XT}
+    \subitem {Arvore.\+c}, \hyperpage{5}
+
+  \indexspace
+
+  \item {T\+E\+S\+T\+\_\+\+C\+A\+SE}
+    \subitem {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{10--13}
+  \item {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{9}
+    \subitem {T\+E\+S\+T\+\_\+\+C\+A\+SE}, \hyperpage{10--13}
+
+  \indexspace
+
+  \item {Vinte\+\_\+\+Perguntas}
+    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{15}
+  \item {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{14}
+    \subitem {Pergunta\+\_\+\+Final}, \hyperpage{15}
+    \subitem {Resposta}, \hyperpage{15}
+    \subitem {Vinte\+\_\+\+Perguntas}, \hyperpage{15}
+
+\end{theindex}

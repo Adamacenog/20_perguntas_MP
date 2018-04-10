@@ -12,9 +12,8 @@
  *de funções auxiliares, e de estruturação do jogo.
  */
 
- /*
- *@brief Header de funções padrão, para I/O, manipulação de strings.
- */
+/**@brief Header de funções padrão, para I/O, manipulação de strings.
+*/
 #ifndef _Primary_libraries
   #define _Primary_libraries
     #include <stdio.h>
@@ -23,32 +22,29 @@
     #include <string.h>
 #endif
 
-/*
-*@brief Header da biblioteca de arvore.
+/**@brief Header da biblioteca de arvore.
 */
 #ifndef _Arvore_library
   #define _Arvore_library
     #include "Arvore.h"
 #endif
 
-/*
-*@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+/**@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
 */
 #ifndef _Funcs_library
   #define _Funcs_library
     #include "Funcs.h"
 #endif
 
-/*
-*@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
+/**@brief Header da biblioteca de estruturação (execução) do jogo de 20 perguntas.
 */
 #ifndef _Vinte_Perguntas_library
   #define _Vinte_Perguntas_library
     #include "Vinte_Perguntas.h"
 #endif
 
-/*
-*@brief Função para pegar o input especifico de opções do usuario.
+/**@brief Função para pegar o input especifico de opções do usuario.
+*
 *Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção
 *que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.
 *Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo
@@ -96,8 +92,8 @@ int Resposta(int tipo)
   } while(1);
 }
 
-/*
-*@brief Função de execução do programa.
+/**@brief Função de execução do programa.
+*
 *Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anavega'
 *(para as possiveis mudanças na arvore como apagar, editar, navegar e criar novos nós) e
 *um inteiro 'int numero_respostas', para saber quantas perguntas ja foram respondidas pelo usuario.
@@ -193,8 +189,8 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
   return;
 }
 
-/*
-*@brief Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas).
+/**@brief Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas).
+*
 *Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anterior', o endereço do apontador do inicio
 *da arvore 'arvore **ainicio', o numero de perguntas ja respondidas 'int numero_respostas' e a última opção selecionada 'int opcao'.
 *A função não retorna nenhum parametro. Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto

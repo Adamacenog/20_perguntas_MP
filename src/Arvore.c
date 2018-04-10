@@ -8,13 +8,12 @@
  * @author Andre Garrido Damaceno
  * @brief Arquivo que contem a biblioteca de manipulação e criação da arvore.
  *
- *Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de 
+ *Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de
  *de funções auxiliares.
  */
 
- /*
- *@brief Header de funções padrão, para I/O, manipulação de strings.
- */
+/**@brief Header de funções padrão, para I/O, manipulação de strings.
+*/
 #ifndef _Primary_libraries
   #define _Primary_libraries
     #include <stdio.h>
@@ -23,24 +22,22 @@
     #include <string.h>
 #endif
 
-/*
-*@brief Header da biblioteca de arvore.
+/**@brief Header da biblioteca de arvore.
 */
 #ifndef _Arvore_library
   #define _Arvore_library
     #include "Arvore.h"
 #endif
 
-/*
-*@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+/**@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
 */
 #ifndef _Funcs_library
   #define _Funcs_library
     #include "Funcs.h"
 #endif
 
-/*
-*@brief Função de criação da arvore de forma manual.
+/**@brief Função de criação da arvore de forma manual.
+*
 *Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação),
 *uma string 'char *no' para a informação a respeito do nó atual para o usuário, um inteiro 'int size', para impedir
 *a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo).
@@ -101,8 +98,8 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
   return;
 }
 
-/*
-*@brief Função de criação da arvore por .txt.
+/**@brief Função de criação da arvore por .txt.
+*
 *Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação)
 *e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro.
 *Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados
@@ -148,8 +145,8 @@ void Constroi_TXT (arvore **ainicio, FILE *arq)
     return;
 }
 
-/*
-*@brief Função para salvar as perguntas da arvore em um .txt.
+/**@brief Função para salvar as perguntas da arvore em um .txt.
+*
 *Essa função recebe como parametro o endereço do ponteiro de uma arvore 'arvore **ainicio',
 *e o arquivo de texto a ser salvo as perguntas da arvore 'FILE *arq'. A função não retorna
 *nenhum parametro. A função salva a pergunta no arquivo .txt, caso o nó seja NULL, é salvo
@@ -174,8 +171,8 @@ void Salva_TXT (arvore **ainicio, FILE *arq)
   return;
 }
 
-/*
-*@brief Função para a leitura da pergunta no nó da Arvore.
+/**@brief Função para a leitura da pergunta no nó da Arvore.
+*
 *Essa função recebe como parametro um ponteiro de arvore 'arvore *a1', não retorna
 *nenhum parametro. A função apenas checa se o ponteiro é valido, caso seja, imprime
 *na tela a pergunta. Caso o ponteiro não seja valido (NULL), a função não faz nada (não havendo erros).
@@ -190,8 +187,8 @@ void Le (arvore *a1)
     return;
 }
 
-/*
-*@brief Função para a navegação e leitura da pergunta para o nó 'sim' da arvore.
+/**@brief Função para a navegação e leitura da pergunta para o nó 'sim' da arvore.
+*
 *Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum
 *parametro. A função checa se o nó atual é valido e se o nó 'sim' é valido, caso sejam,
 *o apontador passa a apontar para o nó 'sim' e a pergunta é lida.
@@ -214,8 +211,8 @@ void NavegaSim(arvore **pergunta)
   return;
 }
 
-/*
-*@brief Função para a navegação e leitura da pergunta para o nó 'nao' da arvore.
+/**@brief Função para a navegação e leitura da pergunta para o nó 'nao' da arvore.
+*
 *Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum
 *parametro. A função checa se o nó atual é valido e se o nó 'nao' é valido, caso sejam,
 *o apontador passa a apontar para o nó 'nao' e a pergunta é lida.
@@ -238,8 +235,8 @@ void NavegaNao(arvore **pergunta)
   return;
 }
 
-/*
-*@brief Função para apagar a arvore da memória.
+/**@brief Função para apagar a arvore da memória.
+*
 *Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **ainicio'
 *e não retorna nenhum parametro. A função navega recursivamente para o ultimo nó sim, em seguida o ultimo
 *nó nao, e vai apagando a arvore. A função checa se o nó é NULL, para evitar erros e conseguir apagar de forma

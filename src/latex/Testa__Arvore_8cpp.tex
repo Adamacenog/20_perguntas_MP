@@ -1,0 +1,309 @@
+\hypertarget{Testa__Arvore_8cpp}{}\section{Referência do Arquivo Testa\+\_\+\+Arvore.\+cpp}
+\label{Testa__Arvore_8cpp}\index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+
+
+Arquivo que contem os testes do jogo de 20 perguntas.  
+
+
+{\ttfamily \#include \char`\"{}catch.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Arvore.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Funcs.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Vinte\+\_\+\+Perguntas.\+h\char`\"{}}\\*
+Gráfico de dependência de inclusões para Testa\+\_\+\+Arvore.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Testa__Arvore_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Definições e Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries C\+A\+T\+C\+H\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+IN}\hypertarget{Testa__Arvore_8cpp_a656eb5868e824d59f489f910db438420}{}\label{Testa__Arvore_8cpp_a656eb5868e824d59f489f910db438420}
+
+\item 
+\#define \hyperlink{Testa__Arvore_8cpp_ab4b7ceac16a6ea2999b93f42d7a9b638}{\+\_\+\+Catch}\hypertarget{Testa__Arvore_8cpp_ab4b7ceac16a6ea2999b93f42d7a9b638}{}\label{Testa__Arvore_8cpp_ab4b7ceac16a6ea2999b93f42d7a9b638}
+
+\begin{DoxyCompactList}\small\item\em Header da biblioteca de testes. \end{DoxyCompactList}\item 
+\#define \hyperlink{Testa__Arvore_8cpp_ad3059c7e862e1f571f036f8edbec268e}{\+\_\+\+Arvore\+\_\+library}\hypertarget{Testa__Arvore_8cpp_ad3059c7e862e1f571f036f8edbec268e}{}\label{Testa__Arvore_8cpp_ad3059c7e862e1f571f036f8edbec268e}
+
+\begin{DoxyCompactList}\small\item\em Header da biblioteca de arvore. \end{DoxyCompactList}\item 
+\#define \hyperlink{Testa__Arvore_8cpp_aada0c2263d9b6d55cbf5b649bc72a64a}{\+\_\+\+Funcs\+\_\+library}\hypertarget{Testa__Arvore_8cpp_aada0c2263d9b6d55cbf5b649bc72a64a}{}\label{Testa__Arvore_8cpp_aada0c2263d9b6d55cbf5b649bc72a64a}
+
+\begin{DoxyCompactList}\small\item\em Header da biblioteca de funções (criação de arquivo e concatenação de strings). \end{DoxyCompactList}\item 
+\#define \hyperlink{Testa__Arvore_8cpp_a18fc926bd99ef27d0302ea3f50e1424e}{\+\_\+\+Vinte\+\_\+\+Perguntas\+\_\+library}\hypertarget{Testa__Arvore_8cpp_a18fc926bd99ef27d0302ea3f50e1424e}{}\label{Testa__Arvore_8cpp_a18fc926bd99ef27d0302ea3f50e1424e}
+
+\begin{DoxyCompactList}\small\item\em Header da biblioteca de estruturação (execução) do jogo de 20 perguntas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Testa__Arvore_8cpp_a08a49c56066daf348a84d92832092ee1}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Creating a tree from user input\char`\"{},\char`\"{}Prove that the tree is created\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função \textquotesingle{}Constroi\+\_\+\+Manual\textquotesingle{}. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_aae0dc9964263481842ca5c93ee639022}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Creating a tree from a file\char`\"{},\char`\"{}Prove that the tree is created\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testes da função \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} -\/ Criação normal da arvore. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a30a1f60b8f711329fc88b50af1eacc03}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Trying to create a tree from an non existing file\char`\"{},\char`\"{}Prove that the tree is not created\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testes da função \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} -\/ tentativa de criar arvore por arquivo Null. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a9d22244470a4cc23b7c975f5ad5df612}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Trying to navigate to save a N\+U\+LL tree to file\char`\"{},\char`\"{}Prove that the txt saves \textquotesingle{}.\textquotesingle{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testes da função \textquotesingle{}Salva\+\_\+\+T\+XT\textquotesingle{} -\/ tentativa de salvar arvore N\+U\+LL. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a89fc4bda1a6422a093210d0a4324a5ee}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Saving a tree to file\char`\"{},\char`\"{}Prove that the txt saves the tree\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testes da função \textquotesingle{}Salva\+\_\+\+T\+XT\textquotesingle{} -\/ tentativa de salvar arvore existente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_ae68681daf9290cc2f69a0cb91a9173df}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Saving tree to N\+U\+LL file\char`\"{},\char`\"{}Prove that the function does nothing and contains the program\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testes da função \textquotesingle{}Salva\+\_\+\+T\+XT\textquotesingle{} -\/ tentativa de salvar arquivo inexistente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_ae429578c484b993cb0639844d6eb213c}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Freeing an existing tree\char`\"{},\char`\"{}the tree is freed\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função \textquotesingle{}Desconstroi\textquotesingle{} -\/ Apagando uma arvore existente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_ad52052c336d92e3201f52ce8acd225d1}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Freeing a N\+U\+LL tree\char`\"{},\char`\"{}the program is contained\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função \textquotesingle{}Desconstroi\textquotesingle{} -\/ Apagando uma arvore inexistente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a59de4e65331b095e8163209825ca73ad}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Reading a tree question\char`\"{},\char`\"{}tree is unmodified and question is read\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função Le -\/ lendo arvore existente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a2cc69249e8bcba153203c611664fc490}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Trying to read N\+U\+LL tree\char`\"{},\char`\"{}Program is contained and function does nothing\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função Le -\/ lendo arvore inexistente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a78c16933a4792de2cf02a5c402ee21be}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Trying to navigate to \textquotesingle{}-\/$>$sim\textquotesingle{} and \textquotesingle{}-\/$>$nao\textquotesingle{} and reading the question\char`\"{},\char`\"{}Tree goes to specific navigation and reads the question\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testes de navegação (sim e nao) -\/ arvore existente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a0cee031fe604571f9858f44388743016}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Trying to navigate to \textquotesingle{}-\/$>$sim\textquotesingle{} and \textquotesingle{}-\/$>$nao\textquotesingle{} whith N\+U\+LL tree\char`\"{},\char`\"{}Program is contained and function returns 2\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testes de navegação (sim e nao) -\/ arvore inexistente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_ae555a574ec75624b4553a0a2b46cb7c6}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Creating/Opening a file (read) and (write)\char`\"{},\char`\"{}Function opens/creates the file\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função \textquotesingle{}Cria\+Arquivo\textquotesingle{} -\/ arquivos existentes \char`\"{}r\char`\"{} e \char`\"{}w\char`\"{} e arquivos inexistentes. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a488caefe9ad92a7fe27b73d1f5ab81f6}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Function that concatenates strings\char`\"{},\char`\"{}Should concatenate the string\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testando a função \textquotesingle{}Constroi\+No\textquotesingle{} -\/ Concatenação de strings existente e inexistente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a948870d6e9e00c16977f7d751b67403b}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Testing user\textquotesingle{}s answers in game\char`\"{},\char`\"{}Get only \textquotesingle{}sim\textquotesingle{}, \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}editar\textquotesingle{}, \textquotesingle{}apagar\textquotesingle{} answer and nothing else\char`\"{})
+\begin{DoxyCompactList}\small\item\em Testando a função \textquotesingle{}Resposta\textquotesingle{} -\/ teste para o tipo \textquotesingle{}simples\textquotesingle{}, \textquotesingle{}multipla\textquotesingle{} e inicializacao. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_a74876aec2dbe751f844d19ef08dd9aa8}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Receiving null tree or object was not guessed by \hyperlink{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{Vinte\+\_\+\+Perguntas}\char`\"{},\char`\"{}The function should be contained, should ask the user to add more questions if less than 20 answers\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função \textquotesingle{}Vinte\+\_\+\+Perguntas\textquotesingle{} -\/ Arvore inexistente. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_adca0fdb9cafcd35fea4306937d1c1a08}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Receiving 20 questions and testing \textquotesingle{}apagar\textquotesingle{} and \textquotesingle{}editar\textquotesingle{} in \hyperlink{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{Vinte\+\_\+\+Perguntas}\char`\"{},\char`\"{}The function should ask the questions and navigate in the tree, and execute its functions \textquotesingle{}apagar\textquotesingle{}, \textquotesingle{}editar\textquotesingle{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função \textquotesingle{}Vinte\+\_\+\+Perguntas\textquotesingle{} -\/ Arvore existente, cheia, edição, apagar. \end{DoxyCompactList}\item 
+\hyperlink{Testa__Arvore_8cpp_af5868ed98ec7b8f5a83b88558c4e382d}{T\+E\+S\+T\+\_\+\+C\+A\+SE} (\char`\"{}Creating childs at the end in \textquotesingle{}sim\textquotesingle{} and \textquotesingle{}nao\textquotesingle{}\char`\"{},\char`\"{}Should normaly create childs\char`\"{})
+\begin{DoxyCompactList}\small\item\em Teste da função \textquotesingle{}Pergunta\+\_\+\+Final\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição Detalhada}
+Arquivo que contem os testes do jogo de 20 perguntas. 
+
+\begin{DoxyAuthor}{Autor}
+Andre Garrido Damaceno Como esse arquivo contem os testes, necessita dos headers de toda a biblioteca do jogo. 
+\end{DoxyAuthor}
+
+
+\subsection{Funções}
+\index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Creating a tree from user input"",""Prove that the tree is created"")}{TEST_CASE("Creating a tree from user input","Prove that the tree is created")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Creating a tree from user input\char`\"{}}]{, }
+\item[{\char`\"{}Prove that the tree is created\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a08a49c56066daf348a84d92832092ee1}{}\label{Testa__Arvore_8cpp_a08a49c56066daf348a84d92832092ee1}
+
+
+Teste da função \textquotesingle{}Constroi\+\_\+\+Manual\textquotesingle{}. 
+
+Testes feitos e criterio de aceitação\+: Teste de criação de uma arvore N\+U\+LL -\/ criterio de aceitação é a arvore ser null e o programa se conter. Teste de criação no nó pai apenas -\/ criterio de aceitação nó pai criado e os nós filhos N\+U\+LL. Teste de criação no pai e no filho \textquotesingle{}S\+IM\textquotesingle{} -\/ criterio de aceitação pai nao ser N\+U\+LL, filho \textquotesingle{}sim\textquotesingle{} nao ser N\+U\+LL, filho \textquotesingle{}sim\textquotesingle{} \textquotesingle{}sim\textquotesingle{} ser N\+U\+LL, filho \textquotesingle{}sim\textquotesingle{} \textquotesingle{}nao\textquotesingle{} ser N\+U\+LL e filho \textquotesingle{}nao\textquotesingle{} ser N\+U\+LL. Teste de criação no pai e no filho \textquotesingle{}N\+AO\textquotesingle{} -\/ criterio de aceitação pai nao ser N\+U\+LL, filho \textquotesingle{}nao\textquotesingle{} nao ser N\+U\+LL, filho \textquotesingle{}nao\textquotesingle{} \textquotesingle{}sim\textquotesingle{} ser N\+U\+LL, filho \textquotesingle{}nao\textquotesingle{} \textquotesingle{}nao\textquotesingle{} ser N\+U\+LL e filho \textquotesingle{}sim\textquotesingle{} ser N\+U\+LL. Teste de criação de um nó pai, um nó filho \textquotesingle{}sim\textquotesingle{}, um nó filho \textquotesingle{}nao\textquotesingle{} -\/ criterio de aceitação pai nao ser N\+U\+LL, filho \textquotesingle{}nao\textquotesingle{} nao ser N\+U\+LL, filho \textquotesingle{}nao\textquotesingle{} \textquotesingle{}sim\textquotesingle{} ser N\+U\+LL, filho \textquotesingle{}nao\textquotesingle{} \textquotesingle{}nao\textquotesingle{} ser N\+U\+LL, filho \textquotesingle{}sim\textquotesingle{} não ser N\+U\+LL filho \textquotesingle{}sim\textquotesingle{} nao ser N\+U\+LL e filho \textquotesingle{}sim\textquotesingle{} \textquotesingle{}sim\textquotesingle{} ser N\+U\+LL. Todos os testes foram bem sucedidos. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Creating a tree from a file"",""Prove that the tree is created"")}{TEST_CASE("Creating a tree from a file","Prove that the tree is created")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Creating a tree from a file\char`\"{}}]{, }
+\item[{\char`\"{}Prove that the tree is created\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_aae0dc9964263481842ca5c93ee639022}{}\label{Testa__Arvore_8cpp_aae0dc9964263481842ca5c93ee639022}
+
+
+Testes da função \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} -\/ Criação normal da arvore. 
+
+Testes feitos e criterio de aceitação\+: Teste de criação da arvore com um arquivo existente (onde os nós pai, filho \textquotesingle{}sim\textquotesingle{} filho \textquotesingle{}nao\textquotesingle{} existem na arvore), os criterios de aceitação foram os nós descritos serem iguais à frases escritas no teste (comparação feita por strcmp), e os dos filhos \textquotesingle{}sim\textquotesingle{} e \textquotesingle{}nao\textquotesingle{} serem N\+U\+LL. Todos os testes foram bem sucedidos. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Trying to create a tree from an non existing file"",""Prove that the tree is not created"")}{TEST_CASE("Trying to create a tree from an non existing file","Prove that the tree is not created")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Trying to create a tree from an non existing file\char`\"{}}]{, }
+\item[{\char`\"{}Prove that the tree is not created\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a30a1f60b8f711329fc88b50af1eacc03}{}\label{Testa__Arvore_8cpp_a30a1f60b8f711329fc88b50af1eacc03}
+
+
+Testes da função \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} -\/ tentativa de criar arvore por arquivo Null. 
+
+Foi feito um teste, abrindo um arquivo inexistente pela função \textquotesingle{}fopen\textquotesingle{}, e passado o arquivo para a função \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{}, os criterios de aceitação são a Arvore ser N\+U\+LL, e o programa não ter problemas em sua execução. O teste passou com sucesso, e tudo ocorreu como esperado. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Trying to navigate to save a N\+U\+L\+L tree to file"",""Prove that the txt saves \textquotesingle{}.\textquotesingle{}"")}{TEST_CASE("Trying to navigate to save a NULL tree to file","Prove that the txt saves '.'")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Trying to navigate to save a N\+U\+LL tree to file\char`\"{}}]{, }
+\item[{\char`\"{}Prove that the txt saves \textquotesingle{}.\textquotesingle{}\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a9d22244470a4cc23b7c975f5ad5df612}{}\label{Testa__Arvore_8cpp_a9d22244470a4cc23b7c975f5ad5df612}
+
+
+Testes da função \textquotesingle{}Salva\+\_\+\+T\+XT\textquotesingle{} -\/ tentativa de salvar arvore N\+U\+LL. 
+
+Foi feito um teste, abrindo um arquivo inexistente na forma \char`\"{}w\char`\"{}, então foi salva uma arvore N\+U\+LL no arquivo. Em seguida, foi aberto esse arquivo e construida a arvore a partir dele com a função \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{}, e por fim, o criterio de aceitação é a arvore criada ser N\+U\+LL. O teste passou com sucesso, tudo ocorreu como esperado. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Saving a tree to file"",""Prove that the txt saves the tree"")}{TEST_CASE("Saving a tree to file","Prove that the txt saves the tree")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Saving a tree to file\char`\"{}}]{, }
+\item[{\char`\"{}Prove that the txt saves the tree\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a89fc4bda1a6422a093210d0a4324a5ee}{}\label{Testa__Arvore_8cpp_a89fc4bda1a6422a093210d0a4324a5ee}
+
+
+Testes da função \textquotesingle{}Salva\+\_\+\+T\+XT\textquotesingle{} -\/ tentativa de salvar arvore existente. 
+
+Foi aberto um arquivo txt existente com dados de arvore, criada a arvore pela função \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{}, em seguida foi salva a arvore criada pela função \textquotesingle{}Salva\+\_\+\+T\+XT\textquotesingle{} em um outro arquivo de texto inexistente (\textquotesingle{}Perguntas2.\+txt\textquotesingle{}), por fim, para verificar se tudo ocorreu como esperado, foi aberto esse arquivo txt, feito a arvore novamente, e checada todas as perguntas que existiam no arquivo, e também se todos os nós inexistentes da arvore eram N\+U\+LL. Todos os criterios passaram, tudo ocorreu como esperado. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Saving tree to N\+U\+L\+L file"",""Prove that the function does nothing and contains the program"")}{TEST_CASE("Saving tree to NULL file","Prove that the function does nothing and contains the program")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Saving tree to N\+U\+LL file\char`\"{}}]{, }
+\item[{\char`\"{}Prove that the function does nothing and contains the program\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_ae68681daf9290cc2f69a0cb91a9173df}{}\label{Testa__Arvore_8cpp_ae68681daf9290cc2f69a0cb91a9173df}
+
+
+Testes da função \textquotesingle{}Salva\+\_\+\+T\+XT\textquotesingle{} -\/ tentativa de salvar arquivo inexistente. 
+
+Foi aberto um arquivo txt na função \char`\"{}r\char`\"{}, em seguida foi tentado salvar uma arvore N\+U\+LL em um arquivo inexistente, os criterios de aceitação são a função se conter, a arvore ser N\+U\+LL, o arquivo ser N\+U\+LL. Todos os testes passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Freeing an existing tree"",""the tree is freed"")}{TEST_CASE("Freeing an existing tree","the tree is freed")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Freeing an existing tree\char`\"{}}]{, }
+\item[{\char`\"{}the tree is freed\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_ae429578c484b993cb0639844d6eb213c}{}\label{Testa__Arvore_8cpp_ae429578c484b993cb0639844d6eb213c}
+
+
+Teste da função \textquotesingle{}Desconstroi\textquotesingle{} -\/ Apagando uma arvore existente. 
+
+Foi criada uma arvore por um txt existente, em seguida, foi verificado que a arvore não era N\+U\+LL, por fim, foi chamada a função de desconstrução, e o criterio de aceitação é que a função apagasse a arvore e seu ponteiro fosse Null no final. Todos os testes passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Freeing a N\+U\+L\+L tree"",""the program is contained"")}{TEST_CASE("Freeing a NULL tree","the program is contained")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Freeing a N\+U\+LL tree\char`\"{}}]{, }
+\item[{\char`\"{}the program is contained\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_ad52052c336d92e3201f52ce8acd225d1}{}\label{Testa__Arvore_8cpp_ad52052c336d92e3201f52ce8acd225d1}
+
+
+Teste da função \textquotesingle{}Desconstroi\textquotesingle{} -\/ Apagando uma arvore inexistente. 
+
+Foi passada para a função \textquotesingle{}\hyperlink{Arvore_8c_ad33c2e638a0cc3819525d8cef7119cdb}{Desconstroi()}\textquotesingle{} uma arvore N\+U\+LL, o resultado esperado e criterio de aceitação é que o programa se contenha e que a arvore continue sendo N\+U\+LL. Todos os testes passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Reading a tree question"",""tree is unmodified and question is read"")}{TEST_CASE("Reading a tree question","tree is unmodified and question is read")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Reading a tree question\char`\"{}}]{, }
+\item[{\char`\"{}tree is unmodified and question is read\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a59de4e65331b095e8163209825ca73ad}{}\label{Testa__Arvore_8cpp_a59de4e65331b095e8163209825ca73ad}
+
+
+Teste da função Le -\/ lendo arvore existente. 
+
+Foi criada uma arvore por um arquivo txt existente e passado o ponteiro da arvore para a função \textquotesingle{}\hyperlink{Arvore_8c_ab7a6f0fdd0836b340bbad8c859b16dc4}{Le()}\textquotesingle{}, o criterio de aceitação é que a mensagem da pergunta apareça na tela e o ponteiro da arvore não seja alterado. Todos os testes passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Trying to read N\+U\+L\+L tree"",""Program is contained and function does nothing"")}{TEST_CASE("Trying to read NULL tree","Program is contained and function does nothing")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Trying to read N\+U\+LL tree\char`\"{}}]{, }
+\item[{\char`\"{}Program is contained and function does nothing\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a2cc69249e8bcba153203c611664fc490}{}\label{Testa__Arvore_8cpp_a2cc69249e8bcba153203c611664fc490}
+
+
+Teste da função Le -\/ lendo arvore inexistente. 
+
+Foi passado um ponteiro N\+U\+LL de arvore para a função \textquotesingle{}\hyperlink{Arvore_8c_ab7a6f0fdd0836b340bbad8c859b16dc4}{Le()}\textquotesingle{}, o criterio de aceitação é que função não fizesse nada e se contenha e o ponteiro da arvore não fosse alterado de N\+U\+LL. Todos os testes passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Trying to navigate to \textquotesingle{}-\/$>$sim\textquotesingle{} and \textquotesingle{}-\/$>$nao\textquotesingle{} and reading the question"",""Tree goes to specific navigation and reads the question"")}{TEST_CASE("Trying to navigate to '->sim' and '->nao' and reading the question","Tree goes to specific navigation and reads the question")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Trying to navigate to \textquotesingle{}-\/$>$sim\textquotesingle{} and \textquotesingle{}-\/$>$nao\textquotesingle{} and reading the question\char`\"{}}]{, }
+\item[{\char`\"{}Tree goes to specific navigation and reads the question\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a78c16933a4792de2cf02a5c402ee21be}{}\label{Testa__Arvore_8cpp_a78c16933a4792de2cf02a5c402ee21be}
+
+
+Testes de navegação (sim e nao) -\/ arvore existente. 
+
+Foi criada uma arvore por um arquivo txt, e inicializado as variaveis navegasim, naveganao e ainiciobackup com o endereço da arvore e verificado se todas continham o endereço da arvore, em seguida, foi feita a navegação Navega\+Sim em navegasim e Navega\+Nao em naveganao e o criterio de aceitação foi se o resultado dos ponteiros eram iguais aos ponteiros da arvore original no nó \textquotesingle{}sim\textquotesingle{} e \textquotesingle{}nao\textquotesingle{}, por fim, mais uma vez foi chamada as funções Navega\+Sim e Navega\+Nao e verificado se os nós eram N\+U\+LL (para checar se eram iguais à arvore original que é N\+U\+LL). Todos os testes e verificações foram bem sucedidas. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Trying to navigate to \textquotesingle{}-\/$>$sim\textquotesingle{} and \textquotesingle{}-\/$>$nao\textquotesingle{} whith N\+U\+L\+L tree"",""Program is contained and function returns 2"")}{TEST_CASE("Trying to navigate to '->sim' and '->nao' whith NULL tree","Program is contained and function returns 2")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Trying to navigate to \textquotesingle{}-\/$>$sim\textquotesingle{} and \textquotesingle{}-\/$>$nao\textquotesingle{} whith N\+U\+LL tree\char`\"{}}]{, }
+\item[{\char`\"{}Program is contained and function returns 2\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a0cee031fe604571f9858f44388743016}{}\label{Testa__Arvore_8cpp_a0cee031fe604571f9858f44388743016}
+
+
+Testes de navegação (sim e nao) -\/ arvore inexistente. 
+
+Para esse teste, foi criado um ponteiro N\+U\+LL, e feito a navegação de Navega\+Sim e Navega\+Nao passando como parametro o ponteiro N\+U\+LL, para criterio de aceitação, verifica-\/se se a função se conteve e se os ponteiros continuam sendo N\+U\+LL. Todos os testes e verificações foram bem sucedidos. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Creating/\+Opening a file (read) and (write)"",""Function opens/creates the file"")}{TEST_CASE("Creating/Opening a file (read) and (write)","Function opens/creates the file")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Creating/Opening a file (read) and (write)\char`\"{}}]{, }
+\item[{\char`\"{}Function opens/creates the file\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_ae555a574ec75624b4553a0a2b46cb7c6}{}\label{Testa__Arvore_8cpp_ae555a574ec75624b4553a0a2b46cb7c6}
+
+
+Teste da função \textquotesingle{}Cria\+Arquivo\textquotesingle{} -\/ arquivos existentes \char`\"{}r\char`\"{} e \char`\"{}w\char`\"{} e arquivos inexistentes. 
+
+Primeiramente é aberto um arquivo com a função \char`\"{}r\char`\"{}, e criado uma arvore a partir desse arquivo, o teste de aceitação é que todos os nós do arquivo sejam iguais à strings colocadas no teste. Em seguida, cria-\/se um arquivo com a função \char`\"{}w\char`\"{}, e é feito o teste de escrita, usando a função \textquotesingle{}Salva\+\_\+\+T\+XT\textquotesingle{} para salvar a arvore no arquivo de texto, o criterio de aceitação é a função se conter e o arquivo ser criado com sucesso. Por fim, checa-\/se a abertura de um arquivo inexistente (passando o nome de um arquivo que nao se encontra no computador), o criterio de aceitação é que o arquivo seja N\+U\+LL. Todos os testes e criterios passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Function that concatenates strings"",""Should concatenate the string"")}{TEST_CASE("Function that concatenates strings","Should concatenate the string")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Function that concatenates strings\char`\"{}}]{, }
+\item[{\char`\"{}Should concatenate the string\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a488caefe9ad92a7fe27b73d1f5ab81f6}{}\label{Testa__Arvore_8cpp_a488caefe9ad92a7fe27b73d1f5ab81f6}
+
+
+Testando a função \textquotesingle{}Constroi\+No\textquotesingle{} -\/ Concatenação de strings existente e inexistente. 
+
+São declaradas strings e feito criterios de aceitação, usando a função \textquotesingle{}strcmp\textquotesingle{} para comparar as strings concatenadas com strings digitadas no teste, testando inclusive a concatenação de duas strings vazias, sendo o resultado valido da concatenação string vazia. Todos os testes e criterios passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Testing user\textquotesingle{}s answers in game"",""Get only \textquotesingle{}sim\textquotesingle{}, \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}editar\textquotesingle{}, \textquotesingle{}apagar\textquotesingle{} answer and nothing else"")}{TEST_CASE("Testing user's answers in game","Get only 'sim', 'nao', 'editar', 'apagar' answer and nothing else")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Testing user\textquotesingle{}s answers in game\char`\"{}}]{, }
+\item[{\char`\"{}Get only \textquotesingle{}sim\textquotesingle{}}]{, }
+\item[{\textquotesingle{}nao\textquotesingle{}}]{, }
+\item[{\textquotesingle{}editar\textquotesingle{}}]{, }
+\item[{\textquotesingle{}apagar\textquotesingle{}answer and nothing else\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a948870d6e9e00c16977f7d751b67403b}{}\label{Testa__Arvore_8cpp_a948870d6e9e00c16977f7d751b67403b}
+
+
+Testando a função \textquotesingle{}Resposta\textquotesingle{} -\/ teste para o tipo \textquotesingle{}simples\textquotesingle{}, \textquotesingle{}multipla\textquotesingle{} e inicializacao. 
+
+Os testes são feitos ao passar todas as possiveis combinações (maiusculo ou minusculo) dos resultados das possiveis respostas, e feito uma comparação se a resposta é como a esperada. O criterio de aceitação é que todas as variaveis em todas as suas combinações possiveis de maiusculo e minusculo sejam reconhecidos, e que as mensagens de erro ao digitar um caracter invalido seja exibido de forma correta na tela. Todos os testes e requisitos passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Receiving null tree or object was not guessed by Vinte\+\_\+\+Perguntas"",""The function should be contained, should ask the user to add more questions if less than 20 answers"")}{TEST_CASE("Receiving null tree or object was not guessed by Vinte_Perguntas","The function should be contained, should ask the user to add more questions if less than 20 answers")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Receiving null tree or object was not guessed by {\bf Vinte\+\_\+\+Perguntas}\char`\"{}}]{, }
+\item[{\char`\"{}The function should be}]{contained, }
+\item[{should ask the user to add more questions if less than 20 answers\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_a74876aec2dbe751f844d19ef08dd9aa8}{}\label{Testa__Arvore_8cpp_a74876aec2dbe751f844d19ef08dd9aa8}
+
+
+Teste da função \textquotesingle{}Vinte\+\_\+\+Perguntas\textquotesingle{} -\/ Arvore inexistente. 
+
+Nesse teste, foi testado o comportamento da função \textquotesingle{}Vinte\+\_\+\+Perguntas\textquotesingle{} quando recebe uma arvore Null, sendo o primeiro requisito que a arvore continuasse N\+U\+LL, e que no segundo requisito que a arvore fosse criada (no minimo um nó). Todos os testes e requisitos passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Receiving 20 questions and testing \textquotesingle{}apagar\textquotesingle{} and \textquotesingle{}editar\textquotesingle{} in Vinte\+\_\+\+Perguntas"",""The function should ask the questions and navigate in the tree, and execute its functions \textquotesingle{}apagar\textquotesingle{}, \textquotesingle{}editar\textquotesingle{}"")}{TEST_CASE("Receiving 20 questions and testing 'apagar' and 'editar' in Vinte_Perguntas","The function should ask the questions and navigate in the tree, and execute its functions 'apagar', 'editar'")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Receiving 20 questions and testing \textquotesingle{}apagar\textquotesingle{} and \textquotesingle{}editar\textquotesingle{} in {\bf Vinte\+\_\+\+Perguntas}\char`\"{}}]{, }
+\item[{\char`\"{}The function should ask the questions and navigate in the}]{tree, }
+\item[{and execute its functions \textquotesingle{}apagar\textquotesingle{}}]{, }
+\item[{\textquotesingle{}editar\textquotesingle{}\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_adca0fdb9cafcd35fea4306937d1c1a08}{}\label{Testa__Arvore_8cpp_adca0fdb9cafcd35fea4306937d1c1a08}
+
+
+Teste da função \textquotesingle{}Vinte\+\_\+\+Perguntas\textquotesingle{} -\/ Arvore existente, cheia, edição, apagar. 
+
+Foi testado inicialmente o comportamento da função \textquotesingle{}Vinte\+\_\+\+Perguntas\textquotesingle{} ao receber e navegar até o final de uma arvore com as 20 perguntas preenchidas, o criterio de aceitação é que o jogo finalizasse se o usuario chegou ou não no objeto que ele estava pensando. O outro teste foi de edição do nó principal, o criterio de aceitação foi que a string editada seja igual à string digitada no teste, e por fim, foi testado diversas situações de apagar, sendo as situações de apagar o nó pai, apagar os nós filhos e desistir de apagar um nó, para cada situação, respectivamente o criterio de aceitação é que o nó pai seja N\+U\+LL, nós filhos sejam N\+U\+L\+Ls, nada ocorrece ao desistir de apagar e o jogo retorne normalmente na ultima pergunta não respondida (que foi tentada ser apagada). Todos os testes e requisitos passaram com sucesso. \index{Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}!T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}}
+\index{T\+E\+S\+T\+\_\+\+C\+A\+SE@{T\+E\+S\+T\+\_\+\+C\+A\+SE}!Testa\+\_\+\+Arvore.\+cpp@{Testa\+\_\+\+Arvore.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+E\+S\+T\+\_\+\+C\+A\+S\+E(""Creating childs at the end in \textquotesingle{}sim\textquotesingle{} and \textquotesingle{}nao\textquotesingle{}"",""Should normaly create childs"")}{TEST_CASE("Creating childs at the end in 'sim' and 'nao'","Should normaly create childs")}}]{\setlength{\rightskip}{0pt plus 5cm}T\+E\+S\+T\+\_\+\+C\+A\+SE (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Creating childs at the end in \textquotesingle{}sim\textquotesingle{} and \textquotesingle{}nao\textquotesingle{}\char`\"{}}]{, }
+\item[{\char`\"{}Should normaly create childs\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{Testa__Arvore_8cpp_af5868ed98ec7b8f5a83b88558c4e382d}{}\label{Testa__Arvore_8cpp_af5868ed98ec7b8f5a83b88558c4e382d}
+
+
+Teste da função \textquotesingle{}Pergunta\+\_\+\+Final\textquotesingle{}. 
+
+Foi aberto um arquivo txt e criado uma arvore, em seguida passada essa arvore para a função \textquotesingle{}Pergunta\+\_\+\+Final\textquotesingle{}, com o intuido da criação de um novo nó \textquotesingle{}sim\textquotesingle{} na arvore, o criterio de aceitação é que o nó fosse criado com sucesso e que seus filhos fossem N\+U\+LL, em seguida, novamente foi feito o mesmo teste só que para o nó \textquotesingle{}nao\textquotesingle{}, o criterio é que o nó \textquotesingle{}nao\textquotesingle{} seja existente e seus filhos sejam N\+U\+LL. Todos os testes passaram com sucesso. 
