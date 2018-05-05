@@ -8,7 +8,9 @@
  * @author Andre Garrido Damaceno
  * @brief Arquivo que contem a biblioteca de estruturação (execução) do jogo de 20 perguntas.
  *
- *Como esse arquivo contem a biblioteca de execução, necessita dos headers padrões,
+ */
+
+ /**Como esse arquivo contem a biblioteca de execução, necessita dos headers padrões,
  *de funções auxiliares, e de estruturação do jogo.
  */
 

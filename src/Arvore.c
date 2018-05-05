@@ -8,11 +8,13 @@
  * @author Andre Garrido Damaceno
  * @brief Arquivo que contem a biblioteca de manipulação e criação da arvore.
  *
- *Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de
+ */
+
+/**Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de
  *de funções auxiliares.
  */
 
-/**@brief Header de funções padrão, para I/O, manipulação de strings.
+/**@brief Header de funções padrão, para I/O, manipulação de strings e asserts.
 */
 #ifndef _Primary_libraries
   #define _Primary_libraries
@@ -20,6 +22,7 @@
     #include <stdlib.h>
     #include <ctype.h>
     #include <string.h>
+    #include <assert.h>
 #endif
 
 /**@brief Header da biblioteca de arvore.
@@ -41,12 +44,36 @@
 *Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação),
 *uma string 'char *no' para a informação a respeito do nó atual para o usuário, um inteiro 'int size', para impedir
 *a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo).
-*A função não retorna nenhum parametro. Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário,
-*sendo possível o usuário criar quantas perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser.
+*A função não retorna nenhum parametro.
+
+*Descrição: Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário,sendo possível o usuário criar quantas
+*perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser.
 *Caso haja erro de alocação de memória em 'Constroi_Manual' ou nas funções que ela chama, o programa é encerrado com erro.
+*
+*Assertivas de entrada: string 'no' não ser null, size ser no máximo 20.
+*
+*Requisitos: A função deve criar uma árvore binária com todas as perguntas inseridas pelo usuario, mostrando para o usuário sempre,
+*o lugar da árvore em que ele está. Deve também inserir apenas no máximo 20 níveis de perguntas.
+*
+*Hipóteses: A árvore tem o tamanho alocado ideal, a string tem seu tamanho alocado ideal, a arvore deve possuir apenas 20 níveis de
+*perguntas. Ao final, toda memória alocada para a string deve ser liberada, apenas a memoria alocada da arvore deve se manter.
+*
+*Assertivas de saida: alocações internas para strings desalocadas e a árvore não seja NULL.
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual
+*e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta,
+*dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore.
+*
 */
 void Constroi_Manual (arvore **ainicio, char *no, int size)
 {
+  assert(size < 21); //Certifica que no máximo serão inseridos 20 níveis.
+  assert(no != NULL); //Certifica que a string nunca é nula.
+
   if(size < 20)  //Verifica se ja foram inseridas 20 perguntas em um nó
   {
     char pergunta[100];  //Variavel que armazena a pergunta
@@ -80,9 +107,12 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
         noFilho = ConstroiNo(no, fSim);  //Concatenação da string sim
         Constroi_Manual (&((*ainicio)->sim), noFilho, (size + 1));  //Constroi para a esquerda (sim)
         free(noFilho);  //Remove a concatenação feita
+        noFilho = NULL;
         noFilho = ConstroiNo(no, fNao);  //Concatenação para a string nao
         Constroi_Manual (&((*ainicio)->nao), noFilho, (size + 1));  //Constroi para a direita (nao)
         free(noFilho);  //Remove a concatenação feita
+        noFilho = NULL;
+        assert(noFilho == NULL); //As strings alocadas sejam desalocadas
       }
       else  //Caso haja problema na alocação da arvore
       {
@@ -95,6 +125,11 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
     *ainicio = NULL;
   }
 
+  if(size == 0)
+  {
+    assert(*ainicio != NULL); //Checa se a árvore possui ao menos um nó
+  }
+
   return;
 }
 
@@ -102,8 +137,27 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
 *
 *Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação)
 *e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro.
-*Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados
+*
+*Descrição: Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados
 *por pontos '.'. Caso haja erro de alocação de memória em 'Constroi_TXT' o programa é encerrado com erro.
+*
+*Assertivas de entrada: a função deve receber um arquivo não nulo.
+*
+*Requisitos: A função deve criar uma árvore binária de acordo com o arquivo de txt passado como parâmetro.
+*
+*Hipoteses: O tamanho da árvore é alocado com o tamanho correto, o arquivo txt é lido de forma correta.
+*Ao final, deve ser alocada uma árvore em memória idêntica à árvore encontrada no arquivo txt.
+*
+*Assertivas de saida: Não há, pois o arquivo pode criar a árvore, ou ele ser em branco, não criando a árvore.
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, um arquivo de texto não nulo.
+*A função deve criar ou aumentar os nós da árvore de acordo com o arquivo txt (sendo possível inclusive não
+*criar nenhum nó ou árvore, caso o arquivo txt esteja em branco).
+*
 */
 void Constroi_TXT (arvore **ainicio, FILE *arq)
 {

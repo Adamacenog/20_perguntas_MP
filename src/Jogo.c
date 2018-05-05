@@ -8,7 +8,9 @@
  * @author Andre Garrido Damaceno
  * @brief Arquivo que contem a Main e uma função de chamadas para executar o jogo.
  *
- *Como esse arquivo contem a função que inicializa o jogo, são necessários todos arquivos
+ */
+
+ /**Como esse arquivo contem a função que inicializa o jogo, são necessários todos arquivos
  *headers que o programa utiliza.
  */
 

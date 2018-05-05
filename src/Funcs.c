@@ -8,7 +8,9 @@
  * @author Andre Garrido Damaceno
  * @brief Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar).
  *
- *Como esse arquivo contem apenas funções auxiliares, necessita apenas dos headers padrões.
+ */
+ 
+/**Como esse arquivo contem apenas funções auxiliares, necessita apenas dos headers padrões.
  */
 
 /**@brief Header de funções padrão, para I/O, manipulação de strings.
