@@ -72,7 +72,7 @@ FILE * CriaArquivo(char *type, char *opcao)
 
   if(arq == NULL)
   {
-    printf("Arquivo não encontrado!\n");
+    printf("\nArquivo não encontrado!\n");
   }
 
   return arq;

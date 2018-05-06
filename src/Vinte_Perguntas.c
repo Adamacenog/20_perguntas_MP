@@ -22,6 +22,7 @@
     #include <stdlib.h>
     #include <ctype.h>
     #include <string.h>
+    #include <assert.h>
 #endif
 
 /**@brief Header da biblioteca de arvore.
@@ -47,34 +48,43 @@
 
 /**@brief Função para pegar o input especifico de opções do usuario.
 *
-*Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção
+*Parametros: Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção
 *que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.
-*Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo
-*da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de
-*'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'.
-*Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e
+*
+*Tratamento de erros: Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e
 *dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta
 *do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres),
 * apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de
 *erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper).
 *
-*Assertivas de entrada:
+*Descrição: Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo
+*da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de
+*'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'.
 *
-*Requisitos:
+*Assertivas de entrada: O valor de entrada deve estar entre 0 (pergunta multipla) e 2 (pergunta de inicialização).
 *
-*Hipoteses:
+*Requisitos: A função deve receber a resposta do usuário de acordo com o contexto (se é uma pergunta multipla,
+*de inicialização ou simples), e retornar uma resposta válida apenas. A função deve ficar perguntando ao usuário
+*até que uma resposta válida seja respondida.
 *
-*Assertivas de saida:
+*Hipoteses: A leitura da opção é feita de forma correta, de acordo com o tamanho do vetor que fica armazenada a
+*resposta do usuário. O loop é feito apenas quando há uma resposta incorreta, saindo dele sempre que a resposta
+*correta ser respondida.
+*
+*Assertivas de saida: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).
 *
 *Interface explicita:
 *
 *Interface implicita:
 *
-*Contrato na especificação:
+*Contrato na especificação: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta
+*do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta
+*válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida.
 *
 */
-int Resposta(int tipo)
+int Resposta(unsigned int tipo)
 {
+  assert(tipo < 3);
   do
   {
     char resposta[8];  //Variavel que armazena a resposta do usuario
@@ -111,33 +121,44 @@ int Resposta(int tipo)
 
 /**@brief Função de execução do programa.
 *
-*Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anavega'
+*Parametros: Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anavega'
 *(para as possiveis mudanças na arvore como apagar, editar, navegar e criar novos nós) e
 *um inteiro 'int numero_respostas', para saber quantas perguntas ja foram respondidas pelo usuario.
-*Essa função não retorna nenhum parametro. A função inicialmente alerta ao usuário que o jogo irá
-*começar e analisa se a arvore é vazia ou o numero_respostas é menor que 19 (ja foram respondidas
-*20 perguntas). Em seguida é lida a pergunta para o usuário e ele pode navegar pelas perguntas
-*(respondendo 'sim' ou 'nao') ou editar/apagar uma pergunta. No fim, é perguntado ao usuário se
-*seu objeto pensado foi descoberto. Caso tenha sido, o jogo é finalizado, caso não tenha sido e
-*o usuário ainda não tenha respondido 20 perguntas, é perguntado se o usuário deseja inserir mais
-*perguntas para o programa descobrir o objeto. Ao fim das inserções, o jogo recomeça a partir do ponto
-*da ultima pergunta respondida pelo usuário. Como essa função de execução utiliza a maior parte de todas
-*as funções criadas, os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi
-*desenvolvida para conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer.
+*Essa função não retorna nenhum parametro.
 *
-*Assertivas de entrada:
+*Tratamento de erros: Como essa função de execução utiliza a maior parte de todas as funções criadas,
+*os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi desenvolvida para
+*conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer.
 *
-*Requisitos:
+*Descrição: A função inicialmente alerta ao usuário que o jogo irá começar e analisa se a arvore
+*é vazia ou o numero_respostas é menor que 19 (ja foram respondidas 20 perguntas). Em seguida é
+*lida a pergunta para o usuário e ele pode navegar pelas perguntas (respondendo 'sim' ou 'nao') ou
+*editar/apagar uma pergunta. No fim, é perguntado ao usuário se seu objeto pensado foi descoberto.
+*Caso tenha sido, o jogo é finalizado, caso não tenha sido e o usuário ainda não tenha respondido 20
+*perguntas, é perguntado se o usuário deseja inserir mais perguntas para o programa descobrir o objeto.
+*Ao fim das inserções, o jogo recomeça a partir do ponto da ultima pergunta respondida pelo usuário.
 *
-*Hipoteses:
+*numero_respostas menor que 21
 *
-*Assertivas de saida:
+*Requisitos: A função deve percorrer as perguntas da árvore de acordo com as respostas do usuário,
+*também ter a capacidade de verificar se ja foram respondidas 20 perguntas. Ao fim, também oferecer
+*a opção de inserir mais perguntas caso ainda não tenham sido respondidas as 20, e a resposta não tenha
+*sido encontrada.
+*
+*Hipoteses: As alocações de memória são feitas com o tamanho ideal e de forma correta, as navegações com
+*os ponteiros são feitas de forma adequada.
+*
+*Assertivas de saida: Não há.
 *
 *Interface explicita:
 *
 *Interface implicita:
 *
-*Contrato na especificação:
+*Contrato na especificação: A função recebe a árvore com as perguntas e a quantidade de respostas já respondidas,
+*ela deve então navegar na árvore de acordo com as respostas do usuário, até o fim da árvore (onde pode ser que
+*tenha ou não a resposta do objeto pensado pelo usuário). Caso não chegue na resposta e não tenham sido respondidas
+*20 perguntas ainda, a função dá a opção de inserir mais perguntas até que a resposta seja alcançada ou as 20 perguntas
+*sejam criadas.
 *
 */
 void Vinte_Perguntas(arvore **anavega, int numero_respostas)
@@ -145,7 +166,7 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
   int opcao;  //Variavel com a resposta do usuario ('sim', 'nao', 'editar', 'apagar')
   arvore *ainicio,*anterior = NULL;  /*ainicio - guarda o endereço do inicio da arvore,
                                       anterior - guarda o endereço da jogada anterior feita*/
-
+  assert(numero_respostas < 21);
   printf("\nO jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'\n\n");
   ainicio = (*anavega);  //Coloca-se o endereço do inicio da arvore em ainicio
   Le(*anavega);  //A primeira pergunta é lida
@@ -223,27 +244,38 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
 
 /**@brief Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas).
 *
-*Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anterior', o endereço do apontador do inicio
+*Parametros: Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anterior', o endereço do apontador do inicio
 *da arvore 'arvore **ainicio', o numero de perguntas ja respondidas 'int numero_respostas' e a última opção selecionada 'int opcao'.
-*A função não retorna nenhum parametro. Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto
-*que o usuário pensava. Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha
-*respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas
-*as 20 perguntas). Os casos de erro são os mesmos das funções 'Vinte_Perguntas()' e 'Constroi_Manual()', pois depende dessas funções e de alocação
+*A função não retorna nenhum parametro.
+*
+*Tratamento de erros: Os casos de erro são os mesmos das funções 'Vinte_Perguntas()' e 'Constroi_Manual()', pois depende dessas funções e de alocação
 *de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação.
 *
-*Assertivas de entrada:
+*Descrição: Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto que o usuário pensava.
+*Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha respondido menos
+*que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas as 20 perguntas).
 *
-*Requisitos:
+*Assertivas de entrada: numero_respostas deve ser menor que 21, apontador da árvore 'anterior' não pode ser NULL.
 *
-*Hipoteses:
+*Requisitos: A função deve verificar se o usuário achou a resposta e se ja foram respondidas as 20 perguntas. Caso ainda não tenha
+*chegado na resposta e ja tenha sido respondidas 20 perguntas, nada ocorre. Caso não tenha chegado na resposta e ainda não tenham sido
+*respondidas as 20 perguntas, o usuário tem a opção de inserir mais perguntas até que as 20 perguntas sejam completadas, por fim o jogo retorna.
+*Caso já tenha achado a resposta do objeto pensado pelo usuário, o programa finaliza.
 *
-*Assertivas de saida:
+*
+*Hipoteses: Todas as memórias alocadas são feitas com o tamanho e a forma adequada, as navegações com os ponteiros são feitas de
+*forma correta e com cuidado para não se perder as referências.
+*
+*Assertivas de saida: Não há.
 *
 *Interface explicita:
 *
 *Interface implicita:
 *
-*Contrato na especificação:
+*Contrato na especificação: A função deve verificar se o usuário já chegou na resposta desejada, caso ja tenha, uma mensagem
+*é exibida. Caso ainda não tenha chegado, verifica-se se já foram respondidas 20 perguntas. Caso ja tenha sido respondido,
+*é exibida uma mensagem de consolo. Caso contrário, é disponibilizada uma opção de inserir mais perguntas para se chegar na
+*resposta (com o limite de 20 perguntas no total). No final, o jogo retorna na útlima pergunta respondida (que não tinha a resposta).
 *
 */
 void Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, int opcao)

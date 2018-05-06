@@ -1,0 +1,1 @@
+Deve-se abrir o diretório ..\20_perguntas_MP\src no terminal, digitar 'doxygen Doxyfile', por fim abrir o diretório ..\20_perguntas_MP\src\latex no terminal e digitar 'make', sendo o pdf criado com o nome 'refman.pdf'.

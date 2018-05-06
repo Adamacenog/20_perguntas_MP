@@ -139,6 +139,11 @@ void Jogo_init(void)
     {
         fclose(arq);
     }
+    else
+    {
+      opcao = Rcriar;
+      printf("Criando jogo manualmente...\n");
+    }
   }
   if(opcao == Rcriar)
   {
