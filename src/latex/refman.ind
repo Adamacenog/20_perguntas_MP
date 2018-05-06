@@ -2,9 +2,9 @@
 
   \item {\+\_\+\+Primary\+\_\+libraries}
     \subitem {Arvore.\+c}, \hyperpage{4}
-    \subitem {Funcs.\+c}, \hyperpage{7}
-    \subitem {Jogo.\+c}, \hyperpage{9}
-    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{16}
+    \subitem {Funcs.\+c}, \hyperpage{9}
+    \subitem {Jogo.\+c}, \hyperpage{11}
+    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{18}
 
   \indexspace
 
@@ -13,23 +13,23 @@
     \subitem {Constroi\+\_\+\+Manual}, \hyperpage{4}
     \subitem {Constroi\+\_\+\+T\+XT}, \hyperpage{5}
     \subitem {Desconstroi}, \hyperpage{5}
-    \subitem {Le}, \hyperpage{5}
+    \subitem {Le}, \hyperpage{6}
     \subitem {Navega\+Nao}, \hyperpage{6}
-    \subitem {Navega\+Sim}, \hyperpage{6}
-    \subitem {Salva\+\_\+\+T\+XT}, \hyperpage{6}
+    \subitem {Navega\+Sim}, \hyperpage{7}
+    \subitem {Salva\+\_\+\+T\+XT}, \hyperpage{7}
 
   \indexspace
 
   \item {C\+A\+T\+C\+H\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+IN}
-    \subitem {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{11}
+    \subitem {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{14}
   \item {Constroi\+\_\+\+Manual}
     \subitem {Arvore.\+c}, \hyperpage{4}
   \item {Constroi\+\_\+\+T\+XT}
     \subitem {Arvore.\+c}, \hyperpage{5}
   \item {Constroi\+No}
-    \subitem {Funcs.\+c}, \hyperpage{7}
+    \subitem {Funcs.\+c}, \hyperpage{9}
   \item {Cria\+Arquivo}
-    \subitem {Funcs.\+c}, \hyperpage{7}
+    \subitem {Funcs.\+c}, \hyperpage{9}
 
   \indexspace
 
@@ -38,69 +38,69 @@
 
   \indexspace
 
-  \item {Funcs.\+c}, \hyperpage{6}
-    \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{7}
-    \subitem {Constroi\+No}, \hyperpage{7}
-    \subitem {Cria\+Arquivo}, \hyperpage{7}
+  \item {Funcs.\+c}, \hyperpage{8}
+    \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{9}
+    \subitem {Constroi\+No}, \hyperpage{9}
+    \subitem {Cria\+Arquivo}, \hyperpage{9}
 
   \indexspace
 
-  \item {Jogo.\+c}, \hyperpage{8}
-    \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{9}
-    \subitem {Jogo\+\_\+init}, \hyperpage{9}
-    \subitem {main}, \hyperpage{9}
+  \item {Jogo.\+c}, \hyperpage{10}
+    \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{11}
+    \subitem {Jogo\+\_\+init}, \hyperpage{11}
+    \subitem {main}, \hyperpage{11}
   \item {Jogo\+\_\+init}
-    \subitem {Jogo.\+c}, \hyperpage{9}
+    \subitem {Jogo.\+c}, \hyperpage{11}
 
   \indexspace
 
   \item {Le}
-    \subitem {Arvore.\+c}, \hyperpage{5}
+    \subitem {Arvore.\+c}, \hyperpage{6}
 
   \indexspace
 
   \item {main}
-    \subitem {Jogo.\+c}, \hyperpage{9}
+    \subitem {Jogo.\+c}, \hyperpage{11}
 
   \indexspace
 
   \item {Navega\+Nao}
     \subitem {Arvore.\+c}, \hyperpage{6}
   \item {Navega\+Sim}
-    \subitem {Arvore.\+c}, \hyperpage{6}
+    \subitem {Arvore.\+c}, \hyperpage{7}
 
   \indexspace
 
   \item {Pergunta\+\_\+\+Final}
-    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{16}
+    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{19}
 
   \indexspace
 
   \item {Resposta}
-    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{16}
+    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{19}
 
   \indexspace
 
   \item {Salva\+\_\+\+T\+XT}
-    \subitem {Arvore.\+c}, \hyperpage{6}
+    \subitem {Arvore.\+c}, \hyperpage{7}
 
   \indexspace
 
   \item {T\+E\+S\+T\+\_\+\+C\+A\+SE}
-    \subitem {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{11--14}
-  \item {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{9}
+    \subitem {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{14--17}
+  \item {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{12}
     \subitem {C\+A\+T\+C\+H\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+IN}, 
-		\hyperpage{11}
-    \subitem {T\+E\+S\+T\+\_\+\+C\+A\+SE}, \hyperpage{11--14}
+		\hyperpage{14}
+    \subitem {T\+E\+S\+T\+\_\+\+C\+A\+SE}, \hyperpage{14--17}
 
   \indexspace
 
   \item {Vinte\+\_\+\+Perguntas}
-    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{16}
-  \item {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{15}
-    \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{16}
-    \subitem {Pergunta\+\_\+\+Final}, \hyperpage{16}
-    \subitem {Resposta}, \hyperpage{16}
-    \subitem {Vinte\+\_\+\+Perguntas}, \hyperpage{16}
+    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{19}
+  \item {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{17}
+    \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{18}
+    \subitem {Pergunta\+\_\+\+Final}, \hyperpage{19}
+    \subitem {Resposta}, \hyperpage{19}
+    \subitem {Vinte\+\_\+\+Perguntas}, \hyperpage{19}
 
 \end{theindex}

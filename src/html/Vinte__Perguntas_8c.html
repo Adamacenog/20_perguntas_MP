@@ -100,8 +100,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 Gráfico de dependência de inclusões para Vinte_Perguntas.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="Vinte__Perguntas_8c__incl.png" border="0" usemap="#Vinte__Perguntas_8c" alt=""/></div>
-<map name="Vinte__Perguntas_8c" id="Vinte__Perguntas_8c">
-</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -191,7 +189,14 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas). </p>
-<p>Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anterior', o endereço do apontador do inicio da arvore 'arvore **ainicio', o numero de perguntas ja respondidas 'int numero_respostas' e a última opção selecionada 'int opcao'. A função não retorna nenhum parametro. Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto que o usuário pensava. Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas as 20 perguntas). Os casos de erro são os mesmos das funções '<a class="el" href="Vinte__Perguntas_8c.html#a50cd5030c633ddd0c6cc9bcfb9adfd88" title="Função de execução do programa. ">Vinte_Perguntas()</a>' e '<a class="el" href="Arvore_8c.html#a11bdc8462ac661708ec7dfc6209ad039" title="Função de criação da arvore de forma manual. ">Constroi_Manual()</a>', pois depende dessas funções e de alocação de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação. </p>
+<p>Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anterior', o endereço do apontador do inicio da arvore 'arvore **ainicio', o numero de perguntas ja respondidas 'int numero_respostas' e a última opção selecionada 'int opcao'. A função não retorna nenhum parametro. Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto que o usuário pensava. Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas as 20 perguntas). Os casos de erro são os mesmos das funções '<a class="el" href="Vinte__Perguntas_8c.html#a50cd5030c633ddd0c6cc9bcfb9adfd88" title="Função de execução do programa. ">Vinte_Perguntas()</a>' e '<a class="el" href="Arvore_8c.html#a11bdc8462ac661708ec7dfc6209ad039" title="Função de criação da arvore de forma manual. ">Constroi_Manual()</a>', pois depende dessas funções e de alocação de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação.</p>
+<p>Assertivas de entrada:</p>
+<p>Requisitos:</p>
+<p>Hipoteses:</p>
+<p>Assertivas de saida:</p>
+<p>Interface explicita:</p>
+<p>Interface implicita:</p>
+<p>Contrato na especificação: </p>
 
 </div>
 </div>
@@ -210,7 +215,14 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função para pegar o input especifico de opções do usuario. </p>
-<p>Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario. Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de 'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'. Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres), apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper). </p>
+<p>Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario. Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de 'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'. Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres), apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper).</p>
+<p>Assertivas de entrada:</p>
+<p>Requisitos:</p>
+<p>Hipoteses:</p>
+<p>Assertivas de saida:</p>
+<p>Interface explicita:</p>
+<p>Interface implicita:</p>
+<p>Contrato na especificação: </p>
 
 </div>
 </div>
@@ -239,7 +251,14 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função de execução do programa. </p>
-<p>Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anavega' (para as possiveis mudanças na arvore como apagar, editar, navegar e criar novos nós) e um inteiro 'int numero_respostas', para saber quantas perguntas ja foram respondidas pelo usuario. Essa função não retorna nenhum parametro. A função inicialmente alerta ao usuário que o jogo irá começar e analisa se a arvore é vazia ou o numero_respostas é menor que 19 (ja foram respondidas 20 perguntas). Em seguida é lida a pergunta para o usuário e ele pode navegar pelas perguntas (respondendo 'sim' ou 'nao') ou editar/apagar uma pergunta. No fim, é perguntado ao usuário se seu objeto pensado foi descoberto. Caso tenha sido, o jogo é finalizado, caso não tenha sido e o usuário ainda não tenha respondido 20 perguntas, é perguntado se o usuário deseja inserir mais perguntas para o programa descobrir o objeto. Ao fim das inserções, o jogo recomeça a partir do ponto da ultima pergunta respondida pelo usuário. Como essa função de execução utiliza a maior parte de todas as funções criadas, os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi desenvolvida para conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer. </p>
+<p>Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anavega' (para as possiveis mudanças na arvore como apagar, editar, navegar e criar novos nós) e um inteiro 'int numero_respostas', para saber quantas perguntas ja foram respondidas pelo usuario. Essa função não retorna nenhum parametro. A função inicialmente alerta ao usuário que o jogo irá começar e analisa se a arvore é vazia ou o numero_respostas é menor que 19 (ja foram respondidas 20 perguntas). Em seguida é lida a pergunta para o usuário e ele pode navegar pelas perguntas (respondendo 'sim' ou 'nao') ou editar/apagar uma pergunta. No fim, é perguntado ao usuário se seu objeto pensado foi descoberto. Caso tenha sido, o jogo é finalizado, caso não tenha sido e o usuário ainda não tenha respondido 20 perguntas, é perguntado se o usuário deseja inserir mais perguntas para o programa descobrir o objeto. Ao fim das inserções, o jogo recomeça a partir do ponto da ultima pergunta respondida pelo usuário. Como essa função de execução utiliza a maior parte de todas as funções criadas, os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi desenvolvida para conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer.</p>
+<p>Assertivas de entrada:</p>
+<p>Requisitos:</p>
+<p>Hipoteses:</p>
+<p>Assertivas de saida:</p>
+<p>Interface explicita:</p>
+<p>Interface implicita:</p>
+<p>Contrato na especificação: </p>
 
 </div>
 </div>

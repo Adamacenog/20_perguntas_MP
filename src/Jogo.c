@@ -56,6 +56,21 @@
 *
 *A main apenas chama a função de inicialização 'Jogo_init()',
 *que chama as funções do jogo em ordem lógica para sua execução normal.
+*
+*Assertivas de entrada:
+*
+*Requisitos:
+*
+*Hipoteses:
+*
+*Assertivas de saida:
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação:
+*
 */
 int main()
 {
@@ -71,6 +86,21 @@ int main()
 *Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null, eventualmente
 *havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão,
 *ou o programa finalizará com erro.
+*
+*Assertivas de entrada:
+*
+*Requisitos:
+*
+*Hipoteses:
+*
+*Assertivas de saida:
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação:
+*
 */
 void Jogo_init(void)
 {

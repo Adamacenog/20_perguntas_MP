@@ -12,8 +12,7 @@ Arquivo que contem a biblioteca de manipulação e criação da arvore.
 {\ttfamily \#include $<$assert.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}Arvore.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Funcs.\+h\char`\"{}}\\*
-Gráfico de dependência de inclusões para Arvore.\+c\+:
-\nopagebreak
+Gráfico de dependência de inclusões para Arvore.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -82,9 +81,11 @@ Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões 
 
 Função de criação da arvore de forma manual. 
 
-Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação), uma string \textquotesingle{}char $\ast$no\textquotesingle{} para a informação a respeito do nó atual para o usuário, um inteiro \textquotesingle{}int size\textquotesingle{}, para impedir a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo). A função não retorna nenhum parametro.
+Parâmetros\+: Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação), uma string \textquotesingle{}char $\ast$no\textquotesingle{} para a informação a respeito do nó atual para o usuário, um inteiro \textquotesingle{}int size\textquotesingle{}, para impedir a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo). A função não retorna nenhum parametro.
 
-Descrição\+: Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário,sendo possível o usuário criar quantas perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser. Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+Manual\textquotesingle{} ou nas funções que ela chama, o programa é encerrado com erro.
+Tratamento de Erros\+: Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+Manual\textquotesingle{} ou nas funções que ela chama, o programa é encerrado com erro.
+
+Descrição\+: Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário,sendo possível o usuário criar quantas perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser.
 
 Assertivas de entrada\+: string \textquotesingle{}no\textquotesingle{} não ser null, size ser no máximo 20.
 
@@ -110,9 +111,11 @@ Contrato na especificação\+: A função deve receber uma árvore vazia ou inco
 
 Função de criação da arvore por .txt. 
 
-Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação) e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro.
+Parametros\+: Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação) e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro.
 
-Descrição\+: Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados por pontos \textquotesingle{}.\textquotesingle{}. Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} o programa é encerrado com erro.
+Tratamento de erros\+: Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} o programa é encerrado com erro.
+
+Descrição\+: Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados por pontos \textquotesingle{}.\textquotesingle{}.
 
 Assertivas de entrada\+: a função deve receber um arquivo não nulo.
 
@@ -137,7 +140,25 @@ Contrato na especificação\+: A função deve receber uma árvore vazia ou inco
 
 Função para apagar a arvore da memória. 
 
-Essa função recebe como parametro o endereço do ponteiro da arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} e não retorna nenhum parametro. A função navega recursivamente para o ultimo nó sim, em seguida o ultimo nó nao, e vai apagando a arvore. A função checa se o nó é N\+U\+LL, para evitar erros e conseguir apagar de forma recursiva. Caso seja inserido um nó invalido não N\+U\+LL, pode ser que ocorra um erro de Seg\+Fault. \index{Arvore.\+c@{Arvore.\+c}!Le@{Le}}
+Parametros\+: Essa função recebe como parametro o endereço do ponteiro da arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} e não retorna nenhum parametro.
+
+Tratamento de erros\+: Caso seja inserido um nó invalido não N\+U\+LL, pode ser que ocorra um erro de Seg\+Fault.
+
+Descrição\+: A função navega recursivamente para o ultimo nó sim, em seguida o ultimo nó nao, e vai apagando a arvore. A função checa se o nó é N\+U\+LL, para evitar erros e conseguir apagar de forma recursiva.
+
+Assertivas de entrada\+: Nó da árvore válido (não N\+U\+LL)
+
+Requisitos\+: A função deve receber uma árvore não nula, e apagar todos seus nós, liberando toda a memória alocada da árvore.
+
+Hipoteses\+: A funçaõ verifica adequadamente os nós da árvore, sempre libera a memória de forma adequada.
+
+Assertivas de saida\+: Nó da árvore ser N\+U\+LL.
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função deve receber um endereço de árvore alocado na memória, e deve então desalocar toda a memória alocada pela árvore, liberando todos os nós. \index{Arvore.\+c@{Arvore.\+c}!Le@{Le}}
 \index{Le@{Le}!Arvore.\+c@{Arvore.\+c}}
 \subsubsection[{\texorpdfstring{Le(arvore $\ast$a1)}{Le(arvore *a1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Le (
 \begin{DoxyParamCaption}
@@ -148,7 +169,25 @@ Essa função recebe como parametro o endereço do ponteiro da arvore \textquote
 
 Função para a leitura da pergunta no nó da Arvore. 
 
-Essa função recebe como parametro um ponteiro de arvore \textquotesingle{}arvore $\ast$a1\textquotesingle{}, não retorna nenhum parametro. A função apenas checa se o ponteiro é valido, caso seja, imprime na tela a pergunta. Caso o ponteiro não seja valido (N\+U\+LL), a função não faz nada (não havendo erros). \index{Arvore.\+c@{Arvore.\+c}!Navega\+Nao@{Navega\+Nao}}
+Parametros\+: Essa função recebe como parametro um ponteiro de arvore \textquotesingle{}arvore $\ast$a1\textquotesingle{}, não retorna nenhum parametro.
+
+Tratamento de erros\+: Caso o ponteiro não seja valido (N\+U\+LL), a função não faz nada (não havendo erros).
+
+Descrição\+: A função apenas checa se o ponteiro é valido, caso seja, imprime na tela a pergunta.
+
+Assertivas de entrada\+: Ponteiro da árvore válido (não N\+U\+LL).
+
+Requisitos\+: A função deve receber uma árvore não nula e imprimir a pergunta que se encontra no nó.
+
+Hipoteses\+: A função verifica se a árvore é ou não válida e imprime apenas as perguntas de nós validos.
+
+Assertivas de saida\+: não há.
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função recebe uma árvore como parametro, verifica se ela é valida, apenas caso ela seja válida a função imprime a pergunta do nó. Caso não seja valida nada acontece. \index{Arvore.\+c@{Arvore.\+c}!Navega\+Nao@{Navega\+Nao}}
 \index{Navega\+Nao@{Navega\+Nao}!Arvore.\+c@{Arvore.\+c}}
 \subsubsection[{\texorpdfstring{Navega\+Nao(arvore $\ast$$\ast$pergunta)}{NavegaNao(arvore **pergunta)}}]{\setlength{\rightskip}{0pt plus 5cm}void Navega\+Nao (
 \begin{DoxyParamCaption}
@@ -159,7 +198,25 @@ Essa função recebe como parametro um ponteiro de arvore \textquotesingle{}arvo
 
 Função para a navegação e leitura da pergunta para o nó \textquotesingle{}nao\textquotesingle{} da arvore. 
 
-Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum parametro. A função checa se o nó atual é valido e se o nó \textquotesingle{}nao\textquotesingle{} é valido, caso sejam, o apontador passa a apontar para o nó \textquotesingle{}nao\textquotesingle{} e a pergunta é lida. Caso em algum ponto o nó seja N\+U\+LL, a função não faz nada, apenas retorna. \index{Arvore.\+c@{Arvore.\+c}!Navega\+Sim@{Navega\+Sim}}
+Parametros\+: Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum parametro.
+
+Tratamento de erros\+: Caso em algum ponto o nó seja N\+U\+LL, a função não faz nada, apenas retorna.
+
+Descrição\+: A função checa se o nó atual é valido e se o nó \textquotesingle{}nao\textquotesingle{} é valido, caso sejam, o apontador passa a apontar para o nó \textquotesingle{}nao\textquotesingle{} e a pergunta é lida.
+
+Assertivas de entrada\+: A árvore recebida como parametro e o nó que será navegado não podem ser N\+U\+LL.
+
+Requisitos\+: A função deve navegar para o nó \textquotesingle{}nao\textquotesingle{} da arvore recebida como parametro, em seguida ler a pergunta desse nó.
+
+Hipoteses\+: A função lê apenas perguntas validas com nós validos.
+
+Assertivas de saida\+: não há, pois o nó pode .
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função deve receber um nó de árvore, avaliar se ele é valido (não N\+U\+LL), caso seja válido verificar o nó \textquotesingle{}nao\textquotesingle{}, caso o nó \textquotesingle{}nao\textquotesingle{} seja válido, navega para ele e imprime a pergunta do nó. \index{Arvore.\+c@{Arvore.\+c}!Navega\+Sim@{Navega\+Sim}}
 \index{Navega\+Sim@{Navega\+Sim}!Arvore.\+c@{Arvore.\+c}}
 \subsubsection[{\texorpdfstring{Navega\+Sim(arvore $\ast$$\ast$pergunta)}{NavegaSim(arvore **pergunta)}}]{\setlength{\rightskip}{0pt plus 5cm}void Navega\+Sim (
 \begin{DoxyParamCaption}
@@ -170,7 +227,25 @@ Essa função recebe como parametro o endereço do ponteiro da arvore, e não re
 
 Função para a navegação e leitura da pergunta para o nó \textquotesingle{}sim\textquotesingle{} da arvore. 
 
-Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum parametro. A função checa se o nó atual é valido e se o nó \textquotesingle{}sim\textquotesingle{} é valido, caso sejam, o apontador passa a apontar para o nó \textquotesingle{}sim\textquotesingle{} e a pergunta é lida. Caso em algum ponto o nó seja N\+U\+LL, a função não faz nada, apenas retorna. \index{Arvore.\+c@{Arvore.\+c}!Salva\+\_\+\+T\+XT@{Salva\+\_\+\+T\+XT}}
+Parametros\+: Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum parametro.
+
+Tratamento de erros\+: Caso em algum ponto o nó seja N\+U\+LL, a função não faz nada, apenas retorna.
+
+Descrição\+: A função checa se o nó atual é valido e se o nó \textquotesingle{}sim\textquotesingle{} é valido, caso sejam, o apontador passa a apontar para o nó \textquotesingle{}sim\textquotesingle{} e a pergunta é lida.
+
+Assertivas de entrada\+: A árvore recebida como parametro e o nó que será navegado não podem ser N\+U\+LL.
+
+Requisitos\+: A função deve navegar para o nó \textquotesingle{}sim\textquotesingle{} da arvore recebida como parametro, em seguida ler a pergunta desse nó.
+
+Hipoteses\+: A função lê apenas perguntas validas com nós validos.
+
+Assertivas de saida\+: não há, pois o nó pode .
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função deve receber um nó de árvore, avaliar se ele é valido (não N\+U\+LL), caso seja válido verificar o nó \textquotesingle{}sim\textquotesingle{}, caso o nó \textquotesingle{}sim\textquotesingle{} seja válido, navega para ele e imprime a pergunta do nó. \index{Arvore.\+c@{Arvore.\+c}!Salva\+\_\+\+T\+XT@{Salva\+\_\+\+T\+XT}}
 \index{Salva\+\_\+\+T\+XT@{Salva\+\_\+\+T\+XT}!Arvore.\+c@{Arvore.\+c}}
 \subsubsection[{\texorpdfstring{Salva\+\_\+\+T\+X\+T(arvore $\ast$$\ast$ainicio, F\+I\+L\+E $\ast$arq)}{Salva_TXT(arvore **ainicio, FILE *arq)}}]{\setlength{\rightskip}{0pt plus 5cm}void Salva\+\_\+\+T\+XT (
 \begin{DoxyParamCaption}
@@ -182,4 +257,22 @@ Essa função recebe como parametro o endereço do ponteiro da arvore, e não re
 
 Função para salvar as perguntas da arvore em um .txt. 
 
-Essa função recebe como parametro o endereço do ponteiro de uma arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{}, e o arquivo de texto a ser salvo as perguntas da arvore \textquotesingle{}F\+I\+LE $\ast$arq\textquotesingle{}. A função não retorna nenhum parametro. A função salva a pergunta no arquivo .txt, caso o nó seja N\+U\+LL, é salvo um \textquotesingle{}.\textquotesingle{} no arquivo. Caso o arquivo seja inexistente, a função não faz nada. Caso a arvore seja inexistente, a função salva apenas um \textquotesingle{}.\textquotesingle{} no .txt (não havendo erros). 
+Parametros\+: Essa função recebe como parametro o endereço do ponteiro de uma arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{}, e o arquivo de texto a ser salvo as perguntas da arvore \textquotesingle{}F\+I\+LE $\ast$arq\textquotesingle{}. A função não retorna nenhum parametro.
+
+Tratamento de erros\+: Caso a função receba um arquivo null, nada ocorre.
+
+Descrição\+: A função salva a pergunta no arquivo .txt, caso o nó seja N\+U\+LL, é salvo um \textquotesingle{}.\textquotesingle{} no arquivo. Caso o arquivo seja inexistente, a função não faz nada. Caso a arvore seja inexistente, a função salva apenas um \textquotesingle{}.\textquotesingle{} no .txt.
+
+Assertivas de entrada\+: A função deve receber um arquivo não nulo.
+
+Requisitos\+: Irá ser passado por parâmetro uma árvore e o arquivo txt a ser salvo, a função irá então salvar os dados da arvore no arquivo txt.
+
+Hipoteses\+: A função checa se o arquivo existe, se a arvore ja chegou no fim e salva todas as perguntas da arvore de forma adequada.
+
+Assertivas de saida\+: não há.
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função irá salvar a árvore por completo no arquivo txt recebido como parametro, inclusive salvando no txt as partes da árvore que são N\+U\+LL, representando-\/os com um \textquotesingle{}.\textquotesingle{}. 

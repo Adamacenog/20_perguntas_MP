@@ -10,8 +10,7 @@ Arquivo que contem a função de concatenação de string e de criar arquivos tx
 {\ttfamily \#include $<$ctype.\+h$>$}\\*
 {\ttfamily \#include $<$string.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}Funcs.\+h\char`\"{}}\\*
-Gráfico de dependência de inclusões para Funcs.\+c\+:
-\nopagebreak
+Gráfico de dependência de inclusões para Funcs.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -66,7 +65,21 @@ Como esse arquivo contem apenas funções auxiliares, necessita apenas dos heade
 
 Função de concatenação de string. 
 
-Essa função recebe como parametro duas strings \textquotesingle{}char $\ast$no\textquotesingle{} e \textquotesingle{}char $\ast$filho\textquotesingle{}, concatena a string \textquotesingle{}filho\textquotesingle{} na string \textquotesingle{}no\textquotesingle{}, e retorna essa string \textquotesingle{}char $\ast$\textquotesingle{}. Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string \textquotesingle{}no\textquotesingle{} para a memoria alocada, por fim, concatena a string \textquotesingle{}filho\textquotesingle{} na memoria alocada, retornando assim a string com \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} concatenados devidamente. Caso o computador negue a alocação de memória, o programa é finalizado. \index{Funcs.\+c@{Funcs.\+c}!Cria\+Arquivo@{Cria\+Arquivo}}
+Essa função recebe como parametro duas strings \textquotesingle{}char $\ast$no\textquotesingle{} e \textquotesingle{}char $\ast$filho\textquotesingle{}, concatena a string \textquotesingle{}filho\textquotesingle{} na string \textquotesingle{}no\textquotesingle{}, e retorna essa string \textquotesingle{}char $\ast$\textquotesingle{}. Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string \textquotesingle{}no\textquotesingle{} para a memoria alocada, por fim, concatena a string \textquotesingle{}filho\textquotesingle{} na memoria alocada, retornando assim a string com \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} concatenados devidamente. Caso o computador negue a alocação de memória, o programa é finalizado.
+
+Assertivas de entrada\+:
+
+Requisitos\+:
+
+Hipoteses\+:
+
+Assertivas de saida\+:
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: \index{Funcs.\+c@{Funcs.\+c}!Cria\+Arquivo@{Cria\+Arquivo}}
 \index{Cria\+Arquivo@{Cria\+Arquivo}!Funcs.\+c@{Funcs.\+c}}
 \subsubsection[{\texorpdfstring{Cria\+Arquivo(char $\ast$type, char $\ast$opcao)}{CriaArquivo(char *type, char *opcao)}}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+LE$\ast$ Cria\+Arquivo (
 \begin{DoxyParamCaption}
@@ -78,4 +91,18 @@ Essa função recebe como parametro duas strings \textquotesingle{}char $\ast$no
 
 Função de Criação de arquivos (abertura ou leitura). 
 
-Essa função recebe como parametro o tipo de abertura \textquotesingle{}char $\ast$type\textquotesingle{} (\char`\"{}r\char`\"{} -\/ para read, \char`\"{}w\char`\"{} -\/ para write) e também uma string \textquotesingle{}char $\ast$opcao\textquotesingle{} para ser impresso na tela (informando ao usuário se o arquivo esta sendo aberto ou salvo). A função retorna o arquivo \textquotesingle{}F\+I\+LE $\ast$\textquotesingle{}. Essa função apenas abre um arquivo e o retorna para o usuário. Caso o arquivo não exista, ou ele será criado (no caso do tipo \char`\"{}w\char`\"{} -\/ write), ou a função retornará N\+U\+LL no \textquotesingle{}F\+I\+LE $\ast$\textquotesingle{}. 
+Essa função recebe como parametro o tipo de abertura \textquotesingle{}char $\ast$type\textquotesingle{} (\char`\"{}r\char`\"{} -\/ para read, \char`\"{}w\char`\"{} -\/ para write) e também uma string \textquotesingle{}char $\ast$opcao\textquotesingle{} para ser impresso na tela (informando ao usuário se o arquivo esta sendo aberto ou salvo). A função retorna o arquivo \textquotesingle{}F\+I\+LE $\ast$\textquotesingle{}. Essa função apenas abre um arquivo e o retorna para o usuário. Caso o arquivo não exista, ou ele será criado (no caso do tipo \char`\"{}w\char`\"{} -\/ write), ou a função retornará N\+U\+LL no \textquotesingle{}F\+I\+LE $\ast$\textquotesingle{}.
+
+Assertivas de entrada\+:
+
+Requisitos\+:
+
+Hipoteses\+:
+
+Assertivas de saida\+:
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: 

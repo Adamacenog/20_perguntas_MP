@@ -57,6 +57,21 @@
 *do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres),
 * apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de
 *erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper).
+*
+*Assertivas de entrada:
+*
+*Requisitos:
+*
+*Hipoteses:
+*
+*Assertivas de saida:
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação:
+*
 */
 int Resposta(int tipo)
 {
@@ -109,6 +124,21 @@ int Resposta(int tipo)
 *da ultima pergunta respondida pelo usuário. Como essa função de execução utiliza a maior parte de todas
 *as funções criadas, os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi
 *desenvolvida para conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer.
+*
+*Assertivas de entrada:
+*
+*Requisitos:
+*
+*Hipoteses:
+*
+*Assertivas de saida:
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação:
+*
 */
 void Vinte_Perguntas(arvore **anavega, int numero_respostas)
 {
@@ -200,6 +230,21 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
 *respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas
 *as 20 perguntas). Os casos de erro são os mesmos das funções 'Vinte_Perguntas()' e 'Constroi_Manual()', pois depende dessas funções e de alocação
 *de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação.
+*
+*Assertivas de entrada:
+*
+*Requisitos:
+*
+*Hipoteses:
+*
+*Assertivas de saida:
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação:
+*
 */
 void Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, int opcao)
 {

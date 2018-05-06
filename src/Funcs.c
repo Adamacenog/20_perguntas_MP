@@ -9,7 +9,7 @@
  * @brief Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar).
  *
  */
- 
+
 /**Como esse arquivo contem apenas funções auxiliares, necessita apenas dos headers padrões.
  */
 
@@ -36,6 +36,21 @@
 *e também uma string 'char *opcao' para ser impresso na tela (informando ao usuário se o arquivo esta sendo aberto ou salvo).
 *A função retorna o arquivo 'FILE *'. Essa função apenas abre um arquivo e o retorna para o usuário.
 *Caso o arquivo não exista, ou ele será criado (no caso do tipo "w" - write), ou a função retornará NULL no 'FILE *'.
+*
+*Assertivas de entrada:
+*
+*Requisitos:
+*
+*Hipoteses:
+*
+*Assertivas de saida:
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação:
+*
 */
 FILE * CriaArquivo(char *type, char *opcao)
 {
@@ -54,6 +69,21 @@ FILE * CriaArquivo(char *type, char *opcao)
 *das strings, em seguida copia a string 'no' para a memoria alocada, por fim, concatena a string 'filho' na memoria
 *alocada, retornando assim a string com 'no' e 'filho' concatenados devidamente.
 *Caso o computador negue a alocação de memória, o programa é finalizado.
+*
+*Assertivas de entrada:
+*
+*Requisitos:
+*
+*Hipoteses:
+*
+*Assertivas de saida:
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação:
+*
 */
 char * ConstroiNo(char *no, char *filho)
 {

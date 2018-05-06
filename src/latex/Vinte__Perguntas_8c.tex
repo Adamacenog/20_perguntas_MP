@@ -12,8 +12,7 @@ Arquivo que contem a biblioteca de estruturação (execução) do jogo de 20 per
 {\ttfamily \#include \char`\"{}Arvore.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Funcs.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Vinte\+\_\+\+Perguntas.\+h\char`\"{}}\\*
-Gráfico de dependência de inclusões para Vinte\+\_\+\+Perguntas.\+c\+:
-\nopagebreak
+Gráfico de dependência de inclusões para Vinte\+\_\+\+Perguntas.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -78,7 +77,21 @@ Como esse arquivo contem a biblioteca de execução, necessita dos headers padr�
 
 Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas). 
 
-Essa função recebe como parametro o endereço do ponteiro da arvore \textquotesingle{}arvore $\ast$$\ast$anterior\textquotesingle{}, o endereço do apontador do inicio da arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{}, o numero de perguntas ja respondidas \textquotesingle{}int numero\+\_\+respostas\textquotesingle{} e a última opção selecionada \textquotesingle{}int opcao\textquotesingle{}. A função não retorna nenhum parametro. Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto que o usuário pensava. Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas as 20 perguntas). Os casos de erro são os mesmos das funções \textquotesingle{}\hyperlink{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{Vinte\+\_\+\+Perguntas()}\textquotesingle{} e \textquotesingle{}\hyperlink{Arvore_8c_a11bdc8462ac661708ec7dfc6209ad039}{Constroi\+\_\+\+Manual()}\textquotesingle{}, pois depende dessas funções e de alocação de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação. \index{Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}!Resposta@{Resposta}}
+Essa função recebe como parametro o endereço do ponteiro da arvore \textquotesingle{}arvore $\ast$$\ast$anterior\textquotesingle{}, o endereço do apontador do inicio da arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{}, o numero de perguntas ja respondidas \textquotesingle{}int numero\+\_\+respostas\textquotesingle{} e a última opção selecionada \textquotesingle{}int opcao\textquotesingle{}. A função não retorna nenhum parametro. Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto que o usuário pensava. Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas as 20 perguntas). Os casos de erro são os mesmos das funções \textquotesingle{}\hyperlink{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{Vinte\+\_\+\+Perguntas()}\textquotesingle{} e \textquotesingle{}\hyperlink{Arvore_8c_a11bdc8462ac661708ec7dfc6209ad039}{Constroi\+\_\+\+Manual()}\textquotesingle{}, pois depende dessas funções e de alocação de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação.
+
+Assertivas de entrada\+:
+
+Requisitos\+:
+
+Hipoteses\+:
+
+Assertivas de saida\+:
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: \index{Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}!Resposta@{Resposta}}
 \index{Resposta@{Resposta}!Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}}
 \subsubsection[{\texorpdfstring{Resposta(int tipo)}{Resposta(int tipo)}}]{\setlength{\rightskip}{0pt plus 5cm}int Resposta (
 \begin{DoxyParamCaption}
@@ -89,7 +102,21 @@ Essa função recebe como parametro o endereço do ponteiro da arvore \textquote
 
 Função para pegar o input especifico de opções do usuario. 
 
-Essa função recebe como parametro um inteiro \textquotesingle{}int tipo\textquotesingle{}, que especifica o tipo de opção que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario. Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo da pergunta, sendo \textquotesingle{}simples\textquotesingle{} -\/ para perguntas de \textquotesingle{}sim\textquotesingle{} ou \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}multipla\textquotesingle{} -\/ para perguntas de \textquotesingle{}sim\textquotesingle{}, \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}editar\textquotesingle{} ou \textquotesingle{}apagar\textquotesingle{}, e \textquotesingle{}inicializacao\textquotesingle{} -\/ para perguntas de \textquotesingle{}abrir\textquotesingle{} ou \textquotesingle{}criar\textquotesingle{}. Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta do usuario pelo inteiro. Caso haja um erro de leitura pelo \textquotesingle{}scanf\textquotesingle{} (usuario digita mais que 6 caracteres), apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de erro é desconhecido o comportamento (pois estariam dependendo das funções \textquotesingle{}strcmp\textquotesingle{}, \textquotesingle{}strlen\textquotesingle{} e toupper). \index{Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}!Vinte\+\_\+\+Perguntas@{Vinte\+\_\+\+Perguntas}}
+Essa função recebe como parametro um inteiro \textquotesingle{}int tipo\textquotesingle{}, que especifica o tipo de opção que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario. Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo da pergunta, sendo \textquotesingle{}simples\textquotesingle{} -\/ para perguntas de \textquotesingle{}sim\textquotesingle{} ou \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}multipla\textquotesingle{} -\/ para perguntas de \textquotesingle{}sim\textquotesingle{}, \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}editar\textquotesingle{} ou \textquotesingle{}apagar\textquotesingle{}, e \textquotesingle{}inicializacao\textquotesingle{} -\/ para perguntas de \textquotesingle{}abrir\textquotesingle{} ou \textquotesingle{}criar\textquotesingle{}. Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta do usuario pelo inteiro. Caso haja um erro de leitura pelo \textquotesingle{}scanf\textquotesingle{} (usuario digita mais que 6 caracteres), apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de erro é desconhecido o comportamento (pois estariam dependendo das funções \textquotesingle{}strcmp\textquotesingle{}, \textquotesingle{}strlen\textquotesingle{} e toupper).
+
+Assertivas de entrada\+:
+
+Requisitos\+:
+
+Hipoteses\+:
+
+Assertivas de saida\+:
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: \index{Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}!Vinte\+\_\+\+Perguntas@{Vinte\+\_\+\+Perguntas}}
 \index{Vinte\+\_\+\+Perguntas@{Vinte\+\_\+\+Perguntas}!Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}}
 \subsubsection[{\texorpdfstring{Vinte\+\_\+\+Perguntas(arvore $\ast$$\ast$anavega, int numero\+\_\+respostas)}{Vinte_Perguntas(arvore **anavega, int numero_respostas)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vinte\+\_\+\+Perguntas (
 \begin{DoxyParamCaption}
@@ -101,4 +128,18 @@ Essa função recebe como parametro um inteiro \textquotesingle{}int tipo\textqu
 
 Função de execução do programa. 
 
-Essa função recebe como parametro o endereço do ponteiro da arvore \textquotesingle{}arvore $\ast$$\ast$anavega\textquotesingle{} (para as possiveis mudanças na arvore como apagar, editar, navegar e criar novos nós) e um inteiro \textquotesingle{}int numero\+\_\+respostas\textquotesingle{}, para saber quantas perguntas ja foram respondidas pelo usuario. Essa função não retorna nenhum parametro. A função inicialmente alerta ao usuário que o jogo irá começar e analisa se a arvore é vazia ou o numero\+\_\+respostas é menor que 19 (ja foram respondidas 20 perguntas). Em seguida é lida a pergunta para o usuário e ele pode navegar pelas perguntas (respondendo \textquotesingle{}sim\textquotesingle{} ou \textquotesingle{}nao\textquotesingle{}) ou editar/apagar uma pergunta. No fim, é perguntado ao usuário se seu objeto pensado foi descoberto. Caso tenha sido, o jogo é finalizado, caso não tenha sido e o usuário ainda não tenha respondido 20 perguntas, é perguntado se o usuário deseja inserir mais perguntas para o programa descobrir o objeto. Ao fim das inserções, o jogo recomeça a partir do ponto da ultima pergunta respondida pelo usuário. Como essa função de execução utiliza a maior parte de todas as funções criadas, os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi desenvolvida para conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer. 
+Essa função recebe como parametro o endereço do ponteiro da arvore \textquotesingle{}arvore $\ast$$\ast$anavega\textquotesingle{} (para as possiveis mudanças na arvore como apagar, editar, navegar e criar novos nós) e um inteiro \textquotesingle{}int numero\+\_\+respostas\textquotesingle{}, para saber quantas perguntas ja foram respondidas pelo usuario. Essa função não retorna nenhum parametro. A função inicialmente alerta ao usuário que o jogo irá começar e analisa se a arvore é vazia ou o numero\+\_\+respostas é menor que 19 (ja foram respondidas 20 perguntas). Em seguida é lida a pergunta para o usuário e ele pode navegar pelas perguntas (respondendo \textquotesingle{}sim\textquotesingle{} ou \textquotesingle{}nao\textquotesingle{}) ou editar/apagar uma pergunta. No fim, é perguntado ao usuário se seu objeto pensado foi descoberto. Caso tenha sido, o jogo é finalizado, caso não tenha sido e o usuário ainda não tenha respondido 20 perguntas, é perguntado se o usuário deseja inserir mais perguntas para o programa descobrir o objeto. Ao fim das inserções, o jogo recomeça a partir do ponto da ultima pergunta respondida pelo usuário. Como essa função de execução utiliza a maior parte de todas as funções criadas, os erros estão relacionados a essas funções. Mas todas as funções inclusive essa, foi desenvolvida para conter erros e finalizar o programa apenas se um erro de alocação de memoria ocorrer.
+
+Assertivas de entrada\+:
+
+Requisitos\+:
+
+Hipoteses\+:
+
+Assertivas de saida\+:
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: 
