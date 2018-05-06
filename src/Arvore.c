@@ -58,7 +58,7 @@
 *Hipóteses: A árvore tem o tamanho alocado ideal, a string tem seu tamanho alocado ideal, a arvore deve possuir apenas 20 níveis de
 *perguntas. Ao final, toda memória alocada para a string deve ser liberada, apenas a memoria alocada da arvore deve se manter.
 *
-*Assertivas de saida: alocações internas para strings desalocadas e a árvore não seja NULL.
+*Assertivas de saida: alocações internas para strings desalocadas.
 *
 *Interface explicita:
 *
@@ -123,11 +123,6 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
   else  //Caso já tenham sido inseridas 20 perguntas
   {
     *ainicio = NULL;
-  }
-
-  if(size == 0)
-  {
-    assert(*ainicio != NULL); //Checa se a árvore possui ao menos um nó
   }
 
   return;

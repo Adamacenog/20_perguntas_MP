@@ -9,7 +9,7 @@
  * @brief Arquivo que contem os testes do jogo de 20 perguntas.
  *
  */
- 
+
 /**Como esse arquivo contem os testes, necessita dos headers de toda
  *a biblioteca do jogo.
  */

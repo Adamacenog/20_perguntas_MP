@@ -9,9 +9,11 @@ Arquivo que contem a biblioteca de manipulação e criação da arvore.
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
 {\ttfamily \#include $<$ctype.\+h$>$}\\*
 {\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}Arvore.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Funcs.\+h\char`\"{}}\\*
-Gráfico de dependência de inclusões para Arvore.\+c\+:\nopagebreak
+Gráfico de dependência de inclusões para Arvore.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +24,7 @@ Gráfico de dependência de inclusões para Arvore.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{Arvore_8c_aa9c92c11eef6b6d98a1a444302093ca5}{\+\_\+\+Primary\+\_\+libraries}
-\begin{DoxyCompactList}\small\item\em Header de funções padrão, para I/O, manipulação de strings. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Header de funções padrão, para I/O, manipulação de strings e asserts. \end{DoxyCompactList}\item 
 \#define \hyperlink{Arvore_8c_ad3059c7e862e1f571f036f8edbec268e}{\+\_\+\+Arvore\+\_\+library}\hypertarget{Arvore_8c_ad3059c7e862e1f571f036f8edbec268e}{}\label{Arvore_8c_ad3059c7e862e1f571f036f8edbec268e}
 
 \begin{DoxyCompactList}\small\item\em Header da biblioteca de arvore. \end{DoxyCompactList}\item 
@@ -62,7 +64,7 @@ Andre Garrido Damaceno
 \subsubsection[{\texorpdfstring{\+\_\+\+Primary\+\_\+libraries}{_Primary_libraries}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+Primary\+\_\+libraries}\hypertarget{Arvore_8c_aa9c92c11eef6b6d98a1a444302093ca5}{}\label{Arvore_8c_aa9c92c11eef6b6d98a1a444302093ca5}
 
 
-Header de funções padrão, para I/O, manipulação de strings. 
+Header de funções padrão, para I/O, manipulação de strings e asserts. 
 
 Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de de funções auxiliares. 
 
@@ -80,7 +82,23 @@ Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões 
 
 Função de criação da arvore de forma manual. 
 
-Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação), uma string \textquotesingle{}char $\ast$no\textquotesingle{} para a informação a respeito do nó atual para o usuário, um inteiro \textquotesingle{}int size\textquotesingle{}, para impedir a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo). A função não retorna nenhum parametro. Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário, sendo possível o usuário criar quantas perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser. Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+Manual\textquotesingle{} ou nas funções que ela chama, o programa é encerrado com erro. \index{Arvore.\+c@{Arvore.\+c}!Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}}
+Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação), uma string \textquotesingle{}char $\ast$no\textquotesingle{} para a informação a respeito do nó atual para o usuário, um inteiro \textquotesingle{}int size\textquotesingle{}, para impedir a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo). A função não retorna nenhum parametro.
+
+Descrição\+: Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário,sendo possível o usuário criar quantas perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser. Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+Manual\textquotesingle{} ou nas funções que ela chama, o programa é encerrado com erro.
+
+Assertivas de entrada\+: string \textquotesingle{}no\textquotesingle{} não ser null, size ser no máximo 20.
+
+Requisitos\+: A função deve criar uma árvore binária com todas as perguntas inseridas pelo usuario, mostrando para o usuário sempre, o lugar da árvore em que ele está. Deve também inserir apenas no máximo 20 níveis de perguntas.
+
+Hipóteses\+: A árvore tem o tamanho alocado ideal, a string tem seu tamanho alocado ideal, a arvore deve possuir apenas 20 níveis de perguntas. Ao final, toda memória alocada para a string deve ser liberada, apenas a memoria alocada da arvore deve se manter.
+
+Assertivas de saida\+: alocações internas para strings desalocadas.
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta, dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore. \index{Arvore.\+c@{Arvore.\+c}!Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}}
 \index{Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}!Arvore.\+c@{Arvore.\+c}}
 \subsubsection[{\texorpdfstring{Constroi\+\_\+\+T\+X\+T(arvore $\ast$$\ast$ainicio, F\+I\+L\+E $\ast$arq)}{Constroi_TXT(arvore **ainicio, FILE *arq)}}]{\setlength{\rightskip}{0pt plus 5cm}void Constroi\+\_\+\+T\+XT (
 \begin{DoxyParamCaption}
@@ -92,7 +110,23 @@ Essa função recebe como parametro o endereço de um ponteiro de arvore \textqu
 
 Função de criação da arvore por .txt. 
 
-Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação) e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro. Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados por pontos \textquotesingle{}.\textquotesingle{}. Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} o programa é encerrado com erro. \index{Arvore.\+c@{Arvore.\+c}!Desconstroi@{Desconstroi}}
+Essa função recebe como parametro o endereço de um ponteiro de arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{} (para sua criação) e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro.
+
+Descrição\+: Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados por pontos \textquotesingle{}.\textquotesingle{}. Caso haja erro de alocação de memória em \textquotesingle{}Constroi\+\_\+\+T\+XT\textquotesingle{} o programa é encerrado com erro.
+
+Assertivas de entrada\+: a função deve receber um arquivo não nulo.
+
+Requisitos\+: A função deve criar uma árvore binária de acordo com o arquivo de txt passado como parâmetro.
+
+Hipoteses\+: O tamanho da árvore é alocado com o tamanho correto, o arquivo txt é lido de forma correta. Ao final, deve ser alocada uma árvore em memória idêntica à árvore encontrada no arquivo txt.
+
+Assertivas de saida\+: Não há, pois o arquivo pode criar a árvore, ou ele ser em branco, não criando a árvore.
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função deve receber uma árvore vazia ou incompleta, um arquivo de texto não nulo. A função deve criar ou aumentar os nós da árvore de acordo com o arquivo txt (sendo possível inclusive não criar nenhum nó ou árvore, caso o arquivo txt esteja em branco). \index{Arvore.\+c@{Arvore.\+c}!Desconstroi@{Desconstroi}}
 \index{Desconstroi@{Desconstroi}!Arvore.\+c@{Arvore.\+c}}
 \subsubsection[{\texorpdfstring{Desconstroi(arvore $\ast$$\ast$ainicio)}{Desconstroi(arvore **ainicio)}}]{\setlength{\rightskip}{0pt plus 5cm}void Desconstroi (
 \begin{DoxyParamCaption}

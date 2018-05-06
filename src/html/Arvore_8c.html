@@ -93,18 +93,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;Arvore.h&quot;</code><br />
 <code>#include &quot;Funcs.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para Arvore.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="Arvore_8c__incl.png" border="0" usemap="#Arvore_8c" alt=""/></div>
+<map name="Arvore_8c" id="Arvore_8c">
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Definições e Macros</h2></td></tr>
 <tr class="memitem:aa9c92c11eef6b6d98a1a444302093ca5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Arvore_8c.html#aa9c92c11eef6b6d98a1a444302093ca5">_Primary_libraries</a></td></tr>
-<tr class="memdesc:aa9c92c11eef6b6d98a1a444302093ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header de funções padrão, para I/O, manipulação de strings.  <a href="#aa9c92c11eef6b6d98a1a444302093ca5">Mais...</a><br /></td></tr>
+<tr class="memdesc:aa9c92c11eef6b6d98a1a444302093ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header de funções padrão, para I/O, manipulação de strings e asserts.  <a href="#aa9c92c11eef6b6d98a1a444302093ca5">Mais...</a><br /></td></tr>
 <tr class="separator:aa9c92c11eef6b6d98a1a444302093ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3059c7e862e1f571f036f8edbec268e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3059c7e862e1f571f036f8edbec268e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Arvore_8c.html#ad3059c7e862e1f571f036f8edbec268e">_Arvore_library</a></td></tr>
@@ -153,7 +156,7 @@ Funções</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Header de funções padrão, para I/O, manipulação de strings. </p>
+<p>Header de funções padrão, para I/O, manipulação de strings e asserts. </p>
 <p>Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de de funções auxiliares. </p>
 
 </div>
@@ -190,7 +193,15 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função de criação da arvore de forma manual. </p>
-<p>Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação), uma string 'char *no' para a informação a respeito do nó atual para o usuário, um inteiro 'int size', para impedir a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo). A função não retorna nenhum parametro. Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário, sendo possível o usuário criar quantas perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser. Caso haja erro de alocação de memória em 'Constroi_Manual' ou nas funções que ela chama, o programa é encerrado com erro. </p>
+<p>Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação), uma string 'char *no' para a informação a respeito do nó atual para o usuário, um inteiro 'int size', para impedir a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo). A função não retorna nenhum parametro.</p>
+<p>Descrição: Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário,sendo possível o usuário criar quantas perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser. Caso haja erro de alocação de memória em 'Constroi_Manual' ou nas funções que ela chama, o programa é encerrado com erro.</p>
+<p>Assertivas de entrada: string 'no' não ser null, size ser no máximo 20.</p>
+<p>Requisitos: A função deve criar uma árvore binária com todas as perguntas inseridas pelo usuario, mostrando para o usuário sempre, o lugar da árvore em que ele está. Deve também inserir apenas no máximo 20 níveis de perguntas.</p>
+<p>Hipóteses: A árvore tem o tamanho alocado ideal, a string tem seu tamanho alocado ideal, a arvore deve possuir apenas 20 níveis de perguntas. Ao final, toda memória alocada para a string deve ser liberada, apenas a memoria alocada da arvore deve se manter.</p>
+<p>Assertivas de saida: alocações internas para strings desalocadas.</p>
+<p>Interface explicita:</p>
+<p>Interface implicita:</p>
+<p>Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta, dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore. </p>
 
 </div>
 </div>
@@ -219,7 +230,15 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função de criação da arvore por .txt. </p>
-<p>Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação) e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro. Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados por pontos '.'. Caso haja erro de alocação de memória em 'Constroi_TXT' o programa é encerrado com erro. </p>
+<p>Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação) e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro.</p>
+<p>Descrição: Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados por pontos '.'. Caso haja erro de alocação de memória em 'Constroi_TXT' o programa é encerrado com erro.</p>
+<p>Assertivas de entrada: a função deve receber um arquivo não nulo.</p>
+<p>Requisitos: A função deve criar uma árvore binária de acordo com o arquivo de txt passado como parâmetro.</p>
+<p>Hipoteses: O tamanho da árvore é alocado com o tamanho correto, o arquivo txt é lido de forma correta. Ao final, deve ser alocada uma árvore em memória idêntica à árvore encontrada no arquivo txt.</p>
+<p>Assertivas de saida: Não há, pois o arquivo pode criar a árvore, ou ele ser em branco, não criando a árvore.</p>
+<p>Interface explicita:</p>
+<p>Interface implicita:</p>
+<p>Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, um arquivo de texto não nulo. A função deve criar ou aumentar os nós da árvore de acordo com o arquivo txt (sendo possível inclusive não criar nenhum nó ou árvore, caso o arquivo txt esteja em branco). </p>
 
 </div>
 </div>
