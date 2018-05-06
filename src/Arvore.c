@@ -48,7 +48,7 @@
 *
 *Tratamento de Erros: Caso haja erro de alocação de memória em 'Constroi_Manual' ou nas funções que ela chama, o programa é encerrado com erro.
 *
-*Descrição: Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário,sendo possível o usuário criar quantas
+*Descrição: Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário, sendo possível o usuário criar quantas
 *perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser.
 *
 *Assertivas de entrada: string 'no' não ser null, size ser no máximo 20.

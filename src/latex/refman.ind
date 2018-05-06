@@ -4,7 +4,7 @@
     \subitem {Arvore.\+c}, \hyperpage{4}
     \subitem {Funcs.\+c}, \hyperpage{9}
     \subitem {Jogo.\+c}, \hyperpage{11}
-    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{18}
+    \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{19}
 
   \indexspace
 
@@ -47,10 +47,10 @@
 
   \item {Jogo.\+c}, \hyperpage{10}
     \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{11}
-    \subitem {Jogo\+\_\+init}, \hyperpage{11}
-    \subitem {main}, \hyperpage{11}
+    \subitem {Jogo\+\_\+init}, \hyperpage{12}
+    \subitem {main}, \hyperpage{12}
   \item {Jogo\+\_\+init}
-    \subitem {Jogo.\+c}, \hyperpage{11}
+    \subitem {Jogo.\+c}, \hyperpage{12}
 
   \indexspace
 
@@ -60,7 +60,7 @@
   \indexspace
 
   \item {main}
-    \subitem {Jogo.\+c}, \hyperpage{11}
+    \subitem {Jogo.\+c}, \hyperpage{12}
 
   \indexspace
 
@@ -88,7 +88,7 @@
 
   \item {T\+E\+S\+T\+\_\+\+C\+A\+SE}
     \subitem {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{14--17}
-  \item {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{12}
+  \item {Testa\+\_\+\+Arvore.\+cpp}, \hyperpage{13}
     \subitem {C\+A\+T\+C\+H\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+IN}, 
 		\hyperpage{14}
     \subitem {T\+E\+S\+T\+\_\+\+C\+A\+SE}, \hyperpage{14--17}
@@ -97,8 +97,8 @@
 
   \item {Vinte\+\_\+\+Perguntas}
     \subitem {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{19}
-  \item {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{17}
-    \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{18}
+  \item {Vinte\+\_\+\+Perguntas.\+c}, \hyperpage{18}
+    \subitem {\+\_\+\+Primary\+\_\+libraries}, \hyperpage{19}
     \subitem {Pergunta\+\_\+\+Final}, \hyperpage{19}
     \subitem {Resposta}, \hyperpage{19}
     \subitem {Vinte\+\_\+\+Perguntas}, \hyperpage{19}

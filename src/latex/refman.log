@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.9)  6 MAY 2018 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.4.9)  6 MAY 2018 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1387,46 +1387,46 @@ Package babel Info: Redefining portuges shorthand "|
 [7]) (./Funcs_8c.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1.
- <Funcs_8c__incl.pdf, id=432, 398.48875pt x 156.585pt>
+ <Funcs_8c__incl.pdf, id=432, 468.75125pt x 156.585pt>
 File: Funcs_8c__incl.pdf Graphic file (type pdf)
 
 <use Funcs_8c__incl.pdf>
-Package pdftex.def Info: Funcs_8c__incl.pdf used on input line 17.
-(pdftex.def)             Requested size: 350.0pt x 137.53717pt.
+Package pdftex.def Info: Funcs_8c__incl.pdf used on input line 19.
+(pdftex.def)             Requested size: 350.0pt x 116.91519pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 32.
+(babel)             in language  on input line 34.
  [8 <./Funcs_8c__incl.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 39.
 
-Underfull \hbox (badness 10000) detected at line 40
+Underfull \hbox (badness 10000) detected at line 42
 [][][]
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 45.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 50.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 48.
+(hyperref)                removing `subscript' on input line 50.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 48.
+(hyperref)                removing `subscript' on input line 50.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 55.
+(babel)             in language  on input line 57.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 63.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 89.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 100.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 100.
 [9]) (./Jogo_8c.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1.
@@ -1437,9 +1437,9 @@ File: Jogo_8c__incl.pdf Graphic file (type pdf)
 Package pdftex.def Info: Jogo_8c__incl.pdf used on input line 20.
 (pdftex.def)             Requested size: 350.0pt x 84.26074pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 36.
  [10 <./Jogo_8c__incl.pdf>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 49.
@@ -1469,30 +1469,36 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 74.
 
 Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 95.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 95.
+[11]
+Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 99.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 116.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 116.
-[11]) (./Testa__Arvore_8cpp.tex
+) (./Testa__Arvore_8cpp.tex
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1.
 
-<Testa__Arvore_8cpp__incl.pdf, id=495, 397.485pt x 156.585pt>
+<Testa__Arvore_8cpp__incl.pdf, id=493, 397.485pt x 156.585pt>
 File: Testa__Arvore_8cpp__incl.pdf Graphic file (type pdf)
 
 <use Testa__Arvore_8cpp__incl.pdf>
 Package pdftex.def Info: Testa__Arvore_8cpp__incl.pdf used on input line 16.
 (pdftex.def)             Requested size: 350.0pt x 137.88362pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 19.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 19.
+ [12]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 40.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 6.29996pt on input line 40.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 42.
+(babel)             in language  on input line 58.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 42.
- [12 <./Testa__Arvore_8cpp__incl.pdf>]
+(babel)             in language  on input line 58.
+ [13 <./Testa__Arvore_8cpp__incl.pdf>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 77.
 
@@ -1515,19 +1521,19 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 91.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 91.
-[13]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 91.
-Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 99.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 99.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 111.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 111.
+[14]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 111.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 111.
@@ -1559,13 +1565,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 159.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 164.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 164.
-[14]
-Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 171.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 171.
@@ -1583,7 +1583,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 195.
 
 Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 200.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 200.
+[15]
+Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 207.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 207.
@@ -1596,12 +1602,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 231.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 231.
-[15]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 231.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 231.
@@ -1619,7 +1619,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 255.
 
 Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 262.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 262.
+[16]
+Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 270.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 270.
@@ -1645,13 +1651,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 297.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 302.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 302.
-[16]
-Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 309.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 309.
@@ -1667,10 +1667,10 @@ File: Vinte__Perguntas_8c__incl.pdf Graphic file (type pdf)
 Package pdftex.def Info: Vinte__Perguntas_8c__incl.pdf used on input line 19.
 (pdftex.def)             Requested size: 350.0pt x 93.49297pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 26.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 26.
- [17 <./Vinte__Perguntas_8c__incl.pdf>]
+(babel)             in language  on input line 21.
+ [17]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 47.
 
@@ -1691,6 +1691,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 58.
 
 Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 64.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 64.
+[18 <./Vinte__Perguntas_8c__incl.pdf>]
+Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 65.
 LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <7> not available
 (Font)              Font shape `T1/phv/bc/sl' tried instead on input line 75.
@@ -1699,24 +1704,19 @@ LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 75.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 75.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 75.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 90.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 90.
-[18]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 75.
+
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 100.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 126.
 
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 126.
 
@@ -1725,9 +1725,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 126.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 132.
+(babel)             in language  on input line 131.
 [19])
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 153.
@@ -1758,11 +1758,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
 Here is how much of TeX's memory you used:
  15446 strings out of 493029
  222092 string characters out of 6136235
- 341592 words of memory out of 5000000
+ 339592 words of memory out of 5000000
  18557 multiletter control sequences out of 15000+600000
  60927 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,16n,92p,2068b,537s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,16n,92p,2068b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
@@ -1773,7 +1773,7 @@ hvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (27 pages, 196757 bytes).
+Output written on refman.pdf (27 pages, 197653 bytes).
 PDF statistics:
  740 PDF objects out of 1000 (max. 8388607)
  684 compressed objects within 7 object streams

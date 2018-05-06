@@ -93,11 +93,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;Funcs.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Gráfico de dependência de inclusões para Funcs.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="Funcs_8c__incl.png" border="0" usemap="#Funcs_8c" alt=""/></div>
+<map name="Funcs_8c" id="Funcs_8c">
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -164,14 +167,16 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função de concatenação de string. </p>
-<p>Essa função recebe como parametro duas strings 'char *no' e 'char *filho', concatena a string 'filho' na string 'no', e retorna essa string 'char *'. Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string 'no' para a memoria alocada, por fim, concatena a string 'filho' na memoria alocada, retornando assim a string com 'no' e 'filho' concatenados devidamente. Caso o computador negue a alocação de memória, o programa é finalizado.</p>
-<p>Assertivas de entrada:</p>
-<p>Requisitos:</p>
-<p>Hipoteses:</p>
-<p>Assertivas de saida:</p>
+<p>Parametros: Essa função recebe como parametro duas strings 'char *no' e 'char *filho', concatena a string 'filho' na string 'no', e retorna essa string 'char *'.</p>
+<p>Tratamento de erros: Caso o computador negue a alocação de memória, o programa é finalizado.</p>
+<p>Descrição: Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string 'no' para a memoria alocada, por fim, concatena a string 'filho' na memoria alocada, retornando assim a string com 'no' e 'filho' concatenados devidamente.</p>
+<p>Assertivas de entrada: As strings 'no' e 'filho' não podem ser NULLs.</p>
+<p>Requisitos: A função deve concatenar as duas strings recebidas 'no' e 'filho' e retornar a string concatenada.</p>
+<p>Hipoteses: A função aloca devidamente memória suficiente para a string final concatenada, e faz a concatenação de forma correta, concatenando no sentido 'no' e 'filho'.</p>
+<p>Assertivas de saida: A string com o resultado da concatenação não deve ser NULL, O tamanho da string retornada deve ser o tamanho de 'no' + 'filho', e o final da string deve conter o caracter '\0'.</p>
 <p>Interface explicita:</p>
 <p>Interface implicita:</p>
-<p>Contrato na especificação: </p>
+<p>Contrato na especificação: A função deve receber duas strings 'no' e 'filho' não nulas, deve então alocar uma nova string 'noFilho' que deve possuir o tamanho de 'no' e 'filho' juntas, em seguida colocar o resultado da concatenação de 'no' e 'filho' em 'noFilho' e retornar 'noFilho'. </p>
 
 </div>
 </div>
@@ -200,14 +205,16 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função de Criação de arquivos (abertura ou leitura). </p>
-<p>Essa função recebe como parametro o tipo de abertura 'char *type' ("r" - para read, "w" - para write) e também uma string 'char *opcao' para ser impresso na tela (informando ao usuário se o arquivo esta sendo aberto ou salvo). A função retorna o arquivo 'FILE *'. Essa função apenas abre um arquivo e o retorna para o usuário. Caso o arquivo não exista, ou ele será criado (no caso do tipo "w" - write), ou a função retornará NULL no 'FILE *'.</p>
-<p>Assertivas de entrada:</p>
-<p>Requisitos:</p>
-<p>Hipoteses:</p>
-<p>Assertivas de saida:</p>
+<p>Parametros: Essa função recebe como parametro o tipo de abertura 'char *type' ("r" - para read, "w" - para write) e também uma string 'char *opcao' para ser impresso na tela (informando ao usuário se o arquivo esta sendo aberto ou salvo). A função retorna o arquivo 'FILE *'.</p>
+<p>Tratamento de erros: Caso o arquivo não exista, ou ele será criado (no caso do tipo "w" - write), ou a função retornará NULL no 'FILE *'.</p>
+<p>Descrição: Essa função apenas abre um arquivo e o retorna para o usuário.</p>
+<p>Assertivas de entrada: string 'type' e 'opcao' não NULLs.</p>
+<p>Requisitos: A função deve perguntar ao usuário qual o nome do arquivo e abrir ou criar um arquivo de acordo com o parâmetro 'type'.</p>
+<p>Hipoteses: A função deve abrir o arquivo de forma adequada de acordo com a forma de abertura 'type' requisitado, retornando o arquivos aberto/criado.</p>
+<p>Assertivas de saida: Arquivo aberto/criado não ser NUL</p>
 <p>Interface explicita:</p>
 <p>Interface implicita:</p>
-<p>Contrato na especificação: </p>
+<p>Contrato na especificação: A função deve receber a forma de abertura/criação do arquivo 'type', e uma string com a informação para o usuário do que está ocorrendo. Então, deve ser aberto/criado o arquivo de acordo com o parâmetro 'type' e o nome informado pelo usuário, e por fim, deve ser retornado o arquivo. </p>
 
 </div>
 </div>
