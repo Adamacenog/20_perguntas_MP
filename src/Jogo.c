@@ -22,6 +22,7 @@
     #include <stdlib.h>
     #include <ctype.h>
     #include <string.h>
+    #include <assert.h>
 #endif
 
 /**@brief Header da biblioteca de arvore.
@@ -54,22 +55,28 @@
 
 /**@brief Main de inicialização do jogo.
 *
-*A main apenas chama a função de inicialização 'Jogo_init()',
+*Parametros: Não recebe nenhum parâmetro de entrada, retorna um inteiro no fim da execução,
+*sendo 0 - execução bem sucedida, outros valores caso contrário.
+*
+*Tratamento de erros: Não há, apenas há chamadas de funções. Os tratamentos são feitos dentro
+*das funções chamadas.
+*
+*Descrição: A main apenas chama a função de inicialização 'Jogo_init()',
 *que chama as funções do jogo em ordem lógica para sua execução normal.
 *
-*Assertivas de entrada:
+*Assertivas de entrada: Não há
 *
-*Requisitos:
+*Requisitos: Chamar a função de inicialização 'Jogo_init'.
 *
-*Hipoteses:
+*Hipoteses: A função é chamada com sucesso e o jogo é inicializado.
 *
-*Assertivas de saida:
+*Assertivas de saida: Não há
 *
 *Interface explicita:
 *
 *Interface implicita:
 *
-*Contrato na especificação:
+*Contrato na especificação: A função deve apenas chamar a função 'Jogo_init'.
 *
 */
 int main()
@@ -80,33 +87,45 @@ int main()
 
 /**@brief Função de inicialização do jogo.
 *
-*A função não recebe nem retorna nenhum parâmentro. Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto
-*ou por criação manual). Em seguida, inicializa-se o jogo ao chamar a função 'Vinte_Perguntas()', ao fim, é perguntado ao usuário se quer
-*salvar os dados de seu jogo em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria).
-*Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null, eventualmente
-*havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão,
+*Parametros: A função não recebe nem retorna nenhum parâmentro.
+*
+*Tratamento de erros: Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null,
+*eventualmente havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão,
 *ou o programa finalizará com erro.
 *
-*Assertivas de entrada:
+*Descrição: Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto ou por criação manual). Em seguida,
+*inicializa-se o jogo ao chamar a função 'Vinte_Perguntas()', ao fim, é perguntado ao usuário se quer salvar os dados de seu jogo
+*em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria).
 *
-*Requisitos:
+*Assertivas de entrada: árvore ser NULL, arquivo ser NULL.
 *
-*Hipoteses:
+*Requisitos: A função deve chamar a função de popular os dados da árvore (de acordo com a escolha do usuario, por arquivo texto
+*ou manualmente), em seguida chamar a função de executar o jogo, por fim, verificar se o usuario quer salvar a árvore do Jogo
+*em um arquivo de texto, e desalocar a memoria da árvore.
 *
-*Assertivas de saida:
+*Hipoteses: Toda memória alocada é feita com o tamanho correto, toda memória alocada é desalocada após o uso, todos os arquivos
+*de texto abertos são fechados.
+*
+*Assertivas de saida: A árvore tem que ser NULL (desalocada).
 *
 *Interface explicita:
 *
 *Interface implicita:
 *
-*Contrato na especificação:
+*Contrato na especificação: A função não recebe nenhum parametro nem retorna nenhum parametro, deve apenas chamar as funções
+*principais capazes de fazer o jogo rodar, ou seja, em ordem, deve ser populada a árvore com perguntas, em seguida ser chamada a
+*função de execução do jogo e por fim deve ser dada a escolha de salvar a arvore do jogo em um arquivo de texto. Devem ser finalizadas
+*todas as memorias alocadas e arquivos abertos.
 *
 */
 void Jogo_init(void)
 {
   int opcao;  //Respostas do usuário (podendo ser 'sim', 'nao', 'criar', 'abrir')
   arvore *ainicio = NULL;  //arvore com os dados do jogo (as perguntas)
-  FILE *arq;  //Ponteiro usado para manipulação de arquivos (abrir ou salvar em .txt)
+  FILE *arq = NULL;  //Ponteiro usado para manipulação de arquivos (abrir ou salvar em .txt)
+
+  assert(ainicio == NULL); //Arvore deve ser NULL no inicio
+  assert(arq == NULL); //Arquivo deve ser NULL no inicio
 
   printf("\nDigite 'abrir' para abrir um arquivo ou 'criar' para criar um jogo do zero\n");
   opcao = Resposta(inicializacao);  //Tipo inicializacao tem as opções 'abrir' ou 'criar' apenas
@@ -142,6 +161,8 @@ void Jogo_init(void)
     }
   }
   Desconstroi(&ainicio);  //Remove a arvore da memoria
+
+  assert(ainicio == NULL);
 
   return;
 }

@@ -9,11 +9,13 @@ Arquivo que contem a Main e uma função de chamadas para executar o jogo.
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
 {\ttfamily \#include $<$ctype.\+h$>$}\\*
 {\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}Arvore.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Funcs.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Vinte\+\_\+\+Perguntas.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Jogo.\+h\char`\"{}}\\*
-Gráfico de dependência de inclusões para Jogo.\+c\+:\nopagebreak
+Gráfico de dependência de inclusões para Jogo.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -76,21 +78,25 @@ Como esse arquivo contem a função que inicializa o jogo, são necessários tod
 
 Função de inicialização do jogo. 
 
-A função não recebe nem retorna nenhum parâmentro. Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto ou por criação manual). Em seguida, inicializa-\/se o jogo ao chamar a função \textquotesingle{}\hyperlink{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{Vinte\+\_\+\+Perguntas()}\textquotesingle{}, ao fim, é perguntado ao usuário se quer salvar os dados de seu jogo em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria). Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null, eventualmente havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão, ou o programa finalizará com erro.
+Parametros\+: A função não recebe nem retorna nenhum parâmentro.
 
-Assertivas de entrada\+:
+Tratamento de erros\+: Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null, eventualmente havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão, ou o programa finalizará com erro.
 
-Requisitos\+:
+Descrição\+: Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto ou por criação manual). Em seguida, inicializa-\/se o jogo ao chamar a função \textquotesingle{}\hyperlink{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{Vinte\+\_\+\+Perguntas()}\textquotesingle{}, ao fim, é perguntado ao usuário se quer salvar os dados de seu jogo em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria).
 
-Hipoteses\+:
+Assertivas de entrada\+: árvore ser N\+U\+LL, arquivo ser N\+U\+LL.
 
-Assertivas de saida\+:
+Requisitos\+: A função deve chamar a função de popular os dados da árvore (de acordo com a escolha do usuario, por arquivo texto ou manualmente), em seguida chamar a função de executar o jogo, por fim, verificar se o usuario quer salvar a árvore do Jogo em um arquivo de texto, e desalocar a memoria da árvore.
+
+Hipoteses\+: Toda memória alocada é feita com o tamanho correto, toda memória alocada é desalocada após o uso, todos os arquivos de texto abertos são fechados.
+
+Assertivas de saida\+: A árvore tem que ser N\+U\+LL (desalocada).
 
 Interface explicita\+:
 
 Interface implicita\+:
 
-Contrato na especificação\+: \index{Jogo.\+c@{Jogo.\+c}!main@{main}}
+Contrato na especificação\+: A função não recebe nenhum parametro nem retorna nenhum parametro, deve apenas chamar as funções principais capazes de fazer o jogo rodar, ou seja, em ordem, deve ser populada a árvore com perguntas, em seguida ser chamada a função de execução do jogo e por fim deve ser dada a escolha de salvar a arvore do jogo em um arquivo de texto. Devem ser finalizadas todas as memorias alocadas e arquivos abertos. \index{Jogo.\+c@{Jogo.\+c}!main@{main}}
 \index{main@{main}!Jogo.\+c@{Jogo.\+c}}
 \subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
 \begin{DoxyParamCaption}
@@ -101,18 +107,22 @@ Contrato na especificação\+: \index{Jogo.\+c@{Jogo.\+c}!main@{main}}
 
 Main de inicialização do jogo. 
 
-A main apenas chama a função de inicialização \textquotesingle{}\hyperlink{Jogo_8c_aa95326e6eb7941a743d5543f82d7c7de}{Jogo\+\_\+init()}\textquotesingle{}, que chama as funções do jogo em ordem lógica para sua execução normal.
+Parametros\+: Não recebe nenhum parâmetro de entrada, retorna um inteiro no fim da execução, sendo 0 -\/ execução bem sucedida, outros valores caso contrário.
 
-Assertivas de entrada\+:
+Tratamento de erros\+: Não há, apenas há chamadas de funções. Os tratamentos são feitos dentro das funções chamadas.
 
-Requisitos\+:
+Descrição\+: A main apenas chama a função de inicialização \textquotesingle{}\hyperlink{Jogo_8c_aa95326e6eb7941a743d5543f82d7c7de}{Jogo\+\_\+init()}\textquotesingle{}, que chama as funções do jogo em ordem lógica para sua execução normal.
 
-Hipoteses\+:
+Assertivas de entrada\+: Não há
 
-Assertivas de saida\+:
+Requisitos\+: Chamar a função de inicialização \textquotesingle{}Jogo\+\_\+init\textquotesingle{}.
+
+Hipoteses\+: A função é chamada com sucesso e o jogo é inicializado.
+
+Assertivas de saida\+: Não há
 
 Interface explicita\+:
 
 Interface implicita\+:
 
-Contrato na especificação\+: 
+Contrato na especificação\+: A função deve apenas chamar a função \textquotesingle{}Jogo\+\_\+init\textquotesingle{}. 

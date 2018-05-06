@@ -93,6 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;Arvore.h&quot;</code><br />
 <code>#include &quot;Funcs.h&quot;</code><br />
 <code>#include &quot;Vinte_Perguntas.h&quot;</code><br />
@@ -101,6 +102,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 Gráfico de dependência de inclusões para Jogo.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="Jogo_8c__incl.png" border="0" usemap="#Jogo_8c" alt=""/></div>
+<map name="Jogo_8c" id="Jogo_8c">
+</map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -169,14 +172,16 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Função de inicialização do jogo. </p>
-<p>A função não recebe nem retorna nenhum parâmentro. Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto ou por criação manual). Em seguida, inicializa-se o jogo ao chamar a função '<a class="el" href="Vinte__Perguntas_8c.html#a50cd5030c633ddd0c6cc9bcfb9adfd88" title="Função de execução do programa. ">Vinte_Perguntas()</a>', ao fim, é perguntado ao usuário se quer salvar os dados de seu jogo em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria). Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null, eventualmente havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão, ou o programa finalizará com erro.</p>
-<p>Assertivas de entrada:</p>
-<p>Requisitos:</p>
-<p>Hipoteses:</p>
-<p>Assertivas de saida:</p>
+<p>Parametros: A função não recebe nem retorna nenhum parâmentro.</p>
+<p>Tratamento de erros: Caso haja algum erro em alocação de memória, o programa é encerrado. Outros casos variam, caso a arvore seja null, eventualmente havera a opção de tentar recriar a arvore. Caso haja algum outro erro totalmente imprevisto, ou as funções internas o conterão, ou o programa finalizará com erro.</p>
+<p>Descrição: Nessa função, primeiramente é populado os dados na arvore (por arquivo de texto ou por criação manual). Em seguida, inicializa-se o jogo ao chamar a função '<a class="el" href="Vinte__Perguntas_8c.html#a50cd5030c633ddd0c6cc9bcfb9adfd88" title="Função de execução do programa. ">Vinte_Perguntas()</a>', ao fim, é perguntado ao usuário se quer salvar os dados de seu jogo em um arquivo .txt, e por fim é finalizada a execução (deletando a arvore da memoria).</p>
+<p>Assertivas de entrada: árvore ser NULL, arquivo ser NULL.</p>
+<p>Requisitos: A função deve chamar a função de popular os dados da árvore (de acordo com a escolha do usuario, por arquivo texto ou manualmente), em seguida chamar a função de executar o jogo, por fim, verificar se o usuario quer salvar a árvore do Jogo em um arquivo de texto, e desalocar a memoria da árvore.</p>
+<p>Hipoteses: Toda memória alocada é feita com o tamanho correto, toda memória alocada é desalocada após o uso, todos os arquivos de texto abertos são fechados.</p>
+<p>Assertivas de saida: A árvore tem que ser NULL (desalocada).</p>
 <p>Interface explicita:</p>
 <p>Interface implicita:</p>
-<p>Contrato na especificação: </p>
+<p>Contrato na especificação: A função não recebe nenhum parametro nem retorna nenhum parametro, deve apenas chamar as funções principais capazes de fazer o jogo rodar, ou seja, em ordem, deve ser populada a árvore com perguntas, em seguida ser chamada a função de execução do jogo e por fim deve ser dada a escolha de salvar a arvore do jogo em um arquivo de texto. Devem ser finalizadas todas as memorias alocadas e arquivos abertos. </p>
 
 </div>
 </div>
@@ -194,14 +199,16 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Main de inicialização do jogo. </p>
-<p>A main apenas chama a função de inicialização '<a class="el" href="Jogo_8c.html#aa95326e6eb7941a743d5543f82d7c7de" title="Função de inicialização do jogo. ">Jogo_init()</a>', que chama as funções do jogo em ordem lógica para sua execução normal.</p>
-<p>Assertivas de entrada:</p>
-<p>Requisitos:</p>
-<p>Hipoteses:</p>
-<p>Assertivas de saida:</p>
+<p>Parametros: Não recebe nenhum parâmetro de entrada, retorna um inteiro no fim da execução, sendo 0 - execução bem sucedida, outros valores caso contrário.</p>
+<p>Tratamento de erros: Não há, apenas há chamadas de funções. Os tratamentos são feitos dentro das funções chamadas.</p>
+<p>Descrição: A main apenas chama a função de inicialização '<a class="el" href="Jogo_8c.html#aa95326e6eb7941a743d5543f82d7c7de" title="Função de inicialização do jogo. ">Jogo_init()</a>', que chama as funções do jogo em ordem lógica para sua execução normal.</p>
+<p>Assertivas de entrada: Não há</p>
+<p>Requisitos: Chamar a função de inicialização 'Jogo_init'.</p>
+<p>Hipoteses: A função é chamada com sucesso e o jogo é inicializado.</p>
+<p>Assertivas de saida: Não há</p>
 <p>Interface explicita:</p>
 <p>Interface implicita:</p>
-<p>Contrato na especificação: </p>
+<p>Contrato na especificação: A função deve apenas chamar a função 'Jogo_init'. </p>
 
 </div>
 </div>
