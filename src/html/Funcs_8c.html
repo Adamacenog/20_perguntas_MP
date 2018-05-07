@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Busca');
 </div><!--header-->
 <div class="contents">
 
-<p>Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar).  
+<p>Arquivo que contem a função de respostas do usuário, concatenação de string e de criar arquivos txt (abrir ou salvar).  
 <a href="#details">Mais...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -113,15 +113,18 @@ Definições e Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
+<tr class="memitem:a50e270f218809bc8fdaa410c7bf8ec94"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Funcs_8c.html#a50e270f218809bc8fdaa410c7bf8ec94">Resposta</a> (unsigned int tipo)</td></tr>
+<tr class="memdesc:a50e270f218809bc8fdaa410c7bf8ec94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para pegar o input especifico de opções do usuario.  <a href="#a50e270f218809bc8fdaa410c7bf8ec94">Mais...</a><br /></td></tr>
+<tr class="separator:a50e270f218809bc8fdaa410c7bf8ec94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae514617a2ce835b9ba8c3974e6e09f3b"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Funcs_8c.html#ae514617a2ce835b9ba8c3974e6e09f3b">CriaArquivo</a> (char *type, char *opcao)</td></tr>
 <tr class="memdesc:ae514617a2ce835b9ba8c3974e6e09f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de Criação de arquivos (abertura ou leitura).  <a href="#ae514617a2ce835b9ba8c3974e6e09f3b">Mais...</a><br /></td></tr>
 <tr class="separator:ae514617a2ce835b9ba8c3974e6e09f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6e869105db05a7a2253c50108cb8583"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Funcs_8c.html#ab6e869105db05a7a2253c50108cb8583">ConstroiNo</a> (char *no, char *filho)</td></tr>
-<tr class="memdesc:ab6e869105db05a7a2253c50108cb8583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de concatenação de string.  <a href="#ab6e869105db05a7a2253c50108cb8583">Mais...</a><br /></td></tr>
-<tr class="separator:ab6e869105db05a7a2253c50108cb8583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4472a66a52a99e41b9999cffecd89c36"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Funcs_8c.html#a4472a66a52a99e41b9999cffecd89c36">PosicaoNo</a> (char *no, char *filho)</td></tr>
+<tr class="memdesc:a4472a66a52a99e41b9999cffecd89c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função de concatenação de string.  <a href="#a4472a66a52a99e41b9999cffecd89c36">Mais...</a><br /></td></tr>
+<tr class="separator:a4472a66a52a99e41b9999cffecd89c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição Detalhada</h2>
-<div class="textblock"><p>Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar). </p>
+<div class="textblock"><p>Arquivo que contem a função de respostas do usuário, concatenação de string e de criar arquivos txt (abrir ou salvar). </p>
 <dl class="section author"><dt>Autor</dt><dd>Andre Garrido Damaceno </dd></dl>
 </div><h2 class="groupheader">Definições e macros</h2>
 <a class="anchor" id="aa9c92c11eef6b6d98a1a444302093ca5"></a>
@@ -140,44 +143,6 @@ Funções</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Funções</h2>
-<a class="anchor" id="ab6e869105db05a7a2253c50108cb8583"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* ConstroiNo </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>no</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>filho</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Função de concatenação de string. </p>
-<p>Parametros: Essa função recebe como parametro duas strings 'char *no' e 'char *filho', concatena a string 'filho' na string 'no', e retorna essa string 'char *'.</p>
-<p>Tratamento de erros: Caso o computador negue a alocação de memória, o programa é finalizado.</p>
-<p>Descrição: Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string 'no' para a memoria alocada, por fim, concatena a string 'filho' na memoria alocada, retornando assim a string com 'no' e 'filho' concatenados devidamente.</p>
-<p>Assertivas de entrada: As strings 'no' e 'filho' não podem ser NULLs.</p>
-<p>Requisitos: A função deve concatenar as duas strings recebidas 'no' e 'filho' e retornar a string concatenada.</p>
-<p>Hipoteses: A função aloca devidamente memória suficiente para a string final concatenada, e faz a concatenação de forma correta, concatenando no sentido 'no' e 'filho'.</p>
-<p>Assertivas de saida: A string com o resultado da concatenação não deve ser NULL, O tamanho da string retornada deve ser o tamanho de 'no' + 'filho', e o final da string deve conter o caracter '\0'.</p>
-<p>Interface explicita:</p>
-<p>Interface implicita:</p>
-<p>Contrato na especificação: A função deve receber duas strings 'no' e 'filho' não nulas, deve então alocar uma nova string 'noFilho' que deve possuir o tamanho de 'no' e 'filho' juntas, em seguida colocar o resultado da concatenação de 'no' e 'filho' em 'noFilho' e retornar 'noFilho'. </p>
-
-</div>
-</div>
 <a class="anchor" id="ae514617a2ce835b9ba8c3974e6e09f3b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -213,6 +178,72 @@ Funções</h2></td></tr>
 <p>Interface explicita:</p>
 <p>Interface implicita:</p>
 <p>Contrato na especificação: A função deve receber a forma de abertura/criação do arquivo 'type', e uma string com a informação para o usuário do que está ocorrendo. Então, deve ser aberto/criado o arquivo de acordo com o parâmetro 'type' e o nome informado pelo usuário, e por fim, deve ser retornado o arquivo. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4472a66a52a99e41b9999cffecd89c36"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* PosicaoNo </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>no</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função de concatenação de string. </p>
+<p>Parametros: Essa função recebe como parametro duas strings 'char *no' e 'char *filho', concatena a string 'filho' na string 'no', e retorna essa string 'char *'.</p>
+<p>Tratamento de erros: Caso o computador negue a alocação de memória, o programa é finalizado.</p>
+<p>Descrição: Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string 'no' para a memoria alocada, por fim, concatena a string 'filho' na memoria alocada, retornando assim a string com 'no' e 'filho' concatenados devidamente.</p>
+<p>Assertivas de entrada: As strings 'no' e 'filho' não podem ser NULLs.</p>
+<p>Requisitos: A função deve concatenar as duas strings recebidas 'no' e 'filho' e retornar a string concatenada.</p>
+<p>Hipoteses: A função aloca devidamente memória suficiente para a string final concatenada, e faz a concatenação de forma correta, concatenando no sentido 'no' e 'filho'.</p>
+<p>Assertivas de saida: A string com o resultado da concatenação não deve ser NULL, O tamanho da string retornada deve ser o tamanho de 'no' + 'filho', e o final da string deve conter o caracter '\0'.</p>
+<p>Interface explicita:</p>
+<p>Interface implicita:</p>
+<p>Contrato na especificação: A função deve receber duas strings 'no' e 'filho' não nulas, deve então alocar uma nova string 'noFilho' que deve possuir o tamanho de 'no' e 'filho' juntas, em seguida colocar o resultado da concatenação de 'no' e 'filho' em 'noFilho' e retornar 'noFilho'. </p>
+
+</div>
+</div>
+<a class="anchor" id="a50e270f218809bc8fdaa410c7bf8ec94"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int Resposta </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tipo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para pegar o input especifico de opções do usuario. </p>
+<p>Parametros: Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.</p>
+<p>Tratamento de erros: Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres), apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper).</p>
+<p>Descrição: Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de 'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'.</p>
+<p>Assertivas de entrada: O valor de entrada deve estar entre 0 (pergunta multipla) e 2 (pergunta de inicialização).</p>
+<p>Requisitos: A função deve receber a resposta do usuário de acordo com o contexto (se é uma pergunta multipla, de inicialização ou simples), e retornar uma resposta válida apenas. A função deve ficar perguntando ao usuário até que uma resposta válida seja respondida.</p>
+<p>Hipoteses: A leitura da opção é feita de forma correta, de acordo com o tamanho do vetor que fica armazenada a resposta do usuário. O loop é feito apenas quando há uma resposta incorreta, saindo dele sempre que a resposta correta ser respondida.</p>
+<p>Assertivas de saida: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).</p>
+<p>Interface explicita:</p>
+<p>Interface implicita:</p>
+<p>Contrato na especificação: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida. </p>
 
 </div>
 </div>

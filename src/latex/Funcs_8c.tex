@@ -2,7 +2,7 @@
 \label{Funcs_8c}\index{Funcs.\+c@{Funcs.\+c}}
 
 
-Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar).  
+Arquivo que contem a função de respostas do usuário, concatenação de string e de criar arquivos txt (abrir ou salvar).  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
@@ -29,14 +29,16 @@ Gráfico de dependência de inclusões para Funcs.\+c\+:\nopagebreak
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
+unsigned int \hyperlink{Funcs_8c_a50e270f218809bc8fdaa410c7bf8ec94}{Resposta} (unsigned int tipo)
+\begin{DoxyCompactList}\small\item\em Função para pegar o input especifico de opções do usuario. \end{DoxyCompactList}\item 
 F\+I\+LE $\ast$ \hyperlink{Funcs_8c_ae514617a2ce835b9ba8c3974e6e09f3b}{Cria\+Arquivo} (char $\ast$type, char $\ast$opcao)
 \begin{DoxyCompactList}\small\item\em Função de Criação de arquivos (abertura ou leitura). \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{Funcs_8c_ab6e869105db05a7a2253c50108cb8583}{Constroi\+No} (char $\ast$no, char $\ast$filho)
+char $\ast$ \hyperlink{Funcs_8c_a4472a66a52a99e41b9999cffecd89c36}{Posicao\+No} (char $\ast$no, char $\ast$filho)
 \begin{DoxyCompactList}\small\item\em Função de concatenação de string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Descrição Detalhada}
-Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar). 
+Arquivo que contem a função de respostas do usuário, concatenação de string e de criar arquivos txt (abrir ou salvar). 
 
 \begin{DoxyAuthor}{Autor}
 Andre Garrido Damaceno 
@@ -54,37 +56,7 @@ Header de funções padrão, para I/O, manipulação de strings.
 Como esse arquivo contem apenas funções auxiliares, necessita apenas dos headers padrões. 
 
 \subsection{Funções}
-\index{Funcs.\+c@{Funcs.\+c}!Constroi\+No@{Constroi\+No}}
-\index{Constroi\+No@{Constroi\+No}!Funcs.\+c@{Funcs.\+c}}
-\subsubsection[{\texorpdfstring{Constroi\+No(char $\ast$no, char $\ast$filho)}{ConstroiNo(char *no, char *filho)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Constroi\+No (
-\begin{DoxyParamCaption}
-\item[{char $\ast$}]{no, }
-\item[{char $\ast$}]{filho}
-\end{DoxyParamCaption}
-)}\hypertarget{Funcs_8c_ab6e869105db05a7a2253c50108cb8583}{}\label{Funcs_8c_ab6e869105db05a7a2253c50108cb8583}
-
-
-Função de concatenação de string. 
-
-Parametros\+: Essa função recebe como parametro duas strings \textquotesingle{}char $\ast$no\textquotesingle{} e \textquotesingle{}char $\ast$filho\textquotesingle{}, concatena a string \textquotesingle{}filho\textquotesingle{} na string \textquotesingle{}no\textquotesingle{}, e retorna essa string \textquotesingle{}char $\ast$\textquotesingle{}.
-
-Tratamento de erros\+: Caso o computador negue a alocação de memória, o programa é finalizado.
-
-Descrição\+: Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string \textquotesingle{}no\textquotesingle{} para a memoria alocada, por fim, concatena a string \textquotesingle{}filho\textquotesingle{} na memoria alocada, retornando assim a string com \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} concatenados devidamente.
-
-Assertivas de entrada\+: As strings \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} não podem ser N\+U\+L\+Ls.
-
-Requisitos\+: A função deve concatenar as duas strings recebidas \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} e retornar a string concatenada.
-
-Hipoteses\+: A função aloca devidamente memória suficiente para a string final concatenada, e faz a concatenação de forma correta, concatenando no sentido \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{}.
-
-Assertivas de saida\+: A string com o resultado da concatenação não deve ser N\+U\+LL, O tamanho da string retornada deve ser o tamanho de \textquotesingle{}no\textquotesingle{} + \textquotesingle{}filho\textquotesingle{}, e o final da string deve conter o caracter \textquotesingle{}\textbackslash{}0\textquotesingle{}.
-
-Interface explicita\+:
-
-Interface implicita\+:
-
-Contrato na especificação\+: A função deve receber duas strings \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} não nulas, deve então alocar uma nova string \textquotesingle{}no\+Filho\textquotesingle{} que deve possuir o tamanho de \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} juntas, em seguida colocar o resultado da concatenação de \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} em \textquotesingle{}no\+Filho\textquotesingle{} e retornar \textquotesingle{}no\+Filho\textquotesingle{}. \index{Funcs.\+c@{Funcs.\+c}!Cria\+Arquivo@{Cria\+Arquivo}}
+\index{Funcs.\+c@{Funcs.\+c}!Cria\+Arquivo@{Cria\+Arquivo}}
 \index{Cria\+Arquivo@{Cria\+Arquivo}!Funcs.\+c@{Funcs.\+c}}
 \subsubsection[{\texorpdfstring{Cria\+Arquivo(char $\ast$type, char $\ast$opcao)}{CriaArquivo(char *type, char *opcao)}}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+LE$\ast$ Cria\+Arquivo (
 \begin{DoxyParamCaption}
@@ -114,4 +86,63 @@ Interface explicita\+:
 
 Interface implicita\+:
 
-Contrato na especificação\+: A função deve receber a forma de abertura/criação do arquivo \textquotesingle{}type\textquotesingle{}, e uma string com a informação para o usuário do que está ocorrendo. Então, deve ser aberto/criado o arquivo de acordo com o parâmetro \textquotesingle{}type\textquotesingle{} e o nome informado pelo usuário, e por fim, deve ser retornado o arquivo. 
+Contrato na especificação\+: A função deve receber a forma de abertura/criação do arquivo \textquotesingle{}type\textquotesingle{}, e uma string com a informação para o usuário do que está ocorrendo. Então, deve ser aberto/criado o arquivo de acordo com o parâmetro \textquotesingle{}type\textquotesingle{} e o nome informado pelo usuário, e por fim, deve ser retornado o arquivo. \index{Funcs.\+c@{Funcs.\+c}!Posicao\+No@{Posicao\+No}}
+\index{Posicao\+No@{Posicao\+No}!Funcs.\+c@{Funcs.\+c}}
+\subsubsection[{\texorpdfstring{Posicao\+No(char $\ast$no, char $\ast$filho)}{PosicaoNo(char *no, char *filho)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Posicao\+No (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{no, }
+\item[{char $\ast$}]{filho}
+\end{DoxyParamCaption}
+)}\hypertarget{Funcs_8c_a4472a66a52a99e41b9999cffecd89c36}{}\label{Funcs_8c_a4472a66a52a99e41b9999cffecd89c36}
+
+
+Função de concatenação de string. 
+
+Parametros\+: Essa função recebe como parametro duas strings \textquotesingle{}char $\ast$no\textquotesingle{} e \textquotesingle{}char $\ast$filho\textquotesingle{}, concatena a string \textquotesingle{}filho\textquotesingle{} na string \textquotesingle{}no\textquotesingle{}, e retorna essa string \textquotesingle{}char $\ast$\textquotesingle{}.
+
+Tratamento de erros\+: Caso o computador negue a alocação de memória, o programa é finalizado.
+
+Descrição\+: Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string \textquotesingle{}no\textquotesingle{} para a memoria alocada, por fim, concatena a string \textquotesingle{}filho\textquotesingle{} na memoria alocada, retornando assim a string com \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} concatenados devidamente.
+
+Assertivas de entrada\+: As strings \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} não podem ser N\+U\+L\+Ls.
+
+Requisitos\+: A função deve concatenar as duas strings recebidas \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} e retornar a string concatenada.
+
+Hipoteses\+: A função aloca devidamente memória suficiente para a string final concatenada, e faz a concatenação de forma correta, concatenando no sentido \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{}.
+
+Assertivas de saida\+: A string com o resultado da concatenação não deve ser N\+U\+LL, O tamanho da string retornada deve ser o tamanho de \textquotesingle{}no\textquotesingle{} + \textquotesingle{}filho\textquotesingle{}, e o final da string deve conter o caracter \textquotesingle{}\textbackslash{}0\textquotesingle{}.
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função deve receber duas strings \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} não nulas, deve então alocar uma nova string \textquotesingle{}no\+Filho\textquotesingle{} que deve possuir o tamanho de \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} juntas, em seguida colocar o resultado da concatenação de \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} em \textquotesingle{}no\+Filho\textquotesingle{} e retornar \textquotesingle{}no\+Filho\textquotesingle{}. \index{Funcs.\+c@{Funcs.\+c}!Resposta@{Resposta}}
+\index{Resposta@{Resposta}!Funcs.\+c@{Funcs.\+c}}
+\subsubsection[{\texorpdfstring{Resposta(unsigned int tipo)}{Resposta(unsigned int tipo)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Resposta (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{tipo}
+\end{DoxyParamCaption}
+)}\hypertarget{Funcs_8c_a50e270f218809bc8fdaa410c7bf8ec94}{}\label{Funcs_8c_a50e270f218809bc8fdaa410c7bf8ec94}
+
+
+Função para pegar o input especifico de opções do usuario. 
+
+Parametros\+: Essa função recebe como parametro um inteiro \textquotesingle{}int tipo\textquotesingle{}, que especifica o tipo de opção que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.
+
+Tratamento de erros\+: Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta do usuario pelo inteiro. Caso haja um erro de leitura pelo \textquotesingle{}scanf\textquotesingle{} (usuario digita mais que 6 caracteres), apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de erro é desconhecido o comportamento (pois estariam dependendo das funções \textquotesingle{}strcmp\textquotesingle{}, \textquotesingle{}strlen\textquotesingle{} e toupper).
+
+Descrição\+: Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo da pergunta, sendo \textquotesingle{}simples\textquotesingle{} -\/ para perguntas de \textquotesingle{}sim\textquotesingle{} ou \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}multipla\textquotesingle{} -\/ para perguntas de \textquotesingle{}sim\textquotesingle{}, \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}editar\textquotesingle{} ou \textquotesingle{}apagar\textquotesingle{}, e \textquotesingle{}inicializacao\textquotesingle{} -\/ para perguntas de \textquotesingle{}abrir\textquotesingle{} ou \textquotesingle{}criar\textquotesingle{}.
+
+Assertivas de entrada\+: O valor de entrada deve estar entre 0 (pergunta multipla) e 2 (pergunta de inicialização).
+
+Requisitos\+: A função deve receber a resposta do usuário de acordo com o contexto (se é uma pergunta multipla, de inicialização ou simples), e retornar uma resposta válida apenas. A função deve ficar perguntando ao usuário até que uma resposta válida seja respondida.
+
+Hipoteses\+: A leitura da opção é feita de forma correta, de acordo com o tamanho do vetor que fica armazenada a resposta do usuário. O loop é feito apenas quando há uma resposta incorreta, saindo dele sempre que a resposta correta ser respondida.
+
+Assertivas de saida\+: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).
+
+Interface explicita\+:
+
+Interface implicita\+:
+
+Contrato na especificação\+: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida. 

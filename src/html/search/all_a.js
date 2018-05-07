@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resposta',['Resposta',['../Vinte__Perguntas_8c.html#adfddf703b30161071a91916399b95f6a',1,'Vinte_Perguntas.c']]]
+  ['resposta',['Resposta',['../Funcs_8c.html#a50e270f218809bc8fdaa410c7bf8ec94',1,'Funcs.c']]]
 ];

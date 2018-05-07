@@ -13,8 +13,7 @@ Arquivo que contem a biblioteca de estruturação (execução) do jogo de 20 per
 {\ttfamily \#include \char`\"{}Arvore.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Funcs.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Vinte\+\_\+\+Perguntas.\+h\char`\"{}}\\*
-Gráfico de dependência de inclusões para Vinte\+\_\+\+Perguntas.\+c\+:
-\nopagebreak
+Gráfico de dependência de inclusões para Vinte\+\_\+\+Perguntas.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -38,11 +37,9 @@ Gráfico de dependência de inclusões para Vinte\+\_\+\+Perguntas.\+c\+:
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{Vinte__Perguntas_8c_adfddf703b30161071a91916399b95f6a}{Resposta} (unsigned int tipo)
-\begin{DoxyCompactList}\small\item\em Função para pegar o input especifico de opções do usuario. \end{DoxyCompactList}\item 
-void \hyperlink{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{Vinte\+\_\+\+Perguntas} (arvore $\ast$$\ast$anavega, int numero\+\_\+respostas)
+void \hyperlink{Vinte__Perguntas_8c_a66a2b52bf336af882246fb578c8862c4}{Vinte\+\_\+\+Perguntas} (arvore $\ast$$\ast$anavega, unsigned int numero\+\_\+respostas)
 \begin{DoxyCompactList}\small\item\em Função de execução do programa. \end{DoxyCompactList}\item 
-void \hyperlink{Vinte__Perguntas_8c_a843ac3fa2d2a9236370d2771e011fbde}{Pergunta\+\_\+\+Final} (arvore $\ast$$\ast$anterior, arvore $\ast$$\ast$ainicio, int numero\+\_\+respostas, int opcao)
+void \hyperlink{Vinte__Perguntas_8c_ae63c1aa2af7c51dd010d392f4ca4c9fa}{Pergunta\+\_\+\+Final} (arvore $\ast$$\ast$anterior, arvore $\ast$$\ast$ainicio, unsigned int numero\+\_\+respostas, unsigned int opcao)
 \begin{DoxyCompactList}\small\item\em Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -67,21 +64,21 @@ Como esse arquivo contem a biblioteca de execução, necessita dos headers padr�
 \subsection{Funções}
 \index{Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}!Pergunta\+\_\+\+Final@{Pergunta\+\_\+\+Final}}
 \index{Pergunta\+\_\+\+Final@{Pergunta\+\_\+\+Final}!Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}}
-\subsubsection[{\texorpdfstring{Pergunta\+\_\+\+Final(arvore $\ast$$\ast$anterior, arvore $\ast$$\ast$ainicio, int numero\+\_\+respostas, int opcao)}{Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, int opcao)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pergunta\+\_\+\+Final (
+\subsubsection[{\texorpdfstring{Pergunta\+\_\+\+Final(arvore $\ast$$\ast$anterior, arvore $\ast$$\ast$ainicio, unsigned int numero\+\_\+respostas, unsigned int opcao)}{Pergunta_Final(arvore **anterior, arvore **ainicio, unsigned int numero_respostas, unsigned int opcao)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pergunta\+\_\+\+Final (
 \begin{DoxyParamCaption}
 \item[{arvore $\ast$$\ast$}]{anterior, }
 \item[{arvore $\ast$$\ast$}]{ainicio, }
-\item[{int}]{numero\+\_\+respostas, }
-\item[{int}]{opcao}
+\item[{unsigned int}]{numero\+\_\+respostas, }
+\item[{unsigned int}]{opcao}
 \end{DoxyParamCaption}
-)}\hypertarget{Vinte__Perguntas_8c_a843ac3fa2d2a9236370d2771e011fbde}{}\label{Vinte__Perguntas_8c_a843ac3fa2d2a9236370d2771e011fbde}
+)}\hypertarget{Vinte__Perguntas_8c_ae63c1aa2af7c51dd010d392f4ca4c9fa}{}\label{Vinte__Perguntas_8c_ae63c1aa2af7c51dd010d392f4ca4c9fa}
 
 
 Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas). 
 
 Parametros\+: Essa função recebe como parametro o endereço do ponteiro da arvore \textquotesingle{}arvore $\ast$$\ast$anterior\textquotesingle{}, o endereço do apontador do inicio da arvore \textquotesingle{}arvore $\ast$$\ast$ainicio\textquotesingle{}, o numero de perguntas ja respondidas \textquotesingle{}int numero\+\_\+respostas\textquotesingle{} e a última opção selecionada \textquotesingle{}int opcao\textquotesingle{}. A função não retorna nenhum parametro.
 
-Tratamento de erros\+: Os casos de erro são os mesmos das funções \textquotesingle{}\hyperlink{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{Vinte\+\_\+\+Perguntas()}\textquotesingle{} e \textquotesingle{}\hyperlink{Arvore_8c_a11bdc8462ac661708ec7dfc6209ad039}{Constroi\+\_\+\+Manual()}\textquotesingle{}, pois depende dessas funções e de alocação de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação.
+Tratamento de erros\+: Os casos de erro são os mesmos das funções \textquotesingle{}\hyperlink{Vinte__Perguntas_8c_a66a2b52bf336af882246fb578c8862c4}{Vinte\+\_\+\+Perguntas()}\textquotesingle{} e \textquotesingle{}\hyperlink{Arvore_8c_a9e9297f5ead296cc2731c026d8072831}{Constroi\+\_\+\+Manual()}\textquotesingle{}, pois depende dessas funções e de alocação de memoria do computador, sendo assim, a execução é terminada caso haja algum erro de alocação.
 
 Descrição\+: Essa função tem o objetivo de checar se o computador conseguiu chegar na resposta do objeto que o usuário pensava. Dessa forma, a função dá a opção de criar novas perguntas para alcançar esse objetivo (caso o usuário tenha respondido menos que 20 perguntas ou um nó foi apagado) e por fim, retorna ao jogo (ou mostra o resultado caso ja tenham sido respondidas as 20 perguntas).
 
@@ -97,43 +94,14 @@ Interface explicita\+:
 
 Interface implicita\+:
 
-Contrato na especificação\+: A função deve verificar se o usuário já chegou na resposta desejada, caso ja tenha, uma mensagem é exibida. Caso ainda não tenha chegado, verifica-\/se se já foram respondidas 20 perguntas. Caso ja tenha sido respondido, é exibida uma mensagem de consolo. Caso contrário, é disponibilizada uma opção de inserir mais perguntas para se chegar na resposta (com o limite de 20 perguntas no total). No final, o jogo retorna na útlima pergunta respondida (que não tinha a resposta). \index{Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}!Resposta@{Resposta}}
-\index{Resposta@{Resposta}!Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}}
-\subsubsection[{\texorpdfstring{Resposta(unsigned int tipo)}{Resposta(unsigned int tipo)}}]{\setlength{\rightskip}{0pt plus 5cm}int Resposta (
-\begin{DoxyParamCaption}
-\item[{unsigned int}]{tipo}
-\end{DoxyParamCaption}
-)}\hypertarget{Vinte__Perguntas_8c_adfddf703b30161071a91916399b95f6a}{}\label{Vinte__Perguntas_8c_adfddf703b30161071a91916399b95f6a}
-
-
-Função para pegar o input especifico de opções do usuario. 
-
-Parametros\+: Essa função recebe como parametro um inteiro \textquotesingle{}int tipo\textquotesingle{}, que especifica o tipo de opção que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.
-
-Tratamento de erros\+: Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta do usuario pelo inteiro. Caso haja um erro de leitura pelo \textquotesingle{}scanf\textquotesingle{} (usuario digita mais que 6 caracteres), apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de erro é desconhecido o comportamento (pois estariam dependendo das funções \textquotesingle{}strcmp\textquotesingle{}, \textquotesingle{}strlen\textquotesingle{} e toupper).
-
-Descrição\+: Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo da pergunta, sendo \textquotesingle{}simples\textquotesingle{} -\/ para perguntas de \textquotesingle{}sim\textquotesingle{} ou \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}multipla\textquotesingle{} -\/ para perguntas de \textquotesingle{}sim\textquotesingle{}, \textquotesingle{}nao\textquotesingle{}, \textquotesingle{}editar\textquotesingle{} ou \textquotesingle{}apagar\textquotesingle{}, e \textquotesingle{}inicializacao\textquotesingle{} -\/ para perguntas de \textquotesingle{}abrir\textquotesingle{} ou \textquotesingle{}criar\textquotesingle{}.
-
-Assertivas de entrada\+: O valor de entrada deve estar entre 0 (pergunta multipla) e 2 (pergunta de inicialização).
-
-Requisitos\+: A função deve receber a resposta do usuário de acordo com o contexto (se é uma pergunta multipla, de inicialização ou simples), e retornar uma resposta válida apenas. A função deve ficar perguntando ao usuário até que uma resposta válida seja respondida.
-
-Hipoteses\+: A leitura da opção é feita de forma correta, de acordo com o tamanho do vetor que fica armazenada a resposta do usuário. O loop é feito apenas quando há uma resposta incorreta, saindo dele sempre que a resposta correta ser respondida.
-
-Assertivas de saida\+: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).
-
-Interface explicita\+:
-
-Interface implicita\+:
-
-Contrato na especificação\+: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida. \index{Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}!Vinte\+\_\+\+Perguntas@{Vinte\+\_\+\+Perguntas}}
+Contrato na especificação\+: A função deve verificar se o usuário já chegou na resposta desejada, caso ja tenha, uma mensagem é exibida. Caso ainda não tenha chegado, verifica-\/se se já foram respondidas 20 perguntas. Caso ja tenha sido respondido, é exibida uma mensagem de consolo. Caso contrário, é disponibilizada uma opção de inserir mais perguntas para se chegar na resposta (com o limite de 20 perguntas no total). No final, o jogo retorna na útlima pergunta respondida (que não tinha a resposta). \index{Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}!Vinte\+\_\+\+Perguntas@{Vinte\+\_\+\+Perguntas}}
 \index{Vinte\+\_\+\+Perguntas@{Vinte\+\_\+\+Perguntas}!Vinte\+\_\+\+Perguntas.\+c@{Vinte\+\_\+\+Perguntas.\+c}}
-\subsubsection[{\texorpdfstring{Vinte\+\_\+\+Perguntas(arvore $\ast$$\ast$anavega, int numero\+\_\+respostas)}{Vinte_Perguntas(arvore **anavega, int numero_respostas)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vinte\+\_\+\+Perguntas (
+\subsubsection[{\texorpdfstring{Vinte\+\_\+\+Perguntas(arvore $\ast$$\ast$anavega, unsigned int numero\+\_\+respostas)}{Vinte_Perguntas(arvore **anavega, unsigned int numero_respostas)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vinte\+\_\+\+Perguntas (
 \begin{DoxyParamCaption}
 \item[{arvore $\ast$$\ast$}]{anavega, }
-\item[{int}]{numero\+\_\+respostas}
+\item[{unsigned int}]{numero\+\_\+respostas}
 \end{DoxyParamCaption}
-)}\hypertarget{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}{}\label{Vinte__Perguntas_8c_a50cd5030c633ddd0c6cc9bcfb9adfd88}
+)}\hypertarget{Vinte__Perguntas_8c_a66a2b52bf336af882246fb578c8862c4}{}\label{Vinte__Perguntas_8c_a66a2b52bf336af882246fb578c8862c4}
 
 
 Função de execução do programa. 
