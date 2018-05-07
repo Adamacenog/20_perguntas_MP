@@ -70,7 +70,7 @@
 *dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore.
 *
 */
-void Constroi_Manual (arvore **ainicio, char *no, int size)
+void Constroi_Manual (arvore **ainicio, char *no, unsigned int size)
 {
   assert(size < 21); //Certifica que no máximo serão inseridos 20 níveis.
   assert(no != NULL); //Certifica que a string nunca é nula.
@@ -105,11 +105,11 @@ void Constroi_Manual (arvore **ainicio, char *no, int size)
         char fNao[14] = " - Filho(nao)";  //Variavel do nó sim
 
         strcpy((*ainicio)->Pergunta,pergunta);  //Inserção da pergunta na arvore
-        noFilho = ConstroiNo(no, fSim);  //Concatenação da string sim
+        noFilho = PosicaoNo(no, fSim);  //Concatenação da string sim
         Constroi_Manual (&((*ainicio)->sim), noFilho, (size + 1));  //Constroi para a esquerda (sim)
         free(noFilho);  //Remove a concatenação feita
         noFilho = NULL;
-        noFilho = ConstroiNo(no, fNao);  //Concatenação para a string nao
+        noFilho = PosicaoNo(no, fNao);  //Concatenação para a string nao
         Constroi_Manual (&((*ainicio)->nao), noFilho, (size + 1));  //Constroi para a direita (nao)
         free(noFilho);  //Remove a concatenação feita
         noFilho = NULL;

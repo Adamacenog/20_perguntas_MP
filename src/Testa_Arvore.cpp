@@ -393,7 +393,7 @@ TEST_CASE("Creating/Opening a file (read) and (write)", "Function opens/creates 
   REQUIRE(arq == NULL);
 }
 
-/**@brief Testando a função 'ConstroiNo' - Concatenação de strings existente e inexistente
+/**@brief Testando a função 'PosicaoNo' - Concatenação de strings existente e inexistente
 *
 *São declaradas strings e feito criterios de aceitação, usando a função 'strcmp' para
 *comparar as strings concatenadas com strings digitadas no teste, testando inclusive a
@@ -406,11 +406,11 @@ TEST_CASE("Function that concatenates strings", "Should concatenate the string")
   char tando[6] = "tando";
   char vazio[1] = "";
 
-  REQUIRE(strcmp(ConstroiNo(tes,tando),"testando") == 0);
-  REQUIRE(strcmp(ConstroiNo(vazio,tando),"tando") == 0);
-  REQUIRE(strcmp(ConstroiNo(tes,vazio),"tes") == 0);
-  REQUIRE(strcmp(ConstroiNo(vazio,vazio),"") == 0);
-  REQUIRE(strcmp(ConstroiNo(tando,tes),"tandotes") == 0);
+  REQUIRE(strcmp(PosicaoNo(tes,tando),"testando") == 0);
+  REQUIRE(strcmp(PosicaoNo(vazio,tando),"tando") == 0);
+  REQUIRE(strcmp(PosicaoNo(tes,vazio),"tes") == 0);
+  REQUIRE(strcmp(PosicaoNo(vazio,vazio),"") == 0);
+  REQUIRE(strcmp(PosicaoNo(tando,tes),"tandotes") == 0);
 }
 
 /**@brief Testando a função 'Resposta' - teste para o tipo 'simples', 'multipla' e inicializacao

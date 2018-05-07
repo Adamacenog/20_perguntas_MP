@@ -46,79 +46,6 @@
     #include "Vinte_Perguntas.h"
 #endif
 
-/**@brief Função para pegar o input especifico de opções do usuario.
-*
-*Parametros: Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção
-*que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.
-*
-*Tratamento de erros: Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e
-*dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta
-*do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres),
-* apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de
-*erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper).
-*
-*Descrição: Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo
-*da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de
-*'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'.
-*
-*Assertivas de entrada: O valor de entrada deve estar entre 0 (pergunta multipla) e 2 (pergunta de inicialização).
-*
-*Requisitos: A função deve receber a resposta do usuário de acordo com o contexto (se é uma pergunta multipla,
-*de inicialização ou simples), e retornar uma resposta válida apenas. A função deve ficar perguntando ao usuário
-*até que uma resposta válida seja respondida.
-*
-*Hipoteses: A leitura da opção é feita de forma correta, de acordo com o tamanho do vetor que fica armazenada a
-*resposta do usuário. O loop é feito apenas quando há uma resposta incorreta, saindo dele sempre que a resposta
-*correta ser respondida.
-*
-*Assertivas de saida: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).
-*
-*Interface explicita:
-*
-*Interface implicita:
-*
-*Contrato na especificação: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta
-*do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta
-*válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida.
-*
-*/
-int Resposta(unsigned int tipo)
-{
-  assert(tipo < 3);
-  do
-  {
-    char resposta[8];  //Variavel que armazena a resposta do usuario
-    scanf("%7s", resposta);
-
-    for(int i=0;i<strlen(resposta);i++)  //Transformação de todos os caracteres em maiusculo, para melhor identificação da opcao
-    {
-      resposta[i] = toupper(resposta[i]);
-    }
-
-    //Respostas
-    if(strcmp(resposta,"SIM") == 0 && (tipo == multipla || tipo == simples)) return Rsim;
-    if(strcmp(resposta,"NAO") == 0 && (tipo == multipla || tipo == simples)) return Rnao;
-    if(strcmp(resposta,"EDITAR") == 0 && tipo == multipla) return Reditar;
-    if(strcmp(resposta,"APAGAR") == 0 && tipo == multipla) return Rapagar;
-    if(strcmp(resposta, "ABRIR") == 0 && tipo == inicializacao) return Rabrir;
-    if(strcmp(resposta, "CRIAR") == 0 && tipo == inicializacao) return Rcriar;
-
-    //Caso o usuario tenha digitado algo invalido, há uma condição para cada tipo de pergunta ('simples', 'multipla' e 'inicializacao')
-    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0 || strcmp(resposta,"EDITAR") == 0 || strcmp(resposta,"APAGAR") == 0) && tipo == multipla)
-    {
-      printf("Digite 'sim', 'nao', 'editar' ou 'apagar'\n");
-    }
-    if(!(strcmp(resposta,"CRIAR") == 0 || strcmp(resposta,"ABRIR") == 0) && tipo == inicializacao)
-    {
-      printf("Digite 'abrir' ou 'criar'\n");
-    }
-    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0) && tipo == simples)
-    {
-      printf("Digite 'sim' ou 'nao'\n");
-    }
-  } while(1);
-}
-
 /**@brief Função de execução do programa.
 *
 *Parametros: Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **anavega'
@@ -161,7 +88,7 @@ int Resposta(unsigned int tipo)
 *sejam criadas.
 *
 */
-void Vinte_Perguntas(arvore **anavega, int numero_respostas)
+void Vinte_Perguntas(arvore **anavega, unsigned int numero_respostas)
 {
   int opcao;  //Variavel com a resposta do usuario ('sim', 'nao', 'editar', 'apagar')
   arvore *ainicio,*anterior = NULL;  /*ainicio - guarda o endereço do inicio da arvore,
@@ -174,20 +101,21 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
   {
       opcao = Resposta(multipla);  //Pega as respostas do usuario (do tipo multipla - 'sim', 'nao', 'editar', 'apagar')
 
-      if(opcao == Rsim)  //Navega para o nó sim
+      switch(opcao)
       {
+        case Rsim: //Navega para o nó sim
         anterior = (*anavega);
         NavegaSim(anavega);
-      }
-      if(opcao == Rnao)  //Navega para o nó nao
-      {
+        break;
+
+        case Rnao:  //Navega para o nó nao
         anterior = (*anavega);
         NavegaNao(anavega);
-      }
-      if(opcao == Reditar)  //Edição da pergunta
-      {
-        char pergunta[100];
+        break;
+
+        case Reditar:  //Edição da pergunta        
         printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para cancelar a edição.\n");
+        char pergunta[100];
         do
         {
           fgets (pergunta, 99, stdin);
@@ -200,9 +128,9 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
           strcpy((*anavega)->Pergunta,pergunta);
         }
         printf("Responda a pergunta editada agora para continuar...\n");
-      }
-      if(opcao == Rapagar)  //Apagar um nó
-      {
+        break;
+
+        case Rapagar:  //Apagar um nó
         printf("Tem certeza? Apagar removerá todos os filhos do nó e o nó.\n");
         opcao = Resposta(simples);
         if(opcao == Rsim)  //Checa se a pessoa realmente deseja apagar o nó
@@ -231,6 +159,7 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
           numero_respostas--;
           Le(*anavega);
         }
+        break;
       }
       numero_respostas++;  //Contador de perguntas respondidas
   }
@@ -278,7 +207,7 @@ void Vinte_Perguntas(arvore **anavega, int numero_respostas)
 *resposta (com o limite de 20 perguntas no total). No final, o jogo retorna na útlima pergunta respondida (que não tinha a resposta).
 *
 */
-void Pergunta_Final(arvore **anterior, arvore **ainicio, int numero_respostas, int opcao)
+void Pergunta_Final(arvore **anterior, arvore **ainicio, unsigned int numero_respostas, unsigned int opcao)
 {
   if(opcao != Rapagar)  //Checa se a ultima opcao foi apagar
   {

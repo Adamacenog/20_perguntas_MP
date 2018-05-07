@@ -6,7 +6,7 @@
 /**
  * @file Funcs.c
  * @author Andre Garrido Damaceno
- * @brief Arquivo que contem a função de concatenação de string e de criar arquivos txt (abrir ou salvar).
+ * @brief Arquivo que contem a função de respostas do usuário, concatenação de string e de criar arquivos txt (abrir ou salvar).
  *
  */
 
@@ -30,6 +30,79 @@
   #define _Funcs_library
     #include "Funcs.h"
 #endif
+
+/**@brief Função para pegar o input especifico de opções do usuario.
+*
+*Parametros: Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção
+*que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.
+*
+*Tratamento de erros: Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e
+*dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta
+*do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres),
+* apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de
+*erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper).
+*
+*Descrição: Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo
+*da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de
+*'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'.
+*
+*Assertivas de entrada: O valor de entrada deve estar entre 0 (pergunta multipla) e 2 (pergunta de inicialização).
+*
+*Requisitos: A função deve receber a resposta do usuário de acordo com o contexto (se é uma pergunta multipla,
+*de inicialização ou simples), e retornar uma resposta válida apenas. A função deve ficar perguntando ao usuário
+*até que uma resposta válida seja respondida.
+*
+*Hipoteses: A leitura da opção é feita de forma correta, de acordo com o tamanho do vetor que fica armazenada a
+*resposta do usuário. O loop é feito apenas quando há uma resposta incorreta, saindo dele sempre que a resposta
+*correta ser respondida.
+*
+*Assertivas de saida: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).
+*
+*Interface explicita:
+*
+*Interface implicita:
+*
+*Contrato na especificação: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta
+*do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta
+*válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida.
+*
+*/
+unsigned int Resposta(unsigned int tipo)
+{
+  assert(tipo < 3);
+  do
+  {
+    char resposta[8];  //Variavel que armazena a resposta do usuario
+    scanf("%7s", resposta);
+
+    for(int i=0;i<strlen(resposta);i++)  //Transformação de todos os caracteres em maiusculo, para melhor identificação da opcao
+    {
+      resposta[i] = toupper(resposta[i]);
+    }
+
+    //Respostas
+    if(strcmp(resposta,"SIM") == 0 && (tipo == multipla || tipo == simples)) return Rsim;
+    if(strcmp(resposta,"NAO") == 0 && (tipo == multipla || tipo == simples)) return Rnao;
+    if(strcmp(resposta,"EDITAR") == 0 && tipo == multipla) return Reditar;
+    if(strcmp(resposta,"APAGAR") == 0 && tipo == multipla) return Rapagar;
+    if(strcmp(resposta, "ABRIR") == 0 && tipo == inicializacao) return Rabrir;
+    if(strcmp(resposta, "CRIAR") == 0 && tipo == inicializacao) return Rcriar;
+
+    //Caso o usuario tenha digitado algo invalido, há uma condição para cada tipo de pergunta ('simples', 'multipla' e 'inicializacao')
+    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0 || strcmp(resposta,"EDITAR") == 0 || strcmp(resposta,"APAGAR") == 0) && tipo == multipla)
+    {
+      printf("Digite 'sim', 'nao', 'editar' ou 'apagar'\n");
+    }
+    if(!(strcmp(resposta,"CRIAR") == 0 || strcmp(resposta,"ABRIR") == 0) && tipo == inicializacao)
+    {
+      printf("Digite 'abrir' ou 'criar'\n");
+    }
+    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0) && tipo == simples)
+    {
+      printf("Digite 'sim' ou 'nao'\n");
+    }
+  } while(1);
+}
 
 /**@brief Função de Criação de arquivos (abertura ou leitura).
 *
@@ -108,7 +181,7 @@ FILE * CriaArquivo(char *type, char *opcao)
 *'noFilho' e retornar 'noFilho'.
 *
 */
-char * ConstroiNo(char *no, char *filho)
+char * PosicaoNo(char *no, char *filho)
 {
   assert(no != NULL); //Verifica a string 'no' diferente de NULL
   assert(filho != NULL); //Verifica a string 'filho' diferente de NULL
