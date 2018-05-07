@@ -39,7 +39,7 @@ void \hyperlink{Arvore_8c_a1d91a898045686dcc35f0201643fd047}{Constroi\+\_\+\+T\+
 \begin{DoxyCompactList}\small\item\em Função de criação da arvore por .txt. \end{DoxyCompactList}\item 
 void \hyperlink{Arvore_8c_a84ece5fc9e1f4d2f169800dd5f32b078}{Salva\+\_\+\+T\+XT} (arvore $\ast$$\ast$ainicio, F\+I\+LE $\ast$arq)
 \begin{DoxyCompactList}\small\item\em Função para salvar as perguntas da arvore em um .txt. \end{DoxyCompactList}\item 
-void \hyperlink{Arvore_8c_ab7a6f0fdd0836b340bbad8c859b16dc4}{Le} (arvore $\ast$a1)
+void \hyperlink{Arvore_8c_a38f12ea5e89b3f4ae1bcd49feb323ddd}{Le} (arvore $\ast$arv)
 \begin{DoxyCompactList}\small\item\em Função para a leitura da pergunta no nó da Arvore. \end{DoxyCompactList}\item 
 void \hyperlink{Arvore_8c_a1f19223608412f84ebe5001d5cd539b3}{Navega\+Sim} (arvore $\ast$$\ast$pergunta)
 \begin{DoxyCompactList}\small\item\em Função para a navegação e leitura da pergunta para o nó \textquotesingle{}sim\textquotesingle{} da arvore. \end{DoxyCompactList}\item 
@@ -95,9 +95,9 @@ Hipóteses\+: A árvore tem o tamanho alocado ideal, a string tem seu tamanho al
 
 Assertivas de saida\+: alocações internas para strings desalocadas.
 
-Interface explicita\+:
+Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$ainicio\textquotesingle{}, string \textquotesingle{}$\ast$no\textquotesingle{}, profundidade da árvore \textquotesingle{}size\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Vetores para a obtenção da pergunta do usuário \textquotesingle{}pergunta\textquotesingle{} e string
 
 Contrato na especificação\+: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta, dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore. \index{Arvore.\+c@{Arvore.\+c}!Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}}
 \index{Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}!Arvore.\+c@{Arvore.\+c}}
@@ -125,7 +125,7 @@ Hipoteses\+: O tamanho da árvore é alocado com o tamanho correto, o arquivo tx
 
 Assertivas de saida\+: Não há, pois o arquivo pode criar a árvore, ou ele ser em branco, não criando a árvore.
 
-Interface explicita\+:
+Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$ainicio\textquotesingle{}, arquivo \textquotesingle{}$\ast$arq\textquotesingle{}
 
 Interface implicita\+:
 
@@ -154,17 +154,17 @@ Hipoteses\+: A funçaõ verifica adequadamente os nós da árvore, sempre libera
 
 Assertivas de saida\+: Nó da árvore ser N\+U\+LL.
 
-Interface explicita\+:
+Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$ainicio\textquotesingle{}
 
 Interface implicita\+:
 
 Contrato na especificação\+: A função deve receber um endereço de árvore alocado na memória, e deve então desalocar toda a memória alocada pela árvore, liberando todos os nós. \index{Arvore.\+c@{Arvore.\+c}!Le@{Le}}
 \index{Le@{Le}!Arvore.\+c@{Arvore.\+c}}
-\subsubsection[{\texorpdfstring{Le(arvore $\ast$a1)}{Le(arvore *a1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Le (
+\subsubsection[{\texorpdfstring{Le(arvore $\ast$arv)}{Le(arvore *arv)}}]{\setlength{\rightskip}{0pt plus 5cm}void Le (
 \begin{DoxyParamCaption}
-\item[{arvore $\ast$}]{a1}
+\item[{arvore $\ast$}]{arv}
 \end{DoxyParamCaption}
-)}\hypertarget{Arvore_8c_ab7a6f0fdd0836b340bbad8c859b16dc4}{}\label{Arvore_8c_ab7a6f0fdd0836b340bbad8c859b16dc4}
+)}\hypertarget{Arvore_8c_a38f12ea5e89b3f4ae1bcd49feb323ddd}{}\label{Arvore_8c_a38f12ea5e89b3f4ae1bcd49feb323ddd}
 
 
 Função para a leitura da pergunta no nó da Arvore. 
@@ -183,7 +183,7 @@ Hipoteses\+: A função verifica se a árvore é ou não válida e imprime apena
 
 Assertivas de saida\+: não há.
 
-Interface explicita\+:
+Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$arv\textquotesingle{}
 
 Interface implicita\+:
 
@@ -212,7 +212,7 @@ Hipoteses\+: A função lê apenas perguntas validas com nós validos.
 
 Assertivas de saida\+: não há, pois o nó pode .
 
-Interface explicita\+:
+Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$pergunta\textquotesingle{}
 
 Interface implicita\+:
 
@@ -241,7 +241,7 @@ Hipoteses\+: A função lê apenas perguntas validas com nós validos.
 
 Assertivas de saida\+: não há, pois o nó pode .
 
-Interface explicita\+:
+Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$pergunta\textquotesingle{}
 
 Interface implicita\+:
 
@@ -271,7 +271,7 @@ Hipoteses\+: A função checa se o arquivo existe, se a arvore ja chegou no fim 
 
 Assertivas de saida\+: não há.
 
-Interface explicita\+:
+Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$ainicio\textquotesingle{}, arquivo \textquotesingle{}$\ast$arq\textquotesingle{}
 
 Interface implicita\+:
 

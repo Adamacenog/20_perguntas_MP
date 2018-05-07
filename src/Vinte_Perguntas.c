@@ -77,7 +77,7 @@
 *
 *Assertivas de saida: Não há.
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**anavega', quantidade de respostas 'numero_respostas'
 *
 *Interface implicita:
 *
@@ -113,7 +113,7 @@ void Vinte_Perguntas(arvore **anavega, unsigned int numero_respostas)
         NavegaNao(anavega);
         break;
 
-        case Reditar:  //Edição da pergunta        
+        case Reditar:  //Edição da pergunta
         printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para cancelar a edição.\n");
         char pergunta[100];
         do
@@ -197,7 +197,8 @@ void Vinte_Perguntas(arvore **anavega, unsigned int numero_respostas)
 *
 *Assertivas de saida: Não há.
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**ainicio' e '**anterior', quantidade de respostas 'numero_respostas', ultima opção
+*selecionada pelo usuário 'opcao'.
 *
 *Interface implicita:
 *

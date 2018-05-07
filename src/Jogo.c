@@ -72,7 +72,7 @@
 *
 *Assertivas de saida: Não há
 *
-*Interface explicita:
+*Interface explicita: Não há.
 *
 *Interface implicita:
 *
@@ -108,7 +108,7 @@ int main()
 *
 *Assertivas de saida: A árvore tem que ser NULL (desalocada).
 *
-*Interface explicita:
+*Interface explicita: Não há.
 *
 *Interface implicita:
 *

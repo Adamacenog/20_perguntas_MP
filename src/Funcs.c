@@ -58,7 +58,7 @@
 *
 *Assertivas de saida: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).
 *
-*Interface explicita:
+*Interface explicita: número que identifica o tipo da pergunta 'tipo'
 *
 *Interface implicita:
 *
@@ -123,7 +123,7 @@ unsigned int Resposta(unsigned int tipo)
 *
 *Assertivas de saida: Arquivo aberto/criado não ser NUL
 *
-*Interface explicita:
+*Interface explicita: string com a forma de abertura do arquivo '*type' e string com a opção de abertura '*opcao'
 *
 *Interface implicita:
 *
@@ -172,7 +172,7 @@ FILE * CriaArquivo(char *type, char *opcao)
 *Assertivas de saida: A string com o resultado da concatenação não deve ser NULL, O tamanho da string retornada deve ser
 *o tamanho de 'no' + 'filho', e o final da string deve conter o caracter '\0'.
 *
-*Interface explicita:
+*Interface explicita: primeira string para concatenação '*no', segunda string para concatenação '*filho'
 *
 *Interface implicita:
 *

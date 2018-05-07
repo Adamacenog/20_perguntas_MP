@@ -61,9 +61,9 @@
 *
 *Assertivas de saida: alocações internas para strings desalocadas.
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**ainicio', string '*no', profundidade da árvore 'size'
 *
-*Interface implicita:
+*Interface implicita: Vetores para a obtenção da pergunta do usuário 'pergunta' e string
 *
 *Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual
 *e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta,
@@ -148,7 +148,7 @@ void Constroi_Manual (arvore **ainicio, char *no, unsigned int size)
 *
 *Assertivas de saida: Não há, pois o arquivo pode criar a árvore, ou ele ser em branco, não criando a árvore.
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**ainicio', arquivo '*arq'
 *
 *Interface implicita:
 *
@@ -219,7 +219,7 @@ void Constroi_TXT (arvore **ainicio, FILE *arq)
 *
 *Assertivas de saida: não há.
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**ainicio', arquivo '*arq'
 *
 *Interface implicita:
 *
@@ -262,7 +262,7 @@ void Salva_TXT (arvore **ainicio, FILE *arq)
 *
 *Assertivas de saida: não há.
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**arv'
 *
 *Interface implicita:
 *
@@ -270,11 +270,11 @@ void Salva_TXT (arvore **ainicio, FILE *arq)
 *caso ela seja válida a função imprime a pergunta do nó. Caso não seja valida nada acontece.
 *
 */
-void Le (arvore *a1)
+void Le (arvore *arv)
 {
-    if (a1 != NULL)  //Checa se o ponteiro é valido (diferente de NULL)
+    if (arv != NULL)  //Checa se o ponteiro é valido (diferente de NULL)
     {
-      printf ("%s\n" , a1->Pergunta);  //Imprime a pergunta do nó
+      printf ("%s\n" , arv->Pergunta);  //Imprime a pergunta do nó
     }
 
     return;
@@ -299,7 +299,7 @@ void Le (arvore *a1)
 *
 *Assertivas de saida: não há, pois o nó pode .
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**pergunta'
 *
 *Interface implicita:
 *
@@ -344,7 +344,7 @@ void NavegaSim(arvore **pergunta)
 *
 *Assertivas de saida: não há, pois o nó pode .
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**pergunta'
 *
 *Interface implicita:
 *
@@ -389,7 +389,7 @@ void NavegaNao(arvore **pergunta)
 *
 *Assertivas de saida: Nó da árvore ser NULL.
 *
-*Interface explicita:
+*Interface explicita: estrutura de árvore '**ainicio'
 *
 *Interface implicita:
 *

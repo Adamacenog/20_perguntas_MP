@@ -194,7 +194,7 @@ Funções</h2></td></tr>
 <p>Requisitos: A função deve verificar se o usuário achou a resposta e se ja foram respondidas as 20 perguntas. Caso ainda não tenha chegado na resposta e ja tenha sido respondidas 20 perguntas, nada ocorre. Caso não tenha chegado na resposta e ainda não tenham sido respondidas as 20 perguntas, o usuário tem a opção de inserir mais perguntas até que as 20 perguntas sejam completadas, por fim o jogo retorna. Caso já tenha achado a resposta do objeto pensado pelo usuário, o programa finaliza.</p>
 <p>Hipoteses: Todas as memórias alocadas são feitas com o tamanho e a forma adequada, as navegações com os ponteiros são feitas de forma correta e com cuidado para não se perder as referências.</p>
 <p>Assertivas de saida: Não há.</p>
-<p>Interface explicita:</p>
+<p>Interface explicita: estrutura de árvore '**ainicio' e '**anterior', quantidade de respostas 'numero_respostas', ultima opção selecionada pelo usuário 'opcao'.</p>
 <p>Interface implicita:</p>
 <p>Contrato na especificação: A função deve verificar se o usuário já chegou na resposta desejada, caso ja tenha, uma mensagem é exibida. Caso ainda não tenha chegado, verifica-se se já foram respondidas 20 perguntas. Caso ja tenha sido respondido, é exibida uma mensagem de consolo. Caso contrário, é disponibilizada uma opção de inserir mais perguntas para se chegar na resposta (com o limite de 20 perguntas no total). No final, o jogo retorna na útlima pergunta respondida (que não tinha a resposta). </p>
 
@@ -232,7 +232,7 @@ Funções</h2></td></tr>
 <p>Requisitos: A função deve percorrer as perguntas da árvore de acordo com as respostas do usuário, também ter a capacidade de verificar se ja foram respondidas 20 perguntas. Ao fim, também oferecer a opção de inserir mais perguntas caso ainda não tenham sido respondidas as 20, e a resposta não tenha sido encontrada.</p>
 <p>Hipoteses: As alocações de memória são feitas com o tamanho ideal e de forma correta, as navegações com os ponteiros são feitas de forma adequada.</p>
 <p>Assertivas de saida: Não há.</p>
-<p>Interface explicita:</p>
+<p>Interface explicita: estrutura de árvore '**anavega', quantidade de respostas 'numero_respostas'</p>
 <p>Interface implicita:</p>
 <p>Contrato na especificação: A função recebe a árvore com as perguntas e a quantidade de respostas já respondidas, ela deve então navegar na árvore de acordo com as respostas do usuário, até o fim da árvore (onde pode ser que tenha ou não a resposta do objeto pensado pelo usuário). Caso não chegue na resposta e não tenham sido respondidas 20 perguntas ainda, a função dá a opção de inserir mais perguntas até que a resposta seja alcançada ou as 20 perguntas sejam criadas. </p>
 
