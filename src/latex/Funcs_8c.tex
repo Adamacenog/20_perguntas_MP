@@ -84,7 +84,7 @@ Assertivas de saida\+: Arquivo aberto/criado não ser N\+UL
 
 Interface explicita\+: string com a forma de abertura do arquivo \textquotesingle{}$\ast$type\textquotesingle{} e string com a opção de abertura \textquotesingle{}$\ast$opcao\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Manipulação de arquivo pela variável \textquotesingle{}$\ast$arq\textquotesingle{}.
 
 Contrato na especificação\+: A função deve receber a forma de abertura/criação do arquivo \textquotesingle{}type\textquotesingle{}, e uma string com a informação para o usuário do que está ocorrendo. Então, deve ser aberto/criado o arquivo de acordo com o parâmetro \textquotesingle{}type\textquotesingle{} e o nome informado pelo usuário, e por fim, deve ser retornado o arquivo. \index{Funcs.\+c@{Funcs.\+c}!Posicao\+No@{Posicao\+No}}
 \index{Posicao\+No@{Posicao\+No}!Funcs.\+c@{Funcs.\+c}}
@@ -114,7 +114,7 @@ Assertivas de saida\+: A string com o resultado da concatenação não deve ser 
 
 Interface explicita\+: primeira string para concatenação \textquotesingle{}$\ast$no\textquotesingle{}, segunda string para concatenação \textquotesingle{}$\ast$filho\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Não há.
 
 Contrato na especificação\+: A função deve receber duas strings \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} não nulas, deve então alocar uma nova string \textquotesingle{}no\+Filho\textquotesingle{} que deve possuir o tamanho de \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} juntas, em seguida colocar o resultado da concatenação de \textquotesingle{}no\textquotesingle{} e \textquotesingle{}filho\textquotesingle{} em \textquotesingle{}no\+Filho\textquotesingle{} e retornar \textquotesingle{}no\+Filho\textquotesingle{}. \index{Funcs.\+c@{Funcs.\+c}!Resposta@{Resposta}}
 \index{Resposta@{Resposta}!Funcs.\+c@{Funcs.\+c}}
@@ -143,6 +143,6 @@ Assertivas de saida\+: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).
 
 Interface explicita\+: número que identifica o tipo da pergunta \textquotesingle{}tipo\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Não há.
 
 Contrato na especificação\+: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida. 

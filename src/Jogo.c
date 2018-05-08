@@ -74,7 +74,7 @@
 *
 *Interface explicita: Não há.
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função deve apenas chamar a função 'Jogo_init'.
 *
@@ -110,7 +110,7 @@ int main()
 *
 *Interface explicita: Não há.
 *
-*Interface implicita:
+*Interface implicita: Manipulação de arquivo pela variável '*arq'.
 *
 *Contrato na especificação: A função não recebe nenhum parametro nem retorna nenhum parametro, deve apenas chamar as funções
 *principais capazes de fazer o jogo rodar, ou seja, em ordem, deve ser populada a árvore com perguntas, em seguida ser chamada a

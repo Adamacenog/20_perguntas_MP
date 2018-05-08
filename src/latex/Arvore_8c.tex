@@ -97,7 +97,7 @@ Assertivas de saida\+: alocações internas para strings desalocadas.
 
 Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$ainicio\textquotesingle{}, string \textquotesingle{}$\ast$no\textquotesingle{}, profundidade da árvore \textquotesingle{}size\textquotesingle{}
 
-Interface implicita\+: Vetores para a obtenção da pergunta do usuário \textquotesingle{}pergunta\textquotesingle{} e string
+Interface implicita\+: Não há.
 
 Contrato na especificação\+: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta, dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore. \index{Arvore.\+c@{Arvore.\+c}!Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}}
 \index{Constroi\+\_\+\+T\+XT@{Constroi\+\_\+\+T\+XT}!Arvore.\+c@{Arvore.\+c}}
@@ -127,7 +127,7 @@ Assertivas de saida\+: Não há, pois o arquivo pode criar a árvore, ou ele ser
 
 Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$ainicio\textquotesingle{}, arquivo \textquotesingle{}$\ast$arq\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Manipulação de arquivos pela variável \textquotesingle{}$\ast$arq\textquotesingle{}
 
 Contrato na especificação\+: A função deve receber uma árvore vazia ou incompleta, um arquivo de texto não nulo. A função deve criar ou aumentar os nós da árvore de acordo com o arquivo txt (sendo possível inclusive não criar nenhum nó ou árvore, caso o arquivo txt esteja em branco). \index{Arvore.\+c@{Arvore.\+c}!Desconstroi@{Desconstroi}}
 \index{Desconstroi@{Desconstroi}!Arvore.\+c@{Arvore.\+c}}
@@ -156,7 +156,7 @@ Assertivas de saida\+: Nó da árvore ser N\+U\+LL.
 
 Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$ainicio\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Não há.
 
 Contrato na especificação\+: A função deve receber um endereço de árvore alocado na memória, e deve então desalocar toda a memória alocada pela árvore, liberando todos os nós. \index{Arvore.\+c@{Arvore.\+c}!Le@{Le}}
 \index{Le@{Le}!Arvore.\+c@{Arvore.\+c}}
@@ -185,7 +185,7 @@ Assertivas de saida\+: não há.
 
 Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$arv\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Não há.
 
 Contrato na especificação\+: A função recebe uma árvore como parametro, verifica se ela é valida, apenas caso ela seja válida a função imprime a pergunta do nó. Caso não seja valida nada acontece. \index{Arvore.\+c@{Arvore.\+c}!Navega\+Nao@{Navega\+Nao}}
 \index{Navega\+Nao@{Navega\+Nao}!Arvore.\+c@{Arvore.\+c}}
@@ -214,7 +214,7 @@ Assertivas de saida\+: não há, pois o nó pode .
 
 Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$pergunta\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Não há.
 
 Contrato na especificação\+: A função deve receber um nó de árvore, avaliar se ele é valido (não N\+U\+LL), caso seja válido verificar o nó \textquotesingle{}nao\textquotesingle{}, caso o nó \textquotesingle{}nao\textquotesingle{} seja válido, navega para ele e imprime a pergunta do nó. \index{Arvore.\+c@{Arvore.\+c}!Navega\+Sim@{Navega\+Sim}}
 \index{Navega\+Sim@{Navega\+Sim}!Arvore.\+c@{Arvore.\+c}}
@@ -243,7 +243,7 @@ Assertivas de saida\+: não há, pois o nó pode .
 
 Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$pergunta\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Não há.
 
 Contrato na especificação\+: A função deve receber um nó de árvore, avaliar se ele é valido (não N\+U\+LL), caso seja válido verificar o nó \textquotesingle{}sim\textquotesingle{}, caso o nó \textquotesingle{}sim\textquotesingle{} seja válido, navega para ele e imprime a pergunta do nó. \index{Arvore.\+c@{Arvore.\+c}!Salva\+\_\+\+T\+XT@{Salva\+\_\+\+T\+XT}}
 \index{Salva\+\_\+\+T\+XT@{Salva\+\_\+\+T\+XT}!Arvore.\+c@{Arvore.\+c}}
@@ -273,6 +273,6 @@ Assertivas de saida\+: não há.
 
 Interface explicita\+: estrutura de árvore \textquotesingle{}$\ast$$\ast$ainicio\textquotesingle{}, arquivo \textquotesingle{}$\ast$arq\textquotesingle{}
 
-Interface implicita\+:
+Interface implicita\+: Manipulação de arquivo pela variável \textquotesingle{}$\ast$arq\textquotesingle{}
 
 Contrato na especificação\+: A função irá salvar a árvore por completo no arquivo txt recebido como parametro, inclusive salvando no txt as partes da árvore que são N\+U\+LL, representando-\/os com um \textquotesingle{}.\textquotesingle{}. 

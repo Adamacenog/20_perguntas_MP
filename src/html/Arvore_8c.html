@@ -199,7 +199,7 @@ Funções</h2></td></tr>
 <p>Hipóteses: A árvore tem o tamanho alocado ideal, a string tem seu tamanho alocado ideal, a arvore deve possuir apenas 20 níveis de perguntas. Ao final, toda memória alocada para a string deve ser liberada, apenas a memoria alocada da arvore deve se manter.</p>
 <p>Assertivas de saida: alocações internas para strings desalocadas.</p>
 <p>Interface explicita: estrutura de árvore '**ainicio', string '*no', profundidade da árvore 'size'</p>
-<p>Interface implicita: Vetores para a obtenção da pergunta do usuário 'pergunta' e string</p>
+<p>Interface implicita: Não há.</p>
 <p>Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta, dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore. </p>
 
 </div>
@@ -237,7 +237,7 @@ Funções</h2></td></tr>
 <p>Hipoteses: O tamanho da árvore é alocado com o tamanho correto, o arquivo txt é lido de forma correta. Ao final, deve ser alocada uma árvore em memória idêntica à árvore encontrada no arquivo txt.</p>
 <p>Assertivas de saida: Não há, pois o arquivo pode criar a árvore, ou ele ser em branco, não criando a árvore.</p>
 <p>Interface explicita: estrutura de árvore '**ainicio', arquivo '*arq'</p>
-<p>Interface implicita:</p>
+<p>Interface implicita: Manipulação de arquivos pela variável '*arq'</p>
 <p>Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, um arquivo de texto não nulo. A função deve criar ou aumentar os nós da árvore de acordo com o arquivo txt (sendo possível inclusive não criar nenhum nó ou árvore, caso o arquivo txt esteja em branco). </p>
 
 </div>
@@ -265,7 +265,7 @@ Funções</h2></td></tr>
 <p>Hipoteses: A funçaõ verifica adequadamente os nós da árvore, sempre libera a memória de forma adequada.</p>
 <p>Assertivas de saida: Nó da árvore ser NULL.</p>
 <p>Interface explicita: estrutura de árvore '**ainicio'</p>
-<p>Interface implicita:</p>
+<p>Interface implicita: Não há.</p>
 <p>Contrato na especificação: A função deve receber um endereço de árvore alocado na memória, e deve então desalocar toda a memória alocada pela árvore, liberando todos os nós. </p>
 
 </div>
@@ -293,7 +293,7 @@ Funções</h2></td></tr>
 <p>Hipoteses: A função verifica se a árvore é ou não válida e imprime apenas as perguntas de nós validos.</p>
 <p>Assertivas de saida: não há.</p>
 <p>Interface explicita: estrutura de árvore '**arv'</p>
-<p>Interface implicita:</p>
+<p>Interface implicita: Não há.</p>
 <p>Contrato na especificação: A função recebe uma árvore como parametro, verifica se ela é valida, apenas caso ela seja válida a função imprime a pergunta do nó. Caso não seja valida nada acontece. </p>
 
 </div>
@@ -321,7 +321,7 @@ Funções</h2></td></tr>
 <p>Hipoteses: A função lê apenas perguntas validas com nós validos.</p>
 <p>Assertivas de saida: não há, pois o nó pode .</p>
 <p>Interface explicita: estrutura de árvore '**pergunta'</p>
-<p>Interface implicita:</p>
+<p>Interface implicita: Não há.</p>
 <p>Contrato na especificação: A função deve receber um nó de árvore, avaliar se ele é valido (não NULL), caso seja válido verificar o nó 'nao', caso o nó 'nao' seja válido, navega para ele e imprime a pergunta do nó. </p>
 
 </div>
@@ -349,7 +349,7 @@ Funções</h2></td></tr>
 <p>Hipoteses: A função lê apenas perguntas validas com nós validos.</p>
 <p>Assertivas de saida: não há, pois o nó pode .</p>
 <p>Interface explicita: estrutura de árvore '**pergunta'</p>
-<p>Interface implicita:</p>
+<p>Interface implicita: Não há.</p>
 <p>Contrato na especificação: A função deve receber um nó de árvore, avaliar se ele é valido (não NULL), caso seja válido verificar o nó 'sim', caso o nó 'sim' seja válido, navega para ele e imprime a pergunta do nó. </p>
 
 </div>
@@ -387,7 +387,7 @@ Funções</h2></td></tr>
 <p>Hipoteses: A função checa se o arquivo existe, se a arvore ja chegou no fim e salva todas as perguntas da arvore de forma adequada.</p>
 <p>Assertivas de saida: não há.</p>
 <p>Interface explicita: estrutura de árvore '**ainicio', arquivo '*arq'</p>
-<p>Interface implicita:</p>
+<p>Interface implicita: Manipulação de arquivo pela variável '*arq'</p>
 <p>Contrato na especificação: A função irá salvar a árvore por completo no arquivo txt recebido como parametro, inclusive salvando no txt as partes da árvore que são NULL, representando-os com um '.'. </p>
 
 </div>

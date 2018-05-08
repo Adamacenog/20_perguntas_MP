@@ -60,7 +60,7 @@
 *
 *Interface explicita: número que identifica o tipo da pergunta 'tipo'
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta
 *do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta
@@ -125,7 +125,7 @@ unsigned int Resposta(unsigned int tipo)
 *
 *Interface explicita: string com a forma de abertura do arquivo '*type' e string com a opção de abertura '*opcao'
 *
-*Interface implicita:
+*Interface implicita: Manipulação de arquivo pela variável '*arq'.
 *
 *Contrato na especificação: A função deve receber a forma de abertura/criação do arquivo 'type', e uma string com a informação para o
 *usuário do que está ocorrendo. Então, deve ser aberto/criado o arquivo de acordo com o parâmetro 'type' e o nome informado pelo usuário,
@@ -174,7 +174,7 @@ FILE * CriaArquivo(char *type, char *opcao)
 *
 *Interface explicita: primeira string para concatenação '*no', segunda string para concatenação '*filho'
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função deve receber duas strings 'no' e 'filho' não nulas, deve então alocar uma nova string
 *'noFilho' que deve possuir o tamanho de 'no' e 'filho' juntas, em seguida colocar o resultado da concatenação de 'no' e 'filho' em

@@ -79,7 +79,7 @@
 *
 *Interface explicita: estrutura de árvore '**anavega', quantidade de respostas 'numero_respostas'
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função recebe a árvore com as perguntas e a quantidade de respostas já respondidas,
 *ela deve então navegar na árvore de acordo com as respostas do usuário, até o fim da árvore (onde pode ser que
@@ -200,7 +200,7 @@ void Vinte_Perguntas(arvore **anavega, unsigned int numero_respostas)
 *Interface explicita: estrutura de árvore '**ainicio' e '**anterior', quantidade de respostas 'numero_respostas', ultima opção
 *selecionada pelo usuário 'opcao'.
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função deve verificar se o usuário já chegou na resposta desejada, caso ja tenha, uma mensagem
 *é exibida. Caso ainda não tenha chegado, verifica-se se já foram respondidas 20 perguntas. Caso ja tenha sido respondido,

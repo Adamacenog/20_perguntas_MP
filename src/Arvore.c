@@ -63,7 +63,7 @@
 *
 *Interface explicita: estrutura de árvore '**ainicio', string '*no', profundidade da árvore 'size'
 *
-*Interface implicita: Vetores para a obtenção da pergunta do usuário 'pergunta' e string
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual
 *e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta,
@@ -150,7 +150,7 @@ void Constroi_Manual (arvore **ainicio, char *no, unsigned int size)
 *
 *Interface explicita: estrutura de árvore '**ainicio', arquivo '*arq'
 *
-*Interface implicita:
+*Interface implicita: Manipulação de arquivos pela variável '*arq'
 *
 *Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, um arquivo de texto não nulo.
 *A função deve criar ou aumentar os nós da árvore de acordo com o arquivo txt (sendo possível inclusive não
@@ -221,7 +221,7 @@ void Constroi_TXT (arvore **ainicio, FILE *arq)
 *
 *Interface explicita: estrutura de árvore '**ainicio', arquivo '*arq'
 *
-*Interface implicita:
+*Interface implicita: Manipulação de arquivo pela variável '*arq'
 *
 *Contrato na especificação: A função irá salvar a árvore por completo no arquivo txt recebido como
 *parametro, inclusive salvando no txt as partes da árvore que são NULL, representando-os com um '.'.
@@ -264,7 +264,7 @@ void Salva_TXT (arvore **ainicio, FILE *arq)
 *
 *Interface explicita: estrutura de árvore '**arv'
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função recebe uma árvore como parametro, verifica se ela é valida, apenas
 *caso ela seja válida a função imprime a pergunta do nó. Caso não seja valida nada acontece.
@@ -301,7 +301,7 @@ void Le (arvore *arv)
 *
 *Interface explicita: estrutura de árvore '**pergunta'
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função deve receber um nó de árvore, avaliar se ele é valido (não NULL),
 *caso seja válido verificar o nó 'sim', caso o nó 'sim' seja válido, navega para ele e imprime a
@@ -346,7 +346,7 @@ void NavegaSim(arvore **pergunta)
 *
 *Interface explicita: estrutura de árvore '**pergunta'
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função deve receber um nó de árvore, avaliar se ele é valido (não NULL),
 *caso seja válido verificar o nó 'nao', caso o nó 'nao' seja válido, navega para ele e imprime a
@@ -391,7 +391,7 @@ void NavegaNao(arvore **pergunta)
 *
 *Interface explicita: estrutura de árvore '**ainicio'
 *
-*Interface implicita:
+*Interface implicita: Não há.
 *
 *Contrato na especificação: A função deve receber um endereço de árvore alocado na memória, e deve então
 *desalocar toda a memória alocada pela árvore, liberando todos os nós.
