@@ -19,9 +19,9 @@ SAIR
 BLA
 SAIR
 SAIR
-teste.txt
-escreve.txt
-escreve.txt
+./Arquivos_de_teste/teste.txt
+./Arquivos_de_teste/escreve.txt
+./Arquivos_de_teste/escreve.txt
 afsdfsd
 SIM
 NAO

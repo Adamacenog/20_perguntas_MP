@@ -138,9 +138,9 @@ FILE * CriaArquivo(char *type, char *opcao)
   assert(opcao != NULL); //Verifica se a opção é NULL
 
   FILE *arq;  //Ponteiro para o arquivo (para abrir/salvar em .txt).
-  char nome[20];  //Variável usada para salvar o nome do arquivo a ser salvo/aberto.
+  char nome[36];  //Variável usada para salvar o nome do arquivo a ser salvo/aberto.
   printf("Digite o nome do arquivo a ser %s: \n",opcao);
-  scanf("%19s",nome);
+  scanf("%35s",nome);
   arq = fopen(nome, type);  //Captura do arquivo de acordo com seu nome e o tipo de abertura, no computador.
 
   if(arq == NULL)

@@ -64,10 +64,10 @@ Nó atual: PAI - Filho(nao) - Filho(nao)
 O objeto a ser descoberto é um aviao?
 O objeto é um abacaxi?
 O objeto é de comer?
-Digite o nome do arquivo a ser Aberto (DIGITE 'teste.txt'): 
-Digite o nome do arquivo a ser Escrito (DIGITE 'escreve.txt'): 
-Digite o nome do arquivo a ser Aberto (DIGITE 'escreve.txt'): 
-Digite o nome do arquivo a ser aberto - (DIGITE QUALQUER COISA QUE NAO SEJA UM ARQUIVO): 
+Digite o nome do arquivo a ser Aberto: 
+Digite o nome do arquivo a ser Escrito: 
+Digite o nome do arquivo a ser Aberto: 
+Digite o nome do arquivo a ser Aberto: 
 
 Arquivo não encontrado!
 Digite 'sim', 'nao', 'editar' ou 'apagar'

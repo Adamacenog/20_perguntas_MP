@@ -352,14 +352,14 @@ TEST_CASE("Trying to navigate to '->sim' and '->nao' whith NULL tree", "Program 
 TEST_CASE("Creating/Opening a file (read) and (write)", "Function opens/creates the file")
 {
   arvore *ainicio=NULL;
-  char abrirP[28] = "Aberto (DIGITE 'teste.txt')";
-  char abrirE[30] = "Aberto (DIGITE 'escreve.txt')";
-  char Escrever[31] = "Escrito (DIGITE 'escreve.txt')";
-  char qlqr[57] = "aberto - (DIGITE QUALQUER COISA QUE NAO SEJA UM ARQUIVO)";
+  char abrirP[28] = "Aberto";
+  char abrirE[30] = "Aberto";
+  char Escrever[31] = "Escrito";
+  char qlqr[57] = "Aberto";
   char r[2] = "r";
   char w[2] = "w";
   FILE *arq;
-  arq = CriaArquivo(r,abrirP);
+  arq = CriaArquivo(r,(char *)abrirP);
   REQUIRE(arq != NULL);
   Constroi_TXT(&ainicio,arq);
   REQUIRE(ainicio != NULL);
@@ -367,11 +367,11 @@ TEST_CASE("Creating/Opening a file (read) and (write)", "Function opens/creates 
   REQUIRE( strcmp(ainicio->sim->Pergunta, "O objeto é um abacaxi?") == 0);
   REQUIRE( strcmp(ainicio->nao->Pergunta, "O objeto é de comer?") == 0);
   fclose(arq);
-  arq = CriaArquivo(w, Escrever);
+  arq = CriaArquivo(w, (char *)Escrever);
   REQUIRE(arq != NULL);
   Salva_TXT(&ainicio,arq);
   fclose(arq);
-  arq = CriaArquivo(r, abrirE);
+  arq = CriaArquivo(r, (char *)abrirE);
   Constroi_TXT(&ainicio,arq);
   REQUIRE( strcmp(ainicio->Pergunta, "O objeto a ser descoberto é um aviao?") == 0);
   REQUIRE( strcmp(ainicio->sim->Pergunta, "O objeto é um abacaxi?") == 0);
