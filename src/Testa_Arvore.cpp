@@ -44,6 +44,9 @@
     #include "Vinte_Perguntas.h"
 #endif
 
+fpos_t pos;
+int fd = dup(fileno(stdout));
+
 /**@brief Teste da função 'Constroi_Manual'
 *
 *Testes feitos e criterio de aceitação:
@@ -65,42 +68,27 @@ TEST_CASE( "Creating a tree from user input", "Prove that the tree is created" )
 {
   arvore *ainicio;
   char pai[4] = "PAI";
-  printf("\n\n******************************************************************\n");
-  printf("SIGA AS INSTRUÇÕES EM CAIXA ALTA PARA QUE OS TESTES DEEM CERTO!!!\n");
-  printf("******************************************************************\n");
-  printf("\n\n******************************************************************\n");
-  printf("DIGITE 'SAIR' PARA O TESTE DAR CERTO\n");
-  printf("******************************************************************\n");
+  fgetpos(stdout, &pos);
+  freopen("./Arquivos_de_teste/input.txt", "r", stdin);
+  freopen("./Arquivos_de_teste/output.txt", "w", stdout);
   Constroi_Manual(&ainicio,pai,0);
   REQUIRE( ainicio == NULL );
-  printf("\n******************************************************************\n");
-  printf("AGORA DIGITE QUALQUER COISA VALIDA, DEPOIS 'SAIR' 2 VEZES\n");
-  printf("******************************************************************\n");
   Constroi_Manual(&ainicio,pai,0);
   REQUIRE( ainicio != NULL );
   REQUIRE( ainicio->sim == NULL );
   REQUIRE( ainicio->nao == NULL );
-  printf("\n******************************************************************\n");
-  printf("AGORA DIGITE QUALQUER COISA VALIDA, DEPOIS ALGO VALIDO E DEPOIS 'SAIR' 3 VEZES\n");
-  printf("******************************************************************\n");
   Constroi_Manual(&ainicio,pai,0);
   REQUIRE( ainicio != NULL );
   REQUIRE( ainicio->sim != NULL );
   REQUIRE( ainicio->sim->sim == NULL );
   REQUIRE( ainicio->sim->nao == NULL );
   REQUIRE( ainicio->nao == NULL );
-  printf("\n******************************************************************\n");
-  printf("AGORA DIGITE QUALQUER COISA VALIDA, DEPOIS 'SAIR', DEPOIS ALGO VALIDO, DEPOIS 'SAIR' 2 VEZES'\n");
-  printf("******************************************************************\n");
   Constroi_Manual(&ainicio,pai,0);
   REQUIRE( ainicio != NULL );
   REQUIRE( ainicio->sim == NULL );
   REQUIRE( ainicio->nao->sim == NULL );
   REQUIRE( ainicio->nao->nao == NULL );
   REQUIRE( ainicio->nao != NULL );
-  printf("\n******************************************************************\n");
-  printf("AGORA DIGITE QUALQUER COISA VALIDA, DEPOIS ALGO VALIDO, DEPOIS 'SAIR' 2 VEZES' DEPOIS ALGO VALIDO, DEPOIS 'SAIR' 2 VEZES'\n");
-  printf("******************************************************************\n");
   Constroi_Manual(&ainicio,pai,0);
   REQUIRE( ainicio != NULL );
   REQUIRE( ainicio->sim != NULL );
@@ -424,80 +412,24 @@ TEST_CASE("Function that concatenates strings", "Should concatenate the string")
 */
 TEST_CASE("Testing user's answers in game", "Get only 'sim', 'nao', 'editar', 'apagar' answer and nothing else")
 {
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'SIM'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Rsim);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'NAO'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Rnao);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'APAGAR'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Rapagar);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'EDITAR'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Reditar);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'sim'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Rsim);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'nao'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Rnao);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'apagar'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Rapagar);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'editar'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Reditar);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE QUALQUER COISA (DE ATE 6 CARACTERES) QUANTAS VEZES QUISER, E POR FIM 'EDITAR'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(multipla) == Reditar);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'SIM'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(simples) == Rsim);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'NAO'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(simples) == Rnao);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'sim'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(simples) == Rsim);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'nao'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(simples) == Rnao);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE QUALQUER COISA (DE ATE 6 CARACTERES) QUANTAS VEZES QUISER, E POR FIM 'SIM'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(simples) == Rsim);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'ABRIR'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(inicializacao) == Rabrir);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'CRIAR'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(inicializacao) == Rcriar);
-  printf("PARA PASSAR NO TESTE, DIGITE 'abrir'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(inicializacao) == Rabrir);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE 'criar'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(inicializacao) == Rcriar);
-  printf("\n******************************************************************\n");
-  printf("PARA PASSAR NO TESTE, DIGITE QUALQUER COISA (DE ATE 6 CARACTERES) QUANTAS VEZES QUISER, E POR FIM 'ABRIR'\n");
-  printf("******************************************************************\n");
   REQUIRE(Resposta(inicializacao) == Rabrir);
 }
 
@@ -511,14 +443,8 @@ TEST_CASE("Testing user's answers in game", "Get only 'sim', 'nao', 'editar', 'a
 TEST_CASE("Receiving null tree or object was not guessed by Vinte_Perguntas", "The function should be contained, should ask the user to add more questions if less than 20 answers")
 {
   arvore *ainicio = NULL;
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'NAO', DEPOIS 'NAO'\n");
-  printf("******************************************************************\n");
   Vinte_Perguntas(&ainicio,0);
   REQUIRE(ainicio == NULL);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'NAO', DEPOIS 'SIM', EM SEGUIDA CRIE APENAS UMA PERGUNTA EXTRA E DIGITE 'SAIR' 2 VEZES, DEPOIS RESPONDA A PERGUNTA E DIGITE NO FINAL 'SIM'\n");
-  printf("******************************************************************\n");
   Vinte_Perguntas(&ainicio,0);
   REQUIRE(ainicio != NULL);
 }
@@ -539,47 +465,26 @@ TEST_CASE("Receiving 20 questions and testing 'apagar' and 'editar' in Vinte_Per
   arvore *ainicio;
   FILE *arq;
   char test[6] = "TESTE";
-  printf("******************************************************************\n");
-  printf("DIGITE 'SIM' 20 VEZES, NO FIM DIGITE 'SIM'\n");
-  printf("******************************************************************\n");
   arq = fopen("./Arquivos_de_teste/Vinte.txt","r");
   Constroi_TXT(&ainicio,arq);
   Vinte_Perguntas(&ainicio,0);
   REQUIRE(ainicio != NULL);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'SIM' 20 VEZES, NO FIM DIGITE 'NAO'\n");
-  printf("******************************************************************\n");
   Vinte_Perguntas(&ainicio,0);
   REQUIRE(ainicio != NULL);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'EDITAR' E ESCREVA 'TESTE' NA PERGUNTA, DEPOIS RESPONDA A EDIÇÃO COM 'NAO', NO FIM DIGITE 'SIM'\n");
-  printf("******************************************************************\n");
   Vinte_Perguntas(&ainicio,0);
   REQUIRE(strcmp(ainicio->Pergunta,test) == 0);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'APAGAR', DIGITE 'SIM', NO FIM DIGITE 'NAO'\n");
-  printf("******************************************************************\n");
   Vinte_Perguntas(&ainicio,0);
   REQUIRE(ainicio == NULL);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'SIM', DEPOIS 'APAGAR', DIGITE 'SIM', NO FIM DIGITE 'NAO'\n");
-  printf("\n******************************************************************\n");
   arq = fopen("./Arquivos_de_teste/Perguntas.txt","r");
   Constroi_TXT(&ainicio,arq);
   Vinte_Perguntas(&ainicio,0);
   REQUIRE(ainicio != NULL);
   REQUIRE(ainicio->sim == NULL);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'NAO', DEPOIS 'APAGAR', DIGITE 'SIM', NO FIM DIGITE 'NAO'\n");
-  printf("******************************************************************\n");
   arq = fopen("./Arquivos_de_teste/Perguntas.txt","r");
   Constroi_TXT(&ainicio,arq);
   Vinte_Perguntas(&ainicio,0);
   REQUIRE(ainicio != NULL);
   REQUIRE(ainicio->nao == NULL);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'APAGAR', DIGITE 'NAO', DIGITE 'NAO', DIGITE 'NAO' E POR FIM DIGITE 'NAO'\n");
-  printf("******************************************************************\n");
   arq = fopen("./Arquivos_de_teste/Vinte.txt","r");
   Constroi_TXT(&ainicio,arq);
   Vinte_Perguntas(&ainicio,0);
@@ -602,16 +507,10 @@ TEST_CASE("Creating childs at the end in 'sim' and 'nao'", "Should normaly creat
   FILE *arq;
   arq = fopen("./Arquivos_de_teste/Perguntas3.txt","r");
   Constroi_TXT(&anterior,arq);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'NAO', DEPOIS 'SIM', DEPOIS 'SIM', EM SEGUIDA CRIE APENAS UMA PERGUNTA EXTRA E DIGITE 'SAIR' 2 VEZES, DEPOIS RESPONDA A PERGUNTA E DIGITE NO FINAL 'SIM'\n");
-  printf("******************************************************************\n");
   Pergunta_Final(&anterior, &ainicio, 0, Rsim);
   REQUIRE(anterior != NULL);
   REQUIRE(anterior->sim != NULL);
   REQUIRE(anterior->nao == NULL);
-  printf("\n******************************************************************\n");
-  printf("DIGITE 'NAO', DEPOIS 'SIM', DEPOIS 'NAO', EM SEGUIDA CRIE APENAS UMA PERGUNTA EXTRA E DIGITE 'SAIR' 2 VEZES, DEPOIS RESPONDA A PERGUNTA E DIGITE NO FINAL 'SIM'\n");
-  printf("******************************************************************\n");
   fclose(arq);
   arq = fopen("./Arquivos_de_teste/Perguntas3.txt","r");
   Constroi_TXT(&ainicio,arq);
@@ -620,6 +519,11 @@ TEST_CASE("Creating childs at the end in 'sim' and 'nao'", "Should normaly creat
   REQUIRE(ainicio->sim == NULL);
   REQUIRE(ainicio->nao != NULL);
   fclose(arq);
+  fflush(stdout);
+  dup2(fd, fileno(stdout));
+  close(fd);
+  clearerr(stdout);
+  fsetpos(stdout, &pos);
 }
 
 /**@brief Conclusões

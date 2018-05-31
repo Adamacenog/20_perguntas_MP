@@ -1,0 +1,207 @@
+        -:    0:Source:Funcs.c
+        -:    0:Programs:8
+        -:    1:/*
+        -:    2:*Propriedade de Andre Garrido Damaceno.
+        -:    3:*mat. 15/0117531.
+        -:    4:*/
+        -:    5:
+        -:    6:/**
+        -:    7: * @file Funcs.c
+        -:    8: * @author Andre Garrido Damaceno
+        -:    9: * @brief Arquivo que contem a função de respostas do usuário, concatenação de string e de criar arquivos txt (abrir ou salvar).
+        -:   10: *
+        -:   11: */
+        -:   12:
+        -:   13:/**Como esse arquivo contem apenas funções auxiliares, necessita apenas dos headers padrões.
+        -:   14: */
+        -:   15:
+        -:   16:/**@brief Header de funções padrão, para I/O, manipulação de strings.
+        -:   17:*/
+        -:   18:#ifndef _Primary_libraries
+        -:   19:  #define _Primary_libraries
+        -:   20:    #include <stdio.h>
+        -:   21:    #include <stdlib.h>
+        -:   22:    #include <ctype.h>
+        -:   23:    #include <string.h>
+        -:   24:    #include <assert.h>
+        -:   25:#endif
+        -:   26:
+        -:   27:/**@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+        -:   28:*/
+        -:   29:#ifndef _Funcs_library
+        -:   30:  #define _Funcs_library
+        -:   31:    #include "Funcs.h"
+        -:   32:#endif
+        -:   33:
+        -:   34:/**@brief Função para pegar o input especifico de opções do usuario.
+        -:   35:*
+        -:   36:*Parametros: Essa função recebe como parametro um inteiro 'int tipo', que especifica o tipo de opção
+        -:   37:*que o usuário terá e retorna um inteiro que representa a opção selecionada (escrita) pelo usuario.
+        -:   38:*
+        -:   39:*Tratamento de erros: Caso o usuario tenha respondido algo invalido, é mencionada as respostas que a pergunta espera, e
+        -:   40:*dada a chance do usuario responder novamente, caso contrario, é retornado o equivalente da resposta
+        -:   41:*do usuario pelo inteiro. Caso haja um erro de leitura pelo 'scanf' (usuario digita mais que 6 caracteres),
+        -:   42:* apenas é mencionada a mensagem dos tipos da resposta disponivel multiplas vezes, qualquer outro tipo de
+        -:   43:*erro é desconhecido o comportamento (pois estariam dependendo das funções 'strcmp', 'strlen' e toupper).
+        -:   44:*
+        -:   45:*Descrição: Essa função inicialmente lê a resposta escrita pelo usuário e delimita as respostas para o Tipo
+        -:   46:*da pergunta, sendo 'simples' - para perguntas de 'sim' ou 'nao', 'multipla' - para perguntas de
+        -:   47:*'sim', 'nao', 'editar' ou 'apagar', e 'inicializacao' - para perguntas de 'abrir' ou 'criar'.
+        -:   48:*
+        -:   49:*Assertivas de entrada: O valor de entrada deve estar entre 0 (pergunta multipla) e 2 (pergunta de inicialização).
+        -:   50:*
+        -:   51:*Requisitos: A função deve receber a resposta do usuário de acordo com o contexto (se é uma pergunta multipla,
+        -:   52:*de inicialização ou simples), e retornar uma resposta válida apenas. A função deve ficar perguntando ao usuário
+        -:   53:*até que uma resposta válida seja respondida.
+        -:   54:*
+        -:   55:*Hipoteses: A leitura da opção é feita de forma correta, de acordo com o tamanho do vetor que fica armazenada a
+        -:   56:*resposta do usuário. O loop é feito apenas quando há uma resposta incorreta, saindo dele sempre que a resposta
+        -:   57:*correta ser respondida.
+        -:   58:*
+        -:   59:*Assertivas de saida: O retorno tem que estar entre 0 (Rsim) e 5 (Rabrir).
+        -:   60:*
+        -:   61:*Interface explicita: número que identifica o tipo da pergunta 'tipo'
+        -:   62:*
+        -:   63:*Interface implicita: Não há.
+        -:   64:*
+        -:   65:*Contrato na especificação: A função recebe como parametro o tipo da pergunta e deve retornar com a resposta
+        -:   66:*do usuário de acordo com o tipo da pergunta recebida. Caso ela receba um tipo, e é respondido uma resposta
+        -:   67:*válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida.
+        -:   68:*
+        -:   69:*/
+      384:   70:unsigned int Resposta(unsigned int tipo)
+        -:   71:{
+      384:   72:  assert(tipo < 3);
+       14:   73:  do
+        -:   74:  {
+        -:   75:    char resposta[8];  //Variavel que armazena a resposta do usuario
+      398:   76:    scanf("%7s", resposta);
+        -:   77:
+     1768:   78:    for(int i=0;i<strlen(resposta);i++)  //Transformação de todos os caracteres em maiusculo, para melhor identificação da opcao
+        -:   79:    {
+     1370:   80:      resposta[i] = toupper(resposta[i]);
+        -:   81:    }
+        -:   82:
+        -:   83:    //Respostas
+      782:   84:    if(strcmp(resposta,"SIM") == 0 && (tipo == multipla || tipo == simples)) return Rsim;
+      154:   85:    if(strcmp(resposta,"NAO") == 0 && (tipo == multipla || tipo == simples)) return Rnao;
+       74:   86:    if(strcmp(resposta,"EDITAR") == 0 && tipo == multipla) return Reditar;
+       58:   87:    if(strcmp(resposta,"APAGAR") == 0 && tipo == multipla) return Rapagar;
+       34:   88:    if(strcmp(resposta, "ABRIR") == 0 && tipo == inicializacao) return Rabrir;
+       22:   89:    if(strcmp(resposta, "CRIAR") == 0 && tipo == inicializacao) return Rcriar;
+        -:   90:
+        -:   91:    //Caso o usuario tenha digitado algo invalido, há uma condição para cada tipo de pergunta ('simples', 'multipla' e 'inicializacao')
+       14:   92:    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0 || strcmp(resposta,"EDITAR") == 0 || strcmp(resposta,"APAGAR") == 0) && tipo == multipla)
+        -:   93:    {
+        6:   94:      printf("Digite 'sim', 'nao', 'editar' ou 'apagar'\n");
+        -:   95:    }
+       14:   96:    if(!(strcmp(resposta,"CRIAR") == 0 || strcmp(resposta,"ABRIR") == 0) && tipo == inicializacao)
+        -:   97:    {
+        4:   98:      printf("Digite 'abrir' ou 'criar'\n");
+        -:   99:    }
+       14:  100:    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0) && tipo == simples)
+        -:  101:    {
+        4:  102:      printf("Digite 'sim' ou 'nao'\n");
+        -:  103:    }
+        -:  104:  } while(1);
+        -:  105:}
+        -:  106:
+        -:  107:/**@brief Função de Criação de arquivos (abertura ou leitura).
+        -:  108:*
+        -:  109:*Parametros: Essa função recebe como parametro o tipo de abertura 'char *type' ("r" - para read, "w" - para write)
+        -:  110:*e também uma string 'char *opcao' para ser impresso na tela (informando ao usuário se o arquivo esta sendo aberto ou salvo).
+        -:  111:*A função retorna o arquivo 'FILE *'.
+        -:  112:*
+        -:  113:*Tratamento de erros: Caso o arquivo não exista, ou ele será criado (no caso do tipo "w" - write), ou a função retornará NULL no 'FILE *'.
+        -:  114:*
+        -:  115:*Descrição: Essa função apenas abre um arquivo e o retorna para o usuário.
+        -:  116:*
+        -:  117:*Assertivas de entrada: string 'type' e 'opcao' não NULLs.
+        -:  118:*
+        -:  119:*Requisitos: A função deve perguntar ao usuário qual o nome do arquivo e abrir ou criar um arquivo de acordo com o parâmetro 'type'.
+        -:  120:*
+        -:  121:*Hipoteses: A função deve abrir o arquivo de forma adequada de acordo com a forma de abertura 'type' requisitado, retornando o arquivos
+        -:  122:*aberto/criado.
+        -:  123:*
+        -:  124:*Assertivas de saida: Arquivo aberto/criado não ser NUL
+        -:  125:*
+        -:  126:*Interface explicita: string com a forma de abertura do arquivo '*type' e string com a opção de abertura '*opcao'
+        -:  127:*
+        -:  128:*Interface implicita: Manipulação de arquivo pela variável '*arq'.
+        -:  129:*
+        -:  130:*Contrato na especificação: A função deve receber a forma de abertura/criação do arquivo 'type', e uma string com a informação para o
+        -:  131:*usuário do que está ocorrendo. Então, deve ser aberto/criado o arquivo de acordo com o parâmetro 'type' e o nome informado pelo usuário,
+        -:  132:*e por fim, deve ser retornado o arquivo.
+        -:  133:*
+        -:  134:*/
+       16:  135:FILE * CriaArquivo(char *type, char *opcao)
+        -:  136:{
+       16:  137:  assert(type != NULL); //Verifica se o tipo é NULL
+       16:  138:  assert(opcao != NULL); //Verifica se a opção é NULL
+        -:  139:
+        -:  140:  FILE *arq;  //Ponteiro para o arquivo (para abrir/salvar em .txt).
+        -:  141:  char nome[20];  //Variável usada para salvar o nome do arquivo a ser salvo/aberto.
+       16:  142:  printf("Digite o nome do arquivo a ser %s: \n",opcao);
+       16:  143:  scanf("%19s",nome);
+       16:  144:  arq = fopen(nome, type);  //Captura do arquivo de acordo com seu nome e o tipo de abertura, no computador.
+        -:  145:
+       16:  146:  if(arq == NULL)
+        -:  147:  {
+        4:  148:    printf("\nArquivo não encontrado!\n");
+        -:  149:  }
+        -:  150:
+       16:  151:  return arq;
+        -:  152:}
+        -:  153:
+        -:  154:/**@brief Função de concatenação de string.
+        -:  155:*
+        -:  156:*Parametros: Essa função recebe como parametro duas strings 'char *no' e 'char *filho', concatena a string 'filho' na
+        -:  157:*string 'no', e retorna essa string 'char *'.
+        -:  158:*
+        -:  159:*Tratamento de erros: Caso o computador negue a alocação de memória, o programa é finalizado.
+        -:  160:*
+        -:  161:*Descrição: Inicialmente a função aloca memória suficiente para a concatenação das strings, em seguida copia a string 'no'
+        -:  162:*para a memoria alocada, por fim, concatena a string 'filho' na memoria alocada, retornando assim a string com 'no' e
+        -:  163:*'filho' concatenados devidamente.
+        -:  164:*
+        -:  165:*Assertivas de entrada: As strings 'no' e 'filho' não podem ser NULLs.
+        -:  166:*
+        -:  167:*Requisitos: A função deve concatenar as duas strings recebidas 'no' e 'filho' e retornar a string concatenada.
+        -:  168:*
+        -:  169:*Hipoteses: A função aloca devidamente memória suficiente para a string final concatenada, e faz a concatenação de forma
+        -:  170:*correta, concatenando no sentido 'no' e 'filho'.
+        -:  171:*
+        -:  172:*Assertivas de saida: A string com o resultado da concatenação não deve ser NULL, O tamanho da string retornada deve ser
+        -:  173:*o tamanho de 'no' + 'filho', e o final da string deve conter o caracter '\0'.
+        -:  174:*
+        -:  175:*Interface explicita: primeira string para concatenação '*no', segunda string para concatenação '*filho'
+        -:  176:*
+        -:  177:*Interface implicita: Não há.
+        -:  178:*
+        -:  179:*Contrato na especificação: A função deve receber duas strings 'no' e 'filho' não nulas, deve então alocar uma nova string
+        -:  180:*'noFilho' que deve possuir o tamanho de 'no' e 'filho' juntas, em seguida colocar o resultado da concatenação de 'no' e 'filho' em
+        -:  181:*'noFilho' e retornar 'noFilho'.
+        -:  182:*
+        -:  183:*/
+      108:  184:char * PosicaoNo(char *no, char *filho)
+        -:  185:{
+      108:  186:  assert(no != NULL); //Verifica a string 'no' diferente de NULL
+      108:  187:  assert(filho != NULL); //Verifica a string 'filho' diferente de NULL
+        -:  188:
+      108:  189:  char *noFilho = (char *) malloc (strlen(no) + strlen(filho) + 1);  //Alocação de memoria do tamanho de ambas strings + o finalizador '\0'
+        -:  190:
+      108:  191:  if(noFilho == NULL)  //Caso a alocação dê erro, o programa é finalizado.
+        -:  192:  {
+    #####:  193:    exit(1);
+        -:  194:  }
+        -:  195:
+      108:  196:  strcpy(noFilho, no);  //Copia a string 'no' para o novo espaço alocado
+      108:  197:  strcat(noFilho, filho);  //Concatena a string 'no' com a string 'filho'
+      108:  198:  noFilho[strlen(no) + strlen(filho) + 1] = '\0'; //Coloca o '\0' no final da string
+        -:  199:
+      108:  200:  assert(noFilho != NULL);
+      108:  201:  assert(strlen(noFilho) == (strlen(no) + strlen(filho)));
+      108:  202:  assert(noFilho[strlen(noFilho) + 1] == '\0');
+        -:  203:
+      108:  204:  return noFilho;
+        -:  205:}

@@ -1,0 +1,415 @@
+        -:    0:Source:Arvore.c
+        -:    0:Programs:8
+        -:    1:/*
+        -:    2:*Propriedade de Andre Garrido Damaceno.
+        -:    3:*mat. 15/0117531.
+        -:    4:*/
+        -:    5:
+        -:    6:/**
+        -:    7: * @file Arvore.c
+        -:    8: * @author Andre Garrido Damaceno
+        -:    9: * @brief Arquivo que contem a biblioteca de manipulação e criação da arvore.
+        -:   10: *
+        -:   11: */
+        -:   12:
+        -:   13:/**Como esse arquivo contem a biblioteca da arvore, necessita dos headers padrões e de
+        -:   14: *de funções auxiliares.
+        -:   15: */
+        -:   16:
+        -:   17:/**@brief Header de funções padrão, para I/O, manipulação de strings e asserts.
+        -:   18:*/
+        -:   19:#ifndef _Primary_libraries
+        -:   20:  #define _Primary_libraries
+        -:   21:    #include <stdio.h>
+        -:   22:    #include <stdlib.h>
+        -:   23:    #include <ctype.h>
+        -:   24:    #include <string.h>
+        -:   25:    #include <assert.h>
+        -:   26:#endif
+        -:   27:
+        -:   28:/**@brief Header da biblioteca de arvore.
+        -:   29:*/
+        -:   30:#ifndef _Arvore_library
+        -:   31:  #define _Arvore_library
+        -:   32:    #include "Arvore.h"
+        -:   33:#endif
+        -:   34:
+        -:   35:/**@brief Header da biblioteca de funções (criação de arquivo e concatenação de strings).
+        -:   36:*/
+        -:   37:#ifndef _Funcs_library
+        -:   38:  #define _Funcs_library
+        -:   39:    #include "Funcs.h"
+        -:   40:#endif
+        -:   41:
+        -:   42:/**@brief Função de criação da arvore de forma manual.
+        -:   43:*
+        -:   44:*Parâmetros: Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação),
+        -:   45:*uma string 'char *no' para a informação a respeito do nó atual para o usuário, um inteiro 'int size', para impedir
+        -:   46:*a criação de mais que 20 níveis de perguntas (para garantir que o usuário poderá responder apenas 20 perguntas no máximo).
+        -:   47:*A função não retorna nenhum parametro.
+        -:   48:*
+        -:   49:*Tratamento de Erros: Caso haja erro de alocação de memória em 'Constroi_Manual' ou nas funções que ela chama, o programa é encerrado com erro.
+        -:   50:*
+        -:   51:*Descrição: Essa função cria a arvore de acordo com as perguntas inseridas pelo usuário, sendo possível o usuário criar quantas
+        -:   52:*perguntas quiser (com o limite de 1048576 perguntas), podendo parar de inserir quando quiser.
+        -:   53:*
+        -:   54:*Assertivas de entrada: string 'no' não ser null, size ser no máximo 20.
+        -:   55:*
+        -:   56:*Requisitos: A função deve criar uma árvore binária com todas as perguntas inseridas pelo usuario, mostrando para o usuário sempre,
+        -:   57:*o lugar da árvore em que ele está. Deve também inserir apenas no máximo 20 níveis de perguntas.
+        -:   58:*
+        -:   59:*Hipóteses: A árvore tem o tamanho alocado ideal, a string tem seu tamanho alocado ideal, a arvore deve possuir apenas 20 níveis de
+        -:   60:*perguntas. Ao final, toda memória alocada para a string deve ser liberada, apenas a memoria alocada da arvore deve se manter.
+        -:   61:*
+        -:   62:*Assertivas de saida: alocações internas para strings desalocadas.
+        -:   63:*
+        -:   64:*Interface explicita: estrutura de árvore '**ainicio', string '*no', profundidade da árvore 'size'
+        -:   65:*
+        -:   66:*Interface implicita: Não há.
+        -:   67:*
+        -:   68:*Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, uma string com a localização do nó atual
+        -:   69:*e o tamanho atual da profundidade da árvore. A saída de cada chamada vai ser ou um nó null ou um nó de árvore com uma pergunta,
+        -:   70:*dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore.
+        -:   71:*
+        -:   72:*/
+      120:   73:void Constroi_Manual (arvore **ainicio, char *no, unsigned int size)
+        -:   74:{
+      120:   75:  assert(size < 21); //Certifica que no máximo serão inseridos 20 níveis.
+      120:   76:  assert(no != NULL); //Certifica que a string nunca é nula.
+        -:   77:
+      120:   78:  if(size < 20)  //Verifica se ja foram inseridas 20 perguntas em um nó
+        -:   79:  {
+        -:   80:    char pergunta[100];  //Variavel que armazena a pergunta
+        -:   81:
+      120:   82:    printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.\n");
+      120:   83:    printf("Nó atual: %s\n", no);
+       12:   84:    do
+        -:   85:    {
+        -:   86:      /*
+        -:   87:        Esse loop é feito para evitar que '\n' seja inserido como pergunta.
+        -:   88:      */
+      132:   89:      fgets (pergunta, 99, stdin);
+      132:   90:    } while(strcmp(pergunta,"\n") == 0);
+        -:   91:
+      120:   92:    strtok(pergunta, "\n");  //Remove o '\n' da pergunta para ficar visualmente melhor
+        -:   93:
+      120:   94:    if (strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0)
+        -:   95:    {
+       76:   96:        *ainicio = NULL;  //Caso o usuário não queira mais inserir, o nó não inserido têm que ser "branco" (NULL)
+        -:   97:    }
+        -:   98:    else
+        -:   99:    {
+       44:  100:      *ainicio = (arvore*) malloc (sizeof (arvore));  //Aloca memória para a arvore
+       44:  101:      if(*ainicio != NULL)
+        -:  102:      {
+        -:  103:        char *noFilho;  //Variavel para a concatenação de strings (melhor visualização do nó atual para o usuário)
+       44:  104:        char fSim[14] = " - Filho(sim)";  //Variavel do nó sim
+       44:  105:        char fNao[14] = " - Filho(nao)";  //Variavel do nó sim
+        -:  106:
+       44:  107:        strcpy((*ainicio)->Pergunta,pergunta);  //Inserção da pergunta na arvore
+       44:  108:        noFilho = PosicaoNo(no, fSim);  //Concatenação da string sim
+       44:  109:        Constroi_Manual (&((*ainicio)->sim), noFilho, (size + 1));  //Constroi para a esquerda (sim)
+       44:  110:        free(noFilho);  //Remove a concatenação feita
+       44:  111:        noFilho = NULL;
+       44:  112:        noFilho = PosicaoNo(no, fNao);  //Concatenação para a string nao
+       44:  113:        Constroi_Manual (&((*ainicio)->nao), noFilho, (size + 1));  //Constroi para a direita (nao)
+       44:  114:        free(noFilho);  //Remove a concatenação feita
+       44:  115:        noFilho = NULL;
+       44:  116:        assert(noFilho == NULL); //As strings alocadas sejam desalocadas
+        -:  117:      }
+        -:  118:      else  //Caso haja problema na alocação da arvore
+        -:  119:      {
+    #####:  120:        exit(1);
+        -:  121:      }
+        -:  122:    }
+        -:  123:  }
+        -:  124:  else  //Caso já tenham sido inseridas 20 perguntas
+        -:  125:  {
+    #####:  126:    *ainicio = NULL;
+        -:  127:  }
+        -:  128:
+      120:  129:  return;
+        -:  130:}
+        -:  131:
+        -:  132:/**@brief Função de criação da arvore por .txt.
+        -:  133:*
+        -:  134:*Parametros: Essa função recebe como parametro o endereço de um ponteiro de arvore 'arvore **ainicio' (para sua criação)
+        -:  135:*e um arquivo (para a leitura das perguntas e criação da arvore). A função não retorna nenhum parametro.
+        -:  136:*
+        -:  137:*Tratamento de erros: Caso haja erro de alocação de memória em 'Constroi_TXT' o programa é encerrado com erro.
+        -:  138:*
+        -:  139:*Descrição: Essa função cria a arvore de acordo com um arquivo de texto aberto pelo usuário, sendo os nós nulos identificados
+        -:  140:*por pontos '.'.
+        -:  141:*
+        -:  142:*Assertivas de entrada: a função deve receber um arquivo não nulo.
+        -:  143:*
+        -:  144:*Requisitos: A função deve criar uma árvore binária de acordo com o arquivo de txt passado como parâmetro.
+        -:  145:*
+        -:  146:*Hipoteses: O tamanho da árvore é alocado com o tamanho correto, o arquivo txt é lido de forma correta.
+        -:  147:*Ao final, deve ser alocada uma árvore em memória idêntica à árvore encontrada no arquivo txt.
+        -:  148:*
+        -:  149:*Assertivas de saida: Não há, pois o arquivo pode criar a árvore, ou ele ser em branco, não criando a árvore.
+        -:  150:*
+        -:  151:*Interface explicita: estrutura de árvore '**ainicio', arquivo '*arq'
+        -:  152:*
+        -:  153:*Interface implicita: Manipulação de arquivos pela variável '*arq'
+        -:  154:*
+        -:  155:*Contrato na especificação: A função deve receber uma árvore vazia ou incompleta, um arquivo de texto não nulo.
+        -:  156:*A função deve criar ou aumentar os nós da árvore de acordo com o arquivo txt (sendo possível inclusive não
+        -:  157:*criar nenhum nó ou árvore, caso o arquivo txt esteja em branco).
+        -:  158:*
+        -:  159:*/
+      640:  160:void Constroi_TXT (arvore **ainicio, FILE *arq)
+        -:  161:{
+      640:  162:    const char nulo[2] = ".";  //Definição do nó nulo
+        -:  163:
+      640:  164:    if(arq!=NULL)  //Verificação de arquivo .txt não existente
+        -:  165:    {
+        -:  166:      char pergunta[100];  //Variavel que armazena a pergunta
+        -:  167:
+      636:  168:      if(fgets (pergunta, 100, arq)!=NULL)  //Pega uma linha inteira do .txt (pergunta)
+        -:  169:      {
+      636:  170:          strtok(pergunta, "\n");  //Remove o '\n' da pergunta para ficar visualmente melhor
+        -:  171:
+      636:  172:          if (strcmp(pergunta, nulo) == 0)  //Caso haja um '.' no .txt, criar nó nulo
+        -:  173:          {
+      348:  174:              *ainicio = NULL;
+        -:  175:          }
+        -:  176:          else
+        -:  177:          {
+      288:  178:            *ainicio = (arvore*) malloc (sizeof (arvore));  //Alocação do espaço para a arvore
+      288:  179:            if(*ainicio != NULL)  //Verifica se a memoria alocada é nula (NULL)
+        -:  180:            {
+      288:  181:              strcpy((*ainicio)->Pergunta,pergunta);  //Copia a pergunta para a memoria alocada
+      288:  182:              Constroi_TXT (&((*ainicio)->sim), arq);  //Constroi a arvore para a esquerda (sim)
+      288:  183:              Constroi_TXT (&((*ainicio)->nao), arq);  //Constroi a arvore para a direita (nao)
+        -:  184:            }
+        -:  185:            else  //Caso haja erro na alocação, finalizar o programa
+        -:  186:            {
+    #####:  187:              exit(1);
+        -:  188:            }
+        -:  189:          }
+        -:  190:        }
+        -:  191:    }
+        -:  192:    else  //Caso o arquivo de texto não exista, a arvore não é criada
+        -:  193:    {
+        4:  194:      *ainicio = NULL;
+        -:  195:    }
+        -:  196:
+      640:  197:    return;
+        -:  198:}
+        -:  199:
+        -:  200:/**@brief Função para salvar as perguntas da arvore em um .txt.
+        -:  201:*
+        -:  202:*Parametros: Essa função recebe como parametro o endereço do ponteiro de uma arvore 'arvore **ainicio',
+        -:  203:*e o arquivo de texto a ser salvo as perguntas da arvore 'FILE *arq'. A função não retorna
+        -:  204:*nenhum parametro.
+        -:  205:*
+        -:  206:*Tratamento de erros: Caso a função receba um arquivo null, nada ocorre.
+        -:  207:*
+        -:  208:*Descrição: A função salva a pergunta no arquivo .txt, caso o nó seja NULL, é salvo
+        -:  209:*um '.' no arquivo. Caso o arquivo seja inexistente, a função não faz nada. Caso a arvore seja
+        -:  210:*inexistente, a função salva apenas um '.' no .txt.
+        -:  211:*
+        -:  212:*Assertivas de entrada: A função deve receber um arquivo não nulo.
+        -:  213:*
+        -:  214:*Requisitos: Irá ser passado por parâmetro uma árvore e o arquivo txt a ser salvo, a função irá
+        -:  215:*então salvar os dados da arvore no arquivo txt.
+        -:  216:*
+        -:  217:*Hipoteses: A função checa se o arquivo existe, se a arvore ja chegou no fim e salva todas as perguntas
+        -:  218:*da arvore de forma adequada.
+        -:  219:*
+        -:  220:*Assertivas de saida: não há.
+        -:  221:*
+        -:  222:*Interface explicita: estrutura de árvore '**ainicio', arquivo '*arq'
+        -:  223:*
+        -:  224:*Interface implicita: Manipulação de arquivo pela variável '*arq'
+        -:  225:*
+        -:  226:*Contrato na especificação: A função irá salvar a árvore por completo no arquivo txt recebido como
+        -:  227:*parametro, inclusive salvando no txt as partes da árvore que são NULL, representando-os com um '.'.
+        -:  228:*
+        -:  229:*/
+       64:  230:void Salva_TXT (arvore **ainicio, FILE *arq)
+        -:  231:{
+       64:  232:  if(arq != NULL)  //Checa se o arquivo .txt existe
+        -:  233:  {
+       60:  234:    if (*ainicio == NULL)  //Caso o nó esteja em branco (NULL)
+        -:  235:    {
+       36:  236:        fprintf(arq, "%s\n", ".");  //Coloca o '.' no arquivo .txt
+        -:  237:    }
+        -:  238:    else
+        -:  239:    {
+       24:  240:        fprintf(arq, "%s\n", (*ainicio)->Pergunta);  //Insere a pergunta no .txt
+       24:  241:        Salva_TXT (&(*ainicio)->sim, arq);  //Salva no .txt o nó da esquerda (sim)
+       24:  242:        Salva_TXT (&(*ainicio)->nao, arq);  //Salva no .txt o nó da direita (nao)
+        -:  243:    }
+        -:  244:  }
+       64:  245:  return;
+        -:  246:}
+        -:  247:
+        -:  248:/**@brief Função para a leitura da pergunta no nó da Arvore.
+        -:  249:*
+        -:  250:*Parametros: Essa função recebe como parametro um ponteiro de arvore 'arvore *a1', não retorna
+        -:  251:*nenhum parametro.
+        -:  252:*
+        -:  253:*Tratamento de erros: Caso o ponteiro não seja valido (NULL), a função não faz nada (não havendo erros).
+        -:  254:*
+        -:  255:*Descrição:  A função apenas checa se o ponteiro é valido, caso seja, imprime na tela a pergunta.
+        -:  256:*
+        -:  257:*Assertivas de entrada: Ponteiro da árvore válido (não NULL).
+        -:  258:*
+        -:  259:*Requisitos: A função deve receber uma árvore não nula e imprimir a pergunta que se encontra no nó.
+        -:  260:*
+        -:  261:*Hipoteses: A função verifica se a árvore é ou não válida e imprime apenas as perguntas de nós validos.
+        -:  262:*
+        -:  263:*Assertivas de saida: não há.
+        -:  264:*
+        -:  265:*Interface explicita: estrutura de árvore '**arv'
+        -:  266:*
+        -:  267:*Interface implicita: Não há.
+        -:  268:*
+        -:  269:*Contrato na especificação: A função recebe uma árvore como parametro, verifica se ela é valida, apenas
+        -:  270:*caso ela seja válida a função imprime a pergunta do nó. Caso não seja valida nada acontece.
+        -:  271:*
+        -:  272:*/
+      236:  273:void Le (arvore *arv)
+        -:  274:{
+      236:  275:    if (arv != NULL)  //Checa se o ponteiro é valido (diferente de NULL)
+        -:  276:    {
+      224:  277:      printf ("%s\n" , arv->Pergunta);  //Imprime a pergunta do nó
+        -:  278:    }
+        -:  279:
+      236:  280:    return;
+        -:  281:}
+        -:  282:
+        -:  283:/**@brief Função para a navegação e leitura da pergunta para o nó 'sim' da arvore.
+        -:  284:*
+        -:  285:*Parametros: Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum
+        -:  286:*parametro.
+        -:  287:*
+        -:  288:*Tratamento de erros: Caso em algum ponto o nó seja NULL, a função não faz nada, apenas retorna.
+        -:  289:*
+        -:  290:*Descrição: A função checa se o nó atual é valido e se o nó 'sim' é valido, caso sejam,
+        -:  291:*o apontador passa a apontar para o nó 'sim' e a pergunta é lida.
+        -:  292:*
+        -:  293:*Assertivas de entrada: A árvore recebida como parametro e o nó que será navegado não podem ser NULL.
+        -:  294:*
+        -:  295:*Requisitos: A função deve navegar para o nó 'sim' da arvore recebida como parametro, em seguida ler a
+        -:  296:*pergunta desse nó.
+        -:  297:*
+        -:  298:*Hipoteses: A função lê apenas perguntas validas com nós validos.
+        -:  299:*
+        -:  300:*Assertivas de saida: não há, pois o nó pode .
+        -:  301:*
+        -:  302:*Interface explicita: estrutura de árvore '**pergunta'
+        -:  303:*
+        -:  304:*Interface implicita: Não há.
+        -:  305:*
+        -:  306:*Contrato na especificação: A função deve receber um nó de árvore, avaliar se ele é valido (não NULL),
+        -:  307:*caso seja válido verificar o nó 'sim', caso o nó 'sim' seja válido, navega para ele e imprime a
+        -:  308:*pergunta do nó.
+        -:  309:*
+        -:  310:*/
+      188:  311:void NavegaSim(arvore **pergunta)
+        -:  312:{
+      188:  313:  if((*pergunta) != NULL)  //Checa se o nó é valido (não NULL)
+        -:  314:  {
+      184:  315:    if((*pergunta)->sim != NULL)  //Checa se o nó->sim é valido (não NULL)
+        -:  316:    {
+      160:  317:      *pergunta = (*pergunta)->sim;  //Faz o apontador apontar para o nó 'sim'
+      160:  318:      Le(*pergunta);  //Le a pergunta do nó 'sim'
+        -:  319:    }
+        -:  320:    else  //Caso o nó 'sim' não seja valido
+        -:  321:    {
+       24:  322:      *pergunta = NULL;
+        -:  323:    }
+        -:  324:  }
+      188:  325:  return;
+        -:  326:}
+        -:  327:
+        -:  328:/**@brief Função para a navegação e leitura da pergunta para o nó 'nao' da arvore.
+        -:  329:*
+        -:  330:*Parametros: Essa função recebe como parametro o endereço do ponteiro da arvore, e não retorna nenhum
+        -:  331:*parametro.
+        -:  332:*
+        -:  333:*Tratamento de erros: Caso em algum ponto o nó seja NULL, a função não faz nada, apenas retorna.
+        -:  334:*
+        -:  335:*Descrição: A função checa se o nó atual é valido e se o nó 'nao' é valido, caso sejam,
+        -:  336:*o apontador passa a apontar para o nó 'nao' e a pergunta é lida.
+        -:  337:*
+        -:  338:*Assertivas de entrada: A árvore recebida como parametro e o nó que será navegado não podem ser NULL.
+        -:  339:*
+        -:  340:*Requisitos: A função deve navegar para o nó 'nao' da arvore recebida como parametro, em seguida ler a
+        -:  341:*pergunta desse nó.
+        -:  342:*
+        -:  343:*Hipoteses: A função lê apenas perguntas validas com nós validos.
+        -:  344:*
+        -:  345:*Assertivas de saida: não há, pois o nó pode .
+        -:  346:*
+        -:  347:*Interface explicita: estrutura de árvore '**pergunta'
+        -:  348:*
+        -:  349:*Interface implicita: Não há.
+        -:  350:*
+        -:  351:*Contrato na especificação: A função deve receber um nó de árvore, avaliar se ele é valido (não NULL),
+        -:  352:*caso seja válido verificar o nó 'nao', caso o nó 'nao' seja válido, navega para ele e imprime a
+        -:  353:*pergunta do nó.
+        -:  354:*
+        -:  355:*/
+       24:  356:void NavegaNao(arvore **pergunta)
+        -:  357:{
+       24:  358:  if((*pergunta) != NULL)  //Checa se o nó é valido (não NULL)
+        -:  359:  {
+       20:  360:    if((*pergunta)->nao != NULL)  //Checa se o nó->'nao' é valido (não NULL)
+        -:  361:    {
+        8:  362:      *pergunta = (*pergunta)->nao;  //Faz o apontador apontar para o nó 'nao'
+        8:  363:      Le(*pergunta);  //Le a pergunta do nó 'nao'
+        -:  364:    }
+        -:  365:    else  //Caso o nó 'nao' não seja valido
+        -:  366:    {
+       12:  367:      *pergunta = NULL;
+        -:  368:    }
+        -:  369:  }
+       24:  370:  return;
+        -:  371:}
+        -:  372:
+        -:  373:/**@brief Função para apagar a arvore da memória.
+        -:  374:*
+        -:  375:*Parametros: Essa função recebe como parametro o endereço do ponteiro da arvore 'arvore **ainicio'
+        -:  376:*e não retorna nenhum parametro.
+        -:  377:*
+        -:  378:*Tratamento de erros: Caso seja inserido um nó invalido não NULL, pode ser que ocorra um erro de SegFault.
+        -:  379:*
+        -:  380:*Descrição: A função navega recursivamente para o ultimo nó sim, em seguida o ultimo nó nao, e vai apagando
+        -:  381:*a arvore. A função checa se o nó é NULL, para evitar erros e conseguir apagar de forma recursiva.
+        -:  382:*
+        -:  383:*Assertivas de entrada: Nó da árvore válido (não NULL)
+        -:  384:*
+        -:  385:*Requisitos: A função deve receber uma árvore não nula, e apagar todos seus nós, liberando toda a memória alocada
+        -:  386:*da árvore.
+        -:  387:*
+        -:  388:*Hipoteses: A funçaõ verifica adequadamente os nós da árvore, sempre libera a memória de forma adequada.
+        -:  389:*
+        -:  390:*Assertivas de saida: Nó da árvore ser NULL.
+        -:  391:*
+        -:  392:*Interface explicita: estrutura de árvore '**ainicio'
+        -:  393:*
+        -:  394:*Interface implicita: Não há.
+        -:  395:*
+        -:  396:*Contrato na especificação: A função deve receber um endereço de árvore alocado na memória, e deve então
+        -:  397:*desalocar toda a memória alocada pela árvore, liberando todos os nós.
+        -:  398:*
+        -:  399:*/
+      220:  400:void Desconstroi (arvore **ainicio)
+        -:  401:{
+      220:  402:    if (*ainicio != NULL)  //Checa se o nó é valido (não NULL)
+        -:  403:    {
+      100:  404:        Desconstroi (&((*ainicio)->sim));  //Faz a chamada recursiva para a esquerda (sim)
+      100:  405:        Desconstroi (&((*ainicio)->nao));  //Faz a chamada recursiva para a direita (nao)
+      100:  406:        free (*ainicio);  //Apaga o nó
+      100:  407:        *ainicio = NULL;  //Aponta o nó apagado para NULL (para evitar erros)
+        -:  408:    }
+        -:  409:
+      220:  410:    assert(*ainicio == NULL); //Nó da árvore deve ter sido liberado
+        -:  411:
+      220:  412:    return;
+        -:  413:}

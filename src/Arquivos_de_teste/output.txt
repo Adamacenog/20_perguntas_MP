@@ -1,0 +1,249 @@
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim) - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim) - Filho(nao)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao) - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao) - Filho(nao)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim) - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim) - Filho(nao)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao) - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao) - Filho(nao)
+O objeto a ser descoberto é um aviao?
+O objeto é um abacaxi?
+O objeto é de comer?
+Digite o nome do arquivo a ser Aberto (DIGITE 'teste.txt'): 
+Digite o nome do arquivo a ser Escrito (DIGITE 'escreve.txt'): 
+Digite o nome do arquivo a ser Aberto (DIGITE 'escreve.txt'): 
+Digite o nome do arquivo a ser aberto - (DIGITE QUALQUER COISA QUE NAO SEJA UM ARQUIVO): 
+
+Arquivo não encontrado!
+Digite 'sim', 'nao', 'editar' ou 'apagar'
+Digite 'sim' ou 'nao'
+Digite 'abrir' ou 'criar'
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+
+Fim de jogo!, seu objeto foi descoberto?
+Deseja fazer mais perguntas para conseguir responder seu objeto?
+Fim de jogo!
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+
+Fim de jogo!, seu objeto foi descoberto?
+Deseja fazer mais perguntas para conseguir responder seu objeto?
+A edição vai começar a partir da última pergunta respondida, que é:
+
+Última pergunta vazia, fazendo jogo novo!
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao)
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+BLA
+
+Fim de jogo!, seu objeto foi descoberto?
+Que bom!! O computador é esperto!
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+O objeto é de comer?
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+
+Fim de jogo!, seu objeto foi descoberto?
+Que bom!! O computador é esperto!
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+O objeto é de comer?
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+continue respondendo sim
+
+Fim de jogo!, seu objeto foi descoberto?
+Que pena :(, não foi dessa vez
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+O objeto é de comer?
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para cancelar a edição.
+Responda a pergunta editada agora para continuar...
+
+Fim de jogo!, seu objeto foi descoberto?
+Que bom!! O computador é esperto!
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+TESTE
+Tem certeza? Apagar removerá todos os filhos do nó e o nó.
+Deseja fazer mais perguntas para conseguir responder seu objeto?
+Fim de jogo!
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+O objeto a ser descoberto é um aviao?
+O objeto é um abacaxi?
+Tem certeza? Apagar removerá todos os filhos do nó e o nó.
+Deseja fazer mais perguntas para conseguir responder seu objeto?
+Fim de jogo!
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+O objeto a ser descoberto é um aviao?
+O objeto é de comer?
+Tem certeza? Apagar removerá todos os filhos do nó e o nó.
+Deseja fazer mais perguntas para conseguir responder seu objeto?
+Fim de jogo!
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+O objeto é de comer?
+Tem certeza? Apagar removerá todos os filhos do nó e o nó.
+O objeto é de comer?
+
+Fim de jogo!, seu objeto foi descoberto?
+Deseja fazer mais perguntas para conseguir responder seu objeto?
+Fim de jogo!
+
+Fim de jogo!, seu objeto foi descoberto?
+Deseja fazer mais perguntas para conseguir responder seu objeto?
+A edição vai começar a partir da última pergunta respondida, que é:
+O objeto é de comer?
+Digite 'SIM' para adicionar no nó PERGUNTA->SIM e 'NAO' para o nó PERGUNTA->NAO
+Construindo a partir do nó ULTIMA PERGUNTA->SIM
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: ULTIMA PERGUNTA->SIM
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: ULTIMA PERGUNTA->SIM - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: ULTIMA PERGUNTA->SIM - Filho(nao)
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+BLA
+
+Fim de jogo!, seu objeto foi descoberto?
+Que bom!! O computador é esperto!
+
+Fim de jogo!, seu objeto foi descoberto?
+Deseja fazer mais perguntas para conseguir responder seu objeto?
+A edição vai começar a partir da última pergunta respondida, que é:
+O objeto é de comer?
+Digite 'SIM' para adicionar no nó PERGUNTA->SIM e 'NAO' para o nó PERGUNTA->NAO
+Construindo a partir do nó ULTIMA PERGUNTA->NAO
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: ULTIMA PERGUNTA->NAO
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: ULTIMA PERGUNTA->NAO - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: ULTIMA PERGUNTA->NAO - Filho(nao)
+
+O jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'
+
+BLA
+
+Fim de jogo!, seu objeto foi descoberto?
+Que bom!! O computador é esperto!
+Fim de jogo!
