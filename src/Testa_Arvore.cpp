@@ -97,6 +97,12 @@ TEST_CASE( "Creating a tree from user input", "Prove that the tree is created" )
   REQUIRE( ainicio->nao != NULL );
   REQUIRE( ainicio->nao->sim == NULL );
   REQUIRE( ainicio->nao->nao == NULL );
+  Constroi_Manual(&ainicio,pai,20); //Teste de inserção de mais de 20 perguntas
+  REQUIRE( ainicio == NULL );
+  Constroi_Manual(&ainicio,pai,18); //Teste de tentativa de por pergunta com '\n'
+  REQUIRE( ainicio != NULL );
+  REQUIRE( ainicio->sim == NULL );
+  REQUIRE( ainicio->nao == NULL );
 }
 
 /**@brief Testes da função 'Constroi_TXT' - Criação normal da arvore.

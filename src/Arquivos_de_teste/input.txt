@@ -19,6 +19,10 @@ SAIR
 BLA
 SAIR
 SAIR
+
+BLA
+SAIR
+SAIR
 ./Arquivos_de_teste/teste.txt
 ./Arquivos_de_teste/escreve.txt
 ./Arquivos_de_teste/escreve.txt

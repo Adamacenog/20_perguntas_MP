@@ -61,6 +61,15 @@ Nó atual: PAI - Filho(nao) - Filho(sim)
 
 Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
 Nó atual: PAI - Filho(nao) - Filho(nao)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(sim)
+
+Digite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.
+Nó atual: PAI - Filho(nao)
 O objeto a ser descoberto é um aviao?
 O objeto é um abacaxi?
 O objeto é de comer?
