@@ -69,39 +69,39 @@
         -:   67:*válida em outros tipos mas não no tipo recebido, a resposta deve ser considerada inválida.
         -:   68:*
         -:   69:*/
-       96:   70:unsigned int Resposta(unsigned int tipo)
+      192:   70:unsigned int Resposta(unsigned int tipo)
         -:   71:{
-       96:   72:  assert(tipo < 3);
-        3:   73:  do
+      192:   72:  assert(tipo < 3);
+        6:   73:  do
         -:   74:  {
         -:   75:    char resposta[8];  //Variavel que armazena a resposta do usuario
-       99:   76:    scanf("%7s", resposta);
+      198:   76:    scanf("%7s", resposta);
         -:   77:
-      440:   78:    for(int i=0;i<strlen(resposta);i++)  //Transformação de todos os caracteres em maiusculo, para melhor identificação da opcao
+      880:   78:    for(int i=0;i<strlen(resposta);i++)  //Transformação de todos os caracteres em maiusculo, para melhor identificação da opcao
         -:   79:    {
-      341:   80:      resposta[i] = toupper(resposta[i]);
+      682:   80:      resposta[i] = toupper(resposta[i]);
         -:   81:    }
         -:   82:
         -:   83:    //Respostas
-      195:   84:    if(strcmp(resposta,"SIM") == 0 && (tipo == multipla || tipo == simples)) return Rsim;
-       38:   85:    if(strcmp(resposta,"NAO") == 0 && (tipo == multipla || tipo == simples)) return Rnao;
-       18:   86:    if(strcmp(resposta,"EDITAR") == 0 && tipo == multipla) return Reditar;
-       14:   87:    if(strcmp(resposta,"APAGAR") == 0 && tipo == multipla) return Rapagar;
-        8:   88:    if(strcmp(resposta, "ABRIR") == 0 && tipo == inicializacao) return Rabrir;
-        5:   89:    if(strcmp(resposta, "CRIAR") == 0 && tipo == inicializacao) return Rcriar;
+      390:   84:    if(strcmp(resposta,"SIM") == 0 && (tipo == multipla || tipo == simples)) return Rsim;
+       76:   85:    if(strcmp(resposta,"NAO") == 0 && (tipo == multipla || tipo == simples)) return Rnao;
+       36:   86:    if(strcmp(resposta,"EDITAR") == 0 && tipo == multipla) return Reditar;
+       28:   87:    if(strcmp(resposta,"APAGAR") == 0 && tipo == multipla) return Rapagar;
+       16:   88:    if(strcmp(resposta, "ABRIR") == 0 && tipo == inicializacao) return Rabrir;
+       10:   89:    if(strcmp(resposta, "CRIAR") == 0 && tipo == inicializacao) return Rcriar;
         -:   90:
         -:   91:    //Caso o usuario tenha digitado algo invalido, há uma condição para cada tipo de pergunta ('simples', 'multipla' e 'inicializacao')
-        3:   92:    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0 || strcmp(resposta,"EDITAR") == 0 || strcmp(resposta,"APAGAR") == 0) && tipo == multipla)
+        6:   92:    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0 || strcmp(resposta,"EDITAR") == 0 || strcmp(resposta,"APAGAR") == 0) && tipo == multipla)
         -:   93:    {
-        1:   94:      printf("Digite 'sim', 'nao', 'editar' ou 'apagar'\n");
+        2:   94:      printf("Digite 'sim', 'nao', 'editar' ou 'apagar'\n");
         -:   95:    }
-        3:   96:    if(!(strcmp(resposta,"CRIAR") == 0 || strcmp(resposta,"ABRIR") == 0) && tipo == inicializacao)
+        6:   96:    if(!(strcmp(resposta,"CRIAR") == 0 || strcmp(resposta,"ABRIR") == 0) && tipo == inicializacao)
         -:   97:    {
-        1:   98:      printf("Digite 'abrir' ou 'criar'\n");
+        2:   98:      printf("Digite 'abrir' ou 'criar'\n");
         -:   99:    }
-        3:  100:    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0) && tipo == simples)
+        6:  100:    if(!(strcmp(resposta,"NAO") == 0 || strcmp(resposta,"SIM") == 0) && tipo == simples)
         -:  101:    {
-        1:  102:      printf("Digite 'sim' ou 'nao'\n");
+        2:  102:      printf("Digite 'sim' ou 'nao'\n");
         -:  103:    }
         -:  104:  } while(1);
         -:  105:}
@@ -134,23 +134,23 @@
         -:  132:*e por fim, deve ser retornado o arquivo.
         -:  133:*
         -:  134:*/
-        4:  135:FILE * CriaArquivo(char *type, char *opcao)
+        8:  135:FILE * CriaArquivo(char *type, char *opcao)
         -:  136:{
-        4:  137:  assert(type != NULL); //Verifica se o tipo é NULL
-        4:  138:  assert(opcao != NULL); //Verifica se a opção é NULL
+        8:  137:  assert(type != NULL); //Verifica se o tipo é NULL
+        8:  138:  assert(opcao != NULL); //Verifica se a opção é NULL
         -:  139:
         -:  140:  FILE *arq;  //Ponteiro para o arquivo (para abrir/salvar em .txt).
         -:  141:  char nome[36];  //Variável usada para salvar o nome do arquivo a ser salvo/aberto.
-        4:  142:  printf("Digite o nome do arquivo a ser %s: \n",opcao);
-        4:  143:  scanf("%35s",nome);
-        4:  144:  arq = fopen(nome, type);  //Captura do arquivo de acordo com seu nome e o tipo de abertura, no computador.
+        8:  142:  printf("Digite o nome do arquivo a ser %s: \n",opcao);
+        8:  143:  scanf("%35s",nome);
+        8:  144:  arq = fopen(nome, type);  //Captura do arquivo de acordo com seu nome e o tipo de abertura, no computador.
         -:  145:
-        4:  146:  if(arq == NULL)
+        8:  146:  if(arq == NULL)
         -:  147:  {
-        1:  148:    printf("\nArquivo não encontrado!\n");
+        2:  148:    printf("\nArquivo não encontrado!\n");
         -:  149:  }
         -:  150:
-        4:  151:  return arq;
+        8:  151:  return arq;
         -:  152:}
         -:  153:
         -:  154:/**@brief Função de concatenação de string.
@@ -183,25 +183,25 @@
         -:  181:*'noFilho' e retornar 'noFilho'.
         -:  182:*
         -:  183:*/
-       29:  184:char * PosicaoNo(char *no, char *filho)
+       58:  184:char * PosicaoNo(char *no, char *filho)
         -:  185:{
-       29:  186:  assert(no != NULL); //Verifica a string 'no' diferente de NULL
-       29:  187:  assert(filho != NULL); //Verifica a string 'filho' diferente de NULL
+       58:  186:  assert(no != NULL); //Verifica a string 'no' diferente de NULL
+       58:  187:  assert(filho != NULL); //Verifica a string 'filho' diferente de NULL
         -:  188:
-       29:  189:  char *noFilho = (char *) malloc (strlen(no) + strlen(filho) + 1);  //Alocação de memoria do tamanho de ambas strings + o finalizador '\0'
+       58:  189:  char *noFilho = (char *) malloc (strlen(no) + strlen(filho) + 1);  //Alocação de memoria do tamanho de ambas strings + o finalizador '\0'
         -:  190:
-       29:  191:  if(noFilho == NULL)  //Caso a alocação dê erro, o programa é finalizado.
+       58:  191:  if(noFilho == NULL)  //Caso a alocação dê erro, o programa é finalizado.
         -:  192:  {
     #####:  193:    exit(1);
         -:  194:  }
         -:  195:
-       29:  196:  strcpy(noFilho, no);  //Copia a string 'no' para o novo espaço alocado
-       29:  197:  strcat(noFilho, filho);  //Concatena a string 'no' com a string 'filho'
-       29:  198:  noFilho[strlen(no) + strlen(filho) + 1] = '\0'; //Coloca o '\0' no final da string
+       58:  196:  strcpy(noFilho, no);  //Copia a string 'no' para o novo espaço alocado
+       58:  197:  strcat(noFilho, filho);  //Concatena a string 'no' com a string 'filho'
+       58:  198:  noFilho[strlen(no) + strlen(filho) + 1] = '\0'; //Coloca o '\0' no final da string
         -:  199:
-       29:  200:  assert(noFilho != NULL);
-       29:  201:  assert(strlen(noFilho) == (strlen(no) + strlen(filho)));
-       29:  202:  assert(noFilho[strlen(noFilho) + 1] == '\0');
+       58:  200:  assert(noFilho != NULL);
+       58:  201:  assert(strlen(noFilho) == (strlen(no) + strlen(filho)));
+       58:  202:  assert(noFilho[strlen(noFilho) + 1] == '\0');
         -:  203:
-       29:  204:  return noFilho;
+       58:  204:  return noFilho;
         -:  205:}

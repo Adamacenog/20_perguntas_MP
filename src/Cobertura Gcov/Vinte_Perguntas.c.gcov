@@ -90,87 +90,87 @@
         -:   88:*sejam criadas.
         -:   89:*
         -:   90:*/
-       12:   91:void Vinte_Perguntas(arvore **anavega, unsigned int numero_respostas)
+       24:   91:void Vinte_Perguntas(arvore **anavega, unsigned int numero_respostas)
         -:   92:{
         -:   93:  int opcao;  //Variavel com a resposta do usuario ('sim', 'nao', 'editar', 'apagar')
-       12:   94:  arvore *ainicio,*anterior = NULL;  /*ainicio - guarda o endereço do inicio da arvore,
+       24:   94:  arvore *ainicio,*anterior = NULL;  /*ainicio - guarda o endereço do inicio da arvore,
         -:   95:                                      anterior - guarda o endereço da jogada anterior feita*/
-       12:   96:  assert(numero_respostas < 21);
-       12:   97:  printf("\nO jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'\n\n");
-       12:   98:  ainicio = (*anavega);  //Coloca-se o endereço do inicio da arvore em ainicio
-       12:   99:  Le(*anavega);  //A primeira pergunta é lida
-      116:  100:  while (numero_respostas < 20 && *anavega != NULL)  //Checa se ja foram respondidas 20 perguntas ou se a arvore chegou ao seu fim
+       24:   96:  assert(numero_respostas < 21);
+       24:   97:  printf("\nO jogo vai começar! Para editar uma pergunta a qualquer momento digite 'EDITAR', para apagar 'APAGAR'\n\n");
+       24:   98:  ainicio = (*anavega);  //Coloca-se o endereço do inicio da arvore em ainicio
+       24:   99:  Le(*anavega);  //A primeira pergunta é lida
+      232:  100:  while (numero_respostas < 20 && *anavega != NULL)  //Checa se ja foram respondidas 20 perguntas ou se a arvore chegou ao seu fim
         -:  101:  {
-       52:  102:      opcao = Resposta(multipla);  //Pega as respostas do usuario (do tipo multipla - 'sim', 'nao', 'editar', 'apagar')
+      104:  102:      opcao = Resposta(multipla);  //Pega as respostas do usuario (do tipo multipla - 'sim', 'nao', 'editar', 'apagar')
         -:  103:
-       52:  104:      switch(opcao)
+      104:  104:      switch(opcao)
         -:  105:      {
         -:  106:        case Rsim: //Navega para o nó sim
-       44:  107:        anterior = (*anavega);
-       44:  108:        NavegaSim(anavega);
-       44:  109:        break;
+       88:  107:        anterior = (*anavega);
+       88:  108:        NavegaSim(anavega);
+       88:  109:        break;
         -:  110:
         -:  111:        case Rnao:  //Navega para o nó nao
-        3:  112:        anterior = (*anavega);
-        3:  113:        NavegaNao(anavega);
-        3:  114:        break;
+        6:  112:        anterior = (*anavega);
+        6:  113:        NavegaNao(anavega);
+        6:  114:        break;
         -:  115:
         -:  116:        case Reditar:  //Edição da pergunta
-        1:  117:        printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para cancelar a edição.\n");
+        2:  117:        printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para cancelar a edição.\n");
         -:  118:        char pergunta[100];
-        1:  119:        do
+        2:  119:        do
         -:  120:        {
-        2:  121:          fgets (pergunta, 99, stdin);
-        2:  122:        } while(strcmp(pergunta,"\n") == 0);
+        4:  121:          fgets (pergunta, 99, stdin);
+        4:  122:        } while(strcmp(pergunta,"\n") == 0);
         -:  123:
-        1:  124:        strtok(pergunta, "\n");
+        2:  124:        strtok(pergunta, "\n");
         -:  125:
-        1:  126:        if (!(strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0))  //Caso a pessoa cancele a edição
+        2:  126:        if (!(strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0))  //Caso a pessoa cancele a edição
         -:  127:        {
-        1:  128:          strcpy((*anavega)->Pergunta,pergunta);
+        2:  128:          strcpy((*anavega)->Pergunta,pergunta);
         -:  129:        }
-        1:  130:        printf("Responda a pergunta editada agora para continuar...\n");
-        1:  131:        break;
+        2:  130:        printf("Responda a pergunta editada agora para continuar...\n");
+        2:  131:        break;
         -:  132:
         -:  133:        case Rapagar:  //Apagar um nó
-        4:  134:        printf("Tem certeza? Apagar removerá todos os filhos do nó e o nó.\n");
-        4:  135:        opcao = Resposta(simples);
-        4:  136:        if(opcao == Rsim)  //Checa se a pessoa realmente deseja apagar o nó
+        8:  134:        printf("Tem certeza? Apagar removerá todos os filhos do nó e o nó.\n");
+        8:  135:        opcao = Resposta(simples);
+        8:  136:        if(opcao == Rsim)  //Checa se a pessoa realmente deseja apagar o nó
         -:  137:        {
-        3:  138:          if(anterior != NULL)  //Essa etapa faz com que a arvore deixe de apontar para anavega, para apaga-la
+        6:  138:          if(anterior != NULL)  //Essa etapa faz com que a arvore deixe de apontar para anavega, para apaga-la
         -:  139:          {
-        2:  140:            if(anterior->sim == *anavega)
+        4:  140:            if(anterior->sim == *anavega)
         -:  141:            {
-        1:  142:              anterior->sim = NULL;
+        2:  142:              anterior->sim = NULL;
         -:  143:            }
-        2:  144:            if(anterior->nao == *anavega)
+        4:  144:            if(anterior->nao == *anavega)
         -:  145:            {
-        1:  146:              anterior->nao = NULL;
+        2:  146:              anterior->nao = NULL;
         -:  147:            }
         -:  148:          }
         -:  149:
-        3:  150:          if(ainicio == *anavega)  //Checa se é o primeiro nó que é apagado
+        6:  150:          if(ainicio == *anavega)  //Checa se é o primeiro nó que é apagado
         -:  151:          {
-        1:  152:            ainicio = NULL;
+        2:  152:            ainicio = NULL;
         -:  153:          }
-        3:  154:          Desconstroi(anavega);  //Apaga o nó da arvore
-        3:  155:          opcao = Rapagar;
+        6:  154:          Desconstroi(anavega);  //Apaga o nó da arvore
+        6:  155:          opcao = Rapagar;
         -:  156:        }
-        4:  157:        if(opcao == Rnao)  //Caso a pessoa desista de apagar o nó
+        8:  157:        if(opcao == Rnao)  //Caso a pessoa desista de apagar o nó
         -:  158:        {
-        1:  159:          numero_respostas--;
-        1:  160:          Le(*anavega);
+        2:  159:          numero_respostas--;
+        2:  160:          Le(*anavega);
         -:  161:        }
-        4:  162:        break;
+        8:  162:        break;
         -:  163:      }
-       52:  164:      numero_respostas++;  //Contador de perguntas respondidas
+      104:  164:      numero_respostas++;  //Contador de perguntas respondidas
         -:  165:  }
         -:  166:
-       12:  167:  Pergunta_Final(&anterior, &ainicio, numero_respostas, opcao);
+       24:  167:  Pergunta_Final(&anterior, &ainicio, numero_respostas, opcao);
         -:  168:
-       12:  169:  *anavega = ainicio;  //Coloca o apontador da arvore de volta para o inicio da arvore
+       24:  169:  *anavega = ainicio;  //Coloca o apontador da arvore de volta para o inicio da arvore
         -:  170:
-       12:  171:  return;
+       24:  171:  return;
         -:  172:}
         -:  173:
         -:  174:/**@brief Função que verifica se o computador acertou o objeto, e cria mais perguntas caso não tenha acertado (se o usuário quiser e ainda não tenham sido respondidas 20 perguntas).
@@ -210,74 +210,74 @@
         -:  208:*resposta (com o limite de 20 perguntas no total). No final, o jogo retorna na útlima pergunta respondida (que não tinha a resposta).
         -:  209:*
         -:  210:*/
-       14:  211:void Pergunta_Final(arvore **anterior, arvore **ainicio, unsigned int numero_respostas, unsigned int opcao)
+       28:  211:void Pergunta_Final(arvore **anterior, arvore **ainicio, unsigned int numero_respostas, unsigned int opcao)
         -:  212:{
-       14:  213:  if(opcao != Rapagar)  //Checa se a ultima opcao foi apagar
+       28:  213:  if(opcao != Rapagar)  //Checa se a ultima opcao foi apagar
         -:  214:  {
-       11:  215:    printf("\nFim de jogo!, seu objeto foi descoberto?\n");
-       11:  216:    opcao = Resposta(simples);
+       22:  215:    printf("\nFim de jogo!, seu objeto foi descoberto?\n");
+       22:  216:    opcao = Resposta(simples);
         -:  217:  }
         -:  218:  else  //Caso tenha sido apagar, já vai direto á pergunta se o usuário deseja add mais perguntas
         -:  219:  {
-        3:  220:    opcao = Rnao;
+        6:  220:    opcao = Rnao;
         -:  221:  }
         -:  222:
-       14:  223:  if(opcao == Rsim)  //Verifica a necessidade de criar novas perguntas
+       28:  223:  if(opcao == Rsim)  //Verifica a necessidade de criar novas perguntas
         -:  224:  {
-        5:  225:    printf("Que bom!! O computador é esperto!\n");
+       10:  225:    printf("Que bom!! O computador é esperto!\n");
         -:  226:  }
-       14:  227:  if(opcao == Rnao)  //Caso não tenha descoberto o objeto
+       28:  227:  if(opcao == Rnao)  //Caso não tenha descoberto o objeto
         -:  228:  {
-        9:  229:    if(numero_respostas < 20)  //Caso ainda não tenha respondido todas as 20 perguntas
+       18:  229:    if(numero_respostas < 20)  //Caso ainda não tenha respondido todas as 20 perguntas
         -:  230:    {
-        8:  231:      printf("Deseja fazer mais perguntas para conseguir responder seu objeto?\n");
-        8:  232:      opcao = Resposta(simples);
-        8:  233:      if(opcao == Rsim)  //Caso a pessoa queira fazer mais perguntas
+       16:  231:      printf("Deseja fazer mais perguntas para conseguir responder seu objeto?\n");
+       16:  232:      opcao = Resposta(simples);
+       16:  233:      if(opcao == Rsim)  //Caso a pessoa queira fazer mais perguntas
         -:  234:      {
-        3:  235:        printf("A edição vai começar a partir da última pergunta respondida, que é:\n");
-        3:  236:        if(*anterior != NULL)  //Checa se a ultima pergunta existe
+        6:  235:        printf("A edição vai começar a partir da última pergunta respondida, que é:\n");
+        6:  236:        if(*anterior != NULL)  //Checa se a ultima pergunta existe
         -:  237:        {
-        2:  238:          int seleciona = 0;
-        2:  239:          Le(*anterior);  //Le a ultima pergunta
+        4:  238:          int seleciona = 0;
+        4:  239:          Le(*anterior);  //Le a ultima pergunta
         -:  240:
-        2:  241:          if((*anterior)->sim == NULL && (*anterior)->nao == NULL)  //Checa se ambos os filhos da ultima pergunta estao vazios
+        4:  241:          if((*anterior)->sim == NULL && (*anterior)->nao == NULL)  //Checa se ambos os filhos da ultima pergunta estao vazios
         -:  242:          {
-        2:  243:            printf("Digite 'SIM' para adicionar no nó PERGUNTA->SIM e 'NAO' para o nó PERGUNTA->NAO\n");
-        2:  244:            opcao = Resposta(simples);
-        2:  245:            seleciona = 1;
+        4:  243:            printf("Digite 'SIM' para adicionar no nó PERGUNTA->SIM e 'NAO' para o nó PERGUNTA->NAO\n");
+        4:  244:            opcao = Resposta(simples);
+        4:  245:            seleciona = 1;
         -:  246:          }
-        2:  247:          if((*anterior)->sim == NULL && (((*anterior)->nao != NULL &&  seleciona == 0) || opcao == Rsim))  //Caso o filho 'nao' esteja preenchido OU seja selecionado o filho 'sim'
+        4:  247:          if((*anterior)->sim == NULL && (((*anterior)->nao != NULL &&  seleciona == 0) || opcao == Rsim))  //Caso o filho 'nao' esteja preenchido OU seja selecionado o filho 'sim'
         -:  248:          {
-        1:  249:            char posicaoSim[21] = "ULTIMA PERGUNTA->SIM";
-        1:  250:            printf("Construindo a partir do nó ULTIMA PERGUNTA->SIM\n");
-        1:  251:            Constroi_Manual(&(*anterior)->sim,posicaoSim, numero_respostas);  //Continua a construção da arvore
-        1:  252:            Vinte_Perguntas(&(*anterior)->sim, numero_respostas);  //Continua o jogo
+        2:  249:            char posicaoSim[21] = "ULTIMA PERGUNTA->SIM";
+        2:  250:            printf("Construindo a partir do nó ULTIMA PERGUNTA->SIM\n");
+        2:  251:            Constroi_Manual(&(*anterior)->sim,posicaoSim, numero_respostas);  //Continua a construção da arvore
+        2:  252:            Vinte_Perguntas(&(*anterior)->sim, numero_respostas);  //Continua o jogo
         -:  253:          }
-        2:  254:          if((*anterior)->nao == NULL && (((*anterior)->sim != NULL && seleciona == 0) || opcao == Rnao))  //Caso o filho 'sim' esteja preenchido OU seja selecionado o filho 'nao'
+        4:  254:          if((*anterior)->nao == NULL && (((*anterior)->sim != NULL && seleciona == 0) || opcao == Rnao))  //Caso o filho 'sim' esteja preenchido OU seja selecionado o filho 'nao'
         -:  255:          {
-        1:  256:            char posicaoNao[21] = "ULTIMA PERGUNTA->NAO";
-        1:  257:            printf("Construindo a partir do nó ULTIMA PERGUNTA->NAO\n");
-        1:  258:            Constroi_Manual(&(*anterior)->nao,posicaoNao, numero_respostas);  //Continua a construção da arvore
-        1:  259:            Vinte_Perguntas(&(*anterior)->nao, numero_respostas);  //Continua o jogo
+        2:  256:            char posicaoNao[21] = "ULTIMA PERGUNTA->NAO";
+        2:  257:            printf("Construindo a partir do nó ULTIMA PERGUNTA->NAO\n");
+        2:  258:            Constroi_Manual(&(*anterior)->nao,posicaoNao, numero_respostas);  //Continua a construção da arvore
+        2:  259:            Vinte_Perguntas(&(*anterior)->nao, numero_respostas);  //Continua o jogo
         -:  260:          }
         -:  261:        }
         -:  262:        else  //Caso a ultima pergunta não exista (arvore NULL)
         -:  263:        {
-        1:  264:          printf("\nÚltima pergunta vazia, fazendo jogo novo!\n");
-        1:  265:          char posicao[4] = "PAI";
-        1:  266:          Constroi_Manual(ainicio,posicao, numero_respostas);  //Inicia uma nova arvore
-        1:  267:          Vinte_Perguntas(ainicio, numero_respostas);  //Inicia o jogo
+        2:  264:          printf("\nÚltima pergunta vazia, fazendo jogo novo!\n");
+        2:  265:          char posicao[4] = "PAI";
+        2:  266:          Constroi_Manual(ainicio,posicao, numero_respostas);  //Inicia uma nova arvore
+        2:  267:          Vinte_Perguntas(ainicio, numero_respostas);  //Inicia o jogo
         -:  268:        }
         -:  269:      }
-        8:  270:      if(opcao == Rnao)  //Caso a pessoa não queira fazer mais perguntas
+       16:  270:      if(opcao == Rnao)  //Caso a pessoa não queira fazer mais perguntas
         -:  271:      {
-        6:  272:          printf("Fim de jogo!\n");
+       12:  272:          printf("Fim de jogo!\n");
         -:  273:      }
         -:  274:    }
         -:  275:    else  //Caso a pessoa ja tenha respondido 20 perguntas e não chegou no seu objeto
         -:  276:    {
-        1:  277:      printf("Que pena :(, não foi dessa vez\n");
+        2:  277:      printf("Que pena :(, não foi dessa vez\n");
         -:  278:    }
         -:  279:  }
-       14:  280:  return;
+       28:  280:  return;
         -:  281:}

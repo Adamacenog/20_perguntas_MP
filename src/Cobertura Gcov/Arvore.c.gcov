@@ -72,50 +72,50 @@
         -:   70:*dependendo apenas se o usuário quis ou não inserir algo naquele nó, e se ainda não havia sido preenchidas os 20 níveis da árvore.
         -:   71:*
         -:   72:*/
-       34:   73:void Constroi_Manual (arvore **ainicio, char *no, unsigned int size)
+       68:   73:void Constroi_Manual (arvore **ainicio, char *no, unsigned int size)
         -:   74:{
-       34:   75:  assert(size < 21); //Certifica que no máximo serão inseridos 20 níveis.
-       34:   76:  assert(no != NULL); //Certifica que a string nunca é nula.
+       68:   75:  assert(size < 21); //Certifica que no máximo serão inseridos 20 níveis.
+       68:   76:  assert(no != NULL); //Certifica que a string nunca é nula.
         -:   77:
-       34:   78:  if(size < 20)  //Verifica se ja foram inseridas 20 perguntas em um nó
+       68:   78:  if(size < 20)  //Verifica se ja foram inseridas 20 perguntas em um nó
         -:   79:  {
         -:   80:    char pergunta[100];  //Variavel que armazena a pergunta
         -:   81:
-       33:   82:    printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.\n");
-       33:   83:    printf("Nó atual: %s\n", no);
-        4:   84:    do
+       66:   82:    printf("\nDigite abaixo a pergunta ou a resposta de uma pergunta ou 'SAIR' para não responder.\n");
+       66:   83:    printf("Nó atual: %s\n", no);
+        8:   84:    do
         -:   85:    {
         -:   86:      /*
         -:   87:        Esse loop é feito para evitar que '\n' seja inserido como pergunta.
         -:   88:      */
-       37:   89:      fgets (pergunta, 99, stdin);
-       37:   90:    } while(strcmp(pergunta,"\n") == 0);
+       74:   89:      fgets (pergunta, 99, stdin);
+       74:   90:    } while(strcmp(pergunta,"\n") == 0);
         -:   91:
-       33:   92:    strtok(pergunta, "\n");  //Remove o '\n' da pergunta para ficar visualmente melhor
+       66:   92:    strtok(pergunta, "\n");  //Remove o '\n' da pergunta para ficar visualmente melhor
         -:   93:
-       33:   94:    if (strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0)
+       66:   94:    if (strcmp(pergunta, "sair") == 0 || strcmp(pergunta, "SAIR") == 0)
         -:   95:    {
-       21:   96:        *ainicio = NULL;  //Caso o usuário não queira mais inserir, o nó não inserido têm que ser "branco" (NULL)
+       42:   96:        *ainicio = NULL;  //Caso o usuário não queira mais inserir, o nó não inserido têm que ser "branco" (NULL)
         -:   97:    }
         -:   98:    else
         -:   99:    {
-       12:  100:      *ainicio = (arvore*) malloc (sizeof (arvore));  //Aloca memória para a arvore
-       12:  101:      if(*ainicio != NULL)
+       24:  100:      *ainicio = (arvore*) malloc (sizeof (arvore));  //Aloca memória para a arvore
+       24:  101:      if(*ainicio != NULL)
         -:  102:      {
         -:  103:        char *noFilho;  //Variavel para a concatenação de strings (melhor visualização do nó atual para o usuário)
-       12:  104:        char fSim[14] = " - Filho(sim)";  //Variavel do nó sim
-       12:  105:        char fNao[14] = " - Filho(nao)";  //Variavel do nó sim
+       24:  104:        char fSim[14] = " - Filho(sim)";  //Variavel do nó sim
+       24:  105:        char fNao[14] = " - Filho(nao)";  //Variavel do nó sim
         -:  106:
-       12:  107:        strcpy((*ainicio)->Pergunta,pergunta);  //Inserção da pergunta na arvore
-       12:  108:        noFilho = PosicaoNo(no, fSim);  //Concatenação da string sim
-       12:  109:        Constroi_Manual (&((*ainicio)->sim), noFilho, (size + 1));  //Constroi para a esquerda (sim)
-       12:  110:        free(noFilho);  //Remove a concatenação feita
-       12:  111:        noFilho = NULL;
-       12:  112:        noFilho = PosicaoNo(no, fNao);  //Concatenação para a string nao
-       12:  113:        Constroi_Manual (&((*ainicio)->nao), noFilho, (size + 1));  //Constroi para a direita (nao)
-       12:  114:        free(noFilho);  //Remove a concatenação feita
-       12:  115:        noFilho = NULL;
-       12:  116:        assert(noFilho == NULL); //As strings alocadas sejam desalocadas
+       24:  107:        strcpy((*ainicio)->Pergunta,pergunta);  //Inserção da pergunta na arvore
+       24:  108:        noFilho = PosicaoNo(no, fSim);  //Concatenação da string sim
+       24:  109:        Constroi_Manual (&((*ainicio)->sim), noFilho, (size + 1));  //Constroi para a esquerda (sim)
+       24:  110:        free(noFilho);  //Remove a concatenação feita
+       24:  111:        noFilho = NULL;
+       24:  112:        noFilho = PosicaoNo(no, fNao);  //Concatenação para a string nao
+       24:  113:        Constroi_Manual (&((*ainicio)->nao), noFilho, (size + 1));  //Constroi para a direita (nao)
+       24:  114:        free(noFilho);  //Remove a concatenação feita
+       24:  115:        noFilho = NULL;
+       24:  116:        assert(noFilho == NULL); //As strings alocadas sejam desalocadas
         -:  117:      }
         -:  118:      else  //Caso haja problema na alocação da arvore
         -:  119:      {
@@ -125,10 +125,10 @@
         -:  123:  }
         -:  124:  else  //Caso já tenham sido inseridas 20 perguntas
         -:  125:  {
-        1:  126:    *ainicio = NULL;
+        2:  126:    *ainicio = NULL;
         -:  127:  }
         -:  128:
-       34:  129:  return;
+       68:  129:  return;
         -:  130:}
         -:  131:
         -:  132:/**@brief Função de criação da arvore por .txt.
@@ -159,30 +159,30 @@
         -:  157:*criar nenhum nó ou árvore, caso o arquivo txt esteja em branco).
         -:  158:*
         -:  159:*/
-      160:  160:void Constroi_TXT (arvore **ainicio, FILE *arq)
+      320:  160:void Constroi_TXT (arvore **ainicio, FILE *arq)
         -:  161:{
-      160:  162:    const char nulo[2] = ".";  //Definição do nó nulo
+      320:  162:    const char nulo[2] = ".";  //Definição do nó nulo
         -:  163:
-      160:  164:    if(arq!=NULL)  //Verificação de arquivo .txt não existente
+      320:  164:    if(arq!=NULL)  //Verificação de arquivo .txt não existente
         -:  165:    {
         -:  166:      char pergunta[100];  //Variavel que armazena a pergunta
         -:  167:
-      159:  168:      if(fgets (pergunta, 100, arq)!=NULL)  //Pega uma linha inteira do .txt (pergunta)
+      318:  168:      if(fgets (pergunta, 100, arq)!=NULL)  //Pega uma linha inteira do .txt (pergunta)
         -:  169:      {
-      159:  170:          strtok(pergunta, "\n");  //Remove o '\n' da pergunta para ficar visualmente melhor
+      318:  170:          strtok(pergunta, "\n");  //Remove o '\n' da pergunta para ficar visualmente melhor
         -:  171:
-      159:  172:          if (strcmp(pergunta, nulo) == 0)  //Caso haja um '.' no .txt, criar nó nulo
+      318:  172:          if (strcmp(pergunta, nulo) == 0)  //Caso haja um '.' no .txt, criar nó nulo
         -:  173:          {
-       87:  174:              *ainicio = NULL;
+      174:  174:              *ainicio = NULL;
         -:  175:          }
         -:  176:          else
         -:  177:          {
-       72:  178:            *ainicio = (arvore*) malloc (sizeof (arvore));  //Alocação do espaço para a arvore
-       72:  179:            if(*ainicio != NULL)  //Verifica se a memoria alocada é nula (NULL)
+      144:  178:            *ainicio = (arvore*) malloc (sizeof (arvore));  //Alocação do espaço para a arvore
+      144:  179:            if(*ainicio != NULL)  //Verifica se a memoria alocada é nula (NULL)
         -:  180:            {
-       72:  181:              strcpy((*ainicio)->Pergunta,pergunta);  //Copia a pergunta para a memoria alocada
-       72:  182:              Constroi_TXT (&((*ainicio)->sim), arq);  //Constroi a arvore para a esquerda (sim)
-       72:  183:              Constroi_TXT (&((*ainicio)->nao), arq);  //Constroi a arvore para a direita (nao)
+      144:  181:              strcpy((*ainicio)->Pergunta,pergunta);  //Copia a pergunta para a memoria alocada
+      144:  182:              Constroi_TXT (&((*ainicio)->sim), arq);  //Constroi a arvore para a esquerda (sim)
+      144:  183:              Constroi_TXT (&((*ainicio)->nao), arq);  //Constroi a arvore para a direita (nao)
         -:  184:            }
         -:  185:            else  //Caso haja erro na alocação, finalizar o programa
         -:  186:            {
@@ -193,10 +193,10 @@
         -:  191:    }
         -:  192:    else  //Caso o arquivo de texto não exista, a arvore não é criada
         -:  193:    {
-        1:  194:      *ainicio = NULL;
+        2:  194:      *ainicio = NULL;
         -:  195:    }
         -:  196:
-      160:  197:    return;
+      320:  197:    return;
         -:  198:}
         -:  199:
         -:  200:/**@brief Função para salvar as perguntas da arvore em um .txt.
@@ -229,22 +229,22 @@
         -:  227:*parametro, inclusive salvando no txt as partes da árvore que são NULL, representando-os com um '.'.
         -:  228:*
         -:  229:*/
-       16:  230:void Salva_TXT (arvore **ainicio, FILE *arq)
+       32:  230:void Salva_TXT (arvore **ainicio, FILE *arq)
         -:  231:{
-       16:  232:  if(arq != NULL)  //Checa se o arquivo .txt existe
+       32:  232:  if(arq != NULL)  //Checa se o arquivo .txt existe
         -:  233:  {
-       15:  234:    if (*ainicio == NULL)  //Caso o nó esteja em branco (NULL)
+       30:  234:    if (*ainicio == NULL)  //Caso o nó esteja em branco (NULL)
         -:  235:    {
-        9:  236:        fprintf(arq, "%s\n", ".");  //Coloca o '.' no arquivo .txt
+       18:  236:        fprintf(arq, "%s\n", ".");  //Coloca o '.' no arquivo .txt
         -:  237:    }
         -:  238:    else
         -:  239:    {
-        6:  240:        fprintf(arq, "%s\n", (*ainicio)->Pergunta);  //Insere a pergunta no .txt
-        6:  241:        Salva_TXT (&(*ainicio)->sim, arq);  //Salva no .txt o nó da esquerda (sim)
-        6:  242:        Salva_TXT (&(*ainicio)->nao, arq);  //Salva no .txt o nó da direita (nao)
+       12:  240:        fprintf(arq, "%s\n", (*ainicio)->Pergunta);  //Insere a pergunta no .txt
+       12:  241:        Salva_TXT (&(*ainicio)->sim, arq);  //Salva no .txt o nó da esquerda (sim)
+       12:  242:        Salva_TXT (&(*ainicio)->nao, arq);  //Salva no .txt o nó da direita (nao)
         -:  243:    }
         -:  244:  }
-       16:  245:  return;
+       32:  245:  return;
         -:  246:}
         -:  247:
         -:  248:/**@brief Função para a leitura da pergunta no nó da Arvore.
@@ -272,14 +272,14 @@
         -:  270:*caso ela seja válida a função imprime a pergunta do nó. Caso não seja valida nada acontece.
         -:  271:*
         -:  272:*/
-       59:  273:void Le (arvore *arv)
+      118:  273:void Le (arvore *arv)
         -:  274:{
-       59:  275:    if (arv != NULL)  //Checa se o ponteiro é valido (diferente de NULL)
+      118:  275:    if (arv != NULL)  //Checa se o ponteiro é valido (diferente de NULL)
         -:  276:    {
-       56:  277:      printf ("%s\n" , arv->Pergunta);  //Imprime a pergunta do nó
+      112:  277:      printf ("%s\n" , arv->Pergunta);  //Imprime a pergunta do nó
         -:  278:    }
         -:  279:
-       59:  280:    return;
+      118:  280:    return;
         -:  281:}
         -:  282:
         -:  283:/**@brief Função para a navegação e leitura da pergunta para o nó 'sim' da arvore.
@@ -310,21 +310,21 @@
         -:  308:*pergunta do nó.
         -:  309:*
         -:  310:*/
-       47:  311:void NavegaSim(arvore **pergunta)
+       94:  311:void NavegaSim(arvore **pergunta)
         -:  312:{
-       47:  313:  if((*pergunta) != NULL)  //Checa se o nó é valido (não NULL)
+       94:  313:  if((*pergunta) != NULL)  //Checa se o nó é valido (não NULL)
         -:  314:  {
-       46:  315:    if((*pergunta)->sim != NULL)  //Checa se o nó->sim é valido (não NULL)
+       92:  315:    if((*pergunta)->sim != NULL)  //Checa se o nó->sim é valido (não NULL)
         -:  316:    {
-       40:  317:      *pergunta = (*pergunta)->sim;  //Faz o apontador apontar para o nó 'sim'
-       40:  318:      Le(*pergunta);  //Le a pergunta do nó 'sim'
+       80:  317:      *pergunta = (*pergunta)->sim;  //Faz o apontador apontar para o nó 'sim'
+       80:  318:      Le(*pergunta);  //Le a pergunta do nó 'sim'
         -:  319:    }
         -:  320:    else  //Caso o nó 'sim' não seja valido
         -:  321:    {
-        6:  322:      *pergunta = NULL;
+       12:  322:      *pergunta = NULL;
         -:  323:    }
         -:  324:  }
-       47:  325:  return;
+       94:  325:  return;
         -:  326:}
         -:  327:
         -:  328:/**@brief Função para a navegação e leitura da pergunta para o nó 'nao' da arvore.
@@ -355,21 +355,21 @@
         -:  353:*pergunta do nó.
         -:  354:*
         -:  355:*/
-        6:  356:void NavegaNao(arvore **pergunta)
+       12:  356:void NavegaNao(arvore **pergunta)
         -:  357:{
-        6:  358:  if((*pergunta) != NULL)  //Checa se o nó é valido (não NULL)
+       12:  358:  if((*pergunta) != NULL)  //Checa se o nó é valido (não NULL)
         -:  359:  {
-        5:  360:    if((*pergunta)->nao != NULL)  //Checa se o nó->'nao' é valido (não NULL)
+       10:  360:    if((*pergunta)->nao != NULL)  //Checa se o nó->'nao' é valido (não NULL)
         -:  361:    {
-        2:  362:      *pergunta = (*pergunta)->nao;  //Faz o apontador apontar para o nó 'nao'
-        2:  363:      Le(*pergunta);  //Le a pergunta do nó 'nao'
+        4:  362:      *pergunta = (*pergunta)->nao;  //Faz o apontador apontar para o nó 'nao'
+        4:  363:      Le(*pergunta);  //Le a pergunta do nó 'nao'
         -:  364:    }
         -:  365:    else  //Caso o nó 'nao' não seja valido
         -:  366:    {
-        3:  367:      *pergunta = NULL;
+        6:  367:      *pergunta = NULL;
         -:  368:    }
         -:  369:  }
-        6:  370:  return;
+       12:  370:  return;
         -:  371:}
         -:  372:
         -:  373:/**@brief Função para apagar a arvore da memória.
@@ -399,17 +399,17 @@
         -:  397:*desalocar toda a memória alocada pela árvore, liberando todos os nós.
         -:  398:*
         -:  399:*/
-       55:  400:void Desconstroi (arvore **ainicio)
+      110:  400:void Desconstroi (arvore **ainicio)
         -:  401:{
-       55:  402:    if (*ainicio != NULL)  //Checa se o nó é valido (não NULL)
+      110:  402:    if (*ainicio != NULL)  //Checa se o nó é valido (não NULL)
         -:  403:    {
-       25:  404:        Desconstroi (&((*ainicio)->sim));  //Faz a chamada recursiva para a esquerda (sim)
-       25:  405:        Desconstroi (&((*ainicio)->nao));  //Faz a chamada recursiva para a direita (nao)
-       25:  406:        free (*ainicio);  //Apaga o nó
-       25:  407:        *ainicio = NULL;  //Aponta o nó apagado para NULL (para evitar erros)
+       50:  404:        Desconstroi (&((*ainicio)->sim));  //Faz a chamada recursiva para a esquerda (sim)
+       50:  405:        Desconstroi (&((*ainicio)->nao));  //Faz a chamada recursiva para a direita (nao)
+       50:  406:        free (*ainicio);  //Apaga o nó
+       50:  407:        *ainicio = NULL;  //Aponta o nó apagado para NULL (para evitar erros)
         -:  408:    }
         -:  409:
-       55:  410:    assert(*ainicio == NULL); //Nó da árvore deve ter sido liberado
+      110:  410:    assert(*ainicio == NULL); //Nó da árvore deve ter sido liberado
         -:  411:
-       55:  412:    return;
+      110:  412:    return;
         -:  413:}
